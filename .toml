@@ -1,2 +1,3 @@
 [build]
-  ignore = "/bin/true"
+  command = "echo 'Build ignoré'"
+  ignore = "echo 'Ignorer tous les builds'"
