@@ -48,6 +48,11 @@ Vous pouvez personnaliser votre avatar visible sur la page d'accueil du dépôt 
 
 ---
 
-Merci de votre collaboration et bon travail à tous ! 💡  
-**– Équipe Pédagogique MNS**
+## 🔐 Confidentialité
 
+⚠️ **N'oubliez pas** : ce dépôt ainsi que le site associé sont **publics**.  
+Veillez donc à **ne pas transmettre de données confidentielles** ou sensibles, car elles pourraient être **visibles et utilisables par des tiers**.
+
+---
+
+Merci de votre collaboration et bon travail à tous ! 💡  
