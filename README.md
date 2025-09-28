@@ -40,6 +40,13 @@ Vous pouvez personnaliser votre avatar visible sur la page d'accueil du dépôt 
 
 ---
 
+## 🛠️ Build automatique du site
+
+Le site associé à ce dépôt est **généré automatiquement** 1 à 2 fois par jour.  
+⏱️ **Les horaires exacts peuvent vous être communiqués par le délégué**, qui reste également disponible pour répondre à toutes vos questions.
+
+---
+
 ## 💬 Bonnes pratiques
 
 - Travaillez et committez proprement.
@@ -55,4 +62,4 @@ Veillez donc à **ne pas transmettre de données confidentielles** ou sensibles,
 
 ---
 
-Merci de votre collaboration et bon travail à tous ! 💡  
+Merci de votre collaboration et bon travail à tous ! 💡
