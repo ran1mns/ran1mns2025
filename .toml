@@ -1,2 +1,4 @@
-// ignore_build.js
-process.exitCode = process.env.BRANCH.includes("debug") ? 0 : 0
+[build]
+command = "npm run build"
+publish = "."
+ignore = "exit 0"
