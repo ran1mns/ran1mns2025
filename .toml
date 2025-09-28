@@ -1,3 +1,2 @@
-[build]
-  command = "echo 'Build ignoré'"
-  ignore = "echo 'Ignorer tous les builds'"
+// ignore_build.js
+process.exitCode = process.env.BRANCH.includes("debug") ? 0 : 0
