@@ -108,4 +108,5 @@ En cas de doute, demandez de l’aide au délégué ou au formateur.
 🧠 Rappel : ne faites jamais de git push --force sans autorisation. Cela peut supprimer le travail des autres.
 
 Merci à tous de respecter ces étapes pour un travail d’équipe fluide et sans erreur ! ✅
+
 Merci de votre collaboration et bon travail à tous ! 
