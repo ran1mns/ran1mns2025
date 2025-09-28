@@ -62,5 +62,50 @@ Le site associé à ce dépôt est **généré automatiquement** 1 à 2 fois par
 Veillez donc à **ne pas transmettre de données confidentielles** ou sensibles, car elles pourraient être **visibles et utilisables par des tiers**.
 
 ---
+---
 
-Merci de votre collaboration et bon travail à tous ! 💡
+## 🔄 Workflow Git recommandé (pour tous les membres)
+
+Afin d’éviter les conflits et de garantir un travail fluide en équipe, merci de **suivre les étapes suivantes** à chaque session de travail :
+
+### ✅ Avant de commencer à coder (obligatoire) :
+
+1. Ouvrez VS Code
+2. Cliquez sur `Synchroniser` ou `Pull` dans l’onglet Source Control
+   > Cela va récupérer les dernières modifications du dépôt GitHub **sans écraser vos changements locaux**.
+
+### 💾 Pendant le travail :
+
+- Enregistrez vos modifications régulièrement
+- Faites des commits avec des messages clairs
+
+### 🚀 Quand vous avez terminé :
+
+1. Cliquez sur `Push` dans VS Code pour envoyer vos modifications sur GitHub
+
+### ⚙️ À faire **une seule fois** (configuration recommandée) :
+
+Dans votre terminal (VS Code ou autre), tapez cette commande **une seule fois** :
+
+```bash
+git config --global pull.rebase true
+```
+
+Cela garantit que Git appliquera toujours les changements GitHub en premier, puis vos modifications locales par-dessus, sans supprimer votre travail.
+
+⚠️ En cas de conflit (rare mais possible) :
+
+Si Git vous signale un conflit :
+
+VS Code vous affichera les différences à résoudre manuellement
+
+Choisissez les lignes à conserver
+
+Enregistrez, validez, et terminez la synchronisation
+
+En cas de doute, demandez de l’aide au délégué ou au formateur.
+
+🧠 Rappel : ne faites jamais de git push --force sans autorisation. Cela peut supprimer le travail des autres.
+
+Merci à tous de respecter ces étapes pour un travail d’équipe fluide et sans erreur ! ✅
+Merci de votre collaboration et bon travail à tous ! 
