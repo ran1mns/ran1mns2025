@@ -1,7 +1,39 @@
 
 nav ul {
     list-style: none;
+    display: flex;
 }
+
+nav ul li{
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding:  10px 20px;
+    color:white;
+    background-color: #4f5356;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #929a9f;
+}
+nav ul li ul {  /* gpt*/
+    display: none;       
+    position: absolute;  
+    top: 100%;           
+    left: 0;
+    background-color: #444;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
 p{
     border:2px dotted rgb(57, 57, 57);
     padding: 5px;
