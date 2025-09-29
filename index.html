@@ -17,12 +17,15 @@
             --primary-color: #6C63FF;
             --secondary-color: #FF6584;
             --accent-color: #36D1DC;
+            --success-color: #4CAF50;
             --card-bg: #ffffff;
             --text-color: #2D3748;
+            --text-light: #718096;
             --hover-color: #5a52d4;
             --background-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --card-gradient: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
             --shadow-color: rgba(108, 99, 255, 0.2);
+            --glow-color: rgba(108, 99, 255, 0.4);
         }
 
         * {
@@ -83,15 +86,16 @@
 
         header {
             width: 100%;
-            padding: 60px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
             color: white;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
             position: relative;
             overflow: hidden;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         header::before {
@@ -101,30 +105,36 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(108, 99, 255, 0.3), rgba(255, 101, 132, 0.3));
+            background: linear-gradient(45deg, rgba(108, 99, 255, 0.4), rgba(255, 101, 132, 0.4));
             z-index: -1;
         }
 
         header h1 {
             margin: 0;
-            font-size: 3.5em;
-            font-weight: 700;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-size: 3.8em;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             animation: fadeInDown 1s ease-out;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-            opacity: 0.9;
+            font-size: 1.3em;
+            margin-top: 15px;
+            opacity: 0.95;
             animation: fadeIn 1.5s ease-out;
+            font-weight: 500;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(-40px);
             }
 
             to {
@@ -139,21 +149,21 @@
             }
 
             to {
-                opacity: 0.9;
+                opacity: 0.95;
             }
         }
 
         .container {
             width: 90%;
-            max-width: 1200px;
-            margin: 0 auto 60px;
+            max-width: 1300px;
+            margin: 0 auto 80px;
             animation: fadeInUp 1s ease-out;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
 
             to {
@@ -166,21 +176,22 @@
             list-style-type: none;
             padding: 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             width: 100%;
         }
 
         li {
             background: var(--card-gradient);
-            border-radius: 16px;
+            border-radius: 20px;
             padding: 0;
             text-align: center;
-            box-shadow: 0 10px 30px var(--shadow-color);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 35px var(--shadow-color);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             overflow: hidden;
             position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
         }
 
         li::before {
@@ -189,53 +200,127 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            height: 6px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+            z-index: 2;
+        }
+
+        li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.8s;
+        }
+
+        li:hover::after {
+            left: 100%;
         }
 
         li:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 20px 40px rgba(108, 99, 255, 0.3);
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 50px var(--glow-color);
         }
 
         .user-card {
-            padding: 30px 20px;
+            padding: 35px 25px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
 
         .user-avatar {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: white;
-            font-size: 2em;
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+            font-size: 2.2em;
+            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+            transition: all 0.4s ease;
+            overflow: hidden;
+            border: 4px solid white;
+            position: relative;
+        }
+
+        .user-avatar::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: transform 0.3s ease;
         }
 
         li:hover .user-avatar {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.15) rotate(8deg);
+            box-shadow: 0 12px 30px rgba(108, 99, 255, 0.6);
+        }
+
+        li:hover .user-avatar::before {
+            opacity: 1;
+        }
+
+        li:hover .user-avatar img {
+            transform: scale(1.1);
         }
 
         .user-name {
-            font-size: 1.4em;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 12px;
             color: var(--text-color);
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .user-name::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
         }
 
         .user-role {
-            font-size: 0.9em;
-            color: #718096;
-            margin-bottom: 20px;
+            font-size: 1em;
+            color: var(--text-light);
+            margin-bottom: 25px;
             font-style: italic;
+            padding: 6px 15px;
+            background: rgba(108, 99, 255, 0.08);
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .user-role[data-role="Déléguée"] {
+            background: rgba(76, 175, 80, 0.15);
+            color: var(--success-color);
+            font-weight: 600;
         }
 
         a {
@@ -243,62 +328,132 @@
             color: var(--primary-color);
             font-weight: 600;
             font-size: 1.1em;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             display: inline-flex;
             align-items: center;
-            padding: 10px 20px;
+            padding: 12px 28px;
             border-radius: 50px;
-            background: rgba(108, 99, 255, 0.1);
-            border: 2px solid transparent;
+            background: rgba(108, 99, 255, 0.12);
+            border: 2px solid rgba(108, 99, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        a:hover::before {
+            left: 100%;
         }
 
         a i {
-            margin-left: 8px;
-            transition: transform 0.3s ease;
+            margin-left: 10px;
+            transition: all 0.4s ease;
         }
 
         a:hover {
             color: white;
             background: var(--primary-color);
-            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.5);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
         }
 
         a:hover i {
-            transform: translateX(5px);
+            transform: translateX(8px) scale(1.1);
         }
 
         footer {
             width: 100%;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
             color: white;
-            font-size: 0.9em;
-            opacity: 0.8;
+            font-size: 1em;
+            opacity: 0.9;
             margin-top: auto;
-            padding-top: 40px;
+            padding-top: 50px;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animation de pulse subtile */
+        @keyframes subtlePulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        li {
+            animation: subtlePulse 8s ease-in-out infinite;
+        }
+
+        li:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+
+        li:nth-child(even) {
+            animation-delay: 1s;
         }
 
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.5em;
+                font-size: 2.8em;
+            }
+
+            header {
+                padding: 60px 20px;
+            }
+
+            ul {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .user-card {
+                padding: 30px 20px;
+            }
+
+            .user-avatar {
+                width: 90px;
+                height: 90px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.3em;
+            }
+
+            header p {
+                font-size: 1.1em;
             }
 
             ul {
                 grid-template-columns: 1fr;
             }
 
-            .user-card {
-                padding: 25px 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 2em;
-            }
-
-            header p {
-                font-size: 1em;
+            .user-avatar {
+                width: 80px;
+                height: 80px;
             }
         }
     </style>
@@ -318,253 +473,242 @@
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Adrien/avatar.jpg" alt="Adrien" onerror="this.src='avatarH.png'">
                     </div>
                     <div class="user-name">Adrien</div>
-                    <div class="user-role">Déléguée</div>
+                    <div class="user-role" data-role="Déléguée">Déléguée</div>
                     <a href="Adrien/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Banu/avatar.jpg" alt="Banu" onerror="this.src='avatarH.png'">
                     </div>
-                    <div class="user-name">Edwin</div>
-                    <div class="user-role">Student</div>
-                    <a href="Edwin/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Banu</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Banu/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="user-name">Khaled</div>
-                    <div class="user-role">Student</div>
-                    <a href="Khaled/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="user-name">Zaid</div>
-                    <div class="user-role">Student</div>
-                    <a href="Zaid/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="user-name">Cyr</div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="user-name">Zouhair</div>
-                    <div class="user-role">Student</div>
-                    <a href="Zouhair/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Bilal/avatar.jpg" alt="Bilal" onerror="this.src='avatarH.png'">
                     </div>
                     <div class="user-name">Bilal</div>
-                    <div class="user-role">Student</div>
+                    <div class="user-role" data-role="Student">Student</div>
                     <a href="Bilal/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Cyr/avatar.jpg" alt="Cyr" onerror="this.src='avatarH.png'">
                     </div>
-                    <div class="user-name">Naima</div>
-                    <div class="user-role">Student</div>
-                    <a href="Naima/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Cyr</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Edwin/avatar.jpg" alt="Edwin" onerror="this.src='avatarH.png'">
                     </div>
-                    <div class="user-name">Quentin</div>
-                    <div class="user-role">Student</div>
-                    <a href="Quentin/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Edwin</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Edwin/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Gregory/avatar.jpg" alt="Gregory" onerror="this.src='avatarH.png'">
+                    </div>
+                    <div class="user-name">Gregory</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Gregory/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </li>
+            <li>
+                <div class="user-card">
+                    <div class="user-avatar">
+                        <img src="Idriss/avatar.jpg" alt="Idriss" onerror="this.src='avatarH.png'">
                     </div>
                     <div class="user-name">Idriss</div>
-                    <div class="user-role">Student</div>
+                    <div class="user-role" data-role="Student">Student</div>
                     <a href="Idriss/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Imtiyez/avatar.jpg" alt="Imtiyez" onerror="this.src='avatarH.png'">
+                    </div>
+                    <div class="user-name">Imtiyez</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Imtiyez/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </li>
+            <li>
+                <div class="user-card">
+                    <div class="user-avatar">
+                        <img src="Jimmy/avatar.jpg" alt="Jimmy" onerror="this.src='avatarH.png'">
                     </div>
                     <div class="user-name">Jimmy</div>
-                    <div class="user-role">Student</div>
+                    <div class="user-role" data-role="Student">Student</div>
                     <a href="Jimmy/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Julien/avatar.jpg" alt="Julien" onerror="this.src='avatarH.png'">
                     </div>
-                    <div class="user-name"></div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Julien</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Julien/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Kevin/avatar.jpg" alt="Kevin" onerror="this.src='avatarH.png'">
                     </div>
-                    <div class="user-name"></div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Kevin</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Kevin/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Khaled/avatar.jpg" alt="Khaled" onerror="this.src='avatarH.png'">
                     </div>
-                    <div class="user-name"></div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Khaled</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Khaled/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Lila/avatar.jpg" alt="Lila" onerror="this.src='avatarF.png'">
                     </div>
-                    <div class="user-name"></div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Lila</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Lila/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Naima/avatar.jpg" alt="Naima" onerror="this.src='avatarF.png'">
                     </div>
-                    <div class="user-name"></div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Naima</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Naima/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Oriane/avatar.jpg" alt="Oriane" onerror="this.src='avatarF.png'">
                     </div>
-                    <div class="user-name"></div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Oriane</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Oriane/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Paul/avatar.jpg" alt="Paul" onerror="this.src='avatarH.png'">
                     </div>
-                    <div class="user-name"></div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Paul</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Paul/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Quentin/avatar.jpg" alt="Quentin" onerror="this.src='avatarH.png'">
                     </div>
-                    <div class="user-name"></div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Quentin</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Quentin/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="QuentinB/avatar.jpg" alt="QuentinB" onerror="this.src='avatarH.png'">
                     </div>
-                    <div class="user-name"></div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">QuentinB</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="QuentinB/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Thybaut/avatar.jpg" alt="Thybaut" onerror="this.src='avatarH.png'">
                     </div>
-                    <div class="user-name"></div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Thybaut</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Thybaut/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Zaid/avatar.jpg" alt="Zaid" onerror="this.src='avatarH.png'">
                     </div>
-                    <div class="user-name"></div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Zaid</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Zaid/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i class="fas fa-user"></i>
+                        <img src="Zakarie/avatar.jpg" alt="Zakarie" onerror="this.src='avatarH.png'">
                     </div>
-                    <div class="user-name"></div>
-                    <div class="user-role">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    <div class="user-name">Zakarie</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Zakarie/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                 </div>
             </li>
-
+            <li>
+                <div class="user-card">
+                    <div class="user-avatar">
+                        <img src="Zouhair/avatar.jpg" alt="Zouhair" onerror="this.src='avatarH.png'">
+                    </div>
+                    <div class="user-name">Zouhair</div>
+                    <div class="user-role" data-role="Student">Student</div>
+                    <a href="Zouhair/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </li>
         </ul>
     </div>
 
     <footer>
-        <p>&copy; 2023 Liste des utilisateurs. Tous droits réservés.</p>
+        <p>&copy; MNS-Ran1-2025 Tous droits réservés.</p>
     </footer>
 
     <script>
         // Création des particules animées
         document.addEventListener('DOMContentLoaded', function () {
             const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
+            const particleCount = 40;
 
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
 
                 // Taille aléatoire
-                const size = Math.random() * 10 + 5;
+                const size = Math.random() * 15 + 5;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
 
@@ -573,7 +717,10 @@
                 particle.style.top = `${Math.random() * 100}%`;
 
                 // Délai d'animation aléatoire
-                particle.style.animationDelay = `${Math.random() * 15}s`;
+                particle.style.animationDelay = `${Math.random() * 20}s`;
+
+                // Opacité aléatoire
+                particle.style.opacity = Math.random() * 0.4 + 0.1;
 
                 particlesContainer.appendChild(particle);
             }
@@ -581,7 +728,7 @@
             // Animation d'apparition progressive des cartes
             const cards = document.querySelectorAll('li');
             cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
+                card.style.animationDelay = `${index * 0.08}s`;
             });
         });
     </script>
