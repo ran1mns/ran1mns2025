@@ -11,6 +11,7 @@ header {
 
 nav a {
     color: white;
+    padding: 15px;
 
 }
 
@@ -19,8 +20,7 @@ nav {
     align-content: flex-end;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-end;
-    font-size: 25px;
+    align-items: center;
     gap: 30px;
 }
 
@@ -30,4 +30,19 @@ h1 {
     flex-direction: row;
     justify-content: center;
     align-items: flex-end;
+}
+
+button {
+    background: linear-gradient(blue, rgb(207, 0, 180));
+    font-size: 15px;
+    border: white groove 2px;
+    font-size: 20px;
+
+}
+
+img {
+    width: 50px;
+    /* Largeur souhaitée */
+    height: auto;
+    /* Pour conserver les proportions */
 }
