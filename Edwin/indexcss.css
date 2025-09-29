@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+}
+
+header {
+    background: linear-gradient(blue, rgb(207, 0, 180));
+
+}
+
+nav {
+    display: flex;
+    justify-items: center;
+    place-items: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
