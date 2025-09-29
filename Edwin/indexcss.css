@@ -4,14 +4,30 @@ body {
 
 header {
     background: linear-gradient(blue, rgb(207, 0, 180));
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+nav a {
+    color: white;
 
 }
 
 nav {
     display: flex;
-    justify-items: center;
-    place-items: center;
-    align-items: center;
-    align-content: center;
-    align-self: center;
+    align-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 25px;
+    gap: 30px;
+}
+
+h1 {
+    display: flex;
+    align-content: flex-end;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
 }
