@@ -5,9 +5,11 @@ body{
     font-weight: 400 ;
     font-style: normal;
 }
+
 nav{
     background-color: #4f5356;
 }
+
 nav ul {
     list-style: none;
     display: flex;
@@ -29,6 +31,7 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #929a9f;
 }
+
 nav ul li ul {  /* gpt*/
     display: none;       
     position: absolute;  
@@ -45,7 +48,6 @@ nav ul li:hover > ul {
 }
 
 p{
-    
     padding: 5px;
 }
 
@@ -58,9 +60,11 @@ p{
     color: black;
     background-color: #929a9f;
 }
+
 .liencontact:hover{
     background-color: #b4bdc3;;
 }
+
 .avatar{
     border-radius: 50%; 
 }
