@@ -5,11 +5,13 @@ body{
     font-weight: 400 ;
     font-style: normal;
 }
-
+nav{
+    background-color: #4f5356;
+}
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: right;
 }
 
 nav ul li{
