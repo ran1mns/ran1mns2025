@@ -59,8 +59,6 @@ p{
 .liencontact:hover{
     background-color: #b4bdc3;;
 }
-
-
 .avatar{
-border-radius: 500px;
+    border-radius: 50%; 
 }
