@@ -37,6 +37,15 @@
     <footer>
         <p>home page</p>
     </footer>
+
+    <script>
+        fetch('newsletter.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('contenu').innerHTML = data;
+            });
+    </script>
+
 </body>
 
 </html>
