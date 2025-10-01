@@ -1,0 +1,480 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+/* Header */
+
+.header {
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(177, 177, 177);
+  padding: 1em 5em;
+}
+
+.container__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.menu {
+  display: flex;
+  gap: 3em;
+  list-style: none;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: rgb(0,0,0);
+  font-family: "Permanent Marker", cursive;
+  font-weight: 500;
+  font-size: large;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: rgb(190, 55, 61);
+}
+
+.burger {
+  display: none;
+}
+
+/* Main section */
+
+main {
+  background: url(../images/japon2.jpg);
+  background-position: 50% 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero {
+  padding: 60px 30px;
+}
+
+.container__hero {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid__hero {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero__avatar {
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 4px solid rgb(255, 255, 255);
+}
+
+.hero__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
+.hero__item.right {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 40px auto;
+}
+
+.hero__item.right span {
+  display: inline-block;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.563rem;
+  color: rgb(190, 55, 61);
+  margin-bottom: 10px;
+}
+
+.hero__item.right .title {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hero__item.right p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.grid__item.hero {
+  max-width: 900px;
+  padding: 20px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+main .grid__item{
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 8px;
+  margin: 8px;
+}
+
+.section-title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 28px;
+  color: rgb(190, 55, 61);
+  margin-bottom: 15px;
+}
+
+.objectiv {
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: justify;
+}
+
+/* Footer */
+
+.container__footer {
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid rgb(177, 177, 177);
+  padding: 1em 3em 1em 3em;
+}
+
+.grid__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.grid__item.socials {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.grid__item.copyright {
+  display: flex;
+  align-items: center;
+  font-family: "Kaushan Script", cursive;
+  font-size: 0.9em;
+  font-weight: 500;
+  height: 60px;
+}
+
+footer .socials {
+  display: flex;
+  gap: 1em;
+  list-style: none;
+}
+
+.icon {
+  display: inline-block;
+  fill: rgb(190, 55, 61);
+  transition: fill 0.3s ease;
+}
+
+.icon:hover {
+  fill: rgb(35, 55, 79);
+}
+
+/* Responsive */
+
+/* === Téléphone portrait === */
+@media (max-width: 480px) {
+  .container__header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 1em;
+    text-align: center;
+    background: white;
+    padding: 1em;
+    border-top: 1px solid #ccc;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .grid__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hero__avatar {
+    margin: 0 auto;
+  }
+
+  .hero__item.right {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .grid__footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid__item.copyright {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .grid__item.socials {
+    justify-content: center;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  footer .socials {
+    justify-content: center;
+  }
+}
+
+/* === Téléphone paysage === */
+@media (min-width: 481px) and (max-width: 767px) {
+  .header {
+    padding: 1em 1.5em;
+  }
+
+  .container__header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 1.5em;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .grid__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .hero__avatar {
+    margin: 0 auto;
+  }
+
+  .hero__item.right {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .grid__footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid__item.copyright {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .grid__item.socials {
+    justify-content: center;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  footer .socials {
+    justify-content: center;
+  }
+}
+
+/* === Tablette portrait === */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container__header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  .menu {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5em;
+  }
+
+  .container__footer {
+    margin: 0 auto;
+    padding: 0 2em;
+  }
+
+  .grid__footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid__item.copyright {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .grid__item.socials {
+    justify-content: center;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  footer .socials {
+    justify-content: center;
+  }
+}
+
+/* === Tablette paysage === */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .container__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  .grid__footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .grid__item.copyright {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .grid__item.socials {
+    justify-content: flex-end;
+    margin-left: auto;
+    width: auto;
+  }
+
+  footer .socials {
+    justify-content: flex-end;
+  }
+}
+
+/* === Ordinateur petite résolution === */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .container__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  .grid__footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .grid__item.copyright {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .grid__item.socials {
+    justify-content: flex-end;
+    margin-left: auto;
+    width: auto;
+  }
+
+  footer .socials {
+    justify-content: flex-end;
+  }
+}
+
+/* === Ordinateur grande résolution === */
+@media (min-width: 1600px) {
+  .container__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  .grid__footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .grid__item.copyright {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .grid__item.socials {
+    justify-content: flex-end;
+    margin-left: auto;
+    width: auto;
+  }
+
+  footer .socials {
+    justify-content: flex-end;
+  }
+}
