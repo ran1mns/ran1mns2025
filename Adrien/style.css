@@ -4,6 +4,7 @@ body{
     font-optical-sizing: auto;
     font-weight: 400 ;
     font-style: normal;
+    color: #1e1f20;
 }
 
 nav ul {
@@ -48,22 +49,29 @@ nav a:hover{
     background-color:#929a9f;
 }
 
+h1{
+    text-align: center;
+}
 p{
-    padding: 5px;
+    padding: 10px;
 }
 
 .liencontact{
+    display: block;
     border: 1px solid rgb(57, 57, 57);
     border-radius: 20px;
-    padding: 5px;
+    padding: 10px;
     margin: 5px;
     text-decoration: none;
-    color: black;
-    background-color: #929a9f;
+    color:white;
+    background-color: #4f5356;
+    width: fit-content;
+    margin: 0 auto;
+    
 }
 
 .liencontact:hover{
-    background-color: #b4bdc3;;
+    background-color: #929a9f;
 }
 
 .container{
@@ -73,6 +81,8 @@ p{
 
 .text{
     flex: 1;
+    text-align: justify;
+    margin: 5px;
 }
 
 .image{
@@ -80,6 +90,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5px;
 }  
 
 .avatar{
