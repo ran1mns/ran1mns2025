@@ -1,0 +1,22 @@
+.gallery {
+    gap: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100%;
+    border: white double 19px;
+    border-radius: 20px;
+}
+
+.gallery video {
+    width: 25%;
+    height: 280px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: -20px -2px 19px 0px #ffffff4f;
+    /* color: red; */
+}

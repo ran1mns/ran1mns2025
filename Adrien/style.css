@@ -1,8 +1,19 @@
+body{
+    background-color: #6f7478;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400 ;
+    font-style: normal;
+}
+
+nav{
+    background-color: #4f5356;
+}
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: right;
 }
 
 nav ul li{
@@ -20,6 +31,7 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #929a9f;
 }
+
 nav ul li ul {  /* gpt*/
     display: none;       
     position: absolute;  
@@ -36,23 +48,23 @@ nav ul li:hover > ul {
 }
 
 p{
-    border:2px dotted rgb(57, 57, 57);
     padding: 5px;
 }
 
 .liencontact{
     border: 1px solid rgb(57, 57, 57);
-    padding: 2px;
+    border-radius: 20px;
+    padding: 5px;
     margin: 5px;
     text-decoration: none;
     color: black;
-    background-color: rgb(190, 190, 190);
-}
-.liencontact:hover{
-    background-color: rgb(231, 215, 215);
+    background-color: #929a9f;
 }
 
+.liencontact:hover{
+    background-color: #b4bdc3;;
+}
 
 .avatar{
-border-radius: 500px;
+    border-radius: 50%; 
 }

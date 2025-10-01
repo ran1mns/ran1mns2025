@@ -1,27 +1,39 @@
+html,
 body {
     margin: 0;
+    background: linear-gradient(#1e3a8a, #9333ea, #be185d);
+    /*height: 100%*/
 }
 
 header {
-    background: linear-gradient(blue, rgb(207, 0, 180));
     display: flex;
     justify-content: center;
-    height: 50px;
+    height: auto;
+    width: auto;
+    max-height: 500px;
+    margin-bottom: 8%;
 }
 
-nav a {
-    color: white;
-    padding: 15px;
+header img {
+    height: auto;
+    width: 100%;
+    max-height: 600px;
+}
 
+nav a,
+button a {
+    color: white;
+    font-size: 20px;
 }
 
 nav {
-    display: flex;
-    align-content: flex-end;
-    flex-direction: row;
+    align-content: center;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 30px;
+    flex-wrap: nowrap;
+    text-align: center;
 }
 
 h1 {
@@ -30,19 +42,77 @@ h1 {
     flex-direction: row;
     justify-content: center;
     align-items: flex-end;
+    font-size: 40px;
+    color: white;
 }
 
+
 button {
+    /*display: flex;*/
     background: linear-gradient(blue, rgb(207, 0, 180));
     font-size: 15px;
     border: white groove 2px;
-    font-size: 20px;
-
+    font-size: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: 0.5%;
+    margin-right: 5%;
+    margin-left: 5%;
+    background-size: contain;
+    width: 10%;
+    border-radius: 20px;
 }
 
-img {
-    width: 50px;
-    /* Largeur souhaitée */
-    height: auto;
-    /* Pour conserver les proportions */
+button img {
+    width: 100%;
+    max-height: 200%;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 55%;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+a span {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Suivie par mes regle CSS responsive*/
+
+@media (max-width: 630px) {
+    .menu {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+
+
+    /*button {
+        width: 500px;
+        height: 0px;
+    }*/
+
 }
