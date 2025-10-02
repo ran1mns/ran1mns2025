@@ -1,5 +1,5 @@
 body{
-    background-color: #6f7478;
+    background-color: #929a9f;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400 ;
@@ -107,4 +107,10 @@ p{
 
 footer{
     background-color: #4f5356;
+    text-align: center;
+}
+
+.container{
+    width:1200px;
+    margin:auto;
 }
