@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link href="CSS/Styles.css" rel="stylesheet">
-    <link href="CSS/Accueil.css" rel="stylesheet">
+    <link href="CSS/Contact.css" rel="stylesheet">
     <!-- c'est mon premier site internet -->
 </head>
 
@@ -37,40 +37,44 @@
                     <li><a target="_blank" href="https://www.x.com/">
                             <img src="Icones/twitter.png" alt="Logo X"></a></li>
                     <li><a target="_blanck" href="https://www.linkedin.com/">
-                            <img width="32" src="Icones/linkedin.png" alt="Logo LinkedIn"></a></li>
+                            <img src="Icones/linkedin.png" alt="Logo LinkedIn"></a></li>
                     <li><a target="_blanck" href="https://www.facebook.com/">
-                            <img width="32" src="Icones/Facebook.png" alt="Logo Facebook"></a></li>
+                            <img src="Icones/Facebook.png" alt="Logo Facebook"></a></li>
                     <li><a target="_blanck" href="https://www.instagram.com/">
-                            <img width="32" src="Icones/Instagram.png" alt="Logo Instagram"></a></li>
+                            <img src="Icones/Instagram.png" alt="Logo Instagram"></a></li>
                 </ul>
-                <button class="burger"><span class="barre"></span></button>
+                <button class="burger"><span class="barre"></span> </button>
             </div>
         </div>
     </header>
     <main>
-        <section class=hero>
+        <section class="contact">
             <div class="container">
-                <div class="grid">
-                    <div class="hero_item left">
-                        <span class="grid_left_sous_titre">Développeur Web en formation</span>
-                        <h1>A propos de Zouhair REGHAI</h1>
-                        <p class="grid_left_presentation">
-                            Mon objectif est de redonner un nouveau souﬄe et une nouvelle direction à ma carrière en me
-                            positionnant dans l'IT,
-                            qui est non seulement un secteur porteur aujourd'hui, mais aussi la base de tout
-                            investissement
-                            économique et technologique pour demain.<br>
-                            <br>
-                            Je suis actuellement en formation <strong>Num & Boost</strong> (Option Dév) que je suis avec
-                            grand
-                            intérêt et sérieux et mon objectif est d'intégrer en septembre le cursus diplomant
-                            <strong>Développeur Web - Concepteur Développeur
-                                d'Application</strong> de <strong>MNS</strong>.
-                        </p>
-                    </div>
-                    <div class="hero_item right">
-                        <img src="Images/Zouhair REGHAI.JPG" alt="Portrait Zouhair REGHAI">
-                    </div>
+                <div class="form">
+                    <h2>CONTACT</h2>
+                    <p>Une idée ? Un projet ? N'hésitez pas à prendre contact avec moi et me détailler le plus possible
+                        votre besoin afin de faciliter nos futurs échanges.</p>
+                    <form method="get" action="#">
+                        <div class="formulaire">
+                            <div class="form_nom">
+                                <label for="nom">Nom</label>
+                                <input type="text" name="nom" placeholder="" id="nom">
+                            </div>
+                            <div class="form_prenom">
+                                <label for="nom">Prénom</label>
+                                <input type="text" name="nom" placeholder="" id="nom">
+                            </div>
+                            <div class="form_email">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" placeholder="" id="email">
+                            </div>
+                        </div>
+                        <div class="form_message">
+                            <label for="message">Message</label>
+                            <textarea name="message" placeholder="Message" id="message"></textarea>
+                        </div>
+                        <input type="submit" value="ENVOYER" class="bouton">
+                    </form>
                 </div>
             </div>
         </section>

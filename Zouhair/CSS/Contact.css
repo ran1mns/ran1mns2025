@@ -1,0 +1,85 @@
+h2,
+.h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    font-size: 2.5rem;
+    padding: 10px;
+    margin: 5px auto 50px;
+    background-color: maroon;
+    color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+p {
+    display: flex;
+    text-align: justify;
+    margin-bottom: 30px;
+    color: black;
+}
+
+label {
+    color: black;
+}
+
+.form {
+    max-width: 800px;
+    padding: 0;
+    margin: 20px auto 0 auto;
+}
+
+.form input,
+.form textarea {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    outline:auto;
+}
+
+.form textarea {
+    min-height: 200px;
+}
+
+form .bouton {
+    background: rgb(128, 0, 0);
+    color: #fff2de;
+    width: 150px;
+    margin: 50px auto;
+    border: none;
+}
+
+form .bouton:hover {
+    cursor: pointer;
+    background-color: RGBA(0, 0, 0, 0.5);
+}
+
+/*Media Queries pour tablette*/
+@media screen and (max-width:819px) {
+    form .bouton {
+        background-color: maroon;
+        border: black;
+        color: white;
+    }
+
+    h2 {
+        color: white;
+    }
+
+    .footer .container p {
+        font-size: 1em;
+        color: gray;
+        text-align: center;
+    }
+}
+
+/*Media Queries pour mobiles*/
+@media screen and (max-width:499px) {
+    form .bouton {
+        background-color: maroon;
+        color: white;
+    }
+}
