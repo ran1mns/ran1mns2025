@@ -15,7 +15,8 @@ nav ul {
 
 nav ul li{
     display: inline-block;
-    position: relative; 
+    position: relative;
+    z-index: 1000; 
 }
 
 nav ul li ul li{
@@ -87,13 +88,19 @@ p{
 
 .image{
     flex:1;
-    display: flex;
+    /*display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
+    text-align: center;
+    align-content: center;       
+    line-height: 0;           
+    position: relative;
     margin: 5px;
 }  
 
 .avatar{
     border-radius: 50%;
     width:75%;
+    display: inline-block;
+    vertical-align: middle;
 }
