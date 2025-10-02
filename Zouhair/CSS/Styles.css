@@ -155,8 +155,465 @@ footer .mentions {
     min-width: 30px;
 }
 
+
+
+h1 {
+    display: flex;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 35px;
+    color: black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    padding: 0;
+}
+
+.grid_left_sous_titre {
+    text-transform: uppercase;
+    padding: 20px 0;
+    color: black;
+}
+
+.grid_left_presentation {
+    text-align: justify;
+    font-size: 14px;
+    color: black;
+    padding: 20px;
+    margin: 0 0 30px 0;
+}
+
+.hero_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: black;
+    line-height: 1;
+}
+
+h2,
+.h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    font-size: 2.5rem;
+    padding: 20px;
+    margin: 10px auto 40px;
+    background-color: maroon;
+    color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+h3,
+.h3 {
+    font-size: 1rem;
+    padding: 5px auto;
+    margin: 10px auto;
+}
+
+p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    text-align: justify;
+    font-size: 0.8em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.sous_titre {
+    font-size: 1em;
+    padding: 10px 0;
+    margin: 20px 0;
+    text-justify: auto;
+}
+
+/* MES SERVICES */
+.services .icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border: 2px solid maroon;
+    border-radius: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+}
+
+.grid_left,
+.grid_right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 50%;
+    padding: 10px;
+}
+
+.srvc {
+    max-width: 467px;
+    max-height: 155px;
+    margin: 10px;
+}
+
+.srvc h3 {
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.srvc_text {
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* MES COMPETENCES */
+.skills li {
+    background-color: white;
+    border-left: 5px solid maroon;
+    padding: 5px 10px;
+    margin: 5px 10px;
+}
+
+.skills h2 {
+    margin: auto;
+}
+
+.skills .progressbar {
+    background: white;
+    color: white;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.skills .bar {
+    background: maroon;
+    padding: 10px;
+}
+
+/* PORTFOLIO */
+.portfolio .grid {
+    grid: none;
+}
+
+.grid_filter a {
+    color: white;
+    background: maroon;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.grid_filter a:hover {
+    cursor: pointer;
+    background-color: RGBA(0, 0, 0, 0.5);
+}
+
+
+.grid_filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 100%;
+    margin: 10px auto;
+}
+
+.grid_item {
+    padding: 10px 0;
+}
+
+.category {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 100%;
+    margin: 0 0;
+}
+
+.card {
+    text-transform: uppercase;
+    padding: 0 5px;
+    margin: 0 5px;
+    position: relative;
+}
+
+.card_inner {
+    padding: 20px;
+}
+
+.card h3 {
+    padding: 0 0 20px;
+    margin: 0;
+}
+
+.card_overlay {
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    width: 97.5%;
+    height: 100%;
+    display: none;
+}
+
+.card_overlay a {
+    font-size: 45px;
+    color: white;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.cat {
+    display: flex;
+    justify-content: center;
+    color: #5b6c78;
+    padding: 0;
+    margin: 0;
+}
+
 /*Media Queries pour desktop*/
 @media screen and (min-width:820px) {
+    .sous_titre {
+        padding: 10px 50px;
+    }
+
+    h3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dev_web {
+        font-size: 15px;
+    }
+
+    .footer .container p {
+        font-size: 1em;
+        color: black;
+        text-align: center;
+    }
+}
+
+/*Media Queries pour tablette*/
+@media screen and (max-width:819px) {
+    h2 {
+        display: flex;
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+
+    h3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    main .container {
+        padding: 0 10px;
+    }
+
+    .srvc {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .skills .container .grid {
+        display: block;
+
+    }
+
+    .portfolio h2 {
+        margin: 20px 0;
+    }
+
+    .portfolio .sous_titre {
+        margin: 0;
+    }
+
+    .footer .container p {
+        font-size: 1em;
+        color: gray;
+        text-align: center;
+    }
+}
+
+
+/*Media Queries pour mobiles*/
+@media screen and (max-width:499px) {
+    .header {
+        position: sticky;
+        top: 0;
+    }
+
+    h2 {
+        display: flex;
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    h3 {
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+    p {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: justify;
+    }
+
+    /* MES SERVICES */
+    img.icone {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .grid {
+        display: block;
+    }
+
+    .grid_left,
+    .grid_right {
+        display: block;
+        width: 100%;
+    }
+
+    .srvc {
+        width: 100%;
+        height: 100%;
+        padding-top: 5px;
+        margin: 5px auto;
+    }
+
+    .srvc h3 {
+        padding: 5px auto;
+        margin: 0;
+    }
+
+    .srvc p {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* MES COMPETENCES */
+    .skills li {
+        background-color: #fff2de;
+        border-left: 5px solid maroon;
+        padding: 5px 10px;
+        margin: 5px 10px;
+    }
+
+    .skills p {
+        padding-top: 10px;
+    }
+
+    .skills .progressbar {
+        background: #fff2de;
+    }
+
+    /* PORTFOLIO */
+    .portfolio .sous_titre {
+        margin: 10px 0;
+    }
+
+    .grid_filter {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .grid_item {
+        padding: 5px;
+        margin: auto;
+    }
+
+    .grid_item a {
+        color: black;
+        background: #fff2de;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .dev_web {
+        font-size: 14px;
+    }
+
+    .category {
+        display: block;
+        max-width: 100%;
+        margin: 10px auto;
+    }
+}
+
+/*Media Queries pour desktop*/
+@media screen and (min-width:820px) {
+
+    .hero_item {
+        flex: 1, 0, 50%;
+    }
+
+    .hero_item right {
+        order: 1;
+    }
+
+    .hero_item left {
+        order: 2;
+    }
+
+    .grid img {
+        border-radius: 25%;
+    }
+
+    .footer .container p {
+        font-size: 1em;
+        color: black;
+        text-align: center;
+    }
+
     .burger {
         display: none;
     }
@@ -164,6 +621,7 @@ footer .mentions {
 
 /*Media Queries pour tablettes*/
 @media screen and (max-width:819px) {
+
 
     html {
         background: rgb(186, 196, 206);
@@ -183,10 +641,51 @@ footer .mentions {
         color: grey;
         text-align: center;
     }
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero_item {
+        flex: 1, 0, 50%;
+    }
+
+    .hero_item.right {
+        order: 1;
+    }
+
+    .hero_item.left {
+        order: 2;
+    }
+
+    .hero img {
+        min-width: 350px;
+    }
+
+    .grid {
+        color: black;
+    }
 }
 
 /*Media Queries pour mobiles*/
 @media screen and (max-width:499px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero_item {
+        flex: 1, 0, 50%;
+    }
+
+    .hero_item.right {
+        order: 1;
+    }
+
+    .hero_item.left {
+        order: 2;
+    }
+
     nav {
         display: none;
     }
@@ -236,6 +735,5 @@ footer .mentions {
     .footer img {
         width: 30px;
     }
-
 
 }
