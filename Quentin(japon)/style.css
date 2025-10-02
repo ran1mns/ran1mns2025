@@ -13,7 +13,7 @@ html {
 .header {
   background-color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(177, 177, 177);
-  padding: 1em 5em;
+  padding: 0em 5em;
 }
 
 .container__header {
@@ -22,10 +22,12 @@ html {
   justify-content: space-between;
 }
 
-.logo {
-  font-family: "Permanent Marker", cursive;
-  font-weight: 600;
-  font-size: 2rem;
+.logo img {
+  height: 100px;
+  width: auto;
+  display: block;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
 }
 
 .menu {
