@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/045023b7-2eaf-4725-84e9-49ed501a33c6/deploy-status)](https://app.netlify.com/projects/mns-ran1/deploys)
+Lien du site de la classe: https://ran1mns.github.io/ran1mns2025/
 # 🎓 Dépôt de la formation MNS - Groupe Ran1
 
 Bienvenue sur le dépôt GitHub de la formation **MNS** destiné au groupe **Ran1** ! 🚀
