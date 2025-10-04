@@ -1,0 +1,69 @@
+<body>
+    <div class="container">
+        <div class="construction-icon">🚧</div>
+        <h1>Site en construction</h1>
+        <p>Nous travaillons dur pour vous offrir une expérience exceptionnelle. Revenez bientôt pour découvrir la suite
+            de notre site !</p>
+
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <div class="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">Jours</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">Heures</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">Secondes</span>
+            </div>
+        </div>
+
+        <p><strong>Date de lancement prévue :</strong> 1er Janvier 2026</p>
+
+        <div class="social-links">
+            <a href="#" title="Facebook">📘</a>
+            <a href="#" title="Twitter">🐦</a>
+            <a href="#" title="Instagram">📷</a>
+            <a href="#" title="LinkedIn">💼</a>
+        </div>
+    </div>
+
+    <script>
+        // Date de lancement cible (modifiez cette date selon vos besoins)
+        const launchDate = new Date('January 1, 2026 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.querySelector('.countdown').innerHTML = '<h3>Le site est maintenant en ligne !</h3>';
+            }
+        }
+
+        // Mettre à jour le compte à rebours toutes les secondes
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Appel initial
+    </script>
+</body>
