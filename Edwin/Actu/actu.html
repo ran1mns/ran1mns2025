@@ -6,24 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../indexcss.css">
     <link rel="stylesheet" href="videocss.css">
+    <link rel="icon" href="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-192x192.png"
+        sizes="192x192" />
+    <link rel="apple-touch-icon"
+        href="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-180x180.png" />
+    <meta name="msapplication-TileImage"
+        content="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-270x270.png" />
     <title>Actu page</title>
     <style>
-        /* Reset et base */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            /*max-width: 800px;*/
-            margin: 0 auto;
-            padding: 5%;
-        }
-
         hr {
             border: none;
             border-top: 3px solid #adadad;
             margin: 20px 0;
         }
 
-        /* Style des articles */
         .article {
             background-color: white;
             border-radius: 8px;
@@ -61,6 +57,14 @@
         }
 
         /* Responsive */
+        @media screen and (max-width: 1200px) and (min-width: 601px) {
+            body {
+                padding: 15px;
+            }
+
+
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 10px;
@@ -77,8 +81,9 @@
 <body>
     <header>
         <nav>
-            <img src="../Images/header2.jpg" alt=" ">
-
+            <div>
+                <img src="../Images/header2.jpg" alt=" ">
+            </div>
             <button>
                 <a href="../index.html" alt=" ">Home</a>
             </button>
@@ -86,8 +91,8 @@
                 <a href="../Video/video.html" alt=" ">Video</a>
             </button>
 
-            <button>
-                <a href="../Actu/actu.html" alt=" ">Actua Tech</a>
+            <button class="grobouton">
+                <a href="../Actu/actu.html" alt=" ">Actu Tech</a>
             </button>
 
             <button>
@@ -95,22 +100,20 @@
             </button>
         </nav>
     </header>
-    <h1><u>Actualité Tech:</u></h1>
-    <div id="contenu"></div>
-
-
-    <footer>
-        <p>home page</p>
-    </footer>
-
-    <script>
-        fetch('newsletter.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('contenu').innerHTML = data;
-            });
-    </script>
-
+    <main>
+        <h1><u>Actualité Tech:</u></h1>
+        <div id="contenu"></div>
+        <footer>
+            <a href="#">Mon CV</a>
+        </footer>
+        <script>
+            fetch('newsletter.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('contenu').innerHTML = data;
+                });
+        </script>
+    </main>
 </body>
 
 </html>
