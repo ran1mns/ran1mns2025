@@ -58,7 +58,7 @@ p{
 }
 
 .liencontact{
-    display: block;
+    display: inline-block;
     border: 1px solid rgb(57, 57, 57);
     border-radius: 20px;
     padding: 10px;
@@ -114,3 +114,4 @@ footer{
     width:1200px;
     margin:auto;
 }
+
