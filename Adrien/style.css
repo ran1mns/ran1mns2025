@@ -55,11 +55,11 @@ h1{
 }
 p{
     padding: 10px;
+    text-align: justify;
 }
 
 .liencontact{
-    display: inline-block;
-    border: 1px solid rgb(57, 57, 57);
+    display:  inline-block;
     border-radius: 20px;
     padding: 10px;
     margin: 5px;
@@ -67,22 +67,26 @@ p{
     color:white;
     background-color: #4f5356;
     width: fit-content;
-    margin: 0 auto;
+    border: 1px solid #4f5356;;
     
 }
 
 .liencontact:hover{
     background-color: #929a9f;
+    border: 1px solid rgb(57, 57, 57);
 }
 
 .container{
     display: flex;
     gap: 20px;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .text{
     flex: 1;
-    text-align: justify;
+    text-align: center;
     margin: 5px;
 }
 
