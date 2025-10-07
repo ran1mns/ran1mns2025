@@ -1,0 +1,75 @@
+<section class="course">
+  <h1>Titre du Cours : Adresse IP et DNS</h1>
+  <article class="introduction">
+    <h2>Introduction</h2>
+    <p>Les adresses IP et le DNS (Domain Name System) sont des éléments fondamentaux du fonctionnement d'Internet. Comprendre ces concepts vous permettra de mieux appréhender comment les réseaux informatiques fonctionnent et comment les sites web sont accessibles. Ce cours vous guidera à travers les bases des adresses IP, leur fonctionnement, et l'importance du DNS.</p>
+  </article>
+  <article class="concepts">
+    <h2>Concepts Clés</h2>
+    <h3>Qu'est-ce qu'une adresse IP ?</h3>
+    <p>Une adresse IP (Internet Protocol) est une adresse unique attribuée à chaque appareil connecté à un réseau utilisant le protocole Internet. Elle permet d'identifier et de localiser ces appareils. Chaque équipement dans un réseau a une adresse IP unique, et deux équipements ne peuvent pas avoir la même adresse IP en même temps.</p>
+    <aside class="tip">
+      <p><strong>Astuce :</strong> Vous pouvez trouver l'adresse IP de votre appareil en utilisant la commande <code>ipconfig</code> dans l'invite de commande (CMD) sur Windows.</p>
+    </aside>
+    <h3>Types d'adresses IP</h3>
+    <p>Il existe deux types principaux d'adresses IP : statiques et dynamiques.</p>
+    <ul>
+      <li><strong>Adresse IP statique</strong> : Une adresse IP fixe qui ne change pas. Elle est souvent utilisée pour les serveurs ou les équipements réseau qui doivent être accessibles en permanence.</li>
+      <li><strong>Adresse IP dynamique</strong> : Une adresse IP qui peut changer à chaque connexion au réseau. Elle est attribuée automatiquement par un serveur DHCP (Dynamic Host Configuration Protocol).</li>
+    </ul>
+    <h3>Utilisation de la commande CMD</h3>
+    <p>La commande <code>ipconfig</code> dans l'invite de commande (CMD) sur Windows permet de voir les informations réseau de votre appareil, y compris l'adresse IP.</p>
+    <pre><code class="language-shell">
+ipconfig
+    </code></pre>
+    <p>L'adresse IPv4 est l'adresse IP attribuée par le réseau pour se connecter à Internet. La passerelle par défaut est l'adresse IP du routeur côté interne.</p>
+    <h3>Fonctionnement du routeur</h3>
+    <p>Le routeur utilise son adresse publique pour satisfaire les requêtes sur Internet. Il gère les flux de demandes et de réponses entre les appareils du réseau local et Internet.</p>
+    <h3>Commande Ping</h3>
+    <p>La commande <code>ping</code> est utilisée pour vérifier si une adresse IP ou un nom de domaine est accessible. C'est la plus petite demande possible pour voir si une adresse répond.</p>
+    <pre><code class="language-shell">
+ping google.com
+    </code></pre>
+    <p>En pingant <code>google.com</code>, vous pouvez voir l'adresse IP du serveur où Google est hébergé.</p>
+    <h3>Les plages d'adresses IP</h3>
+    <p>Une adresse IPv4 est composée de 4 chiffres, chacun allant de 0 à 255, séparés par des points. Par exemple, <code>192.168.1.1</code>. Chaque chiffre représente un octet, soit 8 bits en binaire.</p>
+    <pre><code class="language-text">
+00000000 = 0
+11111111 = 255
+    </code></pre>
+    <p>Un octet (ou byte en anglais) correspond à 8 positions binaires, allant de <code>00000000</code> (0) à <code>11111111</code> (255).</p>
+    <h3>Explications sur les disques durs et CD-ROM</h3>
+    <p>Les disques durs et les CD-ROM sont des dispositifs de stockage de données. Les données sont écrites et stockées en octets (bytes). La lecture de ces données se fait en interprétant les bits stockés.</p>
+    <aside class="tip">
+      <p><strong>Astuce :</strong> Pour en savoir plus sur la représentation binaire des données, consultez la table ASCII qui associe chaque caractère à une valeur binaire.</p>
+    </aside>
+  </article>
+  <article class="exercices">
+    <h2>Exercices Pratiques</h2>
+    <ol>
+      <li>Utilisez la commande <code>ipconfig</code> pour trouver l'adresse IP de votre appareil et la passerelle par défaut.</li>
+      <li>Utilisez la commande <code>ping</code> pour vérifier si vous pouvez atteindre <code>google.com</code>.</li>
+      <li>Recherchez et notez les différences entre une adresse IP statique et une adresse IP dynamique.</li>
+    </ol>
+    <details>
+      <summary>Corrigé</summary>
+      <pre><code class="language-shell">
+# Exercice 1
+ipconfig
+
+# Exercice 2
+ping google.com
+
+# Exercice 3
+# Recherchez les différences entre les adresses IP statiques et dynamiques sur Internet.
+      </code></pre>
+    </details>
+  </article>
+  <aside class="ressources">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=qiQR5rTSshw" target="_blank">Vidéo : Nos ordinateurs ont-ils la mémoire courte ?</a></li>
+      <li><a href="https://www.angryip.org/download/" target="_blank">Télécharger Angry IP Scanner</a></li>
+    </ul>
+  </aside>
+</section>
