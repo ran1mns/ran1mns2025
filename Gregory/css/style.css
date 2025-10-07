@@ -1,25 +1,40 @@
-/*BASE GLOBAL*/
+/* BASE GLOBAL */
 
 :root{
+  /* Encre / texte */
+  --ink: #2A1F16;         /* Brun-noir doux */
+  --ink-soft: #5A4B3E;    /* Ton d’ombre chaud et feutré */
 
-  --ink: #263238;
-  --ink-soft: #5b6c78;
-  --rose-50:  #fff6f9;
-  --rose-100: #ffeaf1;
-  --rose-200: #ffd3e2;
-  --rose-400: #ff8fb4;
-  --rose-600: #e25484;
+  /* Papier (clair) */
+  --paper: #E9D8B7;       /* Beige papier washi */
+  --paper-dark: #D8C3A3;  /* Variante un peu plus vieillie pour les fonds */
 
- 
+  /* Palette sakura/torii — on garde vos noms rose-* */
+  --rose-50:  #FBEDEA;    /* Rose très pâle */
+  --rose-100: #F3D6D0;    /* Rose doux et chaud */
+  --rose-200: #E7A9A0;    /* Rose vintage */
+  --rose-400: #C87B73;    /* Rose soutenu, terreux */
+  --rose-600: #B34C45;    /* Rouge torii désaturé (accent) */
+
+  /* Bambou (si besoin ailleurs) */
+  --bamboo-100: #DCE3D4;
+  --bamboo-300: #A6B49D;
+  --bamboo-500: #7F8F73;
+
+  --shadow: rgba(42, 31, 22, 0.2); /* Ombre légère et naturelle */
+
+  /* Tokens généraux */
   --color-body: var(--ink);
-  --background-body: #ffffff;
-  --primary-color: var(--rose-600);
+  --background-body: var(--paper);
+  --primary-color: var(--paper-dark);
 
-  
-  --bg-image: url("../img/background.png"); 
-  --bg-overlay: rgba(255,255,255,.35);
+  /* Image de fond conservée */
+  --bg-image: url("../img/background.png");
+  --bg-overlay: rgba(233, 216, 183, .45);
+
+  /* Dégradés / surface */
   --grad-soft: linear-gradient(180deg, #fff 0%, var(--rose-50) 45%, var(--rose-100) 100%);
-  --card-bg: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.82));
+  --card-bg: linear-gradient(180deg, rgba(233,207,183,.92), rgba(233,207,183,.82));
 }
 
 .container{
@@ -32,14 +47,10 @@ body{
   flex-direction: column;
   min-height: 100vh;
   color: var(--color-body);
-
-
- 
   position: relative;
   z-index: 0;
   background: transparent;
 }
-
 
 body::before{
   content: "";
@@ -51,93 +62,160 @@ body::before{
     var(--bg-image) center / cover no-repeat;
 }
 
-html, body { height: 100%;margin: 0;}
+html, body { 
+    height: 100%; 
+    margin: 0;
+    font-family: 'Noto Serif Jp', serif;
+}
 
-/*HEADER*/
 
+
+/* HEADER */
+
+header div.logotext nav.navheader{
+  display: inline-block;
+  flex-direction: column;  
+  align-items: center;       
+  gap: .6rem;                
+}
 header {
-  background: linear-gradient(90deg, var(--rose-400), #fff);
-  border-bottom: 1px solid rgba(226,84,132,.15);
+  background: linear-gradient(-90deg, rgba(231, 169, 160, 0.70), rgba(216, 195, 163, 0.70));
+  border-bottom: 1px solid rgba(179, 76, 69, .15);
   position: sticky;
   top: 0;
   z-index: 10;
-  backdrop-filter: saturate(120%) blur(4px);
-}
-header {
+  backdrop-filter: saturate(130%) blur(10px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-header nav ul {
-    font-size: 1.2rem;
-    gap: 1rem;
-    list-style: none;
-    padding-left: 0;
-    padding-right: 0; 
-    margin-left: 400px;
-    background: linear-gradient(180deg, var(--rose-200), var(--rose-600));
- }
-header nav ul li {
-    display: inline-block;
+header nav{
+    margin-top: 0.6rem;
 }
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+header nav ul li { 
+    display: inline-block;
+    background: linear-gradient(180deg, var(--rose-100), var(--rose-400));
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5%;
+}
+
+
 header nav a { 
     padding: 0.5rem 1rem;
     transition: color 0.3s;
     text-decoration: none;
     color: inherit;
+    border-radius: 10%;
 }
+
 header nav a:hover { 
-    color: var(--rose-600); 
+    color: var(--paper);
+    background: linear-gradient(180deg, var(--rose-400), var(--rose-600));
 }
 
 img.logoheader{
-    display: inline-block;
-    width: 100px;
-    height: 100px;
+    display: inline;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
+    justify-self:start;
 }
-/* MAIN*/
 
+.topheader {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  align-items: center;
+  position: relative;
+}
+
+.topheader::after{
+  content: "";
+  width: 150px;
+  height: 1px;  
+}
+
+
+header span.titre{
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Noto Serif Jp', serif;
+    color: var(--ink);
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    grid-column: 2;
+}
+
+/* MAIN */
 
 body{
   display: flex;
   flex-direction: column;
-  min-height: 100vh;}
+  min-height: 100vh;
+}
 
 main{ flex: 1 0 auto; }
 
+/* FOOTER */
 
-/*FOOTER*/
 footer { margin-top: auto; }
 
 footer {
-  background: linear-gradient(180deg, var(--rose-200), var(--rose-600));
+  background: linear-gradient(180deg, var(--paper-dark), var(--rose-400));
   color: #fff; 
   text-align: center; 
-  padding: 2rem 0;
+  padding:0;
 }
-.footer-name { font-size: 1.6rem; margin-bottom: 1.5rem; }
+
+.footer-name { 
+  font-size: 1.6rem;
+  margin: 0.1;
+}
+
 .footer-social {
   display: flex; 
   justify-content: center; 
   gap: 0.8rem; 
-  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  margin-bottom: 10px;
 }
+
 .footer-social a {
   display: flex; 
   align-items: center; 
   justify-content: center;
   border: 1px solid #fff; 
   border-radius: 50%;
-  padding: 0.8rem; width: 42px; 
-  height: 42px; color: #fff;
+  padding: 0.8rem;
+  margin-top: 10; 
+  width: 21px; 
+  height: 21px; 
+  color: #fff;
   transition: all 0.3s ease;
 }
-.footer-social a:hover { background: #fff; color: var(--rose-600); }
+
+.footer-social a:hover { 
+  background: #fff; 
+  color: var(--rose-600); 
+}
+
 .footer-social svg { fill: currentColor; }
-.footer-copy { font-size: 1.4rem; margin: 0.2rem 0; }
 
-
-
+.footer-copy { 
+  font-size: 0.8rem;  
+}
