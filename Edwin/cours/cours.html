@@ -240,41 +240,67 @@
     <main>
         <h1><u>Element fourni par l'agent IA:</u></h1>
         <nav class="navi2">
-            <button>
-                <a href="../cours/cours.html" alt=" ">Python</a>
+            <button onclick="chargerContenu('Python')">
+                Python
             </button>
-            <button>
-                <a href="../cours/cours.html" alt=" ">Reseau</a>
+            <button onclick="chargerContenu('Reseau')">
+                Reseau
             </button>
-            <button>
-                <a href="../cours/cours.html" alt=" ">Wordpress</a>
+            <button onclick="chargerContenu('Wordpress')">
+                Wordpress
             </button>
-            <button>
-                <a href="../cours/cours.html" alt=" ">Front-end</a>
+            <button onclick="chargerContenu('Front-end')">
+                Front-end
             </button>
-            <button>
-                <a href="../cours/cours.html" alt=" ">Culture Informatique</a>
+            <button onclick="chargerContenu('Culture Informatique')">
+                Culture Informatique
             </button>
-            <button>
-                <a href="../cours/cours.html" alt=" ">TRE</a>
+            <button onclick="chargerContenu('TRE')">
+                TRE
             </button>
         </nav>
         <div id="contenu"></div>
-
         <footer>
             <a href="../Portfolio/index.html">Mon CV</a>
         </footer>
     </main>
-
     <script>
+        // Fonction pour charger le contenu d'un dossier
+        async function chargerContenu(dossier) {
+            const contenuDiv = document.getElementById('contenu');
+            contenuDiv.innerHTML = '<p>Chargement en cours...</p>';
+
+            try {
+                // Récupère tous les fichiers HTML dans le dossier
+                const response = await fetch(`/${dossier}/`);
+                const text = await response.text();
+                const parser = new DOMParser();
+                const htmlDocument = parser.parseFromString(text, 'text/html');
+                const links = Array.from(htmlDocument.querySelectorAll('a[href$=".html"]'))
+                    .map(a => a.getAttribute('href'))
+                    .filter(href => href !== '../');
+
+                // Charge chaque fichier et concatène le contenu
+                let contenuComplet = '';
+                for (const file of links) {
+                    const fileResponse = await fetch(file);
+                    const fileContent = await fileResponse.text();
+                    contenuComplet += fileContent;
+                }
+
+                contenuDiv.innerHTML = contenuComplet;
+            } catch (error) {
+                contenuDiv.innerHTML = `<p>Erreur de chargement : ${error.message}</p>`;
+            }
+        }
+
+        // Chargement initial
         fetch('contenu_en_cours.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('contenu').innerHTML = data;
             });
     </script>
-    <!-- supprimer apres fin des travaux du site -->
-
     <script>
         // Date de lancement cible (modifiez cette date selon vos besoins)
         const launchDate = new Date('January 1, 2026 00:00:00').getTime();
@@ -304,5 +330,4 @@
         updateCountdown(); // Appel initial
     </script>
 </body>
-
 </html>
