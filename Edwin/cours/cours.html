@@ -295,7 +295,7 @@
         }
 
         // Chargement initial
-        fetch('contenu_en_cours.html')
+        fetch('Resumer-cours-*.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('contenu').innerHTML = data;
@@ -330,4 +330,5 @@
         updateCountdown(); // Appel initial
     </script>
 </body>
+
 </html>
