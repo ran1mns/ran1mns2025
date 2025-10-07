@@ -64,10 +64,8 @@
             left: 0px
         }
 
-        /*A supprimer apres fin des travaux du site*/
         div {
             margin: auto;
-
         }
 
         .container {
@@ -96,6 +94,14 @@
             font-size: 1.2em;
             margin-bottom: 30px;
             line-height: 1.6;
+        }
+
+        .cours-item {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .countdown {
@@ -214,7 +220,6 @@
     </style>
 </head>
 
-
 <body>
     <header>
         <nav>
@@ -227,37 +232,23 @@
             <button>
                 <a href="../Video/video.html" alt=" ">Video</a>
             </button>
-
             <button>
                 <a href="../Actu/actu.html" alt=" ">Actu Tech</a>
             </button>
-
             <button class="grobouton">
                 <a href="../cours/cours.html" alt=" ">Cours</a>
             </button>
         </nav>
     </header>
     <main>
-        <h1><u>Element fourni par l'agent IA:</u></h1>
+        <h1><u>Cours par thématique</u></h1>
         <nav class="navi2">
-            <button onclick="chargerContenu('Python')">
-                Python
-            </button>
-            <button onclick="chargerContenu('Reseau')">
-                Reseau
-            </button>
-            <button onclick="chargerContenu('Wordpress')">
-                Wordpress
-            </button>
-            <button onclick="chargerContenu('Front-end')">
-                Front-end
-            </button>
-            <button onclick="chargerContenu('Culture Informatique')">
-                Culture Informatique
-            </button>
-            <button onclick="chargerContenu('TRE')">
-                TRE
-            </button>
+            <button onclick="chargerContenu('Python')">Python</button>
+            <button onclick="chargerContenu('Reseau')">Reseau</button>
+            <button onclick="chargerContenu('Wordpress')">Wordpress</button>
+            <button onclick="chargerContenu('Front-end')">Front-end</button>
+            <button onclick="chargerContenu('Culture Informatique')">Culture Informatique</button>
+            <button onclick="chargerContenu('TRE')">TRE</button>
         </nav>
         <div id="contenu"></div>
         <footer>
@@ -265,69 +256,73 @@
         </footer>
     </main>
     <script>
+        // Fonction pour essayer de charger un fichier et retourner son contenu si trouvé
+        async function essayerChargerFichier(dossier, nomFichier) {
+            try {
+                const response = await fetch(`/${dossier}/${nomFichier}`);
+                if (response.ok) {
+                    const content = await response.text();
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(content, 'text/html');
+                    const bodyContent = doc.querySelector('body').innerHTML;
+                    return { nom: nomFichier, contenu: bodyContent };
+                }
+            } catch (e) {
+                return null;
+            }
+            return null;
+        }
+
         // Fonction pour charger le contenu d'un dossier
         async function chargerContenu(dossier) {
             const contenuDiv = document.getElementById('contenu');
-            contenuDiv.innerHTML = '<p>Chargement en cours...</p>';
+            contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">🔍</div><h1>Recherche des cours en cours...</h1></div>';
 
             try {
-                // Récupère tous les fichiers HTML dans le dossier
-                const response = await fetch(`/${dossier}/`);
-                const text = await response.text();
-                const parser = new DOMParser();
-                const htmlDocument = parser.parseFromString(text, 'text/html');
-                const links = Array.from(htmlDocument.querySelectorAll('a[href$=".html"]'))
-                    .map(a => a.getAttribute('href'))
-                    .filter(href => href !== '../');
-
-                // Charge chaque fichier et concatène le contenu
                 let contenuComplet = '';
-                for (const file of links) {
-                    const fileResponse = await fetch(file);
-                    const fileContent = await fileResponse.text();
-                    contenuComplet += fileContent;
+                let fichiersTrouves = 0;
+
+                // On essaie de charger tous les fichiers Resumer-cours-*.html
+                // On essaie les 30 derniers jours et 30 numéros possibles
+                const aujourdhui = new Date();
+                for (let i = 0; i < 30; i++) {
+                    const date = new Date(aujourdhui);
+                    date.setDate(aujourdhui.getDate() - i);
+                    const jour = String(date.getDate()).padStart(2, '0');
+                    const mois = String(date.getMonth() + 1).padStart(2, '0');
+                    const annee = date.getFullYear();
+                    const dateStr = `${jour}-${mois}-${annee}`;
+
+                    for (let j = 1; j <= 30; j++) {
+                        const num = String(j).padStart(2, '0');
+                        const nomFichier = `Resumer-cours-${dateStr}-${num}.html`;
+                        const result = await essayerChargerFichier(dossier, nomFichier);
+                        if (result) {
+                            contenuComplet += `<div class="cours-item"><h2>${result.nom}</h2>${result.contenu}</div>`;
+                            fichiersTrouves++;
+                        }
+                    }
                 }
 
-                contenuDiv.innerHTML = contenuComplet;
+                if (fichiersTrouves === 0) {
+                    contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun cours trouvé</h1><p>Vérifie que le dossier et les fichiers existent.</p></div>';
+                } else {
+                    contenuDiv.innerHTML = contenuComplet;
+                }
             } catch (error) {
-                contenuDiv.innerHTML = `<p>Erreur de chargement : ${error.message}</p>`;
+                contenuDiv.innerHTML = `<div class="container"><div class="construction-icon">❌</div><h1>Erreur de chargement</h1><p>${error.message}</p></div>`;
             }
         }
 
-        // Chargement initial
-        fetch('Resumer-cours-*.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('contenu').innerHTML = data;
-            });
-    </script>
-    <script>
-        // Date de lancement cible (modifiez cette date selon vos besoins)
-        const launchDate = new Date('January 1, 2026 00:00:00').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = launchDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-
-            if (distance < 0) {
-                clearInterval(countdownTimer);
-                document.querySelector('.countdown').innerHTML = '<h3>Le site est maintenant en ligne !</h3>';
-            }
-        }
-
-        // Mettre à jour le compte à rebours toutes les secondes
-        const countdownTimer = setInterval(updateCountdown, 1000);
-        updateCountdown(); // Appel initial
+        // Chargement initial : affiche un message par défaut
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('contenu').innerHTML =
+                '<div class="container">' +
+                '<div class="construction-icon">📚</div>' +
+                '<h1>Sélectionne une thématique pour afficher les cours</h1>' +
+                '<p>Clique sur un bouton ci-dessus pour commencer.</p>' +
+                '</div>';
+        });
     </script>
 </body>
 
