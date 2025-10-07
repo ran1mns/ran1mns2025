@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours Python – 18 Septembre 2025</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; background-color: #f9f9f9; color: #333; display: flex; }
+nav { width: 250px; background-color: #2c3e50; color: #ecf0f1; height: 100vh; position: fixed; overflow-y: auto; padding: 20px; }
+nav ul { list-style: none; padding-left: 0; }
+nav ul li { margin: 10px 0; }
+nav ul li a { color: #ecf0f1; text-decoration: none; }
+nav ul li a:hover { text-decoration: underline; }
+main { margin-left: 270px; padding: 20px; flex: 1; }
+h1, h2, h3, h4 { color: #2c3e50; }
+h1 { text-align: center; margin-bottom: 0.5em; }
+h2 { border-bottom: 2px solid #2980b9; padding-bottom: 5px; margin-top: 1em; }
+ul, ol { margin: 0.5em 0 1em 2em; }
+li { margin-bottom: 0.3em; }
+.section { margin-bottom: 2em; padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.05); }
+.focus { background-color: #d1f2eb; padding: 12px; border-left: 5px solid #1abc9c; margin: 15px 0; border-radius: 6px; }
+.focus h4 { margin-top: 0; margin-bottom: 5px; color: #117864; }
+.schéma { background-color: #d6eaf8; padding: 10px; border-radius: 6px; margin: 10px 0; font-family: monospace; }
+.note { background-color: #fcf3cf; padding: 8px; border-left: 4px solid #f1c40f; margin: 10px 0; border-radius: 4px; }
+code { font-family: 'Fira Code', 'Consolas', monospace; font-size: 0.95em; background-color: #1e1e1e; color: #d4d4d4; padding: 2px 4px; border-radius: 4px; }
+pre { font-family: 'Fira Code', 'Consolas', monospace; font-size: 0.95em; line-height: 1.4; background-color: #1e1e1e; color: #d4d4d4; padding: 10px; border-radius: 6px; overflow-x: auto; }
+/* syntax highlighting */
+.keyword { color: #569CD6; font-weight: bold; }
+.type { color: #4EC9B0; }
+.string { color: #CE9178; }
+.comment { color: #6A9955; font-style: italic; }
+.number { color: #B5CEA8; }
+.function { color: #DCDCAA; }
+.operator { color: #D4D4D4; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<nav>
+<h1>Menu</h1>
+<ul>
+    <li><a href="#intro-python">Introduction à Python</a></li>
+    <li><a href="#syntaxe">Syntaxe et opérateurs</a></li>
+    <li><a href="#concat-fstring">Concaténation & f-string</a></li>
+    <li><a href="#booleens">Booléens et constantes</a></li>
+    <li><a href="#naming">Nommage et conventions</a></li>
+    <li><a href="#listes">Listes et tableaux</a></li>
+</ul>
+</nav>
+
+<main>
+<h1>Cours Python – 18 Septembre 2025</h1>
+
+<div id="intro-python" class="section">
+<h2>Introduction à Python</h2>
+<ul>
+<li>Python date de 1991, langage simple pour scripts rapides sans infrastructure lourde</li>
+<li>Interaction via un script ou directement dans le terminal :</li>
+<pre>
+<span class="comment">$ python</span>
+<span class="keyword">print</span>(<span class="string">"Hello Python!"</span>)
+<span class="comment"># Hello Python!</span>
+</pre>
+<li>Manipulation des données chiffrées et calculs</li>
+</ul>
+</div>
+
+<div id="syntaxe" class="section">
+<h2>Syntaxe et opérateurs</h2>
+<ul>
+<li>Puissance avec <code>**</code> : <code>2**3</code> → 2³</li>
+<li>Respect des règles classiques des mathématiques (parenthèses, ordre des opérations)</li>
+</ul>
+<div class="schéma">
+<pre>
+<span class="comment"># Puissance et opérations</span>
+<span class="type">resultat</span> <span class="operator">=</span> <span class="number">2</span>**<span class="number">3</span>
+<span class="keyword">print</span>(<span class="type">resultat</span>)   <span class="comment"># Affiche 8</span>
+
+<span class="type">somme</span> <span class="operator">=</span> (<span class="number">2</span> <span class="operator">+</span> <span class="number">3</span>) <span class="operator">*</span> <span class="number">4</span>
+<span class="keyword">print</span>(<span class="type">somme</span>)      <span class="comment"># Affiche 20</span>
+</pre>
+</div>
+</div>
+
+<div id="concat-fstring" class="section">
+<h2>Concaténation et f-string</h2>
+<ul>
+<li>Concaténation avec <code>+</code> :</li>
+<pre>
+<span class="type">prenom</span> <span class="operator">=</span> <span class="string">"Alice"</span>
+<span class="keyword">print</span>(<span class="string">"Bonjour "</span> <span class="operator">+</span> <span class="type">prenom</span> <span class="operator">+</span> <span class="string">" !"</span>)
+<span class="comment"># Bonjour Alice !</span>
+</pre>
+<li>f-string : formate les données en string tout en conservant leur type :</li>
+<pre>
+<span class="type">age</span> <span class="operator">=</span> <span class="number">25</span>
+<span class="keyword">print</span>(<span class="string">f"{prenom} a {age} ans."</span>)
+<span class="comment"># Alice a 25 ans.</span>
+</pre>
+<li>Chaînes de caractères : utiliser double quotes <code>"</code> ou échappement <code>'j\'ai faim'</code></li>
+</ul>
+</div>
+
+<div id="booleens" class="section">
+<h2>Booléens et constantes</h2>
+<ul>
+<li>Booléens : <code>True</code> / <code>False</code> (majuscule obligatoire)</li>
+<pre>
+<span class="type">est_adulte</span> <span class="operator">=</span> <span class="keyword">True</span>
+<span class="keyword">print</span>(<span class="type">est_adulte</span>)   <span class="comment"># True</span>
+</pre>
+<li>Python ne gère pas les constantes : convention majuscules, mais modifiable</li>
+<pre>
+<span class="type">PI</span> <span class="operator">=</span> <span class="number">3.14159</span>   <span class="comment"># convention constante</span>
+<span class="type">PI</span> <span class="operator">=</span> <span class="number">3.14</span>      <span class="comment"># modifiable malgré la convention</span>
+</pre>
+<li>Différence entre <code>None</code> (rien) et <code>""</code> (chaîne vide)</li>
+</ul>
+</div>
+
+<div id="naming" class="section">
+<h2>Nommage et conventions</h2>
+<ul>
+<li>Snake case : <code>rounded_average</code></li>
+<li>Camel case : <code>roundedAverage</code></li>
+<li>Pascal case : <code>RoundedAverage</code> (usage spécifique)</li>
+<li>Ne pas commencer une variable par un chiffre ou caractère spécial</li>
+<li>is / has / can dans un nom de variable : indique souvent une condition</li>
+<li>Commentaires utiles mais éviter d’en abuser dans un vrai programme</li>
+</ul>
+</div>
+
+<div id="listes" class="section">
+<h2>Listes et tableaux</h2>
+<ul>
+<li>Listes : éléments ordonnés, manipulables individuellement ou en groupe</li>
+<li>Indexation pour accéder ou modifier des éléments :</li>
+<pre>
+<span class="type">fruits</span> <span class="operator">=</span> [<span class="string">"pomme"</span>, <span class="string">"banane"</span>, <span class="string">"cerise"</span>]
+<span class="keyword">print</span>(<span class="type">fruits</span>[<span class="number">0</span>])    <span class="comment"># pomme</span>
+<span class="type">fruits</span>[<span class="number">1</span>] <span class="operator">=</span> <span class="string">"orange"</span>
+<span class="keyword">print</span>(<span class="type">fruits</span>)       <span class="comment"># ['pomme', 'orange', 'cerise']</span>
+</pre>
+<li>Ajouter ou supprimer des éléments :</li>
+<pre>
+<span class="type">fruits</span>.<span class="function">append</span>(<span class="string">"kiwi"</span>)
+<span class="type">fruits</span>.<span class="function">pop</span>(<span class="number">0</span>)
+<span class="keyword">print</span>(<span class="type">fruits</span>)  <span class="comment"># ['orange', 'cerise', 'kiwi']</span>
+</pre>
+
+<div class="focus">
+<h4>Exemple complet – manipulation de listes</h4>
+<pre>
+<span class="type">notes</span> <span class="operator">=</span> [<span class="number">12</span>,<span class="number">14</span>,<span class="number">16</span>,<span class="number">10</span>,<span class="number">5</span>,<span class="number">18</span>,<span class="number">13</span>]  <span class="comment"># liste ordonnée d'éléments du même type</span>
+
+<span class="keyword">print</span>(<span class="type">notes</span>[<span class="number">0</span>])    <span class="comment"># affiche le premier élément</span>
+<span class="keyword">print</span>(<span class="type">notes</span>[-<span class="number">1</span>])   <span class="comment"># affiche le dernier élément</span>
+<span class="keyword">print</span>(<span class="type">notes</span>[:-<span class="number">1</span>])  <span class="comment"># affiche la liste sans le dernier élément</span>
+<span class="keyword">print</span>(<span class="type">notes</span>[<span class="number">1</span>:])   <span class="comment"># affiche sans le premier</span>
+<span class="keyword">print</span>(<span class="type">notes</span>[<span class="number">1</span>:<span class="number">3</span>])  <span class="comment"># affiche les éléments d'index 1 et 2</span>
+<span class="keyword">print</span>(<span class="type">notes</span>[<span class="number">1</span>:-<span class="number">2</span>]) # affiche du 2e au 3e avant la fin
+<span class="keyword">print</span>(<span class="type">notes</span>[::<span class="number">2</span>])  <span class="comment"># affiche un élément sur deux</span>
+
+<span class="keyword">for</span> <span class="type">note</span> <span class="keyword">in</span> <span class="type">notes</span>:
+    <span class="keyword">print</span>(<span class="type">note</span>)    <span class="comment"># affiche chaque note individuellement</span>
+
+<span class="keyword">for</span> <span class="type">i</span> <span class="keyword">in</span> <span class="function">range</span>(<span class="number">5</span>):
+    <span class="keyword">print</span>(<span class="string">"coucou"</span>, <span class="type">i</span>)
+
+<span class="keyword">print</span>(<span class="string">", "</span>.<span class="function">join</span>(<span class="function">str</span>(<span class="type">note</span>) <span class="keyword">for</span> <span class="type">note</span> <span class="keyword">in</span> <span class="type">notes</span>))
+<span class="comment"># Concatène les notes en chaîne de caractères séparées par une virgule</span>
+</pre>
+</div>
+
+<div class="focus">
+<h4>Exemple – saisie utilisateur et calcul de moyenne</h4>
+<pre>
+<span class="type">note1</span> <span class="operator">=</span> <span class="function">float</span>(<span class="function">input</span>(<span class="string">"enter note 1: "</span>))
+<span class="type">note2</span> <span class="operator">=</span> <span class="function">float</span>(<span class="function">input</span>(<span class="string">"enter note 2: "</span>))
+<span class="type">note3</span> <span class="operator">=</span> <span class="function">float</span>(<span class="function">input</span>(<span class="string">"enter note 3: "</span>))
+
+<span class="type">average</span> <span class="operator">=</span> (<span class="type">note1</span> <span class="operator">+</span> <span class="type">note2</span> <span class="operator">+</span> <span class="type">note3</span>) <span class="operator">/</span> <span class="number">3</span>
+<span class="type">roundedAverage</span> <span class="operator">=</span> <span class="function">round</span>(<span class="type">average</span>, <span class="number">2</span>)  <span class="comment"># round arrondit le résultat à 2 décimales</span>
+<span class="keyword">print</span>(<span class="string">f"la moyenne est : {average}"</span>)
+<span class="keyword">print</span>(<span class="string">f"la moyenne est : {roundedAverage}"</span>)
+
+<span class="comment">######################################################################</span>
+
+<span class="type">username</span> <span class="operator">=</span> <span class="function">input</span>(<span class="string">"entrez votre nom: "</span>)
+<span class="type">age</span> <span class="operator">=</span> <span class="function">int</span>(<span class="function">input</span>(<span class="string">"Entrez votre âge : "</span>))
+<span class="keyword">print</span>(<span class="function">type</span>(<span class="type">age</span>))  <span class="comment"># affiche le type de la variable</span>
+
+<span class="keyword">print</span>(<span class="string">"Hello "</span> <span class="operator">+</span> <span class="type">username</span> <span class="operator">+</span> <span class="string">", vous avez "</span> <span class="operator">+</span> <span class="function">str</span>(<span class="type">age</span>) <span class="operator">+</span> <span class="string">" ans !"</span>)
+<span class="keyword">print</span>(<span class="string">f"Hello {username}, vous avez {age} ans !"</span>)
+
+<span class="comment"># les deux syntaxes sont équivalentes :</span>
+<span class="comment"># la première force la conversion en string avec str()</span>
+<span class="comment"># la seconde formate la ligne entière avec f-string</span>
+
+<span class="comment">######################################################################</span>
+
+<span class="type">notes</span> <span class="operator">=</span> []   <span class="comment"># tableau vide</span>
+
+<span class="keyword">while</span> <span class="keyword">True</span>:
+    <span class="keyword">print</span>(<span class="string">"entrez une note ou -1 pour terminer"</span>)
+    <span class="type">note</span> <span class="operator">=</span> <span class="function">float</span>(<span class="function">input</span>(<span class="string">"Note: "</span>))
+
+    <span class="keyword">if</span> <span class="type">note</span> <span class="operator">==</span> <span class="number">-1</span>:
+        <span class="keyword">break</span>
+    <span class="keyword">else</span>:
+        <span class="type">notes</span>.<span class="function">append</span>(<span class="type">note</span>)
+        <span class="keyword">print</span>(<span class="string">f"Notes actuelles: {notes}"</span>)
+
+<span class="type">average</span> <span class="operator">=</span> <span class="function">sum</span>(<span class="type">notes</span>)/<span class="function">len</span>(<span class="type">notes</span>)
+<span class="keyword">print</span>(<span class="string">f"la moyenne est {average}"</span>)
+</pre>
+</div>
+
+</main>
+</body>
+</html>
