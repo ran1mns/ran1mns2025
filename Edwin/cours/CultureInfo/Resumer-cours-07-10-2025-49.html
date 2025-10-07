@@ -1,0 +1,131 @@
+<section class="course">
+  <h1>Titre du Cours : Commandes Linux de Base</h1>
+  <article class="introduction">
+    <h2>Introduction</h2>
+    <p>Les commandes Linux sont essentielles pour interagir avec le système d'exploitation Linux. Elles permettent de créer des répertoires, installer des programmes, naviguer dans le système de fichiers, et bien plus encore. Ce cours vous guidera à travers les commandes de base et leur utilisation pratique.</p>
+  </article>
+  <article class="concepts">
+    <h2>Concepts Clés</h2>
+    <h3>Syntaxe des Commandes</h3>
+    <p>La syntaxe des commandes Linux peut varier, mais elle suit généralement l'une des formes suivantes :</p>
+    <pre><code class="language-sh">
+nom-commande [-option]
+nom_commande
+commande [parametre]
+commande [-option] [parametre]
+    </code></pre>
+    <h3>Commandes de Base</h3>
+    <h4>Créer un Répertoire</h4>
+    <p>La commande <code>mkdir</code> (make directory) permet de créer un nouveau répertoire.</p>
+    <pre><code class="language-sh">
+mkdir nom_du_repertoire
+    </code></pre>
+    <h4>Lister les Fichiers et Répertoires</h4>
+    <p>La commande <code>ls</code> (list) permet de lister les fichiers et répertoires dans le répertoire courant.</p>
+    <pre><code class="language-sh">
+ls
+    </code></pre>
+    <p>Pour un affichage détaillé, utilisez l'option <code>-l</code> :</p>
+    <pre><code class="language-sh">
+ls -l
+    </code></pre>
+    <h4>Afficher le Chemin Courant</h4>
+    <p>La commande <code>pwd</code> (print working directory) affiche le chemin absolu du répertoire courant.</p>
+    <pre><code class="language-sh">
+pwd
+    </code></pre>
+    <h4>Naviguer dans le Système de Fichiers</h4>
+    <p>La commande <code>cd</code> (change directory) permet de changer de répertoire. Utilisée seule, elle vous ramène à votre répertoire home.</p>
+    <pre><code class="language-sh">
+cd nom_du_repertoire
+cd ..  # Remonter d'un répertoire
+    </code></pre>
+    <h4>Supprimer un Répertoire</h4>
+    <p>La commande <code>rmdir</code> (remove directory) permet de supprimer un répertoire vide.</p>
+    <pre><code class="language-sh">
+rmdir nom_du_repertoire
+    </code></pre>
+    <h4>Combiner les Commandes</h4>
+    <p>Vous pouvez combiner plusieurs commandes pour créer une arborescence de répertoires :</p>
+    <pre><code class="language-sh">
+mkdir travail/compta travail/achat travail/achat/2024 travail/achat/2025
+    </code></pre>
+    <h4>Installer et Gérer des Programmes</h4>
+    <p>La commande <code>apt</code> (Advanced Packaging Tool) est utilisée pour installer et gérer des programmes sur les distributions basées sur Debian (comme Ubuntu).</p>
+    <pre><code class="language-sh">
+apt update  # Met à jour la liste des applications disponibles
+    </code></pre>
+    <h4>Déplacer et Renommer des Fichiers</h4>
+    <p>La commande <code>mv</code> (move) permet de déplacer ou renommer des fichiers et répertoires.</p>
+    <pre><code class="language-sh">
+mv ancien_nom nouveau_nom  # Renomme un fichier ou répertoire
+    </code></pre>
+    <h4>Créer un Fichier Vide</h4>
+    <p>La commande <code>touch</code> permet de créer un fichier vide.</p>
+    <pre><code class="language-sh">
+touch nom_du_fichier
+    </code></pre>
+    <h4>Supprimer des Fichiers et Répertoires</h4>
+    <p>La commande <code>rm</code> (remove) permet de supprimer des fichiers.</p>
+    <pre><code class="language-sh">
+rm nom_du_fichier
+    </code></pre>
+    <p>Pour supprimer un répertoire et tout son contenu, utilisez l'option <code>-r</code> :</p>
+    <pre><code class="language-sh">
+rm -r nom_du_repertoire
+    </code></pre>
+    <h4>Architecture 3 Tiers</h4>
+    <p>L'architecture 3 tiers est une méthode de conception logicielle qui sépare les applications en trois couches :</p>
+    <ol>
+      <li><strong>Présentation</strong> : Comment les choses sont présentées à l'utilisateur (navigateur web).</li>
+      <li><strong>Traitement</strong> : Couche métier, algorithmes, serveur web.</li>
+      <li><strong>Données</strong> : Bases de données.</li>
+    </ol>
+    <p>Les requêtes entre les couches se font via HTTP et HTTPS sur les ports 80 et 443. Le serveur web cherche les fichiers et les renvoie au navigateur. Le langage PHP permet de générer le contenu de la page dynamiquement.</p>
+    <p>Le système LAMP (Linux, Apache, MySQL, PHP) est un exemple d'architecture 3 tiers.</p>
+  </article>
+  <article class="exercices">
+    <h2>Exercices Pratiques</h2>
+    <ol>
+      <li>Créer une arborescence de répertoires pour un projet fictif avec les répertoires suivants : <code>projet/docs</code>, <code>projet/src</code>, <code>projet/tests</code>.</li>
+      <li>Naviguer dans cette arborescence et lister les fichiers et répertoires à chaque niveau.</li>
+      <li>Créer un fichier vide nommé <code>README.md</code> dans le répertoire <code>projet/docs</code>.</li>
+      <li>Renommer le répertoire <code>tests</code> en <code>unit_tests</code>.</li>
+      <li>Supprimer le répertoire <code>unit_tests</code> et tout son contenu.</li>
+    </ol>
+    <details>
+      <summary>Corrigé</summary>
+      <pre><code class="language-sh">
+# Exercice 1
+mkdir projet/docs projet/src projet/tests
+
+# Exercice 2
+cd projet
+ls
+cd docs
+ls
+cd ../src
+ls
+cd ../tests
+ls
+
+# Exercice 3
+touch docs/README.md
+
+# Exercice 4
+mv tests unit_tests
+
+# Exercice 5
+rm -r unit_tests
+      </code></pre>
+    </details>
+  </article>
+  <aside class="ressources">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://www.linux.org/" target="_blank">Linux.org</a> - Ressources et documentation sur Linux</li>
+      <li><a href="https://www.debian.org/doc/manuals/debian-reference/ch02.en.html" target="_blank">Debian Reference - Commandes de base</a></li>
+      <li><a href="https://www.gnu.org/software/coreutils/manual/coreutils.html" target="_blank">GNU Core Utilities - Documentation</a></li>
+    </ul>
+  </aside>
+</section>
