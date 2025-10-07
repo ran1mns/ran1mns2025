@@ -259,7 +259,7 @@
         // Fonction pour essayer de charger un fichier et retourner son contenu si trouvé
         async function essayerChargerFichier(dossier, nomFichier) {
             try {
-                const response = await fetch(`/${dossier}/${nomFichier}`);
+                const response = await fetch(`${dossier}/${nomFichier}`);
                 if (response.ok) {
                     const content = await response.text();
                     const parser = new DOMParser();
@@ -282,10 +282,10 @@
                 let contenuComplet = '';
                 let fichiersTrouves = 0;
 
-                // On essaie de charger tous les fichiers Resumer-cours-*.html
+                // On essaie de charger les fichiers Resumer-cours-*.html
                 // On essaie les 30 derniers jours et 30 numéros possibles
                 const aujourdhui = new Date();
-                for (let i = 0; i < 30; i++) {
+                for (let i = 0; i < 60; i++) {
                     const date = new Date(aujourdhui);
                     date.setDate(aujourdhui.getDate() - i);
                     const jour = String(date.getDate()).padStart(2, '0');
@@ -324,6 +324,7 @@
                 '</div>';
         });
     </script>
+
 </body>
 
 </html>
