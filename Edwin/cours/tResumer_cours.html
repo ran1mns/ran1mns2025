@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>My HTML document</title>
+</head>
+<body>
+<section class="course">
+  <h1>Titre du Cours : Introduction aux Réseaux Informatiques</h1>
+  <article class="introduction">
+    <h2>Introduction</h2>
+    <p>Bienvenue dans ce cours sur les réseaux informatiques ! Les réseaux sont essentiels pour permettre la communication entre les ordinateurs et les appareils connectés. Ils forment la base de l'Internet et des systèmes de communication modernes. Dans ce cours, nous allons explorer comment les ordinateurs s'interconnectent, les différents types de réseaux, et les outils utilisés pour configurer et gérer ces réseaux.</p>
+  </article>
+  <article class="concepts">
+    <h2>Concepts Clés</h2>
+    <h3>Interconnexion des Ordinateurs</h3>
+    <p>Les ordinateurs sont interconnectés via un réseau de type maillé qui couvre la totalité de la planète, utilisant des câbles sous-marins et terrestres. Ce type de réseau permet d'assurer une liaison secondaire en cas de panne d'un élément, garantissant ainsi une continuité de service.</p>
+    <h3>Liaison avec la Fibre</h3>
+    <p>La fibre optique est un moyen efficace de transmettre des données à haute vitesse. Elle est souvent utilisée pour les connexions internet rapides. Pour plus de détails, référez-vous au cours précédent sur la fibre optique.</p>
+    <h3>LAN et WAN</h3>
+    <p>Un LAN (Local Area Network) est un réseau local qui couvre une petite zone géographique, comme un bâtiment ou un campus. Un WAN (Wide Area Network) couvre une large zone géographique, comme une ville ou un pays.</p>
+    <h3>Émulation et Simulation</h3>
+    <p>L'émulation permet de créer des machines virtuelles pour tester des configurations réseau sans matériel physique. La simulation utilise des modèles mathématiques pour prédire le comportement des réseaux.</p>
+    <h3>Cisco Packet Tracer</h3>
+    <p>Cisco Packet Tracer est un outil de simulation réseau qui permet de créer et de tester des configurations réseau. Par exemple, vous pouvez mettre en place deux réseaux avec des PC, des switchs, des routeurs et des serveurs, et observer comment les requêtes sont envoyées.</p>
+    <pre><code class="language-html">
+      <!-- Exemple de configuration réseau avec Cisco Packet Tracer -->
+    </code></pre>
+    <h3>Switch, Routeur et Firewall</h3>
+    <p>Un switch est utilisé pour interconnecter des appareils dans un LAN. Un routeur interconnecte des LAN et des WAN. Un firewall protège le réseau contre les accès non autorisés.</p>
+    <h3>Types de Câbles Ethernet</h3>
+    <p>Il existe différents types de câbles Ethernet : Ethernet, Fast Ethernet et Gigabit Ethernet, offrant des débits de plus en plus élevés.</p>
+    <h3>Adresse Broadcast</h3>
+    <p>L'adresse broadcast est la dernière adresse d'un réseau. Elle est utilisée pour envoyer un message à tous les appareils du réseau.</p>
+    <h3>Adresse de Réseau</h3>
+    <p>La première adresse d'un réseau est généralement 192.168.1.0. Les serveurs dans le même réseau sont souvent assignés des adresses comme .101, .102, etc.</p>
+    <h3>VLSM</h3>
+    <p>VLSM (Variable Length Subnet Masking) permet de diviser un réseau en sous-réseaux de tailles différentes pour une utilisation plus efficace des adresses IP.</p>
+    <h3>Schémas IP</h3>
+    <p>Revoir les schémas IP en notation binaire/décimale et décimale pointée. Révisez également les concepts de NAT (Network Address Translation) et PAT (Port Address Translation).</p>
+    <h3>Commande ipconfig /all</h3>
+    <p>La commande <code>ipconfig /all</code> fournit des informations détaillées sur le réseau, y compris l'adresse IP, la passerelle par défaut, et les serveurs DNS.</p>
+    <pre><code class="language-html">
+      ipconfig /all
+    </code></pre>
+    <h3>Passerelle</h3>
+    <p>La passerelle est la porte de sortie du réseau, souvent l'avant-dernière adresse de la plage d'adresses IP.</p>
+    <h3>DHCP</h3>
+    <p>Un serveur DHCP attribue automatiquement des adresses IP aux appareils du réseau à partir d'un pool d'adresses disponibles.</p>
+  </article>
+  <article class="exercices">
+    <h2>Exercices Pratiques</h2>
+    <ol>
+      <li>Configurez un petit réseau LAN avec deux PC, un switch et un routeur en utilisant Cisco Packet Tracer.</li>
+      <li>Utilisez la commande <code>ipconfig /all</code> sur votre ordinateur et analysez les informations obtenues.</li>
+      <li>Expliquez la différence entre un switch et un routeur, et pourquoi chacun est utilisé dans un réseau.</li>
+    </ol>
+    <details>
+      <summary>Corrigé</summary>
+      <ol>
+        <li>
+          <pre><code class="language-html">
+            <!-- Configuration réseau avec Cisco Packet Tracer -->
+            <!-- Ajoutez des PC, un switch et un routeur, puis configurez les adresses IP -->
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="language-html">
+            <!-- Analyse des informations ipconfig /all -->
+            <!-- Adresse IP, passerelle, serveurs DNS, etc. -->
+          </code></pre>
+        </li>
+        <li>
+          <pre><code class="language-html">
+            <!-- Différence entre switch et routeur -->
+            <!-- Un switch interconnecte des appareils dans un LAN, un routeur interconnecte des LAN et des WAN -->
+          </code></pre>
+        </li>
+      </ol>
+    </details>
+  </article>
+  <aside class="ressources">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://www.cisco.com/" target="_blank">Cisco Systems</a></li>
+      <li><a href="https://www.dummies.com/computers/networking/" target="_blank">Networking For Dummies</a></li>
+      <li><a href="https://www.tcpipguide.com/" target="_blank">The TCP/IP Guide</a></li>
+    </ul>
+  </aside>
+</section>
+</body>
+</html>
+
+<style>
+.container {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+h1 {
+  color: #ff6d5a;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 8px;
+}
+
+h2 {
+  color: #909399;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px;
+}
+</style>
+
+<script>
+console.log("Hello World!");
+</script>
