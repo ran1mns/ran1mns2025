@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>My HTML document</title>
+  <style>
+/* Réinitialisation et base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Mise en page générale */
+section.course {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+/* Titres */
+h1 {
+  color: #ff6d5a;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ffd166;
+  padding-bottom: 10px;
+}
+
+h2 {
+  color: #4a4a4a;
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+h3 {
+  color: #5d5d5d;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Paragraphes et texte */
+p {
+  margin-bottom: 15px;
+  text-align: justify;
+  color: #555;
+}
+
+/* Articles */
+article {
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #fefefe;
+  border-radius: 8px;
+  border-left: 4px solid #ffd166;
+}
+
+/* Liste et exercices */
+ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Code et préformaté */
+pre {
+  background-color: #2d3436;
+  color: #eee;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 15px;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Détails et corrigés */
+details {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+summary {
+  font-weight: 600;
+  cursor: pointer;
+  color: #ff6d5a;
+}
+
+/* Ressources et liens */
+aside.ressources {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+}
+
+aside ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+aside li {
+  margin-bottom: 8px;
+}
+
+aside a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+aside a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section.course {
+    padding: 15px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+
+</style>
+</head>
+<body>
+<section class="course">
+  <h1>Titre du Cours : Comment s'interconnectent les ordinateurs</h1>
+  <article class="introduction">
+    <h2>Introduction</h2>
+    <p>L'interconnexion des ordinateurs est un sujet fondamental pour comprendre comment fonctionne Internet et les réseaux informatiques en général. Ce cours vous guidera à travers les concepts clés et les technologies qui permettent aux ordinateurs de communiquer entre eux, qu'ils soient à côté l'un de l'autre ou à l'autre bout du monde.</p>
+  </article>
+  <article class="concepts">
+    <h2>Concepts Clés</h2>
+    <h3>Réseaux Maillés</h3>
+    <p>Un réseau maillé est un type de réseau où chaque nœud (ordinateur ou autre appareil) est connecté à plusieurs autres nœuds. Cela permet de créer plusieurs chemins de communication, ce qui est particulièrement utile en cas de panne d'un nœud ou d'une liaison. Les câbles sous-marins et terrestres forment un réseau maillé global qui couvre la planète entière.</p>
+    <aside class="note">
+      <p><strong>Note :</strong> Les réseaux maillés sont utilisés pour garantir la continuité du service même en cas de panne d'un élément.</p>
+    </aside>
+    <h3>LAN et WAN</h3>
+    <p>Les réseaux locaux (LAN - Local Area Network) et les réseaux étendus (WAN - Wide Area Network) sont deux types de réseaux fondamentaux. Un LAN est limité à une zone géographique restreinte, comme un bâtiment ou un campus, tandis qu'un WAN couvre de plus grandes distances, comme des villes ou des pays entiers.</p>
+    <h3>Émulation et Simulation</h3>
+    <p>L'émulation et la simulation sont des techniques utilisées pour tester et comprendre le comportement des réseaux. L'émulation utilise des machines virtuelles pour reproduire des environnements réels, tandis que la simulation utilise des modèles mathématiques pour prédire le comportement des réseaux.</p>
+    <h3>Cisco Packet Tracer</h3>
+    <p>Cisco Packet Tracer est un outil de simulation de réseau qui permet de créer et de tester des configurations réseau. Par exemple, vous pouvez mettre en place deux réseaux avec des PC, des switchs, des routeurs et des serveurs, et observer comment les requêtes sont envoyées.</p>
+    <pre><code class="language-html">
+<!-- Exemple de configuration de réseau avec Cisco Packet Tracer -->
+PC1 --- Switch1 --- Router1 --- Router2 --- Switch2 --- PC2
+    </code></pre>
+    <h3>Switch, Routeur et Firewall</h3>
+    <p>Un switch est utilisé pour l'interconnexion au sein d'un LAN, tandis qu'un routeur est utilisé pour l'interconnexion entre un LAN et un WAN. Un firewall, quant à lui, est utilisé pour protéger le réseau contre les accès non autorisés.</p>
+    <h3>Types de Câbles Ethernet</h3>
+    <p>Il existe différents types de câbles Ethernet, chacun offrant des débits de données différents :</p>
+    <ul>
+      <li>Ethernet : 10 Mbps</li>
+      <li>Fast Ethernet : 100 Mbps</li>
+      <li>Giga Ethernet : 1 Gbps</li>
+    </ul>
+    <h3>Adresse Broadcast</h3>
+    <p>L'adresse broadcast est la dernière adresse d'un réseau. Elle est utilisée pour envoyer un message à tous les appareils du réseau. Par exemple, dans un réseau avec une plage d'adresses de 192.168.1.0 à 192.168.1.255, l'adresse broadcast serait 192.168.1.255.</p>
+    <h3>VLSM</h3>
+    <p>VLSM (Variable Length Subnet Masking) est une technique de subdivision des réseaux IP qui permet une utilisation plus efficace des adresses IP. Elle permet de créer des sous-réseaux de différentes tailles en utilisant des masques de sous-réseau de longueur variable.</p>
+    <h3>Schémas IP Binaire/Décimal et Décimal Pointé</h3>
+    <p>Les adresses IP peuvent être représentées en binaire, en décimal ou en notation décimale pointée. Il est important de comprendre ces représentations pour configurer et dépanner les réseaux.</p>
+    <h3>Réseau NAT/PAT</h3>
+    <p>NAT (Network Address Translation) et PAT (Port Address Translation) sont des techniques utilisées pour traduire les adresses IP privées en adresses IP publiques, permettant ainsi à plusieurs appareils d'un réseau privé de partager une seule adresse IP publique.</p>
+    <h3>Commande ipconfig /all</h3>
+    <p>La commande <code>ipconfig /all</code> sur Windows fournit des informations détaillées sur la configuration réseau de l'ordinateur, y compris les adresses IP, les masques de sous-réseau, les passerelles par défaut, etc.</p>
+    <pre><code class="language-html">
+<!-- Exemple de sortie de la commande ipconfig /all -->
+C:\> ipconfig /all
+
+Carte Ethernet Connexion au réseau local:
+
+   Suffixe DNS propre à la connexion : example.com
+   Adresse IPv4. . . . . . . . . . . . . .: 192.168.1.100
+   Masque de sous-réseau. . . . . . . . . : 255.255.255.0
+   Passerelle par défaut. . . . . . . . . : 192.168.1.1
+    </code></pre>
+    <h3>Passerelle</h3>
+    <p>La passerelle est la porte de sortie du réseau. Elle permet aux appareils du réseau de communiquer avec des appareils extérieurs au réseau. En général, la passerelle est la avant-dernière adresse de la plage d'adresses du réseau.</p>
+    <h3>DHCP</h3>
+    <p>DHCP (Dynamic Host Configuration Protocol) est un protocole utilisé par les serveurs pour attribuer automatiquement des adresses IP aux appareils du réseau à partir d'un pool d'adresses disponibles.</p>
+  </article>
+  <article class="exercices">
+    <h2>Exercices Pratiques</h2>
+    <ol>
+      <li>Configurez un petit réseau LAN avec deux PC, un switch et un routeur en utilisant Cisco Packet Tracer. Assurez-vous que les deux PC peuvent communiquer entre eux.</li>
+      <li>Utilisez la commande <code>ipconfig /all</code> sur votre ordinateur pour obtenir des informations détaillées sur votre configuration réseau. Notez les informations importantes comme l'adresse IP, le masque de sous-réseau et la passerelle par défaut.</li>
+    </ol>
+    <details>
+      <summary>Corrigé</summary>
+      <pre><code class="language-html">
+<!-- Exercice 1 -->
+PC1 --- Switch1 --- Router1
+PC2 --- Switch1
+
+<!-- Exercice 2 -->
+C:\> ipconfig /all
+
+Carte Ethernet Connexion au réseau local:
+
+   Suffixe DNS propre à la connexion : example.com
+   Adresse IPv4. . . . . . . . . . . . . .: 192.168.1.100
+   Masque de sous-réseau. . . . . . . . . : 255.255.255.0
+   Passerelle par défaut. . . . . . . . . : 192.168.1.1
+      </code></pre>
+    </details>
+  </article>
+  <aside class="ressources">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html" target="_blank">Certification CCNA de Cisco</a></li>
+      <li><a href="https://www.wireshark.org/" target="_blank">Wireshark - Analyseur de paquets réseau</a></li>
+    </ul>
+  </aside>
+</section>
+</body>
+</html>
