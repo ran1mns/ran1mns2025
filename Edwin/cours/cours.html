@@ -256,16 +256,31 @@
         </footer>
     </main>
     <script>
-        // Fonction pour essayer de charger un fichier et retourner son contenu si trouvé
-        async function essayerChargerFichier(dossier, nomFichier) {
+        // Fonction pour charger la liste des fichiers depuis liste.json
+        async function chargerListeFichiers() {
             try {
-                const response = await fetch(`${dossier}/${nomFichier}`);
+                const response = await fetch('liste.json');
+                if (!response.ok) {
+                    throw new Error("Impossible de charger liste.json");
+                }
+                const listeFichiers = await response.json();
+                return listeFichiers;
+            } catch (e) {
+                console.error("Erreur lors du chargement de liste.json :", e);
+                return [];
+            }
+        }
+
+        // Fonction pour essayer de charger un fichier et retourner son contenu si trouvé
+        async function essayerChargerFichier(cheminFichier) {
+            try {
+                const response = await fetch(cheminFichier);
                 if (response.ok) {
                     const content = await response.text();
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(content, 'text/html');
                     const bodyContent = doc.querySelector('body').innerHTML;
-                    return { nom: nomFichier, contenu: bodyContent };
+                    return { nom: cheminFichier, contenu: bodyContent };
                 }
             } catch (e) {
                 return null;
@@ -273,39 +288,43 @@
             return null;
         }
 
-        // Fonction pour charger le contenu d'un dossier
-        async function chargerContenu(dossier) {
+        // Fonction pour afficher les fichiers d'une thématique
+        async function afficherFichiersThematique(thematique) {
             const contenuDiv = document.getElementById('contenu');
             contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">🔍</div><h1>Recherche des cours en cours...</h1></div>';
 
             try {
+                const listeFichiers = await chargerListeFichiers();
+                if (listeFichiers.length === 0) {
+                    contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun fichier trouvé</h1><p>Vérifie que liste.json existe et est correctement formaté.</p></div>';
+                    return;
+                }
+
+                // Filtrer les fichiers pour la thématique sélectionnée
+                const fichiersThematique = listeFichiers.filter(fichier =>
+                    fichier.startsWith(`Edwin/cours/${thematique}/`)
+                );
+
+                if (fichiersThematique.length === 0) {
+                    contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun cours trouvé pour cette thématique</h1></div>';
+                    return;
+                }
+
                 let contenuComplet = '';
                 let fichiersTrouves = 0;
 
-                // On essaie de charger les fichiers Resumer-cours-*.html
-                // On essaie les 30 derniers jours et 30 numéros possibles
-                const aujourdhui = new Date();
-                for (let i = 0; i < 60; i++) {
-                    const date = new Date(aujourdhui);
-                    date.setDate(aujourdhui.getDate() - i);
-                    const jour = String(date.getDate()).padStart(2, '0');
-                    const mois = String(date.getMonth() + 1).padStart(2, '0');
-                    const annee = date.getFullYear();
-                    const dateStr = `${jour}-${mois}-${annee}`;
-
-                    for (let j = 1; j <= 30; j++) {
-                        const num = String(j).padStart(2, '0');
-                        const nomFichier = `Resumer-cours-${dateStr}-${num}.html`;
-                        const result = await essayerChargerFichier(dossier, nomFichier);
-                        if (result) {
-                            contenuComplet += `<div class="cours-item"><h2>${result.nom}</h2>${result.contenu}</div>`;
-                            fichiersTrouves++;
-                        }
+                for (const fichier of fichiersThematique) {
+                    // Retirer le préfixe "Edwin/cours/"
+                    const cheminRelatif = fichier.replace('Edwin/cours/', '');
+                    const result = await essayerChargerFichier(cheminRelatif);
+                    if (result) {
+                        contenuComplet += `<div class="cours-item"><h2>${result.nom}</h2>${result.contenu}</div>`;
+                        fichiersTrouves++;
                     }
                 }
 
                 if (fichiersTrouves === 0) {
-                    contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun cours trouvé</h1><p>Vérifie que le dossier et les fichiers existent.</p></div>';
+                    contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun cours trouvé</h1><p>Vérifie que les fichiers existent.</p></div>';
                 } else {
                     contenuDiv.innerHTML = contenuComplet;
                 }
@@ -324,6 +343,7 @@
                 '</div>';
         });
     </script>
+
 
 </body>
 
