@@ -302,16 +302,16 @@
                 }
 
                 // Filtrer les fichiers pour la thématique sélectionnée
-                const fichiersThematique = listeFichiers.filter(fichier =>
-                    fichier.startsWith(`Edwin/cours/${thematique}/`)
-                );
+                const fichiersThematique = listeFichiers
+                    .filter(fichier => fichier.path.includes(`Edwin/cours/${thematique}/`))
+                    .map(fichier => fichier.path);
 
                 if (fichiersThematique.length === 0) {
                     contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun cours trouvé pour cette thématique</h1></div>';
                     return;
                 }
 
-                // Retirer le préfixe "Edwin/cours/" pour tous les fichiers
+                // Retirer le préfixe "Edwin/cours/"
                 const cheminsRelatifs = fichiersThematique.map(fichier => fichier.replace('Edwin/cours/', ''));
 
                 // Charger tous les fichiers en parallèle
