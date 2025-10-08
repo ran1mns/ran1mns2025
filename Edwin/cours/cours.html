@@ -250,7 +250,6 @@
             <button onclick="afficherFichiersThematique('CultureInfo')">Culture Informatique</button>
             <button onclick="afficherFichiersThematique('Autres')">Autres</button>
         </nav>
-
         <div id="contenu"></div>
         <footer>
             <a href="../Portfolio/index.html">Mon CV</a>
@@ -302,8 +301,9 @@
                 }
 
                 // Filtrer les fichiers pour la thématique sélectionnée
+                // Utilise startsWith pour être strict sur le chemin
                 const fichiersThematique = listeFichiers
-                    .filter(fichier => fichier.path.includes(`Edwin/cours/${thematique}/`))
+                    .filter(fichier => fichier.path.startsWith(`Edwin/cours/${thematique}/`))
                     .map(fichier => fichier.path);
 
                 if (fichiersThematique.length === 0) {
@@ -346,8 +346,6 @@
                 '</div>';
         });
     </script>
-
-
 </body>
 
 </html>
