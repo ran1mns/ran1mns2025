@@ -243,13 +243,14 @@
     <main>
         <h1><u>Cours par thématique</u></h1>
         <nav class="navi2">
-            <button onclick="chargerContenu('Python')">Python</button>
-            <button onclick="chargerContenu('Reseau')">Reseau</button>
-            <button onclick="chargerContenu('Wordpress')">Wordpress</button>
-            <button onclick="chargerContenu('Frontend')">Front-end</button>
-            <button onclick="chargerContenu('CultureInfo')">Culture Informatique</button>
-            <button onclick="chargerContenu('Autres')">Autres</button>
+            <button onclick="afficherFichiersThematique('Python')">Python</button>
+            <button onclick="afficherFichiersThematique('Reseau')">Reseau</button>
+            <button onclick="afficherFichiersThematique('Wordpress')">Wordpress</button>
+            <button onclick="afficherFichiersThematique('Frontend')">Front-end</button>
+            <button onclick="afficherFichiersThematique('CultureInfo')">Culture Informatique</button>
+            <button onclick="afficherFichiersThematique('Autres')">Autres</button>
         </nav>
+
         <div id="contenu"></div>
         <footer>
             <a href="../Portfolio/index.html">Mon CV</a>
