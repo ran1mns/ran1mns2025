@@ -256,17 +256,17 @@
         </footer>
     </main>
     <script>
-        // Fonction pour charger la liste des fichiers depuis liste.json
+        // Fonction pour charger la liste des fichiers depuis list-cours.json
         async function chargerListeFichiers() {
             try {
                 const response = await fetch('list-cours.json');
                 if (!response.ok) {
-                    throw new Error("Impossible de charger liste.json");
+                    throw new Error("Impossible de charger list-cours.json");
                 }
                 const listeFichiers = await response.json();
                 return listeFichiers;
             } catch (e) {
-                console.error("Erreur lors du chargement de liste.json :", e);
+                console.error("Erreur lors du chargement de list-cours.json :", e);
                 return [];
             }
         }
@@ -296,7 +296,7 @@
             try {
                 const listeFichiers = await chargerListeFichiers();
                 if (listeFichiers.length === 0) {
-                    contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun fichier trouvé</h1><p>Vérifie que liste.json existe et est correctement formaté.</p></div>';
+                    contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun fichier trouvé</h1><p>Vérifie que list-cours.json existe et est correctement formaté.</p></div>';
                     return;
                 }
 
@@ -310,22 +310,24 @@
                     return;
                 }
 
-                let contenuComplet = '';
-                let fichiersTrouves = 0;
+                // Retirer le préfixe "Edwin/cours/" pour tous les fichiers
+                const cheminsRelatifs = fichiersThematique.map(fichier => fichier.replace('Edwin/cours/', ''));
 
-                for (const fichier of fichiersThematique) {
-                    // Retirer le préfixe "Edwin/cours/"
-                    const cheminRelatif = fichier.replace('Edwin/cours/', '');
-                    const result = await essayerChargerFichier(cheminRelatif);
-                    if (result) {
-                        contenuComplet += `<div class="cours-item"><h2>${result.nom}</h2>${result.contenu}</div>`;
-                        fichiersTrouves++;
-                    }
-                }
+                // Charger tous les fichiers en parallèle
+                const promesses = cheminsRelatifs.map(chemin => essayerChargerFichier(chemin));
+                const resultats = await Promise.all(promesses);
 
-                if (fichiersTrouves === 0) {
+                // Filtrer les résultats valides
+                const fichiersValides = resultats.filter(result => result !== null);
+
+                if (fichiersValides.length === 0) {
                     contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun cours trouvé</h1><p>Vérifie que les fichiers existent.</p></div>';
                 } else {
+                    // Construire le contenu à afficher
+                    let contenuComplet = '';
+                    fichiersValides.forEach(fichier => {
+                        contenuComplet += `<div class="cours-item"><h2>${fichier.nom}</h2>${fichier.contenu}</div>`;
+                    });
                     contenuDiv.innerHTML = contenuComplet;
                 }
             } catch (error) {
