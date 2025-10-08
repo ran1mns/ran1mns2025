@@ -259,7 +259,7 @@
         // Fonction pour charger la liste des fichiers depuis liste.json
         async function chargerListeFichiers() {
             try {
-                const response = await fetch('liste.json');
+                const response = await fetch('list-cours.json');
                 if (!response.ok) {
                     throw new Error("Impossible de charger liste.json");
                 }
