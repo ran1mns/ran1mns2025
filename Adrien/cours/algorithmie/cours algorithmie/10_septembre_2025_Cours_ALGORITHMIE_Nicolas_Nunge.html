@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours Algorithmie – 10 Septembre 2025</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; background-color: #f9f9f9; color: #333; display: flex; }
+nav { width: 250px; background-color: #2c3e50; color: #ecf0f1; height: 100vh; position: fixed; overflow-y: auto; padding: 20px; }
+nav ul { list-style: none; padding-left: 0; }
+nav ul li { margin: 10px 0; }
+nav ul li a { color: #ecf0f1; text-decoration: none; }
+nav ul li a:hover { text-decoration: underline; }
+main { margin-left: 270px; padding: 20px; flex: 1; }
+h1, h2, h3, h4 { color: #2c3e50; }
+h1 { text-align: center; margin-bottom: 0.5em; }
+h2 { border-bottom: 2px solid #2980b9; padding-bottom: 5px; margin-top: 1em; }
+ul, ol { margin: 0.5em 0 1em 2em; }
+li { margin-bottom: 0.3em; }
+.section { margin-bottom: 2em; padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.05); }
+.focus { background-color: #d1f2eb; padding: 12px; border-left: 5px solid #1abc9c; margin: 15px 0; border-radius: 6px; }
+.focus h4 { margin-top: 0; margin-bottom: 5px; color: #117864; }
+.schéma { background-color: #d6eaf8; padding: 10px; border-radius: 6px; margin: 10px 0; font-family: monospace; }
+.note { background-color: #fcf3cf; padding: 8px; border-left: 4px solid #f1c40f; margin: 10px 0; border-radius: 4px; }
+code { background-color: #ecf0f1; padding: 2px 4px; border-radius: 4px; font-family: monospace; }
+img { max-width: 100%; height: auto; border-radius: 6px; margin: 10px 0; }
+.searchbar { margin-bottom: 15px; }
+.search-placeholder { display: flex; align-items: center; padding: 8px; background: #ecf0f1; border-radius: 5px; }
+.search-placeholder .icon { margin-right: 8px; }
+</style>
+</head>
+<body>
+
+<nav>
+<h1>Menu</h1>
+<ul>
+    <li><a href="#session1-matin">Session 1 – Matin</a></li>
+    <li><a href="#session1-apres-midi">Session 1 – Après-midi</a></li>
+    <li><a href="#pseudo-code-naturel">Pseudo-code naturel</a></li>
+    <li><a href="#pseudo-code-structure">Pseudo-code structuré</a></li>
+    <li><a href="#symboles">Symboles & opérateurs</a></li>
+    <li><a href="#fonctions">Fonctions</a></li>
+</ul>
+</nav>
+
+<main>
+
+<h1>Cours Algorithmie – 10 Septembre 2025</h1>
+
+<div class="searchbar">
+<div class="search-placeholder">
+    <span class="icon">&#128269;</span>
+    <span class="text">Recherche...</span>
+</div>
+</div>
+
+<div id="session1-matin" class="section">
+<h2>Session 1 – Matin</h2>
+<p>Découverte et histoire de l’algorithmie. Les instructions doivent être précises pour obtenir un résultat attendu : suite finie et ordonnée.</p>
+<p>Le formateur partage ses slides sur le classroom : <a href="01. Introduction à l'algorithmique.pdf" target="_blank">Slides premier cours algorithme</a></p>
+
+<div class="focus">
+<h4>Algorithme vs Programme</h4>
+<ul>
+<li><strong>Algorithme :</strong> idée → suite d'étapes pour réaliser une tâche (ex: recette de tarte aux pommes)</li>
+<li><strong>Programme :</strong> algorithme traduit dans un langage compréhensible par la machine</li>
+<li>Algorithmes : deux catégories  
+    <strong>visibles</strong> (recette, notice),  
+    <strong>invisibles</strong> (GPS, Netflix – suite d’étapes non visibles pour l’utilisateur)
+</li>
+</ul>
+</div>
+
+<p>Pour réussir un algorithme, il faut anticiper toutes les étapes et erreurs possibles. Tester systématiquement pour garantir le résultat.</p>
+
+<h3>Structures fondamentales</h3>
+<ul>
+<li><strong>Séquences :</strong> ordre précis, chaque étape dépend de la précédente (algorithme séquentiel)</li>
+<li><strong>Conditions :</strong> Si… alors… (booléen vrai/faux) – ex : "Si le bord de la pâte est trop large, on coupe"</li>
+<li><strong>Répétitions :</strong> Boucles <code>tant que</code> (while) ou <code>pour chaque</code> (for)</li>
+</ul>
+
+<h3>Notion de performance</h3>
+<ul>
+<li>Coût serveur et infrastructure (finops)</li>
+<li>Finitude : le programme doit s’arrêter</li>
+<li>Précision : étapes claires et sans ambiguïté</li>
+<li>Efficacité : atteindre le but avec le minimum d’effort</li>
+<li>Notation Big-O : mesurer la complexité et la performance</li>
+<li>Prévoir l’imprévu : gestion des erreurs pour garantir une expérience utilisateur optimale</li>
+</ul>
+
+<img src="BigO.png" alt="notation bigO">
+<p>notation big-O pour noter la performance s'approcher de O(1)(difficilement ateignable) 
+
+le but c'est de réduire la courbe du rapport Opérations/éléments </p>
+
+</div>
+<div id="logigramme-uml" class="section">
+<h2>Logigramme et UML</h2>
+<p>En milieu professionnel, on utilise des logigrammes et du pseudo-code structurel pour documenter et transmettre l’algorithme.</p>
+
+<div class="schéma">
+<img src="Logigramme_vs_UML.png" alt="Logigramme vs UML">
+<p>Exemple de Logigramme comparé à UML</p>
+</div>
+
+<p>Le logigramme sert à représenter visuellement la logique séquentielle d’un algorithme,
+tandis que l’UML modélise la structure et le comportement global d’un système logiciel.</p>
+
+
+<p>Ces outils permettent de visualiser les étapes de l’algorithme, de vérifier la logique et de communiquer plus efficacement avec d’autres développeurs.</p>
+</div>
+
+
+<div id="session1-apres-midi" class="section">
+<h2>Session 1 – Après-midi</h2>
+<p>Petit travail individuel sur pseudo-code naturel. Rendu sur Classroom et vérification des commentaires du formateur.</p>
+</div>
+
+<div id="pseudo-code-naturel" class="section">
+<h2>Pseudo-code naturel</h2>
+<p>Hybride entre langage naturel français et code informatique, outil de transition vers le langage machine.</p>
+<p>Exemple : Algorithme à nommer</p>
+<div class="schéma">
+<img src="pseudocode_naturel_thé.png" alt="pseudocode_naturel_thé">
+</div>
+</div>
+
+<div id="pseudo-code-structure" class="section">
+<h2>Pseudo-code structuré</h2>
+<p>Exemple : Calculer l’aire d’un cercle</p>
+<pre>
+ALGORITHME CalculerAireCercle
+
+CONSTANTES
+    PI <-- 3.14
+
+VARIABLES
+    a : flottant     // aire du cercle
+    r : flottant     // rayon du cercle
+
+DEBUT
+    LIRE (r)
+    SI r >= 0 ALORS
+        a <-- PI * r * r
+        AFFICHER (a)
+    SINON
+        AFFICHER ("r invalide")
+    FIN_SI
+FIN
+</pre>
+
+<h3>Autres structures et logigrammes</h3>
+<ul>
+<li>FOR n IN ["a","b",…] ... END_FOR</li>
+<li>FOR n IN RANGE(10)</li>
+<li>WHILE ...</li>
+<li>Logigrammes : schémas pour documenter et transmettre l’algorithme</li>
+</ul>
+</div>
+
+<div id="symboles" class="section">
+<h2>Exemples de symboles en pseudo-code structuré</h2>
+<ul>
+<li><code><--</code> : affectation</li>
+<li><code>=</code> : égalité</li>
+<li><code>&gt;</code> : supérieur</li>
+<li><code>&lt;</code> : inférieur</li>
+<li><code>&lt;&gt;</code> : différent de</li>
+<li>Voir liste complète des opérateurs par le formateur</li>
+</ul>
+</div>
+
+<div id="fonctions" class="section">
+<h2>Fonctions</h2>
+<p>Créer des fonctions pour encapsuler des opérations :</p>
+<pre>
+FUNCTION Square(n : flottant)
+    RETURN n * n
+END_FUNCTION
+
+BEGIN
+    x <-- Square(5.0)
+END
+</pre>
+<ul>
+<li>Les fonctions doivent être déclarées avant leur utilisation</li>
+<li>Une fonction peut avoir plusieurs paramètres</li>
+<li><code>RETURN</code> renvoie une valeur vers l’algorithme principal</li>
+</ul>
+
+<div class="note">
+<p>Cheat sheet recommandé : <a href="https://formations.nicolas.sh/algorithms/pseudo-code-cheatsheet" target="_blank">Pseudo-code Cheat Sheet</a></p>
+</div>
+</div>
+
+</main>
+</body>
+</html>

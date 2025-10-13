@@ -1,0 +1,114 @@
+```html
+<section class="course">
+  <h1>Titre du Cours : Introduction à Git et GitHub</h1>
+  <article class="introduction">
+    <h2>Introduction</h2>
+    <p>Git est un moteur de gestion de versions, tandis que GitHub est une plateforme qui exploite ce moteur. Git permet de sauvegarder chaque étape de votre projet, de travailler à plusieurs et de revenir en arrière si besoin. GitHub, quant à lui, facilite la collaboration et l'intégration continue (CI/CD).</p>
+  </article>
+  <article class="concepts">
+    <h2>Concepts Clés</h2>
+    <h3>Installation de Git</h3>
+    <p>Pour commencer, vous devez installer Git sur votre machine. Vous pouvez télécharger l'installateur depuis le site officiel de Git et suivre les instructions.</p>
+    <pre><code class="language-bash">
+      # Exemple de commande pour vérifier l'installation de Git
+      git --version
+    </code></pre>
+    <h3>Repository</h3>
+    <p>Un repository (ou dépôt) est l'équivalent d'un projet. C'est là que vous stockez tous vos fichiers et dossiers liés à votre projet.</p>
+    <pre><code class="language-bash">
+      # Créer un nouveau repository
+      git init mon-projet
+    </code></pre>
+    <h3>Commit</h3>
+    <p>Un commit est un point de sauvegarde. Il est conseillé de créer de petits commits et de les nommer clairement pour faciliter la gestion du projet.</p>
+    <pre><code class="language-bash">
+      # Ajouter des fichiers à l'index
+      git add .
+      # Créer un commit
+      git commit -m "Ajout de la fonctionnalité X"
+    </code></pre>
+    <h3>Tag</h3>
+    <p>Un tag permet de marquer un commit pour lui donner une version, ce qui est utile pour retrouver la version qui a été livrée.</p>
+    <pre><code class="language-bash">
+      # Créer un tag
+      git tag -a v1.0 -m "Version 1.0"
+    </code></pre>
+    <h3>Branche</h3>
+    <p>Une branche permet de créer une autre version du projet pour une nouvelle fonctionnalité. Cela permet à deux projets de cohabiter.</p>
+    <pre><code class="language-bash">
+      # Créer une nouvelle branche
+      git checkout -b nouvelle-fonctionnalite
+    </code></pre>
+    <h3>Merge</h3>
+    <p>Le merge permet de prendre les commits d'une branche et de les réinjecter dans la branche principale pour créer un nouveau commit.</p>
+    <pre><code class="language-bash">
+      # Fusionner une branche dans la branche principale
+      git checkout main
+      git merge nouvelle-fonctionnalite
+    </code></pre>
+    <h3>Rebase</h3>
+    <p>Le rebase modifie la structure de l'arbre pour faire débuter la branche ailleurs. C'est une pratique risquée mais utile pour éviter les conflits lors du merge.</p>
+    <pre><code class="language-bash">
+      # Rebaser une branche
+      git checkout nouvelle-fonctionnalite
+      git rebase main
+    </code></pre>
+    <h3>Workflow</h3>
+    <p>Un workflow définit comment une équipe utilise Git. Il existe plusieurs workflows comme GitFlow, GitHub Flow et Trunk Based Development.</p>
+    <h3>Conventions de Commit</h3>
+    <p>Un commit doit représenter une idée unique. Il est important de suivre des conventions pour rendre l'historique lisible.</p>
+    <pre><code class="language-bash">
+      # Exemple de message de commit
+      git commit -m "feat(auth): Ajout de la fonctionnalité d'authentification"
+    </code></pre>
+    <h3>.gitignore</h3>
+    <p>Le fichier .gitignore contient les fichiers que Git doit ignorer lors du push, comme les informations sensibles ou les fichiers cache.</p>
+    <pre><code class="language-bash">
+      # Exemple de fichier .gitignore
+      node_modules/
+      .env
+    </code></pre>
+    <aside class="tip">
+      <p>Vous pouvez utiliser <a href="https://www.toptal.com/developers/gitignore" target="_blank">gitignore.io</a> pour générer automatiquement votre fichier .gitignore.</p>
+    </aside>
+  </article>
+  <article class="exercices">
+    <h2>Exercices Pratiques</h2>
+    <ol>
+      <li>Créez un nouveau repository local et faites votre premier commit.</li>
+      <li>Créez une nouvelle branche pour ajouter une nouvelle fonctionnalité et fusionnez-la ensuite dans la branche principale.</li>
+      <li>Ajoutez un fichier .gitignore à votre projet pour ignorer les fichiers sensibles.</li>
+    </ol>
+    <details>
+      <summary>Corrigé</summary>
+      <pre><code class="language-bash">
+        # Exercice 1
+        git init mon-projet
+        echo "# Mon Projet" >> README.md
+        git add README.md
+        git commit -m "Initial commit"
+
+        # Exercice 2
+        git checkout -b nouvelle-fonctionnalite
+        echo "Nouvelle fonctionnalité" >> fonctionnalite.txt
+        git add fonctionnalite.txt
+        git commit -m "Ajout de la nouvelle fonctionnalité"
+        git checkout main
+        git merge nouvelle-fonctionnalite
+
+        # Exercice 3
+        echo "node_modules/" >> .gitignore
+        echo ".env" >> .gitignore
+      </code></pre>
+    </details>
+  </article>
+  <aside class="ressources">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://git-scm.com/doc" target="_blank">Documentation officielle de Git</a></li>
+      <li><a href="https://guides.github.com/" target="_blank">Guides GitHub</a></li>
+      <li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows" target="_blank">Comparaison des workflows Git</a></li>
+    </ul>
+  </aside>
+</section>
+```

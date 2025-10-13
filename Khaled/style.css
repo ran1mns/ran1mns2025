@@ -1,0 +1,10 @@
+h1 {
+    background-color: rgb(118, 118, 220);
+    color: white;
+}
+
+body{
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}

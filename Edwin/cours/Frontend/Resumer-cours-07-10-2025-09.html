@@ -1,0 +1,101 @@
+<section class="course">
+  <h1>Titre du Cours : HTML Basique</h1>
+  <article class="introduction">
+    <h2>Introduction</h2>
+    <p>Le HTML, ou HyperText Markup Language, est le langage de base utilisé pour créer des pages web. Il permet de structurer le contenu d'une page en utilisant des balises spécifiques. Apprendre le HTML est la première étape pour devenir un développeur web.</p>
+  </article>
+  <article class="concepts">
+    <h2>Concepts Clés</h2>
+    <h3>Structure de Base d'un Document HTML</h3>
+    <p>Tout document HTML commence par une déclaration de type de document (doctype) suivie des balises <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> et <code>&lt;body&gt;</code>. Voici un exemple de structure de base :</p>
+    <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Titre de la page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Bienvenue sur ma page web&lt;/h1&gt;
+    &lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+    <h3>Balises de Titre</h3>
+    <p>Les balises de titre, de <code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code>, sont utilisées pour définir les titres et sous-titres dans un document HTML. <code>&lt;h1&gt;</code> est le plus important et <code>&lt;h6&gt;</code> le moins important.</p>
+    <pre><code class="language-html">
+&lt;h1&gt;Titre principal&lt;/h1&gt;
+&lt;h2&gt;Sous-titre&lt;/h2&gt;
+&lt;h3&gt;Sous-sous-titre&lt;/h3&gt;
+    </code></pre>
+    <h3>Balises de Paragraphe</h3>
+    <p>La balise <code>&lt;p&gt;</code> est utilisée pour définir un paragraphe de texte. Chaque paragraphe est automatiquement séparé par un espace.</p>
+    <pre><code class="language-html">
+&lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
+&lt;p&gt;Ceci est un autre paragraphe.&lt;/p&gt;
+    </code></pre>
+    <h3>Balises de Liste</h3>
+    <p>Il existe deux types de listes en HTML : les listes ordonnées (<code>&lt;ol&gt;</code>) et les listes non ordonnées (<code>&lt;ul&gt;</code>). Chaque élément de la liste est défini par la balise <code>&lt;li&gt;</code>.</p>
+    <pre><code class="language-html">
+&lt;!-- Liste non ordonnée --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Élément 1&lt;/li&gt;
+  &lt;li&gt;Élément 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Liste ordonnée --&gt;
+&lt;ol&gt;
+  &lt;li&gt;Élément 1&lt;/li&gt;
+  &lt;li&gt;Élément 2&lt;/li&gt;
+&lt;/ol&gt;
+    </code></pre>
+    <h3>Balises de Lien</h3>
+    <p>La balise <code>&lt;a&gt;</code> est utilisée pour créer des liens hypertextes. L'attribut <code>href</code> spécifie l'URL de la page vers laquelle le lien pointe.</p>
+    <pre><code class="language-html">
+&lt;a href="https://www.example.com"&gt;Visitez Example.com&lt;/a&gt;
+    </code></pre>
+    <h3>Balises d'Image</h3>
+    <p>La balise <code>&lt;img&gt;</code> est utilisée pour insérer une image dans une page web. Les attributs <code>src</code> et <code>alt</code> sont obligatoires.</p>
+    <pre><code class="language-html">
+&lt;img src="chemin/vers/image.jpg" alt="Description de l'image"&gt;
+    </code></pre>
+    <aside class="astuce">
+      <h3>Astuce</h3>
+      <p>Utilisez toujours l'attribut <code>alt</code> pour décrire l'image. Cela améliore l'accessibilité de votre site pour les personnes utilisant des lecteurs d'écran.</p>
+    </aside>
+  </article>
+  <article class="exercices">
+    <h2>Exercices Pratiques</h2>
+    <ol>
+      <li>Créez une page HTML de base avec un titre, un paragraphe, une liste non ordonnée de trois éléments, un lien vers votre site préféré et une image avec une description alternative.</li>
+    </ol>
+    <details>
+      <summary>Corrigé</summary>
+      <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Ma Première Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Bienvenue sur ma page&lt;/h1&gt;
+    &lt;p&gt;Ceci est un paragraphe de texte.&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Élément 1&lt;/li&gt;
+      &lt;li&gt;Élément 2&lt;/li&gt;
+      &lt;li&gt;Élément 3&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;a href="https://www.example.com"&gt;Visitez Example.com&lt;/a&gt;
+    &lt;img src="chemin/vers/image.jpg" alt="Description de l'image"&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+      </code></pre>
+    </details>
+  </article>
+  <aside class="ressources">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank">Documentation MDN sur HTML</a></li>
+      <li><a href="https://www.w3schools.com/html/" target="_blank">Tutoriel HTML sur W3Schools</a></li>
+    </ul>
+  </aside>
+</section>

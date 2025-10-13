@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours Python – 25 Septembre 2025</title>
+
+<!-- 🌈 Highlight.js pour coloration syntaxique -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; background-color: #f9f9f9; color: #333; display: flex; }
+nav { width: 250px; background-color: #2c3e50; color: #ecf0f1; height: 100vh; position: fixed; overflow-y: auto; padding: 20px; }
+nav ul { list-style: none; padding-left: 0; }
+nav ul li { margin: 10px 0; }
+nav ul li a { color: #ecf0f1; text-decoration: none; }
+nav ul li a:hover { text-decoration: underline; }
+main { margin-left: 270px; padding: 20px; flex: 1; }
+h1, h2, h3, h4 { color: #2c3e50; }
+h1 { text-align: center; margin-bottom: 0.5em; }
+h2 { border-bottom: 2px solid #2980b9; padding-bottom: 5px; margin-top: 1em; }
+ul, ol { margin: 0.5em 0 1em 2em; }
+li { margin-bottom: 0.3em; }
+.section { margin-bottom: 2em; padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.05); }
+.focus { background-color: #d1f2eb; padding: 12px; border-left: 5px solid #1abc9c; margin: 15px 0; border-radius: 6px; }
+.focus h4 { margin-top: 0; margin-bottom: 5px; color: #117864; }
+.schéma { background-color: #d6eaf8; padding: 10px; border-radius: 6px; margin: 10px 0; font-family: monospace; }
+.note { background-color: #fcf3cf; padding: 8px; border-left: 4px solid #f1c40f; margin: 10px 0; border-radius: 4px; }
+pre { background-color: #1e1e1e; color: #f8f8f2; padding: 10px; border-radius: 6px; overflow-x: auto; }
+code { font-family: "Fira Code", monospace; font-size: 0.95em; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>Menu</h1>
+<ul>
+    <li><a href="#fonctions">Introduction aux fonctions</a></li>
+    <li><a href="#exemples">Exemples et exercices</a></li>
+    <li><a href="#import">Importation de fonctions</a></li>
+    <li><a href="#projet">Projet Spotify</a></li>
+</ul>
+</nav>
+
+<main>
+<h1>Cours Python – 25 Septembre 2025</h1>
+
+<div id="fonctions" class="section">
+<h2>Introduction aux fonctions</h2>
+<p>Les fonctions permettent d’isoler et de réutiliser du code pour simplifier la lecture, la maintenance et l’exécution d’un programme.  
+Elles peuvent aussi être utilisées pour automatiser des traitements, comme la transformation d’un fichier CSV en base de données manipulable par d’autres scripts Python.</p>
+
+<pre><code class="language-python">
+def welcome(name: str):
+    print(f"Hello, {name}!")
+
+print("Starting the greeting process...")
+</code></pre>
+
+<div class="note">
+<b>Remarque :</b> Une fonction est définie avec <code>def</code> puis appelée plus tard dans le programme.  
+L’indentation est essentielle : une ligne mal indentée sortira du bloc fonction.
+</div>
+</div>
+
+<div id="exemples" class="section">
+<h2>Exemples et exercices</h2>
+
+<div class="focus">
+<h4>Exemple 1 – Fonction simple</h4>
+<pre><code class="language-python">
+def greet(name):
+    print(f"Hello, {name}!")  
+
+print("Starting the greeting process...")
+
+greet("Alice")
+greet("Bob")
+greet("Charlie")
+</code></pre>
+<p>➡️ La fonction permet d’éviter la répétition de code et d’améliorer sa lisibilité.</p>
+</div>
+
+<div class="focus">
+<h4>Exemple 2 – Typage et sécurité</h4>
+<pre><code class="language-python">
+def greet(name: str) -> None:
+    print(f"Hello, {name}!")
+</code></pre>
+<p>Le typage <code>: str</code> précise le type attendu de l’argument.  
+L’indication <code>-> None</code> signifie que la fonction ne renvoie aucune valeur.</p>
+</div>
+
+<div class="focus">
+<h4>Exemple 3 – Calcul et retour de valeur</h4>
+<pre><code class="language-python">
+def square(num):
+    print("Calculating the square...")
+    return num * num
+
+result = square(2)
+print(result)
+
+# Fonctions imbriquées :
+print(square(square(square(2))))
+</code></pre>
+</div>
+
+<div class="focus">
+<h4>Exemple 4 – Conditions dans une fonction</h4>
+<pre><code class="language-python">
+def square(num):
+    print("Calculating the square...")
+    if num &lt; 0:
+        return 1  # mathématiquement faux, juste pour l'exemple
+    return num * num
+
+result = square(21)
+print(result)
+</code></pre>
+</div>
+</div>
+
+<div id="import" class="section">
+<h2>Importer des fonctions depuis un autre fichier</h2>
+<p>Pour organiser le code, on peut isoler les fonctions dans un autre fichier Python et les importer :</p>
+<pre><code class="language-python">
+# Importation depuis un autre module
+from fonctions import welcome
+
+welcome("Charlie")
+</code></pre>
+<p>Cette approche favorise la modularité du code et facilite la maintenance.</p>
+</div>
+
+<div id="projet" class="section">
+<h2>Projet Python – Spotify Database</h2>
+<ul>
+<li>Exercice : manipuler une base de données Spotify avec des scripts Python</li>
+<li>Objectif : push du projet complet sur GitHub après transformation du CSV en base de données</li>
+<li><a href="Spotify - Problématiques.pdf" target=_blank>📄 Liste des exercices (PDF)</a></li>
+<li><a href="https://github.com/AdiH18/projetPythonSpotify" target=_blank>💻 Lien vers le dépôt GitHub</a></li>
+</ul>
+</div>
+
+</main>
+</body>
+</html>

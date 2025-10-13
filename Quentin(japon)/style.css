@@ -10,33 +10,49 @@ html {
 
 /* Header */
 
-.header {
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(177, 177, 177);
+header {
+  background-color: rgb(250, 250, 250);
+  box-shadow:
+    0 1px 0 rgb(177, 177, 177),
+    0 6px 12px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
   padding: 0em 5em;
 }
 
-.container__header {
+header > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo img {
-  height: 100px;
+header img {
+  height: 80px;
   width: auto;
   display: block;
   margin-right: 20px;
   transition: transform 0.3s ease;
 }
 
-.menu {
+.navbar ul {
   display: flex;
   gap: 3em;
   list-style: none;
+  align-items: center;
 }
 
-.menu li a {
+.navbar button {
+  background: linear-gradient(90deg, rgb(242, 108, 79),rgb(248, 156, 94));
+  border-style: hidden;
+  border-radius: 50px;
+  width: 150px;
+  height: 40px;
+}
+
+.navbar button a {
+  color: white;
+}
+
+.navbar a {
   text-decoration: none;
   color: rgb(0,0,0);
   font-family: "Permanent Marker", cursive;
@@ -45,7 +61,7 @@ html {
   transition: color 0.3s ease;
 }
 
-.menu li a:hover {
+.navbar a:hover {
   color: rgb(190, 55, 61);
 }
 
@@ -56,7 +72,7 @@ html {
 /* Main section */
 
 main {
-  background: url(../images/japon2.jpg);
+  background: url(./images/japon_background.png);
   background-position: 50% 30%;
   background-repeat: no-repeat;
   background-size: cover;

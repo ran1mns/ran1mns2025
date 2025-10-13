@@ -1,0 +1,154 @@
+#planete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: black; */
+    margin: 0;
+    overflow: hidden;
+}
+
+@media (max-width: 1100px) {
+    #planete {
+        width: 100vw;
+        height: 60vh;
+    }
+}
+@media (max-width: 780px) {
+    #planete {
+        width: 100vw;
+        height: 50vh;
+    }
+}
+@media (max-width: 600px) {
+    #planete {
+        width: 100vw;
+        height: 30vh;
+    }
+}
+
+.star-field {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    animation: move 5s infinite ease-in-out;
+}
+
+.globe-container {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    /* background-color: black; */
+    margin: 0;
+    overflow: hidden;
+    /* transform: scale(0.9); */
+}
+
+.globe {
+    width: 55%;
+    height: 95%;
+    border-radius: 50%;
+    background-color: #0e16839a;
+    position: relative;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    box-shadow: inset 0 0 80px rgb(0, 174, 255);
+    transform: rotateY(0deg);
+    /* padding: 85px;*/
+    margin-left: 20%;
+}
+
+.globe::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgb(6, 255, 39), rgb(189, 255, 8));
+    transform: translate(-50%, -50%) rotateX(90deg);
+}
+
+.logo {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    transform-style: preserve-3d;
+    animation: rotate-logos-left 10s infinite linear;
+}
+@media (max-width: 1100px) {
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media (max-width: 780px) {
+    .logo {
+        width: 30px;
+        height: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .logo {
+        width: 15px;
+        height: 20px;
+    }
+}
+.logos-container {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate-globe 30s infinite linear reverse;
+}
+
+@keyframes rotate-globe {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(-360deg);
+    }
+
+}
+
+@keyframes rotate-logos-left {
+    from {
+        transform: rotateY(-360deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(50px, 50px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50px, -50px);
+        opacity: 1;
+    }
+}

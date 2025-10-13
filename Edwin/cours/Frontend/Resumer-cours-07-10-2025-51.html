@@ -1,0 +1,98 @@
+<section class="course">
+  <h1>Titre du Cours : Les Fonctions en JavaScript</h1>
+  <article class="introduction">
+    <h2>Introduction</h2>
+    <p>Les fonctions sont des blocs de code réutilisables qui effectuent une tâche spécifique. En JavaScript, elles sont essentielles pour organiser et structurer le code. Comprendre et maîtriser les fonctions vous permettra de créer des programmes plus efficaces et maintenables.</p>
+  </article>
+  <article class="concepts">
+    <h2>Concepts Clés</h2>
+    <h3>Définition et Syntaxe de Base</h3>
+    <p>Une fonction en JavaScript est définie à l'aide du mot-clé <code>function</code> suivi du nom de la fonction, de parenthèses et d'un bloc de code entre accolades. Voici un exemple simple :</p>
+    <pre><code class="language-js">
+function direBonjour() {
+  console.log("Bonjour!");
+}
+    </code></pre>
+    <h3>Appel de Fonction</h3>
+    <p>Pour exécuter une fonction, vous devez l'appeler en utilisant son nom suivi de parenthèses. Par exemple :</p>
+    <pre><code class="language-js">
+direBonjour(); // Affiche "Bonjour!" dans la console
+    </code></pre>
+    <h3>Paramètres et Arguments</h3>
+    <p>Les fonctions peuvent accepter des paramètres, qui sont des valeurs d'entrée. Lorsque vous appelez une fonction, vous passez des arguments correspondant à ces paramètres. Voici un exemple :</p>
+    <pre><code class="language-js">
+function saluer(nom) {
+  console.log("Bonjour, " + nom + "!");
+}
+
+saluer("Alice"); // Affiche "Bonjour, Alice!" dans la console
+    </code></pre>
+    <h3>Valeur de Retour</h3>
+    <p>Les fonctions peuvent retourner une valeur en utilisant le mot-clé <code>return</code>. Cette valeur peut ensuite être utilisée ou stockée. Par exemple :</p>
+    <pre><code class="language-js">
+function additionner(a, b) {
+  return a + b;
+}
+
+let resultat = additionner(3, 4); // resultat vaut 7
+console.log(resultat); // Affiche 7 dans la console
+    </code></pre>
+    <h3>Fonctions Fléchées</h3>
+    <p>Introduites avec ES6, les fonctions fléchées offrent une syntaxe plus concise. Voici comment définir une fonction fléchée :</p>
+    <pre><code class="language-js">
+const direBonjour = () => {
+  console.log("Bonjour!");
+};
+
+direBonjour(); // Affiche "Bonjour!" dans la console
+    </code></pre>
+    <h3>Portée des Variables</h3>
+    <p>Les variables définies à l'intérieur d'une fonction sont locales à cette fonction et ne sont pas accessibles en dehors. Voici un exemple :</p>
+    <pre><code class="language-js">
+function exemplePortee() {
+  let message = "Bonjour!";
+  console.log(message); // Affiche "Bonjour!"
+}
+
+exemplePortee();
+console.log(message); // Erreur : message n'est pas défini
+    </code></pre>
+    <aside class="astuce">
+      <h4>Astuce</h4>
+      <p>Utilisez des noms de fonctions descriptifs pour rendre votre code plus lisible et maintenable.</p>
+    </aside>
+  </article>
+  <article class="exercices">
+    <h2>Exercices Pratiques</h2>
+    <ol>
+      <li>Créez une fonction qui prend deux nombres en paramètres et retourne leur produit.</li>
+      <li>Créez une fonction fléchée qui prend un nom en paramètre et affiche un message de bienvenue personnalisé.</li>
+    </ol>
+    <details>
+      <summary>Corrigé</summary>
+      <pre><code class="language-js">
+// Exercice 1
+function multiplier(a, b) {
+  return a * b;
+}
+
+let resultat = multiplier(5, 6); // resultat vaut 30
+console.log(resultat); // Affiche 30 dans la console
+
+// Exercice 2
+const saluer = (nom) => {
+  console.log("Bienvenue, " + nom + "!");
+};
+
+saluer("Bob"); // Affiche "Bienvenue, Bob!" dans la console
+      </code></pre>
+    </details>
+  </article>
+  <aside class="ressources">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Fonctions" target="_blank">Documentation MDN sur les fonctions JavaScript</a></li>
+      <li><a href="https://www.w3schools.com/js/js_functions.asp" target="_blank">Tutoriel W3Schools sur les fonctions</a></li>
+    </ul>
+  </aside>
+</section>
