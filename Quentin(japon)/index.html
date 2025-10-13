@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage | KeaRoZz Developpement</title>
     <meta name="description" content="Portfolio de Quentin BARRAS - Développeur web en devenir. Découvrez son parcours, ses projets et ses réalisations">
-    <title>Quentin | Home Page</title>
+    <link rel="icon" href="./images/favicon.png" type="image/png" sizes="192*192">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,35 +21,114 @@
             </div>
                 <nav class="navbar">
                     <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="realisations.html">Mes réalisations</a></li>
-                        <li><a href="parcours.html">Mon parcours</a></li>
-                        <button><a href="contact.html">Notre équipe</a></button>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#realisations">Mes réalisations</a></li>
+                        <li><a href="#">Mon parcours</a></li>
+                        <li><a href="https://ran1mns.github.io/ran1mns2025/" target="_blank"><button>Notre équipe ➜</a></li></button>
                     </ul>
                 </nav>
             <button class="burger"><span class="bar">☰</span></button>
         </div>
     </header>
 
-    <main>
-        <section id="hero" class="hero">
+    <main id="fullpage">
+        <section id="hero" class="section__hero">
             <div class="container__hero">
                 <div class="grid__hero">
                     <div class="hero__item left">
                         <div class="hero__avatar">
-                            <img src="./images/samurai.webp" alt="Quentin BARRAS - Développeur web en devenir">
+                            <img src="./images/main_avatar.webp" alt="">
                         </div>
                     </div>
                     <div class="hero__item right">
                         <span>Développeur web en devenir</span>
-                        <h1 class="title">Hello, je m'appelle Quentin. 👋</h1>
-                        <p> Créatif, curieux et persévérant, je m'épanouis pleinement dans l'univers du numérique. Passionné par les écrans depuis toujours, qu'il s'agisse de jeux vidéo, de projets créatifs ou de discussions en ligne, je m'intéresse aussi de près à l'actualité technologique, des nouvelles machines aux avancées de l'IA.</p>
+                        <h1>Hello, je m'appelle Quentin. 👋</h1>
+                        <p> Créatif, curieux et persévérant, je m'épanouis pleinement dans l'univers du numérique. Passionné par les écrans depuis toujours, qu'il s'agisse de jeux vidéo ou de projets créatifs divers. J’adore imaginer des identités visuelles cohérentes, créer des expériences web qui respirent l'authenticité, et suivre de près l'actualité tech, des nouvelles machines aux avancées de l'IA.</p>
                     </div>
                 </div>
             </div>
             <div class="grid__item hero">
-                <h2 class="section-title">Mon objectif ?</h2>
-                <p class="objectiv">Actuellement en formation aux bases du développement web en HTML et CSS, je me concentre sur la création de sites fonctionnels et esthétique. Je souhaite à terme me spécialiser dans les sites d'e-commerce et les applications web, avec un intérêt particulier pour les projets de marque ou de restauration, comme l'univers des échoppes de ramen. À court terme, je souhaiterais devenir développeur web, puis, sur le long terme, m'orienter vers le webdesign afin de combiner technique et sens artistique.</p>
+                <h2>Mon objectif ?</h2>
+                <p>Actuellement en formation aux bases du développement web en HTML et CSS, je me concentre sur la création de sites fonctionnels et esthétique. Je souhaite à terme me spécialiser dans les sites d'e-commerce et les applications web, avec un intérêt particulier pour les projets de marque ou de restauration, comme l'univers des échoppes de ramen. À court terme, je souhaiterais devenir développeur web, puis, sur le long terme, m'orienter vers le webdesign afin de combiner technique et sens artistique.</p>
+            </div>
+        </section>
+        <section id="realisations" class="realisations">
+            <div class="container__realisations">
+                <h2 class="section__title">Mes projets</h2>
+                <div class="grid__realisations">
+                    <div class="grid__item">
+                        <div class="card">
+                            <img src="images/KYQ.png" alt="KYQ - Production musicale par utilisation d'IA" class="card__image">
+                            <div class="card__inner">
+                                <h3 class="card__title">KYQ (Spotify)</h3>
+                                <p class="category">Production musicale IA</p>
+                            </div>
+                            <div class="card_overlay">
+                                <a href="#">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item">
+                        <div class="card">
+                            <img src="images/citywish.png" alt="CityWish" class="card__image">
+                            <div class="card__inner">
+                                <h3 class="card__title">CityWish</h3>
+                                <p class="category">Rédaction web & correction</p>
+                            </div>
+                            <div class="card_overlay">
+                                <a href="#">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item">
+                        <div class="card">
+                            <img src="images/foxity.png" alt="Foxity" class="card__image">
+                            <div class="card__inner">
+                                <h3 class="card__title">Foxity</h3>
+                                <p class="category">Graphisme</p>
+                            </div>
+                            <div class="card_overlay">
+                                <a href="#">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item">
+                        <div class="card">
+                            <img src="images/gravinaa.png" alt="Gravinaa Corp" class="card__image">
+                            <div class="card__inner">
+                                <h3 class="card__title">Gravinaa Corp</h3>
+                                <p class="category">Serveur discord d'aide à la correction</p>
+                            </div>
+                            <div class="card_overlay">
+                                <a href="#">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item">
+                        <div class="card">
+                            <img src="./images/paradisia.png" alt="Paradisia" class="card__image">
+                            <div class="card__inner">
+                                <h3 class="card__title">Paradisia</h3>
+                                <p class="category">Serveur Discord communautaire</p>
+                            </div>
+                            <div class="card_overlay">
+                                <a href="#">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item">
+                        <div class="card">
+                            <img src="./images/roblox.png" alt="Roblox" class="card__image">
+                            <div class="card__inner">
+                                <h3 class="card__title">Roblox</h3>
+                                <p class="category">Création d'un jeu de simulation (à venir)</p>
+                            </div>
+                            <div class="card_overlay">
+                                <a href="#">Voir le projet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
