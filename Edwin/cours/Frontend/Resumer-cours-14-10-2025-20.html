@@ -1,0 +1,100 @@
+```html
+<section class="course">
+  <h1>Titre du Cours : HTML Basique</h1>
+  <article class="introduction">
+    <h2>Introduction</h2>
+    <p>L'HTML (HyperText Markup Language) est le langage de base pour créer des pages web. Il permet de structurer le contenu d'une page en utilisant des balises. Apprendre l'HTML est essentiel pour toute personne souhaitant créer des sites web, car il est la fondation sur laquelle reposent le CSS et le JavaScript.</p>
+  </article>
+  <article class="concepts">
+    <h2>Concepts Clés</h2>
+    <h3>Les Balises HTML</h3>
+    <p>Les balises HTML sont des éléments qui permettent de structurer le contenu d'une page web. Chaque balise a une fonction spécifique. Par exemple, la balise <code>&lt;h1&gt;</code> est utilisée pour les titres principaux, tandis que la balise <code>&lt;p&gt;</code> est utilisée pour les paragraphes.</p>
+    <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Ma Première Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Bienvenue sur ma page&lt;/h1&gt;
+  &lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+    <h3>Les Attributs HTML</h3>
+    <p>Les attributs fournissent des informations supplémentaires sur les éléments HTML. Par exemple, l'attribut <code>href</code> dans une balise <code>&lt;a&gt;</code> spécifie l'URL de la page à laquelle le lien pointe.</p>
+    <pre><code class="language-html">
+&lt;a href="https://www.example.com"&gt;Visitez Example&lt;/a&gt;
+    </code></pre>
+    <h3>Les Éléments de Liste</h3>
+    <p>Les listes permettent de regrouper des éléments similaires. Il existe deux types principaux de listes : les listes ordonnées (<code>&lt;ol&gt;</code>) et les listes non ordonnées (<code>&lt;ul&gt;</code>).</p>
+    <pre><code class="language-html">
+&lt;ul&gt;
+  &lt;li&gt;Élément 1&lt;/li&gt;
+  &lt;li&gt;Élément 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Premier élément&lt;/li&gt;
+  &lt;li&gt;Deuxième élément&lt;/li&gt;
+&lt;/ol&gt;
+    </code></pre>
+    <h3>Les Images</h3>
+    <p>Pour ajouter des images à votre page web, utilisez la balise <code>&lt;img&gt;</code>. L'attribut <code>src</code> spécifie le chemin de l'image, et l'attribut <code>alt</code> fournit un texte alternatif pour les navigateurs qui ne peuvent pas afficher l'image.</p>
+    <pre><code class="language-html">
+&lt;img src="chemin/vers/image.jpg" alt="Description de l'image"&gt;
+    </code></pre>
+    <h3>Les Formulaires</h3>
+    <p>Les formulaires permettent aux utilisateurs d'entrer des données. La balise <code>&lt;form&gt;</code> est utilisée pour créer un formulaire, et divers éléments comme <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, et <code>&lt;button&gt;</code> sont utilisés pour capturer les données.</p>
+    <pre><code class="language-html">
+&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Nom :&lt;/label&gt;
+  &lt;input type="text" id="name" name="name"&gt;
+  &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+&lt;/form&gt;
+    </code></pre>
+  </article>
+  <article class="exercices">
+    <h2>Exercices Pratiques</h2>
+    <ol>
+      <li>Créez une page HTML avec un titre principal, un paragraphe, une liste non ordonnée de trois éléments, et une image avec un texte alternatif.</li>
+      <li>Ajoutez un formulaire à votre page avec un champ de texte pour le nom, un champ de texte pour l'email, et un bouton d'envoi.</li>
+    </ol>
+    <details>
+      <summary>Corrigé</summary>
+      <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Exercice Pratique&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Mon Exercice Pratique&lt;/h1&gt;
+  &lt;p&gt;Ceci est un paragraphe d'exemple.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Élément 1&lt;/li&gt;
+    &lt;li&gt;Élément 2&lt;/li&gt;
+    &lt;li&gt;Élément 3&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;img src="chemin/vers/image.jpg" alt="Description de l'image"&gt;
+  &lt;form action="/submit" method="post"&gt;
+    &lt;label for="name"&gt;Nom :&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;label for="email"&gt;Email :&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </code></pre>
+    </details>
+  </article>
+  <aside class="ressources">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank">Documentation MDN Web Docs sur l'HTML</a></li>
+      <li><a href="https://www.w3schools.com/html/" target="_blank">Tutoriels W3Schools sur l'HTML</a></li>
+    </ul>
+  </aside>
+</section>
+```
