@@ -1,0 +1,95 @@
+<section class="course">
+  <h1>Titre du Cours : HTML Basique</h1>
+  <article class="introduction">
+    <h2>Introduction</h2>
+    <p>Le HTML (HyperText Markup Language) est le langage de base pour créer des pages web. Il permet de structurer le contenu d'une page en utilisant des balises. Comprendre le HTML est essentiel pour toute personne souhaitant se lancer dans le développement web.</p>
+  </article>
+  <article class="concepts">
+    <h2>Concepts Clés</h2>
+    <h3>Structure de Base</h3>
+    <p>Toute page HTML commence par une balise <code>&lt;html&gt;</code> qui englobe tout le document. Ensuite, nous avons la balise <code>&lt;head&gt;</code> pour les métadonnées et la balise <code>&lt;body&gt;</code> pour le contenu visible.</p>
+    <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Titre de la page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Bienvenue sur ma page web&lt;/h1&gt;
+  &lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+    <h3>Balises de Titre</h3>
+    <p>Les balises de titre, de <code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code>, sont utilisées pour structurer le contenu. <code>&lt;h1&gt;</code> est le titre principal, tandis que <code>&lt;h6&gt;</code> est le moins important.</p>
+    <pre><code class="language-html">
+&lt;h1&gt;Titre principal&lt;/h1&gt;
+&lt;h2&gt;Sous-titre&lt;/h2&gt;
+&lt;h3&gt;Sous-sous-titre&lt;/h3&gt;
+    </code></pre>
+    <h3>Paragraphes et Texte</h3>
+    <p>Les paragraphes sont définis par la balise <code>&lt;p&gt;</code>. Pour le texte en ligne, on utilise <code>&lt;span&gt;</code>.</p>
+    <pre><code class="language-html">
+&lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
+&lt;p&gt;Voici un autre paragraphe avec du texte &lt;span&gt;en ligne&lt;/span&gt;.&lt;/p&gt;
+    </code></pre>
+    <h3>Listes</h3>
+    <p>Les listes peuvent être ordonnées (<code>&lt;ol&gt;</code>) ou non ordonnées (<code>&lt;ul&gt;</code>). Chaque élément de la liste est défini par <code>&lt;li&gt;</code>.</p>
+    <pre><code class="language-html">
+&lt;ul&gt;
+  &lt;li&gt;Élément de liste non ordonnée&lt;/li&gt;
+  &lt;li&gt;Un autre élément&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Premier élément de liste ordonnée&lt;/li&gt;
+  &lt;li&gt;Deuxième élément&lt;/li&gt;
+&lt;/ol&gt;
+    </code></pre>
+    <h3>Lihens et Images</h3>
+    <p>Les liens sont créés avec la balise <code>&lt;a&gt;</code> et les images avec <code>&lt;img&gt;</code>.</p>
+    <pre><code class="language-html">
+&lt;a href="https://www.example.com"&gt;Cliquez ici&lt;/a&gt;
+&lt;img src="image.jpg" alt="Description de l'image"&gt;
+    </code></pre>
+    <aside>
+      <h3>Bonnes Pratiques</h3>
+      <p>Utilisez toujours des attributs <code>alt</code> pour les images afin d'améliorer l'accessibilité.</p>
+    </aside>
+  </article>
+  <article class="exercices">
+    <h2>Exercices Pratiques</h2>
+    <ol>
+      <li>Créez une page HTML avec un titre principal, deux paragraphes, une liste non ordonnée de trois éléments, et un lien vers votre site préféré.</li>
+    </ol>
+    <details>
+      <summary>Corrigé</summary>
+      <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Mon Premier Exercice&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Bienvenue sur ma page&lt;/h1&gt;
+  &lt;p&gt;Ceci est le premier paragraphe.&lt;/p&gt;
+  &lt;p&gt;Ceci est le deuxième paragraphe.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Élément 1&lt;/li&gt;
+    &lt;li&gt;Élément 2&lt;/li&gt;
+    &lt;li&gt;Élément 3&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;a href="https://www.example.com"&gt;Mon site préféré&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </code></pre>
+    </details>
+  </article>
+  <aside class="ressources">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank">Documentation MDN Web Docs sur HTML</a></li>
+      <li><a href="https://www.w3schools.com/html/" target="_blank">Tutoriels W3Schools sur HTML</a></li>
+    </ul>
+  </aside>
+</section>
