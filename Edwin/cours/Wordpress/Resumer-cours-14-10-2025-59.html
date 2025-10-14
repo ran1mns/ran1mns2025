@@ -1,0 +1,126 @@
+```html
+<section class="course">
+  <h1>Cours du 16 septembre 2025 : Introduction à WordPress</h1>
+  <article class="introduction">
+    <h2>Introduction</h2>
+    <p>Le cours débute par une présentation sommaire de chacun. Quelques mots sur son parcours, son lien avec WordPress, ses attentes.</p>
+    <p>WordPress est un CMS (Content Management System). D'autres CMS existent, comme Shopify, Wix (très utile en ligne et pour une maquette), Joomla, Drupal, Odoo...</p>
+    <p>WordPress fonctionne avec le langage PHP. À l'origine, WordPress servait plutôt pour des blogs, mais il est tellement efficace qu'il est utilisé à présent pour des sites classiques. Il est aujourd'hui très adapté au mobile first.</p>
+  </article>
+  <article class="concepts">
+    <h2>Prérequis</h2>
+    <p>Avant d'utiliser WordPress, il faut préparer son projet :</p>
+    <ul>
+      <li>Suivre un cahier des charges et préparer une maquette.</li>
+      <li>Trouver un hébergeur pour stocker en ligne le site internet.</li>
+      <li>Trouver un nom de domaine. Il faut être attentif à la disponibilité et à la sensibilité sémantique en d'autres langues. Choisir un nom qui peut aider au référencement naturel, par exemple un .alsace si notre activité est typiquement de la région!</li>
+    </ul>
+    <p>Installer WordPress ! (<a href="https://wordpress.org" target="_blank">wordpress.org</a>)</p>
+    <p>L'IA WebSim peut être une aide à la création de maquette.</p>
+  </article>
+  <article class="concepts">
+    <h2>Charte graphique</h2>
+    <p>Par convention, nous utilisons 4 couleurs dont le blanc dans une charte graphique.</p>
+    <p>Les couleurs sont définies :</p>
+    <ul>
+      <li>Soit en RVB (Rouge, Vert, Bleu) dont les valeurs vont de 0 à 255.</li>
+      <li>Soit en hexadécimal de 0 à 9 et de a à f sous un format #00ff99 par exemple.</li>
+    </ul>
+    <p>Nous utiliserons 2 polices de caractères.</p>
+    <p>Les couleurs ont des significations (orange = communication, bleu = innovation...etc). Nous discutons des différentes significations, des logos, des chartes graphiques, avec comme exemple les marques comme Orange, Word, Excel ou encore la région GrandEst pour la charte graphique.</p>
+  </article>
+  <article class="concepts">
+    <h2>Construction d'une page internet</h2>
+    <p>Schéma de la page web :</p>
+    <pre><code class="language-html">
+      &lt;!DOCTYPE html&gt;
+      &lt;html lang="fr"&gt;
+      &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Exemple de page web&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;header&gt;
+          &lt;h1&gt;Titre de la page&lt;/h1&gt;
+        &lt;/header&gt;
+        &lt;nav&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;À propos&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/nav&gt;
+        &lt;main&gt;
+          &lt;section&gt;
+            &lt;h2&gt;Section 1&lt;/h2&gt;
+            &lt;p&gt;Contenu de la section 1.&lt;/p&gt;
+          &lt;/section&gt;
+          &lt;section&gt;
+            &lt;h2&gt;Section 2&lt;/h2&gt;
+            &lt;p&gt;Contenu de la section 2.&lt;/p&gt;
+          &lt;/section&gt;
+        &lt;/main&gt;
+        &lt;footer&gt;
+          &lt;p&gt;Footer de la page&lt;/p&gt;
+        &lt;/footer&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;
+    </code></pre>
+  </article>
+  <article class="exercices">
+    <h2>Exercices Pratiques</h2>
+    <ol>
+      <li>Créer une maquette simple de votre futur site WordPress en utilisant un outil de votre choix (comme WebSim).</li>
+      <li>Choisir un nom de domaine pertinent pour votre projet et vérifier sa disponibilité.</li>
+      <li>Définir une charte graphique avec 4 couleurs et 2 polices de caractères.</li>
+    </ol>
+    <details>
+      <summary>Corrigé</summary>
+      <pre><code class="language-html">
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="fr"&gt;
+        &lt;head&gt;
+          &lt;meta charset="UTF-8"&gt;
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+          &lt;title&gt;Maquette de site&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;header&gt;
+            &lt;h1&gt;Nom de votre site&lt;/h1&gt;
+          &lt;/header&gt;
+          &lt;nav&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/nav&gt;
+          &lt;main&gt;
+            &lt;section&gt;
+              &lt;h2&gt;À propos&lt;/h2&gt;
+              &lt;p&gt;Présentation de votre entreprise.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;section&gt;
+              &lt;h2&gt;Services&lt;/h2&gt;
+              &lt;p&gt;Détails des services proposés.&lt;/p&gt;
+            &lt;/section&gt;
+          &lt;/main&gt;
+          &lt;footer&gt;
+            &lt;p&gt;Footer avec informations de contact.&lt;/p&gt;
+          &lt;/footer&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+      </code></pre>
+    </details>
+  </article>
+  <aside class="ressources">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://wordpress.org" target="_blank">WordPress.org</a></li>
+      <li><a href="https://www.w3schools.com/colors/colors_picker.asp" target="_blank">Sélecteur de couleurs W3Schools</a></li>
+      <li><a href="https://www.websim.co" target="_blank">WebSim pour la création de maquettes</a></li>
+    </ul>
+  </aside>
+</section>
+```
