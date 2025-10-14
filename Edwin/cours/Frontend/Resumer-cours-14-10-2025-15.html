@@ -1,0 +1,111 @@
+<section class="course">
+  <h1>Titre du Cours : CSS Flexbox</h1>
+  <article class="introduction">
+    <h2>Introduction</h2>
+    <p>CSS Flexbox est un modèle de mise en page qui permet de créer des dispositions complexes de manière simple et efficace. Il est particulièrement utile pour créer des interfaces utilisateur réactives et adaptables à différentes tailles d'écran. Flexbox permet de contrôler la disposition des éléments enfants d'un conteneur flexible, facilitant ainsi l'alignement et la distribution de l'espace.</p>
+  </article>
+  <article class="concepts">
+    <h2>Concepts Clés</h2>
+    <h3>Le Conteneur Flexible</h3>
+    <p>Pour utiliser Flexbox, vous devez d'abord définir un conteneur flexible en utilisant la propriété <code>display: flex;</code>. Ce conteneur devient un "flex container" et tous ses enfants directs deviennent des "flex items".</p>
+    <pre><code class="language-html">
+      &lt;div class="flex-container"&gt;
+        &lt;div class="flex-item"&gt;Item 1&lt;/div&gt;
+        &lt;div class="flex-item"&gt;Item 2&lt;/div&gt;
+        &lt;div class="flex-item"&gt;Item 3&lt;/div&gt;
+      &lt;/div&gt;
+    </code></pre>
+    <pre><code class="language-css">
+      .flex-container {
+        display: flex;
+      }
+    </code></pre>
+    <h3>Direction des Flex Items</h3>
+    <p>La propriété <code>flex-direction</code> permet de définir la direction principale des éléments flexibles. Les valeurs possibles sont <code>row</code> (par défaut), <code>row-reverse</code>, <code>column</code> et <code>column-reverse</code>.</p>
+    <pre><code class="language-css">
+      .flex-container {
+        display: flex;
+        flex-direction: column; /* Dispose les éléments en colonne */
+      }
+    </code></pre>
+    <h3>Alignement des Flex Items</h3>
+    <p>La propriété <code>justify-content</code> permet d'aligner les éléments flexibles le long de l'axe principal. Les valeurs possibles incluent <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code> et <code>space-evenly</code>.</p>
+    <pre><code class="language-css">
+      .flex-container {
+        display: flex;
+        justify-content: space-between; /* Espacement égal entre les éléments */
+      }
+    </code></pre>
+    <p>La propriété <code>align-items</code> permet d'aligner les éléments flexibles le long de l'axe transversal. Les valeurs possibles incluent <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code> et <code>stretch</code>.</p>
+    <pre><code class="language-css">
+      .flex-container {
+        display: flex;
+        align-items: center; /* Centre les éléments verticalement */
+      }
+    </code></pre>
+    <h3>Ordre des Flex Items</h3>
+    <p>La propriété <code>order</code> permet de changer l'ordre des éléments flexibles. Par défaut, tous les éléments ont un ordre de 0. Les éléments avec un ordre plus élevé apparaîtront après ceux avec un ordre plus bas.</p>
+    <pre><code class="language-css">
+      .flex-item:nth-child(2) {
+        order: 1; /* Déplace le deuxième élément à la fin */
+      }
+    </code></pre>
+    <h3>Flexibilité des Flex Items</h3>
+    <p>Les propriétés <code>flex-grow</code>, <code>flex-shrink</code> et <code>flex-basis</code> permettent de contrôler la flexibilité des éléments flexibles.</p>
+    <ul>
+      <li><code>flex-grow</code> : Définit la capacité d'un élément à croître par rapport aux autres éléments.</li>
+      <li><code>flex-shrink</code> : Définit la capacité d'un élément à rétrécir par rapport aux autres éléments.</li>
+      <li><code>flex-basis</code> : Définit la taille initiale d'un élément avant que l'espace restant ne soit distribué.</li>
+    </ul>
+    <pre><code class="language-css">
+      .flex-item {
+        flex-grow: 1; /* Permet aux éléments de croître de manière égale */
+        flex-shrink: 1; /* Permet aux éléments de rétrécir de manière égale */
+        flex-basis: 100px; /* Taille initiale de 100px */
+      }
+    </code></pre>
+    <aside class="best-practices">
+      <h3>Bonnes Pratiques</h3>
+      <p>Utilisez Flexbox pour créer des dispositions simples et réactives. Évitez d'utiliser Flexbox pour des dispositions complexes ou imbriquées, car cela peut rendre le code difficile à maintenir.</p>
+    </aside>
+    <aside class="common-mistakes">
+      <h3>Erreurs Fréquentes</h3>
+      <p>Une erreur courante est d'oublier de définir un conteneur flexible avec <code>display: flex;</code>. Sans cette propriété, les éléments enfants ne seront pas traités comme des éléments flexibles.</p>
+    </aside>
+  </article>
+  <article class="exercices">
+    <h2>Exercices Pratiques</h2>
+    <ol>
+      <li>Créez un conteneur flexible avec trois éléments enfants. Alignez les éléments horizontalement et centrez-les verticalement.</li>
+    </ol>
+    <details>
+      <summary>Corrigé</summary>
+      <pre><code class="language-html">
+        &lt;div class="flex-container"&gt;
+          &lt;div class="flex-item"&gt;Item 1&lt;/div&gt;
+          &lt;div class="flex-item"&gt;Item 2&lt;/div&gt;
+          &lt;div class="flex-item"&gt;Item 3&lt;/div&gt;
+        &lt;/div&gt;
+      </code></pre>
+      <pre><code class="language-css">
+        .flex-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh; /* Pour centrer verticalement dans la fenêtre */
+        }
+        .flex-item {
+          padding: 20px;
+          border: 1px solid #000;
+        }
+      </code></pre>
+    </details>
+  </article>
+  <aside class="ressources">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Flexible_Box_Layout/Concepts_de_base_de_Flexbox" target="_blank">Documentation MDN sur Flexbox</a></li>
+      <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Guide complet sur Flexbox par CSS-Tricks</a></li>
+    </ul>
+  </aside>
+</section>
