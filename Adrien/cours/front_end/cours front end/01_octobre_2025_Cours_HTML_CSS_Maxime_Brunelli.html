@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours CSS – 01 Octobre 2025</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; background-color: #f9f9f9; color: #333; display: flex; }
+nav { width: 250px; background-color: #2c3e50; color: #ecf0f1; height: 100vh; position: fixed; overflow-y: auto; padding: 20px; }
+nav ul { list-style: none; padding-left: 0; }
+nav ul li { margin: 10px 0; }
+nav ul li a { color: #ecf0f1; text-decoration: none; }
+nav ul li a:hover { text-decoration: underline; }
+main { margin-left: 270px; padding: 20px; flex: 1; }
+h1, h2, h3, h4 { color: #2c3e50; }
+h1 { text-align: center; margin-bottom: 0.5em; }
+h2 { border-bottom: 2px solid #2980b9; padding-bottom: 5px; margin-top: 1em; }
+ul, ol { margin: 0.5em 0 1em 2em; }
+li { margin-bottom: 0.3em; }
+.section { margin-bottom: 2em; padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.05); }
+.focus { background-color: #d1f2eb; padding: 12px; border-left: 5px solid #1abc9c; margin: 15px 0; border-radius: 6px; }
+.focus h4 { margin-top: 0; margin-bottom: 5px; color: #117864; }
+.note { background-color: #fcf3cf; padding: 8px; border-left: 4px solid #f1c40f; margin: 10px 0; border-radius: 4px; }
+code { background-color: #ecf0f1; padding: 2px 4px; border-radius: 4px; font-family: monospace; }
+pre { background-color: #ecf0f1; padding: 10px; border-radius: 4px; overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<nav>
+<h1>Menu</h1>
+<ul>
+    <li><a href="#positionnement">Positionnement</a></li>
+    <li><a href="#display">Propriété display</a></li>
+    <li><a href="#marges">Marges et padding</a></li>
+    <li><a href="#pseudo-classes">Pseudo-classes</a></li>
+    <li><a href="#div-container">Div et container</a></li>
+</ul>
+</nav>
+
+<main>
+<h1>Cours CSS – 01 Octobre 2025</h1>
+
+<div id="positionnement" class="section">
+<h2>Positionnement en CSS</h2>
+<p>Il existe deux types d'éléments : <b>block</b> et <b>inline</b> :</p>
+<ul>
+<li><b>Block :</b> prend toute la largeur disponible (celle du parent), l’élément suivant passe en dessous</li>
+<li><b>Inline :</b> prend uniquement la largeur de son contenu, permet de placer plusieurs éléments sur la même ligne</li>
+</ul>
+<div class="note">
+Par défaut, chaque élément HTML se comporte soit en block, soit en inline.
+</div>
+</div>
+
+<div id="display" class="section">
+<h2>Propriété CSS <code>display</code></h2>
+<p>On peut modifier le comportement par défaut avec la propriété <code>display</code> :</p>
+<ul>
+<li><code>display: block;</code></li>
+<li><code>display: inline;</code></li>
+</ul>
+<p>Voir fichier projet HTML 2 pour des exemples pratiques.</p>
+</div>
+
+<div id="marges" class="section">
+<h2>Marges et paddings</h2>
+<ul>
+<li><b>Intérieures :</b> <code>padding</code></li>
+<li><b>Extérieures :</b> <code>margin</code></li>
+</ul>
+<p>On peut cibler chaque côté :</p>
+<ul>
+<li><code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code></li>
+<li>Ou utiliser la notation raccourcie :</li>
+<pre>
+margin: 50px;             /* haut et bas 50px, gauche et droite 50px */
+margin: 50px 20px;        /* haut/bas 50px, gauche/droite 20px */
+margin: 50px 20px 30px 40px; /* haut, droite, bas, gauche */
+</pre>
+<li>Propriétés importantes : <code>margin</code>, <code>padding</code>, <code>border</code></li>
+</ul>
+<div class="note">
+À retenir : ne pas dimensionner un élément avec <code>height</code> fixe pour éviter des problèmes de flexibilité.
+</div>
+<p>Pour les éléments inline, la propriété <code>text-align</code> peut être utilisée pour aligner le contenu.</p>
+</div>
+
+<div id="pseudo-classes" class="section">
+<h2>Pseudo-classes</h2>
+<ul>
+<li><code>:hover</code> → appliquée quand la souris passe dessus (éviter de modifier la taille pour ne pas tout décaler)</li>
+<li><code>:visited</code> → pour les liens déjà visités (vérifier le contraste pour l’accessibilité)</li>
+<li><code>:focus</code> → pour les éléments interactifs lorsqu’ils sont sélectionnés, souvent utilisé avec <code>outline</code> pour l’accessibilité</li>
+</ul>
+</div>
+
+<div id="div-container" class="section">
+<h2>&lt;div&gt; et container</h2>
+<p>La balise <code>&lt;div&gt;</code> est un élément neutre de type block.</p>
+<p>On l’utilise couramment avec la classe <code>container</code> pour :</p>
+<ul>
+<li>Regrouper plusieurs éléments et les positionner ensemble</li>
+<li>Garder la possibilité de positionner d’autres éléments différemment</li>
+</ul>
+</div>
+
+</main>
+</body>
+</html>

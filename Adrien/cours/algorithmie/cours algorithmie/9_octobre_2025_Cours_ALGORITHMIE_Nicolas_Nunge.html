@@ -1,0 +1,262 @@
+<!DOCTYPE html> 
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours Python – 9 Octobre 2025</title>
+
+<!-- 🌈 Highlight.js pour coloration syntaxique -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; background-color: #f9f9f9; color: #333; display: flex; }
+nav { width: 250px; background-color: #2c3e50; color: #ecf0f1; height: 100vh; position: fixed; overflow-y: auto; padding: 20px; }
+nav ul { list-style: none; padding-left: 0; }
+nav ul li { margin: 10px 0; }
+nav ul li a { color: #ecf0f1; text-decoration: none; }
+nav ul li a:hover { text-decoration: underline; }
+main { margin-left: 270px; padding: 20px; flex: 1; }
+h1, h2, h3, h4 { color: #2c3e50; }
+h1 { text-align: center; margin-bottom: 0.5em; }
+h2 { border-bottom: 2px solid #2980b9; padding-bottom: 5px; margin-top: 1em; }
+ul, ol { margin: 0.5em 0 1em 2em; }
+li { margin-bottom: 0.3em; }
+.section { margin-bottom: 2em; padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.05); }
+.focus { background-color: #d1f2eb; padding: 12px; border-left: 5px solid #1abc9c; margin: 15px 0; border-radius: 6px; }
+.focus h4 { margin-top: 0; margin-bottom: 5px; color: #117864; }
+.schéma { background-color: #d6eaf8; padding: 10px; border-radius: 6px; margin: 10px 0; font-family: monospace; }
+.note { background-color: #fcf3cf; padding: 8px; border-left: 4px solid #f1c40f; margin: 10px 0; border-radius: 4px; }
+pre { background-color: #1e1e1e; color: #f8f8f2; padding: 10px; border-radius: 6px; overflow-x: auto; }
+code { font-family: "Fira Code", monospace; font-size: 0.95em; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>Menu</h1>
+<ul>
+    <li><a href="#intro">Révisions et liens</a></li>
+    <li><a href="#variables">Variables et types de données</a></li>
+    <li><a href="#chaine">Chaînes de caractères</a></li>
+    <li><a href="#nombres">Nombres entiers et réels</a></li>
+    <li><a href="#booleens">Booléens</a></li>
+    <li><a href="#tuples">Tuples</a></li>
+    <li><a href="#listes">Listes</a></li>
+    <li><a href="#sets">Sets</a></li>
+    <li><a href="#dictionnaires">Dictionnaires</a></li>
+    <li><a href="#conversion">Conversion entre types</a></li>
+    <li><a href="#boucles">Boucles</a></li>
+    <li><a href="#bonnes-pratiques">Bonnes pratiques</a></li>
+</ul>
+</nav>
+
+<main>
+<h1>Cours Python – 9 Octobre 2025</h1>
+
+<div id="intro" class="section">
+<h2>Révisions et liens utiles</h2>
+<p>Révision des bases de Python avec les ressources suivantes :</p>
+<ul>
+<li>Google Colab du jour : <a href="https://colab.research.google.com/drive/1tOqCKhx5qIjJ-50H_J3RnJKKHRjABaSM#scrollTo=PghTx1ic2exG" target="_blank">Colab</a></li>
+<li>Documentation officielle : <a href="https://docs.python.org/3/library/stdtypes.html#text-and-binary-sequence-type-methods-summary" target="_blank">Python Standard Types</a></li>
+</ul>
+</div>
+
+<div id="variables" class="section">
+<h2>Variables et types de données</h2>
+<p>Python ne fait pas de distinction stricte entre variables et constantes.  
+Par convention, une constante est écrite en majuscules pour indiquer qu’elle ne doit pas être modifiée.</p>
+
+<div class="focus">
+<h4>Types de base</h4>
+<ul>
+<li><code>int</code> : nombre entier</li>
+<li><code>float</code> : nombre à virgule</li>
+<li><code>str</code> : chaîne de caractères entourée de guillemets</li>
+<li><code>bool</code> : True ou False</li>
+</ul>
+
+<p>Python gère automatiquement le typage des variables. La commande <code>type()</code> permet néanmoins de vérifier leur type :</p>
+
+<pre><code class="language-python">
+variable = 42
+print(type(variable))  # Affiche <class 'int'>
+</code></pre>
+</div>
+</div>
+
+<div id="chaine" class="section">
+<h2>Chaînes de caractères</h2>
+<p>Les chaînes peuvent être concaténées ou manipulées comme des listes :</p>
+
+<pre><code class="language-python">
+print(variable[0])  # Premier caractère
+</code></pre>
+
+<p>Quelques méthodes utiles :</p>
+<ul>
+<li><code>.upper()</code> → transforme en majuscules</li>
+<li><code>.capitalize()</code> → met la première lettre en majuscule</li>
+<li><code>.strip()</code> → supprime les espaces en début et fin de chaîne</li>
+</ul>
+</div>
+
+<div id="nombres" class="section">
+<h2>Nombres entiers et réels</h2>
+<p>Quelques opérations de base :</p>
+<pre><code class="language-python">
+a, b = 5, 2
+print(a + b)    # addition
+print(a * b)    # multiplication
+print(a / b)    # division réelle
+print(a // b)   # division entière
+print(a % 3)    # modulo
+print(a ** 2)   # puissance
+</code></pre>
+</div>
+
+<div id="booleens" class="section">
+<h2>Booléens</h2>
+<p>Révision de la séance précédente : les booléens représentent <code>True</code> ou <code>False</code>.  
+Ils servent à la logique conditionnelle et aux comparaisons.</p>
+</div>
+
+<div id="tuples" class="section">
+<h2>Tuples</h2>
+<p>Les tuples sont des collections de données immuables :</p>
+<pre><code class="language-python">
+coord = (10, 20)
+x, y = coord
+print('x =', x, ', y =', y)
+</code></pre>
+<p>Ils peuvent contenir des types variés et se destructurer facilement.</p>
+</div>
+
+<div id="listes" class="section">
+<h2>Listes</h2>
+<p>Les listes sont ordonnées et définies avec des crochets :</p>
+<pre><code class="language-python">
+liste = []  # liste vide
+</code></pre>
+<p>L’index commence à 0 et il est conseillé de garder des éléments de même type.  
+Méthodes utiles : <code>.append()</code>, <code>.insert()</code>, etc. (voir documentation).</p>
+</div>
+
+<div id="sets" class="section">
+<h2>Sets</h2>
+<p>Les sets sont des collections non ordonnées où chaque élément est unique :</p>
+<ul>
+<li>Permettent de supprimer les doublons</li>
+<li>Méthodes importantes : <code>.add()</code>, <code>.remove()</code></li>
+</ul>
+
+<div class="note">
+Exemple d’usage : vérifier si une phrase est un pangramme en utilisant un set pour les lettres présentes.
+</div>
+</div>
+
+<div id="dictionnaires" class="section">
+<h2>Dictionnaires</h2>
+<p>Les dictionnaires sont des collections clé-valeur similaires au format JSON :</p>
+<pre><code class="language-python">
+personne = {
+    'nom': 'Dupont',
+    'age': 30,
+    'ville': 'Paris'
+}
+print(personne['nom'])  # Dupont
+</code></pre>
+
+<p>Les dictionnaires imbriqués permettent de stocker des sous-ensembles :</p>
+<pre><code class="language-python">
+personne = {
+    'nom': 'Durand',
+    'prenom': 'Sophie',
+    'age': 29,
+    'profession': 'Architecte',
+    'adresse': {
+        'rue': '15 rue des Lilas',
+        'ville': 'Lyon',
+        'code_postal': 69003,
+        'pays': 'France'
+    }
+}
+
+print(personne['adresse']['ville'])  # Lyon
+</code></pre>
+</div>
+
+<div id="conversion" class="section">
+<h2>Conversion entre différents types</h2>
+<p>Méthodes : <code>int()</code>, <code>float()</code>, <code>str()</code>, <code>list()</code>, <code>tuple()</code>, <code>set()</code>.  
+Exemple :</p>
+<pre><code class="language-python">
+liste3 = set(liste2)
+print(liste3)
+</code></pre>
+<p>On crée ainsi une nouvelle variable sans écraser l’originale.</p>
+</div>
+
+<div id="boucles" class="section">
+<h2>Boucles</h2>
+<p>Les boucles permettent de répéter un morceau de code. Lien vers le Google Colab :  
+<a href="https://colab.research.google.com/drive/1DXPO36vB1T6B7fmykXvisePDNVkRnfCc" target="_blank">Colab Boucles</a></p>
+
+<div class="focus">
+<h4>Itérables et itérateurs</h4>
+<ul>
+<li><b>Itérable :</b> objet que l’on peut parcourir élément par élément (ex : liste, chaîne).</li>
+<li><b>Itérateur :</b> outil qui parcourt réellement l’itérable et mémorise la position. On utilise <code>next()</code> pour obtenir l’élément suivant.</li>
+</ul>
+</div>
+
+<h4>Boucle <code>while</code></h4>
+<p>Exécute tant que la condition est vraie. Attention aux boucles infinies :</p>
+<pre><code class="language-python">
+while True:
+    # code infini
+    if condition:
+        break  # sortir de la boucle
+    continue   # passer à l'itération suivante
+</code></pre>
+
+<h4>Boucle <code>for</code></h4>
+<p>Itère directement sur les éléments d’un itérable :</p>
+<pre><code class="language-python">
+for element in variable:
+    print(element)
+</code></pre>
+
+<p>On peut itérer sur : listes, tuples, sets (ordre non garanti), chaînes de caractères.  
+Pour les dictionnaires : utiliser <code>.items()</code>, <code>.keys()</code>, <code>.values()</code>.</p>
+
+<h4>Fonctions <code>range()</code>, <code>enumerate()</code> et <code>zip()</code></h4>
+<ul>
+<li><code>range(stop)</code>, <code>range(start, stop)</code>, <code>range(start, stop, step)</code></li>
+<li><code>enumerate()</code> → récupère l’index et la valeur</li>
+<li><code>zip()</code> → permet de parcourir plusieurs séquences en parallèle</li>
+</ul>
+
+<p>Personnalisation des <code>print()</code> avec <code>\n</code> ou <code>end=" "</code>.</p>
+</div>
+
+<div id="bonnes-pratiques" class="section">
+<h2>Bonnes pratiques</h2>
+<ul>
+<li>Éviter de modifier une liste pendant qu’on l’itère → utiliser une copie</li>
+<li>Préférer <code>enumerate</code> plutôt que de gérer manuellement un index</li>
+<li>Utiliser <code>zip</code> pour itérations parallèles</li>
+<li>Nommer les conditions complexes</li>
+<li>Préférer <code>for</code> à <code>while</code> quand on connaît la progression ou la collection</li>
+</ul>
+</div>
+
+</main>
+</body>
+</html>

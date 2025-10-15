@@ -181,30 +181,31 @@ section.parti1g {
     flex-direction: column;
 
 }
+
 @media (max-width: 1000px) {
     .calendrier2 {
-    justify-content:  flex-start;
+        justify-content: flex-start;
     }
 }
-@media (min-width: 472px) {
-/* page de droite */
-div:hover .calendrier {
-    border: 5px double white;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    transform: matrix(1, 0.03, 0, 1, 5, 0);
 
-}
+/*@media (min-width: 472px) {
 
-/* page de gauche */
-div:hover .calendrier2 {
-    border: 5px double white;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    transform: matrix(1, -0.03, 0, 1, 5, 0);
+        div:hover .calendrier {
+        border: 5px double white;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        transform: matrix(1, 0.03, 0, 1, 5, 0);
 
-}
-}
+    }
+
+    div:hover .calendrier2 {
+        /*border: 5px double white;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        transform: matrix(1, -0.03, 0, 1, 5, 0);
+    }
+}*/
+
 .details {
     color: aliceblue;
 }
@@ -264,16 +265,19 @@ h2 {
     font-family: fangsong;
     text-decoration: underline;
 }
+
 @media (max-width: 780px) {
     h2 {
         font-size: 180%;
     }
 }
+
 @media (max-width: 550px) {
     h2 {
         font-size: 130%;
     }
 }
+
 p {
     color: rgb(255, 0, 128);
     text-align: center;

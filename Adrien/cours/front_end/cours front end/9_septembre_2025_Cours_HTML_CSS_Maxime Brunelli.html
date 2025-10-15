@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours – 09 Septembre 2025 : Accessibilité Numérique & HTML</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; background-color: #f9f9f9; color: #333; display: flex; }
+nav { width: 250px; background-color: #2c3e50; color: #ecf0f1; height: 100vh; position: fixed; overflow-y: auto; padding: 20px; }
+nav ul { list-style: none; padding-left: 0; }
+nav ul li { margin: 10px 0; }
+nav ul li a { color: #ecf0f1; text-decoration: none; }
+nav ul li a:hover { text-decoration: underline; }
+main { margin-left: 270px; padding: 20px; flex: 1; }
+h1, h2, h3, h4 { color: #2c3e50; }
+h1 { text-align: center; margin-bottom: 0.5em; }
+h2 { border-bottom: 2px solid #2980b9; padding-bottom: 5px; margin-top: 1em; }
+.section { margin-bottom: 2em; padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.05); }
+.focus { background-color: #d1f2eb; padding: 12px; border-left: 5px solid #1abc9c; margin: 15px 0; border-radius: 6px; }
+.note { background-color: #fcf3cf; padding: 8px; border-left: 4px solid #f1c40f; margin: 10px 0; border-radius: 4px; }
+.schéma { background-color: #d6eaf8; padding: 10px; border-radius: 6px; margin: 10px 0; font-family: monospace; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background-color: #ecf0f1; padding: 2px 4px; border-radius: 4px; font-family: monospace; }
+</style>
+</head>
+<body>
+
+<nav>
+<h1>Menu</h1>
+<ul>
+  <li><a href="#accessibilite">Accessibilité numérique</a></li>
+  <li><a href="#rgaa-rgpd">RGAA & RGPD</a></li>
+  <li><a href="#frontend-backend">Front / Back</a></li>
+  <li><a href="#html-css">HTML & CSS</a></li>
+  <li><a href="#debut-html">Début du code HTML</a></li>
+</ul>
+</nav>
+
+<main>
+
+<h1>Cours – 09 Septembre 2025</h1>
+
+<div id="accessibilite" class="section">
+<h2>Accessibilité numérique</h2>
+<p>L’accessibilité numérique est un enjeu essentiel dans la conception de sites web modernes. Elle permet à tous les utilisateurs, y compris ceux en situation de handicap, d’accéder au contenu en ligne.</p>
+
+<div class="focus">
+<h4>Domaines concernés</h4>
+<ul>
+  <li><strong>HTML</strong> → structure du contenu</li>
+  <li><strong>CSS</strong> → design, présentation visuelle</li>
+</ul>
+</div>
+
+<p>Les lois évoluent et imposent une <strong>mise en conformité</strong> des sites web, sous peine d’amendes proportionnelles au chiffre d’affaires.</p>
+
+<div class="note">
+⚠️ <strong>Important :</strong> Ne pas négliger le front-end pour l’accessibilité !
+</div>
+</div>
+
+<div id="rgaa-rgpd" class="section">
+<h2>RGPD et RGAA</h2>
+
+<h3>RGPD</h3>
+<p><a href="https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/assurer-sa-cybersecurite-et-la-protection-de-ses/le#:~:text=Ressources%20compl%C3%A9mentaires-,Le%20RGPD%2C%20qu'est%2Dce%20que%20c'est,dans%20toute%20l'Union%20europ%C3%A9enne." target="_blank">Règlement Général sur la Protection des Données</a></p>
+<p>Le RGPD vise à garantir la protection des données personnelles des utilisateurs dans toute l’Union Européenne.</p>
+
+<h3>RGAA</h3>
+<p><a href="https://accessibilite.numerique.gouv.fr/" target="_blank">Référentiel Général d’Amélioration de l’Accessibilité</a></p>
+<p>Le RGAA définit les règles techniques permettant de rendre les sites accessibles à tous.</p>
+
+<div class="note">
+💬 “Les lois sont en mutation, il est nécessaire de se conformer aux nouvelles exigences pour éviter des sanctions financières.”
+</div>
+</div>
+
+<div id="frontend-backend" class="section">
+<h2>Front-end et Back-end</h2>
+<ul>
+  <li><strong>Front-end :</strong> HTML, CSS, JavaScript → visible par l’utilisateur</li>
+  <li><strong>Back-end :</strong> PHP, SQL... → serveurs et bases de données</li>
+</ul>
+
+<div class="schéma">
+Ordinateur → Serveur → Base de données
+</div>
+
+<div class="focus">
+<h4>Différences Front Office / Back Office</h4>
+<ul>
+  <li><strong>Front Office :</strong> partie visible par le client</li>
+  <li><strong>Back Office :</strong> espace d’administration (réservé aux gestionnaires)</li>
+</ul>
+</div>
+</div>
+
+<div id="html-css" class="section">
+<h2>HTML et CSS : rôles distincts</h2>
+<ul>
+  <li><strong>HTML :</strong> structure du contenu</li>
+  <li><strong>CSS :</strong> design et présentation</li>
+</ul>
+
+<p>Le HTML est interprété par le navigateur, lu par les moteurs de recherche et les outils d’assistance (lecteurs d’écran). D’où l’importance d’un code propre et bien structuré.</p>
+
+<div class="note">
+🔍 <strong>Bon réflexe :</strong> tester ses pages avec des outils d’accessibilité pour vérifier le rendu et la compatibilité.
+</div>
+
+<p>⚠️ Le CSS ne doit pas contenir de contenu caché (risque de blacklist).  
+Ne pas utiliser uniquement la couleur pour transmettre une information.</p>
+
+<div class="focus">
+<h4>Digression IA</h4>
+<p>Le formateur a exprimé des réserves sur l’usage de l’intelligence artificielle : risques liés à la sécurité et à la propriété intellectuelle.</p>
+</div>
+</div>
+
+<div id="debut-html" class="section">
+<h2>Début du cours HTML</h2>
+
+<p>Création d’une première page sur VS Code. Être attentif à la langue (<code>lang="fr"</code>), élément essentiel pour l’accessibilité.</p>
+
+<div class="focus">
+<h4>Structure de base</h4>
+<ul>
+  <li><code>&lt;html&gt;</code> → balise principale, avec attribut <code>lang</code></li>
+  <li><code>&lt;head&gt;</code> → informations destinées au navigateur (métadonnées, encodage, titre...)</li>
+  <li><code>&lt;body&gt;</code> → contenu visible du site</li>
+</ul>
+</div>
+
+<h3>Balises essentielles</h3>
+<ul>
+  <li><code>&lt;meta charset="UTF-8"&gt;</code> → encodage universel (UTF-8)</li>
+  <li><code>&lt;meta name="viewport"&gt;</code> → adaptation à la taille d’écran</li>
+  <li><code>&lt;title&gt;</code> → titre de la page (affiché sur l’onglet du navigateur)</li>
+</ul>
+
+<div class="note">
+💡 <strong>Accessibilité & SEO :</strong> choisir un titre clair et pertinent améliore le référencement et la compréhension du contenu.
+</div>
+
+<h3>Hiérarchie des titres</h3>
+<p>La structure des balises <code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code> doit être respectée :</p>
+<ul>
+  <li>Un seul <code>&lt;h1&gt;</code> par page</li>
+  <li>Suivre l’ordre hiérarchique : pas de <code>&lt;h5&gt;</code> après un <code>&lt;h1&gt;</code></li>
+</ul>
+
+<div class="schéma">
+&lt;h1&gt;Titre principal&lt;/h1&gt;<br>
+&lt;h2&gt;Sous-titre&lt;/h2&gt;<br>
+&lt;h3&gt;Sous-partie&lt;/h3&gt;
+</div>
+</div>
+
+</main>
+</body>
+</html>

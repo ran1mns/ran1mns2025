@@ -1,0 +1,114 @@
+<!DOCTYPE html> 
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours Python – 14 Octobre 2025</title>
+
+<!-- 🌈 Highlight.js pour coloration syntaxique -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; background-color: #f9f9f9; color: #333; display: flex; }
+nav { width: 250px; background-color: #2c3e50; color: #ecf0f1; height: 100vh; position: fixed; overflow-y: auto; padding: 20px; }
+nav ul { list-style: none; padding-left: 0; }
+nav ul li { margin: 10px 0; }
+nav ul li a { color: #ecf0f1; text-decoration: none; }
+nav ul li a:hover { text-decoration: underline; }
+main { margin-left: 270px; padding: 20px; flex: 1; }
+h1, h2, h3, h4 { color: #2c3e50; }
+h1 { text-align: center; margin-bottom: 0.5em; }
+h2 { border-bottom: 2px solid #2980b9; padding-bottom: 5px; margin-top: 1em; }
+ul, ol { margin: 0.5em 0 1em 2em; }
+li { margin-bottom: 0.3em; }
+.section { margin-bottom: 2em; padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.05); }
+.focus { background-color: #d1f2eb; padding: 12px; border-left: 5px solid #1abc9c; margin: 15px 0; border-radius: 6px; }
+.focus h4 { margin-top: 0; margin-bottom: 5px; color: #117864; }
+.note { background-color: #fcf3cf; padding: 8px; border-left: 4px solid #f1c40f; margin: 10px 0; border-radius: 4px; }
+pre { background-color: #1e1e1e; color: #f8f8f2; padding: 10px; border-radius: 6px; overflow-x: auto; }
+code { font-family: "Fira Code", monospace; font-size: 0.95em; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>Menu</h1>
+<ul>
+  <li><a href="#correction">Correction des exercices</a></li>
+  <li><a href="#evaluation">Évaluation sur Google Colab</a></li>
+  <li><a href="#exercice">Exercice : vérifier un palindrome</a></li>
+  <li><a href="#solution">Solution optimisée</a></li>
+</ul>
+</nav>
+
+<main>
+<h1>Cours Python – 14 Octobre 2025</h1>
+
+<div id="correction" class="section">
+<h2>Correction des exercices Python de la semaine passée</h2>
+<p>La séance a débuté par la <b>correction collective</b> des exercices Python réalisés la semaine précédente.  
+L’objectif était de consolider la compréhension des structures conditionnelles et des manipulations de chaînes de caractères.</p>
+</div>
+
+<div id="evaluation" class="section">
+<h2>Évaluation sur Google Colab</h2>
+<p>Une petite évaluation a ensuite été réalisée directement sur <b>Google Colab</b> :</p>
+<p><a href="https://colab.research.google.com/drive/1GkKunRwI6Qlg0S1wF3684QAI7shXG0xT#scrollTo=95e1eb2f" target="_blank">👉 Lien vers l’évaluation</a></p>
+</div>
+
+<div id="exercice" class="section">
+<h2>Exercice : vérifier si une chaîne de caractères est un palindrome</h2>
+<p>Consigne : <b>Créer un code à partir de rien</b> permettant de déterminer si une chaîne de caractères est un <i>palindrome</i>  
+(c’est-à-dire une chaîne qui se lit dans les deux sens, comme “kayak” ou “radar”).</p>
+
+<div class="focus">
+<h4>Exemple d’une approche incorrecte ou trop complexe :</h4>
+<pre><code class="language-python">
+moite = len(texte) / 2
+newtext = []
+letter = ""
+if letter in texte not in newtext:
+    newtext.append(letter)
+if texte == newtext:
+    return True
+if texte != newtext:
+    return False
+</code></pre>
+
+<p>➡️ Cette approche montre une tentative de comparaison, mais elle est <b>inutilement compliquée</b> et ne fonctionne pas correctement.  
+L’idée de base (parcourir et comparer) est bonne, mais l’implémentation doit être simplifiée.</p>
+</div>
+</div>
+
+<div id="solution" class="section">
+<h2>Solution correcte : fonction <code>est_palindrome()</code></h2>
+
+<p>Voici une version fonctionnelle, plus claire et plus efficace, utilisant la manipulation de chaînes et la fonction <code>reversed()</code> :</p>
+
+<pre><code class="language-python">
+def est_palindrome(texte):
+    texte2 = (texte).casefold()         # Met en minuscule pour ignorer la casse
+    texte2 = (texte2).replace(" ", "")  # Supprime les espaces
+
+    texte1 = "".join(reversed(texte2))  # Inverse la chaîne
+    if texte2 == texte1:
+        return True
+    else:
+        return False
+</code></pre>
+
+<div class="note">
+💡 <b>Astuce :</b> La méthode <code>casefold()</code> est plus robuste que <code>lower()</code> pour comparer des chaînes sans tenir compte de la casse.  
+En supprimant les espaces, la fonction peut détecter les palindromes même dans des phrases.
+</div>
+</div>
+
+</main>
+</body>
+</html>
