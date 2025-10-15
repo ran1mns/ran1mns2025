@@ -53,3 +53,31 @@ footer {
   background-color: #2a2a2a;
   color: #fff;
 }
+
+.tab-pane img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; 
+  display: block;
+  margin: 0 auto;
+}
+
+.dropdown-menu {
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+}
+
+.dropdown-item {
+  color: #e0e0e0;
+}
+
+.dropdown-item:hover {
+  background-color: #2a2a2a;
+  color: #ff4c4c;
+}
+
+.navbar-toggler {
+  border-color: #e0e0e0; 
+  background-color: #1c1c1c; 
+}
+
