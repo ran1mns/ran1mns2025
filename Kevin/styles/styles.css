@@ -39,6 +39,10 @@ html .content {
     background-color: rgb(160, 146, 118,0.3);
     border-radius: 10px;
     text-align: center;
+    width: 50%;
+	float: left;
+	padding : 0 10xp;
+	box-sizing: border-box;
 }
 
 footer {margin-top: auto;}
@@ -58,6 +62,10 @@ img.logo {
     margin: auto;
     border-radius: 10px;
     list-style: none;
+    width: 50%;
+	float: left;
+	padding : 0 10xp;
+	box-sizing: border-box;
 }
 
 li {
@@ -90,4 +98,33 @@ a:hover {
 }
 a:focus {
     outline: 5px solid red;
+}
+
+
+.float {
+    width: 50%;
+	float: left;
+	padding : 0 10xp;
+	box-sizing: border-box;
+}
+
+@media (min-width: 300px ) {
+    .float {
+        width: 33%;
+    }
+}
+@media (min-width: 600px) {
+    .float {
+        width: 33%;
+    }
+}
+@media (min-width: 1024px) {
+    .float {
+        width: 33%;
+    }
+}
+@media (min-wdth: 1920px) {
+    .float {
+        width: 33%;
+    }
 }
