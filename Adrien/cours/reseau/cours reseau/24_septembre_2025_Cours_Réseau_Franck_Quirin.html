@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours Réseau – 22 Septembre 2025</title>
+<style>
+* { box-sizing: border-box; }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+}
+nav {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    padding: 20px;
+}
+nav ul { list-style: none; padding-left: 0; }
+nav ul li { margin: 10px 0; }
+nav ul li a { color: #ecf0f1; text-decoration: none; }
+nav ul li a:hover { text-decoration: underline; }
+main { margin-left: 270px; padding: 20px; flex: 1; }
+h1, h2, h3, h4 { color: #2c3e50; }
+h1 { text-align: center; margin-bottom: 0.5em; }
+h2 { border-bottom: 2px solid #2980b9; padding-bottom: 5px; margin-top: 1em; }
+ul, ol { margin: 0.5em 0 1em 2em; }
+li { margin-bottom: 0.3em; }
+.section { margin-bottom: 2em; padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.05); }
+.focus { background-color: #d1f2eb; padding: 12px; border-left: 5px solid #1abc9c; margin: 15px 0; border-radius: 6px; }
+.focus h4 { margin-top: 0; margin-bottom: 5px; color: #117864; }
+.schéma { background-color: #d6eaf8; padding: 10px; border-radius: 6px; margin: 10px 0; font-family: monospace; }
+.note { background-color: #fcf3cf; padding: 8px; border-left: 4px solid #f1c40f; margin: 10px 0; border-radius: 4px; }
+img { max-width: 100%; height: auto; border-radius: 6px; margin: 10px 0; }
+</style>
+</head>
+<body>
+<nav>
+<h1>Menu</h1>
+<ul>
+    <li><a href="#dhcp-ip">DHCP & IP</a></li>
+    <li><a href="#classes-ip">Classes IP</a></li>
+    <li><a href="#ipv6">IPv6</a></li>
+    <li><a href="#hebergement">Hébergement & DNS</a></li>
+    <li><a href="#noms-domaines">Noms de domaine</a></li>
+    <li><a href="#vps-vm">VPS, VM & Cloud</a></li>
+</ul>
+</nav>
+
+<main>
+<h1>Cours Réseau – 22 Septembre 2025</h1>
+
+<div id="dhcp-ip" class="section">
+<h2>DHCP et adresse IP</h2>
+<p>Le <strong>DHCP</strong> (Dynamic Host Configuration Protocol) alloue automatiquement une adresse IP aux équipements du réseau. Il s'agit d'un service (programme) qui tourne en permanence, souvent installé sur le routeur ou sur une machine (physique ou virtuelle).</p>
+<p>Chaque adresse IP est unique sur le réseau. L'adresse IPv4 est composée de 4 nombres :</p>
+<div class="schéma">
+<p>Exemple IPv4 : |__|.|__|.|__|.|__|</p>
+<img src="Adresse_Ipv4.svg.png" alt="Schéma adresse IPv4">
+</div>
+<p><strong>Remarque :</strong> Le dernier octet à 0 est réservé pour l'identifiant réseau dans certaines plages, il ne doit donc pas être utilisé pour un équipement.</p>
+</div>
+
+<div id="classes-ip" class="section">
+<h2>Classes d'adresses IP</h2>
+<p>Les adresses IP étaient historiquement classées :</p>
+<ul>
+    <li><strong>Classe A :</strong> 0 à 126 → numéro réseau sur la première position, numéro d'hôte sur les 3 suivantes</li>
+    <li><strong>Classe B :</strong> 128 à 191 → numéro réseau sur les 2 premières positions, numéro d'hôte sur les 2 suivantes</li>
+    <li><strong>Classe C :</strong> 192 à 223 → numéro réseau sur les 3 premières positions, numéro d'hôte sur la dernière</li>
+    <li>Classes D et E existent mais ne sont pas accessibles aux utilisateurs</li>
+</ul>
+<p>La classe détermine la taille maximale du réseau :</p>
+<ul>
+    <li>Classe A : 255 * 255 * 255 * 126 IP</li>
+    <li>Classe B : 255 * 255 IP</li>
+    <li>Classe C : 255 IP</li>
+</ul>
+<p>Le système de classes n’est plus utilisé sur Internet mais reste pertinent pour les réseaux locaux.</p>
+<div class="note">
+<p>Plages privées : 10.x.x.x, 172.x.x.x, 192.x.x.x → réservées aux réseaux locaux, pas accessibles sur Internet.</p>
+</div>
+</div>
+
+<div id="ipv6" class="section">
+<h2>IPv6</h2>
+<p>Pour gérer le grand nombre d’équipements, IPv6 a été créé :</p>
+<div class="schéma">
+<p>Exemple IPv6 : |__|.|__|.|__|.|__|.|__|.|__|.|__|.|__|</p>
+<img src="Ipv6_address-fr.svg.png" alt="Schéma adresse IPv6">
+</div>
+<p>Chaque bloc correspond à 16 bits (2 octets), représentés en hexadécimal, pour permettre un très grand nombre d’adresses uniques.</p>
+<p>Le système hexadécimal utilise 16 symboles : 0-9 et A-F (majuscules ou minuscules).</p>
+</div>
+
+<div id="hebergement" class="section">
+<h2>Hébergement et DNS</h2>
+<p>Pour qu’un utilisateur accède à notre site :</p>
+<ul>
+    <li>On dépose notre dossier sur le serveur</li>
+    <li>Le routeur gère l'accès vers le serveur hébergeant le site</li>
+    <li>Le <strong>DNS (Domain Name System)</strong> fait le lien entre le nom de domaine et l'adresse IP</li>
+    <li>Le FAI interroge les serveurs DNS pour trouver le site demandé</li>
+</ul>
+<p>Le DNS garantit que le nom de domaine correspond à la bonne adresse IP.</p>
+</div>
+
+<div id="noms-domaines" class="section">
+<h2>Noms de domaine</h2>
+<ul>
+    <li>Hébergement mutualisé : plusieurs utilisateurs déposent leurs dossiers sur le même serveur</li>
+    <li>Nom de domaine = nom + extension (géographique : .fr, .bzh, .alsace ; thématique : .com, .edu, .gov, .org)</li>
+    <li>Sous-domaines possibles : sousdomaine.nom.extension</li>
+    <li><strong>who.is</strong> : permet de connaître le propriétaire d’un nom de domaine</li>
+</ul>
+</div>
+
+<div id="vps-vm" class="section">
+<h2>VPS, VM et cloud computing</h2>
+<ul>
+    <li>VPS (Serveur Privé Virtuel) : souvent sous Linux (ex : Debian)</li>
+    <li>Location d’un serveur physique entier possible</li>
+    <li>Différence VM vs containers :</li>
+    <ul>
+        <li>VM (Virtual Machine) : machine virtuelle complète</li>
+        <li>Container : compartiment léger pour exécuter des applications</li>
+    </ul>
+    <li>Cloud computing : hébergement et déploiement sur des infrastructures partagées ou dédiées</li>
+</ul>
+<div class="schéma">
+<p>Image schématique VM vs Containers</p>
+<img src="container-vs-vm.avif" alt="Schéma VM vs Containers">
+</div>
+</div>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours Réseau – 16 Septembre 2025</title>
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+}
+nav {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    padding: 20px;
+}
+nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+nav ul li {
+    margin: 10px 0;
+}
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+main {
+    margin-left: 270px;
+    padding: 20px;
+    flex: 1;
+}
+h1, h2, h3, h4 {
+    color: #2c3e50;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+h2 {
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 5px;
+    margin-top: 1em;
+}
+ul, ol {
+    margin: 0.5em 0 1em 2em;
+}
+li {
+    margin-bottom: 0.3em;
+}
+.section {
+    margin-bottom: 2em;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+.focus {
+    background-color: #d1f2eb;
+    padding: 12px;
+    border-left: 5px solid #1abc9c;
+    margin: 15px 0;
+    border-radius: 6px;
+}
+.focus h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #117864;
+}
+.schéma {
+    background-color: #d6eaf8;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 0;
+    font-family: monospace;
+}
+.note {
+    background-color: #fcf3cf;
+    padding: 8px;
+    border-left: 4px solid #f1c40f;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+</style>
+</head>
+<body>
+<nav>
+<h1>Menu</h1>
+<ul>
+    <li><a href="#switch">Switch et LAN</a></li>
+    <li><a href="#nas">NAS</a></li>
+    <li><a href="#hebergement">Hébergement Cloud</a></li>
+    <li><a href="#equipements">Équipements sensibles</a></li>
+    <li><a href="#internet">Accès à Internet</a></li>
+    <li><a href="#serveurs">Serveurs</a></li>
+    <li><a href="#sauvegarde">Sauvegarde</a></li>
+    <li><a href="#ip">Adresses IP</a></li>
+</ul>
+</nav>
+<main>
+<h1>Cours Réseau – 16 Septembre 2025</h1>
+
+<div id="switch" class="section">
+<h2>Switch et LAN</h2>
+<p>Reprise des cours sur le switch, nécessaire pour la mise en réseau.</p>
+
+<p>Le <strong>switch</strong> est un équipement réseau essentiel qui relie plusieurs périphériques (ordinateurs, imprimantes, serveurs…) au sein d’un même réseau local (<strong>LAN - Local Area Network</strong>).  
+Il fonctionne en identifiant chaque appareil via son adresse <strong>MAC</strong> et en acheminant les données uniquement vers la machine concernée, contrairement au hub qui diffuse les paquets à tout le réseau.</p>
+
+<div class="focus">
+<h4>⚙️ Rôle principal du switch</h4>
+<ul>
+    <li>Assurer la communication entre appareils d’un même réseau local</li>
+    <li>Segmenter le trafic réseau pour éviter les collisions</li>
+    <li>Améliorer les performances globales du LAN</li>
+</ul>
+</div>
+
+<div class="schéma">
+<p>Schéma : Switch ↔ Périphériques (LAN)</p>
+<img src="schema-reseau-lan-02.png" alt="Schéma LAN simple avec switch et périphériques">
+</div>
+
+<p>Les switches peuvent être :
+<ul>
+    <li><strong>Non administrables</strong> : plug-and-play, utilisés dans les petits réseaux domestiques.</li>
+    <li><strong>Administrables</strong> : configurables (VLAN, sécurité, QoS), utilisés dans les entreprises.</li>
+</ul></p>
+</div>
+
+<div id="nas" class="section">
+<h2>NAS (Network Attached Storage)</h2>
+<p>Serveurs avec disques durs mis en réseau pour partager le stockage.</p>
+
+<p>Un <strong>NAS</strong> est une solution de <em>stockage centralisé</em> accessible via le réseau.  
+Il permet de sauvegarder, partager et accéder à des fichiers depuis plusieurs appareils connectés.</p>
+
+<div class="focus">
+<h4>🔒 Avantages du NAS</h4>
+<ul>
+    <li>Partage de fichiers entre utilisateurs sans dépendre d’un PC</li>
+    <li>Accès distant possible via Internet (VPN, interface web)</li>
+    <li>Protection des données par RAID (Redundant Array of Independent Disks)</li>
+    <li>Automatisation des sauvegardes</li>
+</ul>
+</div>
+
+<p>Exemples de marques populaires : <strong>Synology</strong>, <strong>QNAP</strong>, <strong>Western Digital</strong>.</p>
+<p>Dans un environnement professionnel, le NAS est souvent utilisé comme serveur de fichiers ou de sauvegarde central.</p>
+</div>
+
+<div id="hebergement" class="section">
+<h2>Hébergement Cloud</h2>
+<ul>
+    <li>AWS, Azure, Google Cloud</li>
+    <li>Exemple : AWS développé par Amazon pour usage interne, puis proposé au public</li>
+</ul>
+
+<p>L’<strong>hébergement cloud</strong> consiste à déployer ses applications, données et services sur des serveurs distants accessibles via Internet.  
+Ces serveurs sont gérés par des fournisseurs spécialisés appelés <strong>hébergeurs cloud</strong>.</p>
+
+<div class="focus">
+<h4>☁️ Principaux modèles de services cloud</h4>
+<ul>
+    <li><strong>IaaS</strong> (Infrastructure as a Service) : machines virtuelles, réseaux, stockage (ex : AWS EC2)</li>
+    <li><strong>PaaS</strong> (Platform as a Service) : plateforme de développement complète (ex : Google App Engine)</li>
+    <li><strong>SaaS</strong> (Software as a Service) : logiciels accessibles via navigateur (ex : Gmail, Office 365)</li>
+</ul>
+</div>
+
+<p>Le cloud offre de nombreux avantages : élasticité, disponibilité 24/7, sauvegardes automatiques et réduction des coûts matériels.  
+Cependant, il nécessite une bonne gestion des droits d’accès et de la sécurité des données (RGPD, chiffrement, authentification forte).</p>
+</div>
+
+<div id="equipements" class="section">
+<h2>Équipements sensibles</h2>
+<p>Équipements critiques (informatique, hospitaliers…) protégés par onduleurs/batteries selon l’impact sur l’activité professionnelle.</p>
+<p>Sécurité préventive à juger par le professionnel.</p>
+
+<p>Un <strong>onduleur</strong> (UPS – Uninterruptible Power Supply) protège les équipements sensibles contre les coupures de courant et les surtensions.  
+Il fournit une alimentation temporaire grâce à sa batterie interne, permettant de sauvegarder les données et d’éteindre proprement les systèmes.</p>
+
+<div class="focus">
+<h4>⚡ Exemples d’équipements protégés par onduleur</h4>
+<ul>
+    <li>Serveurs informatiques</li>
+    <li>Postes de travail critiques</li>
+    <li>Équipements hospitaliers ou de sécurité</li>
+    <li>Infrastructures réseau (switch, routeur, NAS)</li>
+</ul>
+</div>
+
+<p>Les onduleurs peuvent être :
+<ul>
+    <li><strong>Offline</strong> : protection de base pour usage domestique</li>
+    <li><strong>Line-Interactive</strong> : ajustement automatique de la tension (usage bureautique)</li>
+    <li><strong>Online</strong> : protection maximale, alimentation constante via batterie (usage professionnel)</li>
+</ul></p>
+
+<div class="note">
+<p>La sécurité préventive inclut aussi les mesures physiques (verrouillage des serveurs, contrôle d’accès) et logicielles (pare-feu, antivirus, surveillance réseau).</p>
+</div>
+</div>
+
+<div id="internet" class="section">
+<h2>Accès à Internet</h2>
+<ul>
+    <li>Routeur connecté au fournisseur d’accès internet (FAI) pour accéder à Internet</li>
+    <li>En général, le routeur est fourni par le FAI</li>
+    <li>Chaque carte réseau possède une adresse MAC unique</li>
+    <li>Le routeur a 2 cartes réseau : une entrée et une sortie. Le FAI utilise la MAC pour autoriser l’accès</li>
+    <li>Le routeur sépare le réseau privé du réseau public</li>
+    <li>On peut placer son propre routeur avant le FAI pour contrôle et protection supplémentaires</li>
+</ul>
+
+<p>Le <strong>routeur</strong> est un élément essentiel dans toute infrastructure réseau : il agit comme une passerelle entre le <strong>réseau local (LAN)</strong> et <strong>Internet (WAN)</strong>.  
+Il analyse les paquets de données, détermine la meilleure route pour les transmettre, et assure la sécurité du trafic entre les réseaux.</p>
+
+<div class="focus">
+<h4>🔐 Fonctions principales du routeur :</h4>
+<ul>
+  <li>Attribuer des adresses IP aux périphériques du réseau via le service DHCP</li>
+  <li>Diriger le trafic entre réseaux internes et externes</li>
+  <li>Faire office de pare-feu pour protéger le réseau local</li>
+  <li>Créer des sous-réseaux (VLAN) pour segmenter le trafic</li>
+</ul>
+</div>
+
+<div class="schéma">
+<p>Schéma LAN/WAN : privé/public</p>
+<img src="schema-reseau-wan-01.png" alt="Schéma séparation LAN/WAN">
+</div>
+
+<p>Hors sujet : distributions Linux sécurisées pour enfants</p>
+
+<div class="note">
+<p>Règles de sécurité : ne jamais laisser de session ouverte, risque de sanction professionnelle</p>
+</div>
+
+<div class="schéma">
+<p>La box contient : routeur, switch, Wi-Fi, NAS optionnel et connecté à Internet</p>
+<img src="network.jpeg" alt="Schéma box avec routeur, switch, wifi et NAS">
+</div>
+
+<p>Les box grand public (Freebox, Livebox, Bbox, etc.) combinent plusieurs fonctions dans un seul appareil :
+<ul>
+  <li><strong>Routeur</strong> – pour l’accès à Internet</li>
+  <li><strong>Switch</strong> – pour connecter plusieurs appareils Ethernet</li>
+  <li><strong>Point d’accès Wi-Fi</strong> – pour les connexions sans fil</li>
+  <li><strong>Serveur NAS intégré</strong> (optionnel) – pour le partage de fichiers</li>
+</ul>
+</p>
+</div>
+
+<div id="serveurs" class="section">
+<h2>Serveurs en entreprise</h2>
+<ul>
+    <li>Un serveur = ordinateur qui rend des services au réseau</li>
+    <li>Types de serveurs :
+        <ul>
+            <li>Serveur de fichiers : partage de fichiers</li>
+            <li>Serveur de messagerie : gestion des emails</li>
+            <li>Serveur d’impression : gestion des imprimantes et autorisations</li>
+            <li>Serveur web : hébergement des applications</li>
+            <li>Serveur de bases de données (BDD) : stockage des données</li>
+        </ul>
+    </li>
+    <li>Le serveur répond aux requêtes HTTP pour diriger vers la bonne URL</li>
+</ul>
+
+<p>En entreprise, les <strong>serveurs</strong> sont le cœur du système d’information.  
+Ils permettent de centraliser les ressources et de garantir la disponibilité des services.  
+Un même serveur peut exécuter plusieurs rôles, ou bien ces rôles peuvent être répartis sur plusieurs machines pour des raisons de performance ou de sécurité.</p>
+
+<div class="focus">
+<h4>💻 Exemples concrets d’usages :</h4>
+<ul>
+  <li>Un <strong>serveur web</strong> héberge les sites internes (intranet) et externes.</li>
+  <li>Un <strong>serveur de fichiers</strong> permet le travail collaboratif sur un espace partagé.</li>
+  <li>Un <strong>serveur de messagerie</strong> (Ex : Microsoft Exchange, Zimbra) gère les emails de l’entreprise.</li>
+  <li>Un <strong>serveur de base de données</strong> (MySQL, PostgreSQL, SQL Server) stocke et organise les informations.</li>
+</ul>
+</div>
+
+<div class="note">
+<p>Chaque serveur est relié au réseau local (LAN) et doit être protégé par des pare-feux, des sauvegardes régulières et une politique stricte d’accès utilisateurs.</p>
+</div>
+</div>
+
+<div id="sauvegarde" class="section">
+<h2>Sauvegarde et protection des données</h2>
+<ul>
+    <li>Règle 3-2-1 : 3 sauvegardes sur 3 supports, 2 localement, 1 externe/offline/cloud</li>
+    <li>Sauvegarde régulière selon moyens et besoins</li>
+    <li>Délais de remise en état : aussi rapide que possible</li>
+    <li>Selon priorité de l’entreprise, infrastructures de stockage doublées ou plus</li>
+</ul>
+
+<p>La sauvegarde est un pilier de la sécurité informatique.  
+Elle permet de restaurer les données en cas de panne, de suppression accidentelle, de vol ou d’attaque (ex : ransomware).</p>
+
+<div class="focus">
+<h4>📦 Bonnes pratiques de sauvegarde :</h4>
+<ul>
+  <li>Planifier des sauvegardes automatiques quotidiennes ou hebdomadaires</li>
+  <li>Tester régulièrement la restauration des données</li>
+  <li>Stocker une copie hors ligne (disque déconnecté ou coffre fort numérique)</li>
+  <li>Protéger les sauvegardes par chiffrement</li>
+</ul>
+</div>
+
+<p>Les entreprises utilisent souvent des solutions comme <strong>Veeam, Acronis, ou Bacula</strong> pour automatiser ces processus.  
+Le délai de reprise après sinistre (<strong>RTO</strong>) et la perte maximale de données tolérée (<strong>RPO</strong>) sont des indicateurs clés pour définir la stratégie de sauvegarde.</p>
+</div>
+
+<div id="ip" class="section">
+<h2>Adresses IP</h2>
+<p>Inventées aux États-Unis au début d’internet pour permettre la communication réseau via TCP/IP :</p>
+<ul>
+    <li>TCP : contrôle nombre et taille des paquets</li>
+    <li>IP : identifie le destinataire sur le réseau</li>
+    <li>Le routeur connecté à 2 réseaux nécessite IP sur entrée et sortie</li>
+    <li>IP peut être :
+        <ul>
+            <li>Statique : toujours la même</li>
+            <li>Dynamique : attribuée automatiquement via DHCP</li>
+        </ul>
+    </li>
+</ul>
+
+<p>Une <strong>adresse IP (Internet Protocol)</strong> est un identifiant unique attribué à chaque appareil connecté à un réseau.  
+Elle permet d’acheminer les paquets de données jusqu’à leur destination, comme une adresse postale sur Internet.</p>
+
+<div class="focus">
+<h4>🌐 Deux versions d’adresses IP :</h4>
+<ul>
+  <li><strong>IPv4</strong> : format classique (ex : 192.168.0.1) – 4,3 milliards d’adresses disponibles</li>
+  <li><strong>IPv6</strong> : format étendu (ex : 2001:0db8:85a3::8a2e:0370:7334) – quasi illimité</li>
+</ul>
+</div>
+
+<p>Le protocole <strong>TCP/IP</strong> combine :
+<ul>
+  <li><strong>TCP (Transmission Control Protocol)</strong> : découpe les données en paquets et assure leur livraison complète</li>
+  <li><strong>IP (Internet Protocol)</strong> : gère l’adressage et l’acheminement des paquets sur le réseau</li>
+</ul>
+</p>
+
+<div class="schéma">
+<p>Schéma simplifié du fonctionnement TCP/IP :</p>
+<img src="OSI_TCPIP.png" alt="Schéma fonctionnement TCP/IP et adressage IP">
+</div>
+
+<p>Les adresses IP sont essentielles pour la communication entre appareils.  
+Les réseaux domestiques utilisent souvent des adresses privées (<code>192.168.x.x</code>, <code>10.x.x.x</code>…), traduites vers Internet via la fonction <strong>NAT</strong> (Network Address Translation) du routeur.</p>
+</div>
