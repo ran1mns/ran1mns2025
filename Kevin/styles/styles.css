@@ -3,7 +3,6 @@ html, body {
     color: black;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("../images/font.png");
@@ -31,16 +30,14 @@ html body::after {
     pointer-events: none;
 }
 
-html .content {
+.content {
     position: relative;
     padding: 10px;
-    width: 780px;
+    width: 900px;
     margin: 10px auto;
-    background-color: rgb(160, 146, 118,0.3);
-    border-radius: 10px;
     text-align: center;
-    width: 50%;
 	float: left;
+    width: 50%;
 	padding : 0 10xp;
 	box-sizing: border-box;
 }
@@ -56,14 +53,12 @@ img.logo {
 }
 
 .content2 {
-    background-color: rgb(160, 146, 118,0.3);
     text-align: center;
-    width: 800px;
-    margin: auto;
-    border-radius: 10px;
+    width: 900px;
+    margin:auto;
     list-style: none;
-    width: 50%;
 	float: left;
+    width: 50%;
 	padding : 0 10xp;
 	box-sizing: border-box;
 }
@@ -108,23 +103,15 @@ a:focus {
 	box-sizing: border-box;
 }
 
-@media (min-width: 300px ) {
-    .float {
-        width: 33%;
+@media screen and (max-width: 400px) {
+    .content2 {
+        width: 400px;
+    
     }
-}
-@media (min-width: 600px) {
-    .float {
-        width: 33%;
+    .content {
+        width: 400px;
     }
-}
-@media (min-width: 1024px) {
-    .float {
-        width: 33%;
-    }
-}
-@media (min-wdth: 1920px) {
-    .float {
-        width: 33%;
-    }
+    
+    
+
 }
