@@ -1,0 +1,257 @@
+<!DOCTYPE html> 
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours Python – 16 Octobre 2025</title>
+
+<!-- 🌈 Highlight.js pour coloration syntaxique -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; background-color: #f9f9f9; color: #333; display: flex; }
+nav { width: 250px; background-color: #2c3e50; color: #ecf0f1; height: 100vh; position: fixed; overflow-y: auto; padding: 20px; }
+nav ul { list-style: none; padding-left: 0; }
+nav ul li { margin: 10px 0; }
+nav ul li a { color: #ecf0f1; text-decoration: none; }
+nav ul li a:hover { text-decoration: underline; }
+main { margin-left: 270px; padding: 20px; flex: 1; }
+h1, h2, h3, h4 { color: #2c3e50; }
+h1 { text-align: center; margin-bottom: 0.5em; }
+h2 { border-bottom: 2px solid #2980b9; padding-bottom: 5px; margin-top: 1em; }
+ul, ol { margin: 0.5em 0 1em 2em; }
+li { margin-bottom: 0.3em; }
+.section { margin-bottom: 2em; padding: 15px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.05); }
+.focus { background-color: #d1f2eb; padding: 12px; border-left: 5px solid #1abc9c; margin: 15px 0; border-radius: 6px; }
+.focus h4 { margin-top: 0; margin-bottom: 5px; color: #117864; }
+.note { background-color: #fcf3cf; padding: 8px; border-left: 4px solid #f1c40f; margin: 10px 0; border-radius: 4px; }
+pre { background-color: #1e1e1e; color: #f8f8f2; padding: 10px; border-radius: 6px; overflow-x: auto; }
+code { font-family: "Fira Code", monospace; font-size: 0.95em; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>Menu</h1>
+<ul>
+  <li><a href="#correction">Correction Évaluation</a></li>
+  <li><a href="#fonctions">Les Fonctions</a></li>
+  <li><a href="#parametres">Paramètres et valeurs par défaut</a></li>
+  <li><a href="#args_kwargs">*args et **kwargs</a></li>
+  <li><a href="#annotations">Docstring et Annotations</a></li>
+  <li><a href="#portee">Portée et LEGB</a></li>
+  <li><a href="#ressources">Ressources</a></li>
+</ul>
+</nav>
+
+<main>
+<h1>Cours Python – 16 Octobre 2025</h1>
+
+<div id="correction" class="section">
+<h2>Correction Évaluation</h2>
+<p><b>Réponses :</b> 12, 30 (j’ai oublié le 10 dans le calcul).</p>
+<p><code>n % 2 == 0</code> → le reste permet de vérifier si un nombre est pair.</p>
+
+<h3>Itérations et boucles</h3>
+<p>Exemple de boucle dans une boucle : table de multiplication :</p>
+<pre><code class="language-python">
+for i in range(10):
+    for j in range(10):
+        print(f"{i} * {j} = {i*j}")
+</code></pre>
+
+<h3>Compteur de valeurs positives (pseudo-code)</h3>
+<p><b>Erreur courante :</b> le compteur s’incrémente même pour <code>x &lt; 0</code> si la condition <code>else_if</code> est mal gérée.</p>
+<pre><code class="language-pseudo">
+ALGORITHM CountPositive
+VARIABLES:
+  l: LIST     // liste de nombres
+  cpt: INT    // compteur de valeurs positives
+  x: INT
+BEGIN
+    cpt <- 0
+    FOR EACH x IN l
+        IF x > 0 THEN
+            cpt <- cpt + 1
+        ELSE_IF x < 0 THEN
+            cpt <- cpt  ou  cpt <- cpt + 0
+        END_IF
+    END_FOR
+    RETURN cpt
+END
+</code></pre>
+
+<p>⚠️ Erreur fréquente pour la seconde incrémentation : supprimer la condition (mettre +0 au compteur fonctionne mais n’est pas optimisé). Il suffit ici de supprimer simplement la condition ELSE_IF</p>
+
+<h3>Fonction pair ou impair</h3>
+<p>Solution classique :</p>
+<pre><code class="language-python">
+def pair_ou_impair(n):
+    if n % 2 == 0:
+        return "pair"
+    else:
+        return "impair"
+</code></pre>
+
+<p>Solution simplifiée avec indentation : </p>
+<pre><code class="language-python">
+def pair_ou_impair(n):
+    if n % 2 == 0:
+        return "pair"
+    return "impair"
+</code></pre>
+
+<h3>Exercice factorielle</h3>
+<p>Résolution : <i>reponse ok</i>.</p>
+
+<h3>Palindrome (solution formateur)</h3>
+<pre><code class="language-python">
+def est_palindrome(texte):
+    lettres = "abcdefghijklmnopqrstuvwxyz"
+    gauche_a_droite = []
+    droite_a_gauche = []
+
+    for lettre in texte.lower():
+        if lettre in lettres:
+            gauche_a_droite.append(lettre)
+            droite_a_gauche.insert(0, lettre)  # ajoute à l'index 0 pour inverser
+
+    return gauche_a_droite == droite_a_gauche
+</code></pre>
+</div>
+
+<div id="fonctions" class="section">
+<h2>Sujet du jour : Les fonctions</h2>
+<p>Lien Google Colab : <a href="https://colab.research.google.com/drive/1oVxcCoUuzqDawObxdpbcMuwoE2WS88nm" target="_blank">Colab</a></p>
+
+<p>Une fonction réalise une action spécifique, permet d'abstraire la complexité du code et rend le programme plus lisible et fluide.</p>
+<p>Principe DRY : <b>Don’t Repeat Yourself</b> → éviter la duplication de code.</p>
+
+<h3>Syntaxe</h3>
+<pre><code class="language-python">
+def nom_de_fonction(param1, param2):
+    """Docstring : description de la fonction"""
+    # corps de la fonction
+    return resultat
+</code></pre>
+
+<p>Exemple :</p>
+<pre><code class="language-python">
+def aire_rectangle(largeur, hauteur):
+    """Calcule l'aire d'un rectangle en unités carrées."""
+    return largeur * hauteur
+
+print(aire_rectangle(4, 7))  # 28
+</code></pre>
+
+<p><b>Différence entre <code>print</code> et <code>return</code> :</b></p>
+<ul>
+<li><code>print()</code> affiche un résultat à l’écran mais ne le renvoie pas.</li>
+<li><code>return</code> renvoie une valeur utilisable dans le programme et arrête la fonction.</li>
+</ul>
+</div>
+
+<div id="parametres" class="section">
+<h2>Paramètres et valeurs par défaut</h2>
+<p>Paramètres :</p>
+<ul>
+<li>Positionnels : ordre important lors de l’appel.</li>
+<li>Nommés : on précise le nom lors de l’appel.</li>
+<li>Valeur par défaut : <code>def f(param1, param2=valeur)</code>.</li>
+</ul>
+</div>
+
+<div id="args_kwargs" class="section">
+<h2>*args et **kwargs</h2>
+<p>*args → permet de passer un nombre indéterminé de paramètres sous forme de tuple :</p>
+<pre><code class="language-python">
+def somme(*args):
+    total = 0
+    for n in args:
+        total += n
+    return total
+
+print(somme(1, 2, 3))       # 6
+print(somme(10, -5, 4, 1))  # 10
+</code></pre>
+
+<p>**kwargs → capture des paramètres nommés additionnels sous forme de dictionnaire :</p>
+<pre><code class="language-python">
+def infos_personne(**kwargs):
+    return kwargs
+
+print(infos_personne(nom="Ada", pays="UK", domaine="Math/CS"))
+# {'nom': 'Ada', 'pays': 'UK', 'domaine': 'Math/CS'}
+</code></pre>
+
+<p>Le paramètre * dans la déclaration force la nomination :</p>
+<pre><code class="language-python">
+def config_connexion(hote, *, port=5432, ssl=False):
+    ...
+</code></pre>
+</div>
+
+<div id="annotations" class="section">
+<h2>Docstring et annotations de type</h2>
+<p>Docstring : texte explicatif entre triple guillemets immédiatement après la déclaration.</p>
+<pre><code class="language-python">
+def moyenne(notes: list[float]) -> float:
+    """Calcule la moyenne d'une liste de notes."""
+    return sum(notes)/len(notes)
+</code></pre>
+
+<ul>
+<li>Permet de documenter le rôle de la fonction et les cas particuliers.</li>
+<li>Les annotations aident le lecteur mais n’imposent pas de contrainte stricte.</li>
+</ul>
+</div>
+
+<div id="portee" class="section">
+<h2>Portée et principe LEGB</h2>
+<p>LEGB : Local → Enclosing → Global → Builtins.</p>
+<pre><code class="language-python">
+x = 10  # globale
+
+def f():
+    x = 5  # locale
+    print("locale x =", x)
+
+def g():
+    global x
+    x = 99  # modifie la variable globale
+
+f()
+print("globale x =", x)
+g()
+print("globale x après g() =", x)
+</code></pre>
+
+<h3>Pass</h3>
+<p>Le mot-clé <code>pass</code> permet de passer une instruction vide pour éviter les erreurs de syntaxe.</p>
+
+<h3>Fonctions pures et effets de bord</h3>
+<ul>
+<li>Fonction pure : toujours la même sortie pour les mêmes paramètres.</li>
+<li>Effets de bord : modifications de l’environnement extérieur à la fonction, à contrôler.</li>
+<li>Mutabilité : certains objets modifiables peuvent entraîner des effets de bord, à gérer en créant des copies si nécessaire.</li>
+</ul>
+</div>
+
+<div id="ressources" class="section">
+<h2>Ressources à explorer</h2>
+<ul>
+<li><a href="https://www.codingame.com/" target="_blank">Codingame</a></li>
+<li><a href="https://adventofcode.com/" target="_blank">Advent of Code</a></li>
+<li>Illustration du principe DRY sur Google Colab (cf lien ci-dessus).</li>
+</ul>
+</div>
+
+</main>
+</body>
+</html>
