@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours Culture Informatique – 29 Septembre 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+        }
+
+        nav {
+            width: 250px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-left: 270px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 5px;
+            margin-top: 1em;
+        }
+
+        ul, ol {
+            margin: 0.5em 0 1em 2em;
+        }
+
+        li {
+            margin-bottom: 0.3em;
+        }
+
+        .section {
+            margin-bottom: 2em;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.05);
+        }
+
+        .schéma {
+            background-color: #d6eaf8;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+
+        .note {
+            background-color: #fcf3cf;
+            padding: 8px;
+            border-left: 4px solid #f1c40f;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .focus {
+            background-color: #d1f2eb;
+            padding: 12px;
+            border-left: 5px solid #1abc9c;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .focus h4 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #117864;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h1>Menu</h1>
+    <ul>
+        <li><a href="#onduleurs">Onduleurs</a></li>
+        <li><a href="#connexion">Connexion réseau</a></li>
+        <li><a href="#recyclage">Recyclage DEEE</a></li>
+        <li><a href="#osi">Modèle OSI</a></li>
+        <li><a href="#tcpip">Modèle TCP/IP</a></li>
+        <li><a href="#schemas">Schémas ASCII</a></li>
+        <li><a href="#adresses">Adresses et identifiants</a></li>
+        <li><a href="#appareils">Appareils réseau</a></li>
+        <li><a href="#schema-reseau">Schéma réseau</a></li>
+        <li><a href="#visite">Visite racks & serveurs</a></li>
+        <li><a href="#coaching">Coaching & retour expérience</a></li>
+    </ul>
+</nav>
+
+<main>
+<h1>Cours de Culture Informatique – 29 Septembre 2025</h1>
+
+<div id="onduleurs" class="section">
+    <h2>Onduleurs</h2>
+    <p>Discussion sur les onduleurs et leur rôle dans la protection de l’alimentation électrique des systèmes informatiques.</p>
+    <ul>
+        <li>Off-line / Standby : bascule sur batterie en cas de coupure</li>
+        <li>Line-interactive : ajuste la tension et bascule sur batterie si nécessaire</li>
+        <li>Online / Double conversion : isolation totale du réseau, pas d’interruption</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : Onduleur</h4>
+        <p>Dispositif fournissant une alimentation électrique stable et continue aux équipements. Essentiel pour protéger serveurs et data centers contre les coupures ou variations de tension.</p>
+    </div>
+</div>
+
+<div id="connexion" class="section">
+    <h2>Connexion réseau</h2>
+    <ul>
+        <li>Ethernet : câblé, stable et rapide</li>
+        <li>Bluetooth : courte portée, faible consommation</li>
+        <li>Wi-Fi : sans fil, différentes générations (802.11a/b/g/n/ac/ax/6E)</li>
+        <li>Fibre optique :</li>
+        <ul>
+            <li>Mono-mode : laser, coeur de 5 microns, longue distance (&gt;10 km)</li>
+            <li>Multi-mode : LED, coeur de 50 microns, distance plus courte (~500 m)</li>
+        </ul>
+        <li>Plus la fréquence est élevée, plus le débit est important mais la pénétration dans les murs est réduite</li>
+        <li>Bandes Wi-Fi : 2,4 GHz, 5 GHz, 6 GHz</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : Wi-Fi</h4>
+        <p>La fréquence et la génération déterminent le débit et la portée. Wi-Fi 6E utilise la bande 6 GHz pour plus de performance et moins de congestion.</p>
+    </div>
+</div>
+
+<div id="recyclage" class="section">
+    <h2>Recyclage DEEE</h2>
+    <p>Déchets d’équipements électriques et électroniques :</p>
+    <ul>
+        <li>Obligatoire pour le producteur qui organise la filière</li>
+        <li>Le consommateur finance via une taxe incluse dans le prix d’achat</li>
+        <li>Valorisation des matériaux : métaux précieux, plastiques, composants électroniques</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : DEEE</h4>
+        <p>Déchet d’équipement électrique et électronique. Recyclage obligatoire pour réduire l’impact environnemental et récupérer les matériaux précieux.</p>
+    </div>
+</div>
+
+<div id="osi" class="section">
+    <h2>Modèle OSI (Open Systems Interconnection)</h2>
+    <p>Modèle en 7 couches pour standardiser la communication réseau :</p>
+    <ol>
+        <li>Physique : câbles, transmission des bits</li>
+        <li>Données : trames prêtes à être transmises, nécessite adresse MAC</li>
+        <li>Réseau : acheminement des paquets, nécessite adresse IP</li>
+        <li>Transport : transmission fiable, nécessite port TCP/UDP</li>
+        <li>Session : gestion des sessions de communication</li>
+        <li>Présentation : formatage des données (doc, jpg…)</li>
+        <li>Application : interaction avec l’utilisateur (site web, messagerie…)</li>
+    </ol>
+    <div class="note">
+        Les couches 1 à 4 correspondent au hardware, 5 à 7 au software.
+    </div>
+    <div class="focus">
+        <h4>Focus : Couche Transport</h4>
+        <p>Assure la transmission fiable des données entre machines. Protocoles typiques : TCP (Transmission Control Protocol) et UDP (User Datagram Protocol).</p>
+    </div>
+</div>
+
+<div id="tcpip" class="section">
+    <h2>Modèle TCP/IP</h2>
+    <p>Modèle simplifié : 4 ou 5 couches :</p>
+    <ul>
+        <li>Application (OSI 5-7)</li>
+        <li>Transport (OSI 4)</li>
+        <li>Internet / Réseau (OSI 3)</li>
+        <li>Liaison / Accès réseau (OSI 1-2)</li>
+        <li>Physique (souvent intégrée dans Liaison)</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : TCP/IP</h4>
+        <p>Base de l’Internet. Définit comment les données sont adressées, transmises et reçues entre ordinateurs. Mapping OSI → TCP/IP permet de comprendre les échanges entre hardware et software.</p>
+    </div>
+</div>
+
+<div id="schemas" class="section">
+    <h2>Schémas ASCII – Modèle OSI et TCP/IP</h2>
+
+    <h3>Modèle OSI (7 couches)</h3>
+    <pre class="schéma">
++-------------------+ 7. Application
+| Application       |
++-------------------+ 6. Présentation
+| Présentation      |
++-------------------+ 5. Session
+| Session           |
++-------------------+ 4. Transport
+| Transport (TCP/UDP)|
++-------------------+ 3. Réseau
+| Réseau (IP)       |
++-------------------+ 2. Liaison / Données
+| Liaison (MAC)     |
++-------------------+ 1. Physique
+| Physique (câbles) |
++-------------------+
+    </pre>
+
+    <h3>Modèle TCP/IP (4 couches)</h3>
+    <pre class="schéma">
++-------------------+ Application
+| Application       |
++-------------------+ Transport
+| Transport (TCP/UDP)|
++-------------------+ Internet / Réseau
+| Internet / IP     |
++-------------------+ Accès réseau / Physique
+| Liaison / Physique |
++-------------------+
+    </pre>
+
+    <div class="focus">
+        <h4>Focus : Schémas ASCII</h4>
+        <p>Ces schémas permettent de visualiser rapidement les relations entre les couches OSI et TCP/IP, du niveau physique au niveau logiciel, et de comprendre où interviennent les adresses MAC, IP et les ports.</p>
+    </div>
+</div>
+
+<div id="adresses" class="section">
+    <h2>Adresses et identifiants</h2>
+    <ul>
+        <li>Adresse physique : MAC (48 bits, 24 bits constructeur + 24 bits série)</li>
+        <li>Adresse réseau : IP v4 (32 bits), IP v6 (128 bits)</li>
+        <li>Identifiant couche transport : port (16 bits, 0-65535 ; ports 0-1023 réservés aux services connus)</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : MAC</h4>
+        <p>Adresse unique pour chaque interface réseau, utilisée pour identifier les appareils sur un réseau local et assurer la livraison des trames.</p>
+    </div>
+</div>
+
+<div id="appareils" class="section">
+    <h2>Appareils réseau</h2>
+    <ul>
+        <li>Hub : ancien concentrateur, collisions fréquentes</li>
+        <li>Switch : commutation intelligente des paquets, dirige vers le destinataire exact</li>
+        <li>Routeur : interconnexion entre réseaux</li>
+        <li>Firewall : matériel ou logiciel, peut être intégré au routeur pour petites installations, protège le réseau contre intrusions</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : Switch</h4>
+        <p>Appareil réseau qui dirige les paquets de données uniquement vers le port correspondant au destinataire, réduisant les collisions et optimisant le trafic.</p>
+    </div>
+</div>
+
+<div id="schema-reseau" class="section">
+    <h2>Schéma ASCII – Interconnexion des appareils réseau</h2>
+    <pre class="schéma">
+             [ Internet ]
+                  |
+               [Firewall]
+                  |
+               [Routeur]
+                  |
+        ---------------------
+        |                   |
+     [Switch]             [Switch]
+      /   \               /   \
+ [PC1]   [PC2]      [Serveur1] [Serveur2]
+       |
+      [Hub] (optionnel)
+       |
+   [PC / périphérique]
+    </pre>
+    <div class="focus">
+        <h4>Focus : Interconnexion réseau</h4>
+        <p>Le firewall protège le réseau interne du monde extérieur. Le routeur distribue la connexion entre plusieurs segments. Le switch dirige les paquets vers les appareils exacts. Les hubs sont rarement utilisés mais peuvent encore connecter certains périphériques.</p>
+    </div>
+</div>
+
+<div id="visite" class="section">
+    <h2>Visite racks & serveurs</h2>
+    <p>Observation pratique des racks, switches, serveurs et équipements réseaux sur site.</p>
+</div>
+
+<div id="coaching" class="section">
+    <h2>Coaching & retour expérience</h2>
+    <p>Discussion sur les méthodes d’apprentissage et retour d’expérience pratique pour mieux comprendre le fonctionnement des réseaux et équipements.</p>
+</div>
+
+</main>
+</body>
+</html>

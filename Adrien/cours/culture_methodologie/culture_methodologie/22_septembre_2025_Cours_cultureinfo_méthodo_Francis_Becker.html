@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours Culture Informatique – 22 Septembre</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+        }
+
+        nav {
+            width: 250px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            margin-left: 270px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 5px;
+            margin-top: 1em;
+        }
+
+        ul {
+            margin: 0.5em 0 1em 2em;
+        }
+
+        li {
+            margin-bottom: 0.3em;
+        }
+
+        .section {
+            margin-bottom: 2em;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.05);
+        }
+
+        .schéma {
+            background-color: #d6eaf8;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+
+        .note {
+            background-color: #fcf3cf;
+            padding: 8px;
+            border-left: 4px solid #f1c40f;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .focus {
+            background-color: #d1f2eb;
+            padding: 12px;
+            border-left: 5px solid #1abc9c;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .focus h4 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #117864;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h1>Menu</h1>
+    <ul>
+        <li><a href="#materiel">Ordinateur & périphériques</a></li>
+        <li><a href="#processeurs">Processeurs & sockets</a></li>
+        <li><a href="#memoire">Mémoire</a></li>
+        <li><a href="#disques">Disques durs & SSD</a></li>
+        <li><a href="#connectique">Connectique</a></li>
+        <li><a href="#carte_graphique">Carte graphique</a></li>
+        <li><a href="#carte_son">Carte son</a></li>
+        <li><a href="#usb">Ports USB</a></li>
+        <li><a href="#peripheriques">Périphériques & multimédia</a></li>
+    </ul>
+</nav>
+
+<main>
+<h1>Cours de Culture Informatique – 22 Septembre</h1>
+
+<div id="materiel" class="section">
+    <h2>Ordinateur & périphériques</h2>
+    <p>Carte mère entourée par les périphériques.</p>
+    <div class="schéma">
+        CPU / RAM / ROM / PIO → relié par bus d'adresse, bus de données et bus de commande
+    </div>
+    <ul>
+        <li><strong>CPU</strong> : Central Processing Unit (unité centrale de traitement)</li>
+        <li><strong>RAM</strong> : Random Access Memory, mémoire volatile (perdue sans énergie)</li>
+        <li><strong>ROM</strong> : Read Only Memory, mémoire non volatile</li>
+        <li><strong>PIO</strong> : Programmable Input/Output, interface entrée/sortie programmable</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : RAM</h4>
+        <p>La RAM peut être dynamique (DRAM) ou statique (SRAM). La DRAM nécessite un rafraîchissement constant, la SRAM est plus rapide mais plus coûteuse. Elle est essentielle pour le fonctionnement des programmes en cours.</p>
+    </div>
+</div>
+
+<div id="processeurs" class="section">
+    <h2>Processeurs & sockets</h2>
+    <ul>
+        <li>Intel et AMD : ~99% du marché</li>
+        <li>Sockets différents selon série :</li>
+        <ul>
+            <li>PGA : Pin Grid Array</li>
+            <li>LGA : Land Grid Array</li>
+        </ul>
+        <li>Chaleur : nécessité de refroidissement (air ou watercooling)</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : Socket</h4>
+        <p>Un socket est l’interface physique entre le processeur et la carte mère. Chaque type de processeur nécessite un socket compatible.</p>
+    </div>
+</div>
+
+<div id="memoire" class="section">
+    <h2>La mémoire</h2>
+    <ul>
+        <li><strong>DDR</strong> : Double Data Rate (transfert de données deux fois par cycle d'horloge)</li>
+        <li>Séries DDR2, DDR3, DDR4, DDR5 : vitesse et optimisation énergétique</li>
+        <li><strong>ECC</strong> : Error-Correcting Code, mémoire capable de détecter et corriger certaines erreurs</li>
+        <li>Formats réduits pour laptop : <strong>SO-DIMM</strong> (Small Outline DIMM)</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : DDR5</h4>
+        <p>DDR5 offre des vitesses supérieures, meilleure efficacité énergétique et supporte plus de mémoire par module. Essentielle pour les systèmes récents et applications lourdes.</p>
+    </div>
+</div>
+
+<div id="disques" class="section">
+    <h2>Disques durs & SSD</h2>
+    <ul>
+        <li>HDD mécanique : plus lent, données récupérables (Hard Disk Drive)</li>
+        <li>SSD électronique : rapide, récupération limitée (Solid State Drive)</li>
+        <li>Connectiques : ATA (parallèle), SATA (série), M.2 SATA, M.2 NVMe</li>
+        <li>Technologie RAID : 0,1,5,6,10</li>
+        <li><strong>Tailles M.2</strong> : numéro = largeur × longueur en mm. Exemple : 2280 = 22 mm × 80 mm, 22110 = 22 mm × 110 mm</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : SSD NVMe</h4>
+        <p>Disque SSD connecté via M.2 NVMe utilise le bus PCIe pour des vitesses très élevées, réduit les temps de lecture/écriture comparé au SATA.</p>
+    </div>
+</div>
+
+<div id="connectique" class="section">
+    <h2>Connectique</h2>
+    <ul>
+        <li>Diamant comme isolant et conducteur thermique performant</li>
+        <li>Connecteurs arrière carte mère : RJ45, audio, HDMI, DisplayPort…</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : M.2</h4>
+        <p>Format compact pour SSD, supporte SATA et NVMe. Différentes longueurs adaptées aux cartes mères et laptops.</p>
+    </div>
+</div>
+
+<div id="carte_graphique" class="section">
+    <h2>Carte graphique</h2>
+    <ul>
+        <li>RAM plus performante que la RAM classique (ex : GDDR6)</li>
+        <li>Connectiques : VGA, DVI, HDMI, DisplayPort</li>
+        <li>HDMI mini/micro, DisplayPort série possible</li>
+        <li>Résolutions : VGA 640x480 → Ultra HD 8K 7680x4320</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : GDDR6</h4>
+        <p>RAM dédiée aux cartes graphiques, très rapide, optimise le rendu et les performances 3D par rapport à la RAM classique.</p>
+    </div>
+</div>
+
+<div id="carte_son" class="section">
+    <h2>Cartes son</h2>
+    <ul>
+        <li>Entrées/sorties audio codées par couleurs</li>
+        <li>Connectiques : RCA, Toslink (fibre optique), MIDI DIN 5 broches</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : Toslink</h4>
+        <p>Connectique audio numérique via fibre optique, haute fidélité et immunité aux interférences électriques.</p>
+    </div>
+</div>
+
+<div id="usb" class="section">
+    <h2>Ports USB</h2>
+    <ul>
+        <li>Types : A, B, MiniA, MiniB, Type-C</li>
+        <li>Tableau date de sortie et vitesses : USB 1.0 (1996), 2.0 (2000), 3.0 (2008), 3.1/3.2, 4.0</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : USB Type-C</h4>
+        <p>Connecteur réversible, supporte transfert rapide et alimentation, devient standard moderne pour périphériques et laptops.</p>
+    </div>
+</div>
+
+<div id="peripheriques" class="section">
+    <h2>Périphériques & multimédia</h2>
+    <ul>
+        <li>Clés USB, cartes graphiques externes, cartes réseau RJ45, cartes modem</li>
+        <li>Alimentations, lecteurs/enregistreurs externes (disquettes, bandes, CD/DVD/BluRay)</li>
+        <li>Tablettes, tablettes graphiques, imprimantes (matricielles, jet d’encre, laser, 3D)</li>
+        <li>Scanner, traceurs, caméras vidéo/audio, visioconférence, onduleurs</li>
+    </ul>
+    <div class="focus">
+        <h4>Focus : Imprimante 3D</h4>
+        <p>Dispositif qui crée des objets en déposant couche par couche des matériaux. Utilisée en prototypage, industrie et éducation.</p>
+    </div>
+</div>
+
+</main>
+</body>
+</html>
