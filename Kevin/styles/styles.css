@@ -101,11 +101,11 @@ a:focus {
 
 @media screen and (max-width: 350px) {
     .content2 {
-        width: 400px;
+        width: 350px;
     
     }
     .content {
-        width: 400px;
+        width: 350px;
     }
     html body {
         background-position: center;
