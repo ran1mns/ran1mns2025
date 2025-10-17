@@ -102,14 +102,14 @@ a:focus {
 @media screen and (max-width: 400px) {
     .content2 {
         width: 400px;
-        height: auto;
     
     }
     .content {
         width: 400px;
-        height: auto;
     }
-    
+    html body {
+        background-position: auto;
+    }
     
 
 }
