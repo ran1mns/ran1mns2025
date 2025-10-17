@@ -99,18 +99,15 @@ a:focus {
 }
 
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 400px) {
     .content2 {
-        width: 380px;
+        width: 400px;
     
     }
     .content {
-        width: 380px;
+        width: 400px;
     }
-    html body {
-        background-position: center;
-        background-size: cover;
-    }
+    
     
 
 }
