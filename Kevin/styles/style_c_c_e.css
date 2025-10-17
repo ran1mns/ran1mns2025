@@ -100,13 +100,10 @@ a:focus {
 @media screen and (max-width: 500px) {
     .content2 {
         width: 400px;
-        display: inline-flex;
-        margin-inline: 100px;
         
     }
     .content {
         width: 500px;
-        display: auto;
     }
     li {
         width: 115px;
