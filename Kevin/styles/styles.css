@@ -6,8 +6,8 @@ html, body {
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("../images/font.png");
+    background-size: cover;
     background-attachment: fixed;
-
 }
 
 html body::before {
@@ -64,12 +64,15 @@ img.logo {
 
 li {
     display: inline-block;
-    
-
 }
 
 nav li a {
     margin-inline: 50px;
+    background-color: rgb(160, 146, 118,0.3);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid rgb(160, 146, 118);
 }
 
 ul li {
@@ -78,37 +81,43 @@ ul li {
 }
 
 a {
-    background-color: rgb(160, 146, 118,0.3);
     display: inline-block;
     padding: 10px;
     width: 85px;
-    text-decoration: none ;
-    color: black;
-    font-weight: bold ;
-    border: 2px solid rgb(160, 146, 118);
-    
 }
-a:hover {
+
+nav li a:hover {
     background-color: black;
     color: white;
     border-color: rgb(160, 146, 118,);
 }
+
 a:focus {
     outline: 5px solid red;
 }
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .content2 {
         width: 400px;
-    
+        display: inline-flex;
+        
     }
     .content {
         width: 400px;
+        
     }
-    html body {
-        background-attachment: fixed;
+    li {
+        width: 115px;
     }
-    
+    ul li {
+        width: 72px;
+
+    }
+    ul li a {
+        width: 50px;
+        height: 40px;
+
+    }
 
 }
