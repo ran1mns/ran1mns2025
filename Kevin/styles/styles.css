@@ -101,11 +101,12 @@ a:focus {
     .content2 {
         width: 400px;
         display: inline-flex;
+        margin-inline: 100px;
         
     }
     .content {
-        width: 400px;
-        
+        width: 500px;
+        display: auto;
     }
     li {
         width: 115px;
