@@ -6,7 +6,6 @@ html, body {
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("../images/font.png");
-    background-size: cover;
     background-attachment: fixed;
 
 }
@@ -107,7 +106,9 @@ a:focus {
     .content {
         width: 400px;
     }
-    
+    html body {
+        background-attachment: fixed;
+    }
     
 
 }
