@@ -55,7 +55,7 @@ img.logo {
 .content2 {
     text-align: center;
     width: 900px;
-    margin:auto;
+    margin: auto;
     list-style: none;
 	float: left;
     width: 50%;
@@ -65,10 +65,12 @@ img.logo {
 
 li {
     display: inline-block;
+    
+
 }
 
 nav li a {
-    margin-inline: 70px;
+    margin-inline: 50px;
 }
 
 ul li {
@@ -80,6 +82,7 @@ a {
     background-color: rgb(160, 146, 118,0.3);
     display: inline-block;
     padding: 10px;
+    width: 85px;
     text-decoration: none ;
     color: black;
     font-weight: bold ;
@@ -96,20 +99,15 @@ a:focus {
 }
 
 
-.float {
-    width: 50%;
-	float: left;
-	padding : 0 10xp;
-	box-sizing: border-box;
-}
-
 @media screen and (max-width: 400px) {
     .content2 {
         width: 400px;
+        height: auto;
     
     }
     .content {
         width: 400px;
+        height: auto;
     }
     
     
