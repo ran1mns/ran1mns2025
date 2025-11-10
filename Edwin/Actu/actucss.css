@@ -1,0 +1,53 @@
+/* Styles pour la page d'actualités */
+hr {
+    border: none;
+    border-top: 3px solid #adadad;
+    margin: 20px 0;
+}
+
+#contenu {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    color: #333;
+}
+
+.article {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.article h3 {
+    color: #db226f;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.article h4 {
+    color: #2c3e50;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.article p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.article a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.article a:hover {
+    text-decoration: underline;
+}

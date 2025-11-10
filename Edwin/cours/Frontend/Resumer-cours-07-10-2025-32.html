@@ -1,114 +1,95 @@
-```html
 <section class="course">
-  <h1>Titre du Cours : Introduction à Git et GitHub</h1>
+  <h1>Titre du Cours : Introduction au Versioning avec Git et GitHub</h1>
   <article class="introduction">
     <h2>Introduction</h2>
-    <p>Git est un moteur de gestion de versions, tandis que GitHub est une plateforme qui exploite ce moteur. Git permet de sauvegarder chaque étape de votre projet, de travailler à plusieurs et de revenir en arrière si besoin. GitHub, quant à lui, facilite la collaboration et l'intégration continue (CI/CD).</p>
+    <p><strong>Git</strong> est un système de contrôle de version distribué, un outil indispensable pour suivre les modifications de votre code. <strong>GitHub</strong> est une plateforme web qui héberge des dépôts Git et fournit des outils pour faciliter la collaboration entre développeurs.</p>
   </article>
+
   <article class="concepts">
-    <h2>Concepts Clés</h2>
-    <h3>Installation de Git</h3>
-    <p>Pour commencer, vous devez installer Git sur votre machine. Vous pouvez télécharger l'installateur depuis le site officiel de Git et suivre les instructions.</p>
+    <h2>1. Configuration Initiale</h2>
+    <p>Avant toute chose, vous devez configurer Git avec vos informations.</p>
     <pre><code class="language-bash">
-      # Exemple de commande pour vérifier l'installation de Git
-      git --version
+# Configurer votre nom d'utilisateur et votre email
+git config --global user.name "Votre Nom"
+git config --global user.email "votre.email@example.com"
     </code></pre>
-    <h3>Repository</h3>
-    <p>Un repository (ou dépôt) est l'équivalent d'un projet. C'est là que vous stockez tous vos fichiers et dossiers liés à votre projet.</p>
-    <pre><code class="language-bash">
-      # Créer un nouveau repository
-      git init mon-projet
-    </code></pre>
-    <h3>Commit</h3>
-    <p>Un commit est un point de sauvegarde. Il est conseillé de créer de petits commits et de les nommer clairement pour faciliter la gestion du projet.</p>
-    <pre><code class="language-bash">
-      # Ajouter des fichiers à l'index
-      git add .
-      # Créer un commit
-      git commit -m "Ajout de la fonctionnalité X"
-    </code></pre>
-    <h3>Tag</h3>
-    <p>Un tag permet de marquer un commit pour lui donner une version, ce qui est utile pour retrouver la version qui a été livrée.</p>
-    <pre><code class="language-bash">
-      # Créer un tag
-      git tag -a v1.0 -m "Version 1.0"
-    </code></pre>
-    <h3>Branche</h3>
-    <p>Une branche permet de créer une autre version du projet pour une nouvelle fonctionnalité. Cela permet à deux projets de cohabiter.</p>
-    <pre><code class="language-bash">
-      # Créer une nouvelle branche
-      git checkout -b nouvelle-fonctionnalite
-    </code></pre>
-    <h3>Merge</h3>
-    <p>Le merge permet de prendre les commits d'une branche et de les réinjecter dans la branche principale pour créer un nouveau commit.</p>
-    <pre><code class="language-bash">
-      # Fusionner une branche dans la branche principale
-      git checkout main
-      git merge nouvelle-fonctionnalite
-    </code></pre>
-    <h3>Rebase</h3>
-    <p>Le rebase modifie la structure de l'arbre pour faire débuter la branche ailleurs. C'est une pratique risquée mais utile pour éviter les conflits lors du merge.</p>
-    <pre><code class="language-bash">
-      # Rebaser une branche
-      git checkout nouvelle-fonctionnalite
-      git rebase main
-    </code></pre>
-    <h3>Workflow</h3>
-    <p>Un workflow définit comment une équipe utilise Git. Il existe plusieurs workflows comme GitFlow, GitHub Flow et Trunk Based Development.</p>
-    <h3>Conventions de Commit</h3>
-    <p>Un commit doit représenter une idée unique. Il est important de suivre des conventions pour rendre l'historique lisible.</p>
-    <pre><code class="language-bash">
-      # Exemple de message de commit
-      git commit -m "feat(auth): Ajout de la fonctionnalité d'authentification"
-    </code></pre>
-    <h3>.gitignore</h3>
-    <p>Le fichier .gitignore contient les fichiers que Git doit ignorer lors du push, comme les informations sensibles ou les fichiers cache.</p>
-    <pre><code class="language-bash">
-      # Exemple de fichier .gitignore
-      node_modules/
-      .env
-    </code></pre>
-    <aside class="tip">
-      <p>Vous pouvez utiliser <a href="https://www.toptal.com/developers/gitignore" target="_blank">gitignore.io</a> pour générer automatiquement votre fichier .gitignore.</p>
-    </aside>
-  </article>
-  <article class="exercices">
-    <h2>Exercices Pratiques</h2>
+    <p>Pour commencer un projet avec Git, vous avez deux options :</p>
+    <ul>
+      <li><code>git init</code> : Crée un nouveau dépôt Git dans un dossier existant.</li>
+      <li><code>git clone [URL]</code> : Copie un dépôt distant (par exemple depuis GitHub) sur votre machine locale.</li>
+    </ul>
+
+    <h2>2. Le Cycle de Travail de Base</h2>
+    <p>Le travail local avec Git suit un cycle en trois étapes :</p>
+    <img src="https://i.imgur.com/gI2QYF7.png" alt="Cycle de travail Git" style="max-width:100%; border-radius:8px;">
     <ol>
-      <li>Créez un nouveau repository local et faites votre premier commit.</li>
-      <li>Créez une nouvelle branche pour ajouter une nouvelle fonctionnalité et fusionnez-la ensuite dans la branche principale.</li>
-      <li>Ajoutez un fichier .gitignore à votre projet pour ignorer les fichiers sensibles.</li>
+      <li><strong>Modification :</strong> Vous modifiez vos fichiers dans votre répertoire de travail.</li>
+      <li><strong>Indexation (Staging) :</strong> Vous sélectionnez les modifications que vous voulez inclure dans le prochain "snapshot" (commit) avec <code>git add</code>.</li>
+      <li><strong>Commit :</strong> Vous enregistrez ce "snapshot" de manière permanente dans votre historique avec <code>git commit</code>.</li>
     </ol>
-    <details>
-      <summary>Corrigé</summary>
-      <pre><code class="language-bash">
-        # Exercice 1
-        git init mon-projet
-        echo "# Mon Projet" >> README.md
-        git add README.md
-        git commit -m "Initial commit"
+    <pre><code class="language-bash">
+# Voir le statut des modifications
+git status
 
-        # Exercice 2
-        git checkout -b nouvelle-fonctionnalite
-        echo "Nouvelle fonctionnalité" >> fonctionnalite.txt
-        git add fonctionnalite.txt
-        git commit -m "Ajout de la nouvelle fonctionnalité"
-        git checkout main
-        git merge nouvelle-fonctionnalite
+# Ajouter un fichier à l'index
+git add nom_du_fichier.html
 
-        # Exercice 3
-        echo "node_modules/" >> .gitignore
-        echo ".env" >> .gitignore
-      </code></pre>
-    </details>
+# Ajouter tous les fichiers modifiés
+git add .
+
+# Enregistrer les modifications avec un message descriptif
+git commit -m "feat: Ajout de la page d'accueil"
+    </code></pre>
+
+    <h2>3. Travailler avec les Branches</h2>
+    <p>Une branche est une ligne de développement indépendante. C'est une pratique essentielle pour développer de nouvelles fonctionnalités sans affecter la version stable du code (qui se trouve généralement sur la branche `main` ou `master`).</p>
+    <pre><code class="language-bash">
+# Lister les branches existantes
+git branch
+
+# Créer une nouvelle branche et s'y placer
+git checkout -b ma-nouvelle-fonctionnalite
+
+# Revenir sur la branche principale
+git checkout main
+    </code></pre>
+    <h3>Fusionner les Branches</h3>
+    <p>Une fois votre fonctionnalité terminée, vous devez la rapatrier sur la branche principale. Il y a deux manières principales de le faire :</p>
+    <ul>
+      <li><strong><code>git merge</code> :</strong> Crée un nouveau "commit de fusion" qui combine l'historique des deux branches. C'est simple et préserve l'historique exact.</li>
+      <li><strong><code>git rebase</code> :</strong> Réapplique les commits de votre branche au sommet de la branche principale. Cela crée un historique linéaire plus propre, mais modifie l'historique, ce qui peut être risqué si la branche est partagée.</li>
+    </ul>
+
+    <h2>4. Collaboration avec GitHub</h2>
+    <p>GitHub facilite le travail en équipe sur un même projet.</p>
+    <ul>
+      <li><strong><code>git push</code> :</strong> Envoie vos commits locaux vers le dépôt distant sur GitHub.</li>
+      <li><strong><code>git pull</code> :</strong> Récupère les dernières modifications du dépôt distant et les fusionne avec votre branche locale.</li>
+      <li><strong>Pull Request (PR) :</strong> C'est le cœur de la collaboration sur GitHub. C'est une demande pour intégrer vos modifications (votre branche) dans une autre branche (généralement `main`). Cela permet aux autres membres de l'équipe de relire votre code (code review) avant la fusion.</li>
+    </ul>
   </article>
+
+  <article class="exercices">
+    <h2>Exercice Pratique : Workflow de Collaboration</h2>
+    <ol>
+      <li><strong>Créez un dépôt sur GitHub.</strong></li>
+      <li><strong>Clonez</strong> ce dépôt sur votre machine locale.</li>
+      <li>Créez une nouvelle <strong>branche</strong> nommée <code>ajout-readme</code>.</li>
+      <li>Sur cette branche, modifiez le fichier <code>README.md</code>.</li>
+      <li>Faites un <strong>commit</strong> de vos modifications.</li>
+      <li><strong>Poussez</strong> votre branche sur GitHub.</li>
+      <li>Depuis l'interface de GitHub, ouvrez une <strong>Pull Request</strong> pour fusionner votre branche dans `main`.</li>
+      <li><strong>Fusionnez</strong> la Pull Request.</li>
+      <li>En local, revenez sur la branche `main` et faites un <strong>pull</strong> pour récupérer les modifications.</li>
+    </ol>
+  </article>
+
   <aside class="ressources">
     <h2>Pour aller plus loin</h2>
     <ul>
-      <li><a href="https://git-scm.com/doc" target="_blank">Documentation officielle de Git</a></li>
-      <li><a href="https://guides.github.com/" target="_blank">Guides GitHub</a></li>
-      <li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows" target="_blank">Comparaison des workflows Git</a></li>
+      <li><a href="https://git-scm.com/book/fr/v2" target="_blank">Pro Git Book (en français)</a> - La référence complète.</li>
+      <li><a href="https://learngitbranching.js.org/?locale=fr_FR" target="_blank">Learn Git Branching</a> - Un tutoriel interactif pour maîtriser les branches.</li>
+      <li><a href="https://www.conventionalcommits.org/en/v1.0.0/" target="_blank">Conventional Commits</a> - Une spécification pour des messages de commit clairs et structurés.</li>
     </ul>
   </aside>
 </section>
-```

@@ -1,85 +1,59 @@
 <section class="course">
-  <h1>Titre du Cours : Interconnexion des Ordinateurs</h1>
+  <h1>Titre du Cours : Interconnexion des Réseaux</h1>
   <article class="introduction">
     <h2>Introduction</h2>
-    <p>L'interconnexion des ordinateurs est un sujet fondamental pour comprendre comment les réseaux informatiques fonctionnent. Ce cours vous guidera à travers les concepts clés, les types de réseaux, les équipements utilisés et les techniques de gestion des adresses IP. Vous apprendrez également à utiliser des outils comme Cisco Packet Tracer pour simuler des réseaux.</p>
+    <p>Ce cours explore les principes fondamentaux de l'interconnexion des ordinateurs. Nous aborderons les différentes topologies de réseau, les équipements essentiels, les techniques avancées d'adressage IP et l'utilisation d'outils de simulation comme Cisco Packet Tracer pour mettre en pratique ces concepts.</p>
   </article>
-  <article class="concepts">
-    <h2>Concepts Clés</h2>
-    <h3>Réseaux Maillés</h3>
-    <p>Un réseau maillé est un type de réseau où chaque nœud est connecté à plusieurs autres nœuds. Ce type de réseau est utilisé pour interconnecter les ordinateurs à travers le monde via des câbles sous-marins et terrestres. L'avantage principal est la redondance : si un nœud tombe en panne, il existe toujours une liaison secondaire pour maintenir la connexion.</p>
-    <h3>Liaison avec la Fibre</h3>
-    <p>La fibre optique est utilisée pour les liaisons à haut débit. Elle permet de transmettre des données sur de longues distances avec une faible atténuation du signal. Pour plus de détails, référez-vous au cours précédent sur la fibre optique.</p>
-    <h3>LAN et WAN</h3>
-    <p>Un LAN (Local Area Network) est un réseau local qui couvre une petite zone géographique, comme un bureau ou une maison. Un WAN (Wide Area Network) est un réseau étendu qui couvre une grande zone géographique, comme un pays ou le monde entier.</p>
-    <h3>Émulation et Simulation</h3>
-    <p>L'émulation consiste à reproduire le comportement d'un système sur un autre système, souvent à l'aide de machines virtuelles. La simulation, quant à elle, utilise des modèles mathématiques pour imiter le comportement d'un système.</p>
-    <h3>Cisco Packet Tracer</h3>
-    <p>Cisco Packet Tracer est un outil de simulation de réseau qui permet de créer et de tester des réseaux virtuels. Vous pouvez y mettre en place des PC, des switches, des routeurs et des serveurs pour voir comment les requêtes sont envoyées à travers le réseau.</p>
-    <pre><code class="language-html">
-<!-- Exemple de configuration de base avec Cisco Packet Tracer -->
-<Switch1>
-  enable
-  configure terminal
-  interface FastEthernet0/1
-  switchport mode access
-  switchport access vlan 10
-  no shutdown
-</Switch1>
 
-<Router1>
-  enable
-  configure terminal
-  interface GigabitEthernet0/0
-  ip address 192.168.1.1 255.255.255.0
-  no shutdown
-</Router1>
-    </code></pre>
-    <h3>Équipements Réseau</h3>
-    <p>Les switches sont utilisés pour l'interconnexion au sein d'un LAN, tandis que les routeurs sont utilisés pour l'interconnexion entre LAN et WAN. Les firewalls, quant à eux, assurent la protection du réseau.</p>
-    <h3>Types de Câbles Ethernet</h3>
-    <p>Les câbles Ethernet, Fast Ethernet et Giga Ethernet offrent des débits de plus en plus élevés. Un câble droit est généralement utilisé pour connecter des appareils de types différents.</p>
-    <h3>Adresse Broadcast</h3>
-    <p>L'adresse broadcast est la dernière adresse d'un réseau et est utilisée pour envoyer un message à tous les appareils du réseau. Par exemple, dans un réseau 192.168.1.0/24, l'adresse broadcast est 192.168.1.255.</p>
-    <h3>Adresse IP et VLSM</h3>
-    <p>L'adresse IP est une adresse unique attribuée à chaque appareil sur un réseau. VLSM (Variable Length Subnet Masking) permet de diviser un réseau en sous-réseaux de tailles différentes pour une utilisation plus efficace des adresses IP.</p>
-    <h3>Schémas IP Binaire/Décimal et NAT/PAT</h3>
-    <p>Il est important de comprendre les schémas IP en binaire et décimal pour configurer correctement les réseaux. NAT (Network Address Translation) et PAT (Port Address Translation) sont des techniques utilisées pour mapper une adresse IP publique à plusieurs adresses IP privées.</p>
-    <h3>Commandes Réseau</h3>
-    <p>La commande <code>ipconfig /all</code> fournit des informations détaillées sur la configuration réseau d'un appareil, y compris l'adresse IP, le masque de sous-réseau, la passerelle par défaut, et les serveurs DNS.</p>
-    <h3>Passerelle et Serveurs</h3>
-    <p>La passerelle est la porte de sortie du réseau, généralement l'avant-dernière adresse de la plage. Les serveurs dans le même réseau sont souvent numérotés en séquence, comme .101, .102, etc.</p>
-    <h3>DHCP</h3>
-    <p>DHCP (Dynamic Host Configuration Protocol) est un serveur qui attribue automatiquement des adresses IP aux appareils du réseau à partir d'un pool d'adresses disponibles.</p>
+  <article class="concepts">
+    <h2>1. Topologies et Types de Réseaux</h2>
+    <h3>Topologie Maillée (Mesh)</h3>
+    <p>Utilisée pour l'infrastructure d'Internet (via des câbles sous-marins et terrestres), cette topologie connecte chaque nœud à plusieurs autres. Elle offre une grande redondance : si une liaison tombe, le trafic est redirigé par une autre.</p>
+    <img src="https://i.imgur.com/8y7m9kC.png" alt="Topologie maillée" style="max-width: 60%; display: block; margin: auto; border-radius: 8px;">
+    <h3>LAN vs WAN</h3>
+    <p><strong>LAN (Local Area Network) :</strong> Un réseau à l'échelle d'un bâtiment (maison, bureaux). La topologie la plus courante est en étoile, où tous les appareils sont connectés à un équipement central (un switch).</p>
+    <p><strong>WAN (Wide Area Network) :</strong> Interconnecte plusieurs LAN sur de longues distances (ville, pays, monde).</p>
+
+    <h2>2. Équipements Réseau</h2>
+    <p>Chaque équipement a un rôle précis :</p>
+    <ul>
+      <li><strong>Switch (Commutateur) :</strong> Opère au niveau 2 (Liaison). Il connecte les appareils au sein d'un même LAN et transmet les données uniquement au destinataire concerné grâce aux adresses MAC.</li>
+      <li><strong>Routeur :</strong> Opère au niveau 3 (Réseau). Il interconnecte différents réseaux (par exemple, votre LAN à Internet) et prend des décisions de routage basées sur les adresses IP.</li>
+      <li><strong>Firewall (Pare-feu) :</strong> Filtre le trafic entre les réseaux pour assurer la sécurité.</li>
+    </ul>
+
+    <h2>3. Adressage IP Avancé</h2>
+    <h3>Sous-réseautage (Subnetting)</h3>
+    <p>Le sous-réseautage consiste à diviser un grand réseau IP en plusieurs sous-réseaux plus petits. Cela permet une meilleure organisation et une utilisation plus efficace des adresses.</p>
+    <h3>VLSM (Variable Length Subnet Masking)</h3>
+    <p>Le VLSM pousse le concept plus loin en permettant de créer des sous-réseaux de tailles différentes à partir d'un même bloc d'adresses, optimisant ainsi au maximum l'allocation des IP.</p>
+    <h3>Adresses Spéciales</h3>
+    <ul>
+      <li><strong>Adresse réseau :</strong> La première adresse d'une plage (ex: <code>192.168.1.0</code>). Elle identifie le réseau.</li>
+      <li><strong>Adresse de broadcast :</strong> La dernière adresse d'une plage (ex: <code>192.168.1.255</code>). Elle permet d'envoyer un message à tous les appareils du réseau simultanément.</li>
+    </ul>
+    <h3>NAT (Network Address Translation) et PAT (Port Address Translation)</h3>
+    <p>Le NAT permet à plusieurs appareils d'un réseau privé (avec des adresses IP privées comme <code>192.168.x.x</code>) de partager une seule adresse IP publique pour accéder à Internet. Le PAT, une forme de NAT, utilise différents ports pour distinguer les connexions, ce qui permet à de nombreux appareils de communiquer en même temps.</p>
+
+    <h2>4. Simulation de Réseau avec Cisco Packet Tracer</h2>
+    <p>Cisco Packet Tracer est un outil puissant pour simuler des topologies réseau complexes sans avoir besoin de matériel physique. Il permet de configurer des PC, serveurs, switches, routeurs et de visualiser le trafic réseau en temps réel, ce qui est idéal pour l'apprentissage.</p>
   </article>
+
   <article class="exercices">
-    <h2>Exercices Pratiques</h2>
+    <h2>Exercices Pratiques (avec Cisco Packet Tracer)</h2>
     <ol>
-      <li>Configurez un réseau simple avec Cisco Packet Tracer comprenant deux PC, un switch et un routeur. Assurez-vous que les PC peuvent communiquer entre eux et avec le routeur.</li>
-      <li>Utilisez la commande <code>ipconfig /all</code> sur votre ordinateur et notez les informations réseau obtenues.</li>
-      <li>Configurez un serveur DHCP sur Cisco Packet Tracer et attribuez des adresses IP à plusieurs PC.</li>
+      <li><strong>Réseau LAN simple :</strong> Créez un réseau avec 3 PC connectés à un switch. Configurez manuellement les adresses IP des PC dans le même sous-réseau (ex: 192.168.1.1, 192.168.1.2, 192.168.1.3) et utilisez la commande <code>ping</code> pour vérifier qu'ils peuvent communiquer entre eux.</li>
+      <li><strong>Interconnexion avec un routeur :</strong> Ajoutez un routeur à votre topologie. Connectez le switch au routeur. Configurez l'adresse IP de l'interface du routeur pour qu'elle soit la passerelle par défaut (gateway) des PC (ex: 192.168.1.254).</li>
+      <li><strong>Configuration du DHCP :</strong> Configurez le routeur pour qu'il agisse comme un serveur DHCP et distribue automatiquement les adresses IP aux PC.</li>
     </ol>
-    <details>
-      <summary>Corrigé</summary>
-      <pre><code class="language-html">
-<!-- Exemple de configuration DHCP avec Cisco Packet Tracer -->
-<Router1>
-  enable
-  configure terminal
-  ip dhcp excluded-address 192.168.1.1 192.168.1.10
-  ip dhcp pool LAN-POOL
-  network 192.168.1.0 255.255.255.0
-  default-router 192.168.1.1
-  dns-server 8.8.8.8
-</Router1>
-      </code></pre>
-    </details>
   </article>
+
   <aside class="ressources">
     <h2>Pour aller plus loin</h2>
     <ul>
-      <li><a href="https://www.cisco.com/c/en/us/support/index.html" target="_blank">Documentation officielle de Cisco</a></li>
-      <li><a href="https://www.tcpipguide.com/free/t_DHCPMessageFormat.htm" target="_blank">Guide sur le protocole DHCP</a></li>
+      <li><a href="https://www.netacad.com/courses/packet-tracer" target="_blank">Cisco Networking Academy - Packet Tracer</a></li>
+      <li><a href="https://www.youtube.com/watch?v=GT_Y-6_g2A0" target="_blank">Vidéo : Subnetting Mastery (en anglais)</a></li>
+      <li><a href="https://www.juniper.net/us/en/research-topics/what-is-nat.html" target="_blank">Juniper - What is NAT?</a></li>
     </ul>
   </aside>
 </section>

@@ -5,115 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../indexcss.css">
-    <link rel="stylesheet" href="videocss.css">
+    <link rel="stylesheet" href="actucss.css">
     <link rel="icon" href="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-192x192.png"
         sizes="192x192" />
     <link rel="apple-touch-icon"
         href="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-180x180.png" />
     <meta name="msapplication-TileImage"
         content="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-270x270.png" />
-    <title>Actu page</title>
-    <style>
-        hr {
-            border: none;
-            border-top: 3px solid #adadad;
-            margin: 20px 0;
-        }
-
-        .article {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .article h3 {
-            color: #db226f;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .article h4 {
-            color: #2c3e50;
-            font-size: 1.4em;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        .article p {
-            margin-bottom: 15px;
-        }
-
-        .article a {
-            color: #e74c3c;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .article a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media screen and (max-width: 1200px) and (min-width: 601px) {
-            body {
-                padding: 15px;
-            }
-
-
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-
-            .article {
-                padding: 15px;
-            }
-        }
-    </style>
+    <title>Actualités Tech</title>
 </head>
-
 
 <body>
     <header>
         <nav>
-            <div>
-                <img src="../Images/header2.jpg" alt=" ">
+            <a href="../index.html">
+                <img src="../Images/header2.jpg" alt="Bannière du site">
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Video/video.html">Vidéo</a>
+                <a href="../Actu/actu.html" class="active">Actu Tech</a>
+                <a href="../cours/cours.html">Cours</a>
             </div>
-            <button>
-                <a href="../index.html" alt=" ">Home</a>
-            </button>
-            <button>
-                <a href="../Video/video.html" alt=" ">Video</a>
-            </button>
-
-            <button class="grobouton">
-                <a href="../Actu/actu.html" alt=" ">Actu Tech</a>
-            </button>
-
-            <button>
-                <a href="../cours/cours.html" alt=" ">Cours</a>
-            </button>
         </nav>
     </header>
     <main>
-        <h1><u>Actualité Tech:</u></h1>
-        <div id="contenu"></div>
-        <footer>
-            <a href="../Portfolio/index.html">Mon CV</a>
-        </footer>
-        <script>
-            fetch('newsletter.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('contenu').innerHTML = data;
-                });
-        </script>
+        <h1>Actualités Tech</h1>
+        <div id="contenu">
+            <p>Chargement des actualités...</p>
+        </div>
     </main>
+    <footer>
+        <a href="../Portfolio/index.html">Mon CV</a>
+    </footer>
+    <script>
+        fetch('newsletter.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur de chargement de la newsletter.');
+                }
+                return response.text();
+            })
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const bodyContent = doc.body.innerHTML;
+                document.getElementById('contenu').innerHTML = bodyContent;
+            })
+            .catch(error => {
+                document.getElementById('contenu').innerHTML = `<p>${error.message}</p>`;
+            });
+    </script>
 </body>
 
 </html>

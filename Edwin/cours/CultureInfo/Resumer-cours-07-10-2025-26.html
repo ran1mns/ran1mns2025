@@ -2,85 +2,102 @@
   <h1>Titre du Cours : Découverte et Histoire de l'Algorithmie</h1>
   <article class="introduction">
     <h2>Introduction</h2>
-    <p>L'algorithmie est la science des algorithmes, c'est-à-dire des suites finies et ordonnées d'instructions permettant d'atteindre un résultat précis. Comprendre l'algorithmie est essentiel pour toute personne souhaitant se lancer dans le développement informatique, car c'est la base de la programmation.</p>
+    <p>L'algorithmie est la base de toute la programmation. C'est l'art de concevoir des "recettes" logiques, des suites d'instructions précises, pour résoudre des problèmes. Avant même d'écrire une ligne de code, un bon développeur pense en termes d'algorithmes.</p>
   </article>
-  <article class="concepts">
-    <h2>Concepts Clés</h2>
-    <h3>Définition et Importance de l'Algorithmie</h3>
-    <p>Un algorithme est une suite d'étapes précises et ordonnées pour résoudre un problème. Par exemple, une recette de cuisine est un algorithme : elle donne des instructions précises pour préparer un plat. En informatique, un algorithme est traduit en programme, c'est-à-dire en langage que la machine comprend.</p>
-    <h3>Types d'Algorithmes</h3>
-    <p>Il existe deux catégories d'algorithmes : les visibles et les invisibles.</p>
-    <ul>
-      <li><strong>Visibles</strong> : On peut voir les étapes, comme une recette ou une notice de montage.</li>
-      <li><strong>Invisibles</strong> : Les étapes ne sont pas visibles, comme les algorithmes utilisés par un GPS ou Netflix.</li>
-    </ul>
-    <h3>Structures Fondamentales</h3>
-    <p>Les structures fondamentales des algorithmes sont :</p>
-    <ul>
-      <li><strong>Séquences</strong> : Ordre précis d'étapes où chaque étape dépend de la précédente.</li>
-      <li><strong>Conditions</strong> : Instructions basées sur des conditions (si/alors).</li>
-      <li><strong>Répétitions</strong> : Boucles qui répètent des étapes jusqu'à ce qu'une condition soit remplie.</li>
-    </ul>
-    <h3>Pseudo-Code Naturel</h3>
-    <p>Le pseudo-code naturel est un outil de transition entre le langage naturel et le langage de la machine. Il est hybride entre le français et le code informatique.</p>
-    <pre><code class="language-html">
-Algorithme : PréparerThé
-Entrée : eau, thé
-Sortie : thé prêt
 
-Début
-  Chauffer l'eau
-  Ajouter le thé
-  Laisser infuser
-  Servir le thé
-Fin
+  <article class="concepts">
+    <h2>1. Qu'est-ce qu'un Algorithme ?</h2>
+    <p>Un algorithme est une suite finie et non ambiguë d'opérations ou d'instructions permettant de résoudre un problème. Une simple recette de cuisine est un algorithme. En informatique, on formalise cette recette pour qu'une machine puisse l'exécuter.</p>
+    <h3>Variables</h3>
+    <p>Un algorithme manipule des données qu'il stocke dans des "boîtes" nommées <strong>variables</strong>. Chaque variable a un nom et contient une valeur qui peut changer au cours de l'exécution.</p>
+
+    <h2>2. Les Structures Fondamentales</h2>
+    <p>Tout algorithme, aussi complexe soit-il, est une combinaison de trois structures de base :</p>
+    <h3>La Séquence</h3>
+    <p>Les instructions sont exécutées les unes après les autres, dans l'ordre où elles sont écrites.</p>
+    <pre><code>
+DEBUT
+  AFFICHER "Entrez un nombre"
+  LIRE nombre
+  resultat <-- nombre * 2
+  AFFICHER resultat
+FIN
     </code></pre>
-    <h3>Notion de Performances</h3>
-    <p>La performance d'un algorithme est cruciale pour optimiser les coûts et les ressources. Les critères de performance incluent :</p>
+    <h3>La Condition (ou Alternative)</h3>
+    <p>Permet d'exécuter des instructions différentes selon qu'une condition est vraie ou fausse (<code>SI ... ALORS ... SINON</code>).</p>
+    <pre><code>
+SI age >= 18 ALORS
+  AFFICHER "Vous êtes majeur."
+SINON
+  AFFICHER "Vous êtes mineur."
+FIN SI
+    </code></pre>
+    <h3>La Répétition (ou Boucle)</h3>
+    <p>Permet de répéter un bloc d'instructions plusieurs fois. La boucle <code>TANT QUE</code> est la plus courante.</p>
+    <pre><code>
+compteur <-- 1
+TANT QUE compteur <= 5 FAIRE
+  AFFICHER compteur
+  compteur <-- compteur + 1
+FIN TANT QUE
+    </code></pre>
+
+    <h2>3. De l'Idée au Code : le Pseudo-Code</h2>
+    <p>Le pseudo-code est un langage intermédiaire entre le langage humain et le langage de programmation. Il permet de décrire un algorithme de manière structurée sans se soucier de la syntaxe exacte d'un langage spécifique.</p>
+
+    <h2>4. La Performance des Algorithmes (Notion de Complexité)</h2>
+    <p>Tous les algorithmes ne se valent pas. Certains sont plus rapides ou consomment moins de mémoire que d'autres. La <strong>notation Big O</strong> est utilisée pour mesurer l'efficacité d'un algorithme en fonction de la taille des données d'entrée (<em>n</em>).</p>
     <ul>
-      <li><strong>Finitude</strong> : L'algorithme doit s'arrêter.</li>
-      <li><strong>Précision</strong> : Les étapes doivent être claires et sans ambiguïté.</li>
-      <li><strong>Efficacité</strong> : Atteindre le but avec le moins d'effort possible.</li>
+      <li><strong>O(1) - Complexité constante :</strong> Le temps d'exécution est toujours le même, peu importe la taille des données. (Ex: Accéder au premier élément d'une liste).</li>
+      <li><strong>O(n) - Complexité linéaire :</strong> Le temps d'exécution augmente proportionnellement à la taille des données. (Ex: Parcourir tous les éléments d'une liste).</li>
+      <li><strong>O(n²) - Complexité quadratique :</strong> Le temps d'exécution augmente de manière exponentielle. Souvent le signe d'une double boucle. (Ex: Comparer chaque élément d'une liste avec tous les autres).</li>
     </ul>
-    <p>La notation Big-O est utilisée pour évaluer la performance d'un algorithme.</p>
+    <img src="https://i.imgur.com/3QeX0fV.png" alt="Graphique de complexité Big O" style="max-width:80%; display:block; margin:auto; background:white; padding:10px; border-radius:8px;">
   </article>
+
   <article class="exercices">
     <h2>Exercices Pratiques</h2>
     <ol>
-      <li>Écrire un pseudo-code naturel pour l'algorithme "Préparer un Sandwich".</li>
-      <li>Décrire les étapes d'un algorithme invisible que vous utilisez quotidiennement (par exemple, un GPS).</li>
+      <li>Écrivez le pseudo-code d'un algorithme qui demande à l'utilisateur son année de naissance et lui affiche son âge.</li>
+      <li>Écrivez le pseudo-code d'un algorithme qui prend une liste de nombres et affiche le plus grand.</li>
     </ol>
     <details>
-      <summary>Corrigé</summary>
-      <pre><code class="language-html">
-Algorithme : PréparerSandwich
-Entrée : pain, jambon, fromage, beurre
-Sortie : sandwich prêt
+      <summary>Corrigés</summary>
+      <pre><code>
+// Exercice 1
+DEBUT
+  annee_actuelle <-- 2024
+  AFFICHER "Quelle est votre année de naissance ?"
+  LIRE annee_naissance
+  age <-- annee_actuelle - annee_naissance
+  AFFICHER "Vous avez " + age + " ans."
+FIN
 
-Début
-  Prendre deux tranches de pain
-  Étaler du beurre sur une tranche
-  Ajouter une tranche de jambon
-  Ajouter une tranche de fromage
-  Fermer le sandwich avec la deuxième tranche de pain
-Fin
+// Exercice 2
+ALGORITHME TrouverLePlusGrand
+VARIABLES
+  nombres: LISTE D'ENTIERS
+  plus_grand: ENTIER
+  i: ENTIER
 
-Algorithme : UtiliserGPS
-Entrée : destination
-Sortie : itinéraire
-
-Début
-  Entrer la destination
-  Calculer l'itinéraire
-  Suivre les instructions vocales
-Fin
+DEBUT
+  plus_grand <-- nombres[0]
+  POUR i DE 1 A LONGUEUR(nombres) - 1 FAIRE
+    SI nombres[i] > plus_grand ALORS
+      plus_grand <-- nombres[i]
+    FIN SI
+  FIN POUR
+  AFFICHER "Le plus grand nombre est : " + plus_grand
+FIN
       </code></pre>
     </details>
   </article>
+
   <aside class="ressources">
     <h2>Pour aller plus loin</h2>
     <ul>
-      <li><a href="https://formations.nicolas.sh/algorithms/pseudo-code-cheatsheet" target="_blank">Cheat Sheet Pseudo-Code</a></li>
+      <li><a href="https://www.khanacademy.org/computing/computer-science/algorithms" target="_blank">Khan Academy - Introduction aux algorithmes</a></li>
+      <li><a href="https://www.bigocheatsheet.com/" target="_blank">Big-O Cheat Sheet</a> - Référence des complexités des algorithmes courants.</li>
     </ul>
   </aside>
 </section>

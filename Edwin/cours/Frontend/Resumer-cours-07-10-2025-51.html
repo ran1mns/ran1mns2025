@@ -2,97 +2,142 @@
   <h1>Titre du Cours : Les Fonctions en JavaScript</h1>
   <article class="introduction">
     <h2>Introduction</h2>
-    <p>Les fonctions sont des blocs de code réutilisables qui effectuent une tâche spécifique. En JavaScript, elles sont essentielles pour organiser et structurer le code. Comprendre et maîtriser les fonctions vous permettra de créer des programmes plus efficaces et maintenables.</p>
+    <p>Les fonctions sont l'un des piliers du JavaScript. Ce sont des blocs de code réutilisables qui permettent d'organiser le code, de le rendre plus modulaire et plus facile à maintenir. Ce cours couvre tout ce que vous devez savoir pour maîtriser les fonctions, des bases à des concepts plus avancés.</p>
   </article>
+
   <article class="concepts">
-    <h2>Concepts Clés</h2>
-    <h3>Définition et Syntaxe de Base</h3>
-    <p>Une fonction en JavaScript est définie à l'aide du mot-clé <code>function</code> suivi du nom de la fonction, de parenthèses et d'un bloc de code entre accolades. Voici un exemple simple :</p>
+    <h2>1. Déclarer et Appeler des Fonctions</h2>
+    <h3>Déclaration de Fonction</h3>
+    <p>La manière la plus classique de créer une fonction est la déclaration de fonction.</p>
     <pre><code class="language-js">
+// Déclaration de la fonction
 function direBonjour() {
-  console.log("Bonjour!");
-}
-    </code></pre>
-    <h3>Appel de Fonction</h3>
-    <p>Pour exécuter une fonction, vous devez l'appeler en utilisant son nom suivi de parenthèses. Par exemple :</p>
-    <pre><code class="language-js">
-direBonjour(); // Affiche "Bonjour!" dans la console
-    </code></pre>
-    <h3>Paramètres et Arguments</h3>
-    <p>Les fonctions peuvent accepter des paramètres, qui sont des valeurs d'entrée. Lorsque vous appelez une fonction, vous passez des arguments correspondant à ces paramètres. Voici un exemple :</p>
-    <pre><code class="language-js">
-function saluer(nom) {
-  console.log("Bonjour, " + nom + "!");
+  console.log("Bonjour !");
 }
 
-saluer("Alice"); // Affiche "Bonjour, Alice!" dans la console
+// Appel de la fonction
+direBonjour(); // Affiche "Bonjour !"
     </code></pre>
-    <h3>Valeur de Retour</h3>
-    <p>Les fonctions peuvent retourner une valeur en utilisant le mot-clé <code>return</code>. Cette valeur peut ensuite être utilisée ou stockée. Par exemple :</p>
+
+    <h2>2. Paramètres et Arguments</h2>
+    <p>Les fonctions peuvent accepter des données en entrée, appelées <strong>paramètres</strong>. Lorsque vous appelez la fonction, les valeurs que vous lui passez sont des <strong>arguments</strong>.</p>
     <pre><code class="language-js">
-function additionner(a, b) {
+function saluer(nom) { // 'nom' est un paramètre
+  console.log(`Bonjour, ${nom} !`);
+}
+
+saluer("Edwin"); // "Edwin" est un argument
+    </code></pre>
+    <h3>Paramètres par Défaut</h3>
+    <p>Vous pouvez assigner une valeur par défaut à un paramètre si aucun argument n'est fourni.</p>
+    <pre><code class="language-js">
+function saluer(nom = "visiteur") {
+  console.log(`Bonjour, ${nom} !`);
+}
+
+saluer(); // Affiche "Bonjour, visiteur !"
+    </code></pre>
+
+    <h2>3. La Valeur de Retour (return)</h2>
+    <p>Une fonction peut renvoyer une valeur à l'aide du mot-clé <code>return</code>. L'exécution de la fonction s'arrête dès que <code>return</code> est rencontré.</p>
+    <pre><code class="language-js">
+function addition(a, b) {
   return a + b;
 }
 
-let resultat = additionner(3, 4); // resultat vaut 7
-console.log(resultat); // Affiche 7 dans la console
+const resultat = addition(5, 3);
+console.log(resultat); // Affiche 8
     </code></pre>
-    <h3>Fonctions Fléchées</h3>
-    <p>Introduites avec ES6, les fonctions fléchées offrent une syntaxe plus concise. Voici comment définir une fonction fléchée :</p>
+
+    <h2>4. Expressions de Fonction et Fonctions Fléchées</h2>
+    <h3>Expression de Fonction</h3>
+    <p>Vous pouvez aussi assigner une fonction à une variable. On parle alors d'expression de fonction (ou fonction anonyme).</p>
     <pre><code class="language-js">
-const direBonjour = () => {
-  console.log("Bonjour!");
+const salutation = function() {
+  console.log("Salut !");
 };
 
-direBonjour(); // Affiche "Bonjour!" dans la console
+salutation();
     </code></pre>
-    <h3>Portée des Variables</h3>
-    <p>Les variables définies à l'intérieur d'une fonction sont locales à cette fonction et ne sont pas accessibles en dehors. Voici un exemple :</p>
+    <h3>Fonctions Fléchées (ES6)</h3>
+    <p>Les fonctions fléchées offrent une syntaxe plus courte et concise.</p>
     <pre><code class="language-js">
-function exemplePortee() {
-  let message = "Bonjour!";
-  console.log(message); // Affiche "Bonjour!"
+const multiplier = (a, b) => {
+  return a * b;
+};
+
+// Si la fonction n'a qu'une seule instruction de retour, on peut l'écrire encore plus court :
+const multiplierSimple = (a, b) => a * b;
+    </code></pre>
+
+    <h2>5. Portée des Variables (Scope)</h2>
+    <p>La portée définit où une variable est accessible.</p>
+    <ul>
+      <li><strong>Portée globale :</strong> Variable déclarée en dehors de toute fonction.</li>
+      <li><strong>Portée de fonction :</strong> Variable déclarée avec <code>var</code> à l'intérieur d'une fonction.</li>
+      <li><strong>Portée de bloc :</strong> Variable déclarée avec <code>let</code> ou <code>const</code> à l'intérieur d'un bloc <code>{...}</code> (ex: dans un <code>if</code> ou une boucle).</li>
+    </ul>
+
+    <h2>6. Fonctions Callback</h2>
+    <p>En JavaScript, une fonction peut être passée en argument à une autre fonction. C'est ce qu'on appelle une fonction "callback". C'est un concept très puissant utilisé pour la programmation asynchrone.</p>
+    <pre><code class="language-js">
+function operation(a, b, callback) {
+  return callback(a, b);
 }
 
-exemplePortee();
-console.log(message); // Erreur : message n'est pas défini
+// On utilise la fonction 'addition' comme callback
+const resultatAddition = operation(10, 5, addition);
+console.log(resultatAddition); // Affiche 15
+
+// On peut aussi utiliser une fonction anonyme
+const resultatSoustraction = operation(10, 5, function(x, y) {
+  return x - y;
+});
+console.log(resultatSoustraction); // Affiche 5
     </code></pre>
-    <aside class="astuce">
-      <h4>Astuce</h4>
-      <p>Utilisez des noms de fonctions descriptifs pour rendre votre code plus lisible et maintenable.</p>
-    </aside>
   </article>
+
   <article class="exercices">
     <h2>Exercices Pratiques</h2>
     <ol>
-      <li>Créez une fonction qui prend deux nombres en paramètres et retourne leur produit.</li>
-      <li>Créez une fonction fléchée qui prend un nom en paramètre et affiche un message de bienvenue personnalisé.</li>
+      <li>Écrivez une fonction fléchée nommée <code>calculerAge</code> qui prend une année de naissance en paramètre et retourne l'âge de la personne.</li>
+      <li>Créez une fonction <code>filtrerNombresPairs</code> qui prend un tableau de nombres et une fonction callback. La fonction doit appliquer le callback à chaque nombre pair du tableau.</li>
     </ol>
     <details>
-      <summary>Corrigé</summary>
+      <summary>Corrigés</summary>
       <pre><code class="language-js">
 // Exercice 1
-function multiplier(a, b) {
-  return a * b;
-}
-
-let resultat = multiplier(5, 6); // resultat vaut 30
-console.log(resultat); // Affiche 30 dans la console
-
-// Exercice 2
-const saluer = (nom) => {
-  console.log("Bienvenue, " + nom + "!");
+const calculerAge = (anneeNaissance) => {
+  const anneeActuelle = new Date().getFullYear();
+  return anneeActuelle - anneeNaissance;
 };
 
-saluer("Bob"); // Affiche "Bienvenue, Bob!" dans la console
+console.log(calculerAge(1990)); // Affiche 34 (en 2024)
+
+// Exercice 2
+function filtrerNombresPairs(nombres, callback) {
+  for (const nombre of nombres) {
+    if (nombre % 2 === 0) {
+      callback(nombre);
+    }
+  }
+}
+
+const monTableau = [1, 2, 3, 4, 5, 6];
+
+filtrerNombresPairs(monTableau, (nombrePair) => {
+  console.log(`${nombrePair} est un nombre pair.`);
+});
       </code></pre>
     </details>
   </article>
+
   <aside class="ressources">
     <h2>Pour aller plus loin</h2>
     <ul>
-      <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Fonctions" target="_blank">Documentation MDN sur les fonctions JavaScript</a></li>
-      <li><a href="https://www.w3schools.com/js/js_functions.asp" target="_blank">Tutoriel W3Schools sur les fonctions</a></li>
+      <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Fonctions" target="_blank">MDN - Les fonctions JavaScript</a></li>
+      <li><a href="https://javascript.info/function-basics" target="_blank">JavaScript.info - Functions (en anglais)</a></li>
+      <li><a href="http://callbackhell.com/" target="_blank">Callback Hell</a> - Une explication de ce qu'il faut éviter avec les callbacks.</li>
     </ul>
   </aside>
 </section>

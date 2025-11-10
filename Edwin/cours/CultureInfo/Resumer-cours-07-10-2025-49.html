@@ -1,131 +1,109 @@
 <section class="course">
-  <h1>Titre du Cours : Commandes Linux de Base</h1>
+  <h1>Titre du Cours : Introduction à la Ligne de Commande Linux</h1>
   <article class="introduction">
     <h2>Introduction</h2>
-    <p>Les commandes Linux sont essentielles pour interagir avec le système d'exploitation Linux. Elles permettent de créer des répertoires, installer des programmes, naviguer dans le système de fichiers, et bien plus encore. Ce cours vous guidera à travers les commandes de base et leur utilisation pratique.</p>
+    <p>La ligne de commande (ou terminal) est une interface texte puissante pour interagir avec un système Linux. La maîtriser est une compétence fondamentale pour tout développeur, car elle permet de gérer des serveurs, d'automatiser des tâches et de travailler plus efficacement.</p>
   </article>
+
   <article class="concepts">
-    <h2>Concepts Clés</h2>
-    <h3>Syntaxe des Commandes</h3>
-    <p>La syntaxe des commandes Linux peut varier, mais elle suit généralement l'une des formes suivantes :</p>
-    <pre><code class="language-sh">
-nom-commande [-option]
-nom_commande
-commande [parametre]
-commande [-option] [parametre]
+    <h2>1. Naviguer dans le Système de Fichiers</h2>
+    <ul>
+      <li><strong><code>pwd</code> (Print Working Directory) :</strong> Affiche le chemin complet du répertoire où vous vous trouvez.</li>
+      <li><strong><code>ls</code> (List) :</strong> Liste le contenu du répertoire courant.
+        <ul>
+          <li><code>ls -l</code> : Affiche une liste détaillée (permissions, propriétaire, taille...).</li>
+          <li><code>ls -a</code> : Affiche tous les fichiers, y compris les fichiers cachés (ceux qui commencent par un <code>.</code>).</li>
+          <li><code>ls -la</code> : Combine les deux options.</li>
+        </ul>
+      </li>
+      <li><strong><code>cd</code> (Change Directory) :</strong> Permet de se déplacer dans l'arborescence.
+        <ul>
+          <li><code>cd /chemin/vers/un/dossier</code> : Se déplace vers le dossier spécifié.</li>
+          <li><code>cd ..</code> : Remonte au répertoire parent.</li>
+          <li><code>cd ~</code> ou <code>cd</code> : Retourne au répertoire personnel de l'utilisateur.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>2. Manipuler les Fichiers et Répertoires</h2>
+    <h3>Création</h3>
+    <ul>
+      <li><strong><code>touch [nom_fichier]</code> :</strong> Crée un fichier vide.</li>
+      <li><strong><code>mkdir [nom_dossier]</code> :</strong> Crée un nouveau répertoire.
+        <ul>
+          <li><code>mkdir -p projets/web/images</code> : L'option <code>-p</code> crée les répertoires parents s'ils n'existent pas.</li>
+        </ul>
+      </li>
+    </ul>
+    <h3>Copie, Déplacement et Renommage</h3>
+    <ul>
+      <li><strong><code>cp [source] [destination]</code> (Copy) :</strong> Copie un fichier ou un répertoire.</li>
+      <li><strong><code>mv [source] [destination]</code> (Move) :</strong> Déplace ou renomme un fichier ou un répertoire.</li>
+    </ul>
+    <pre><code class="language-bash">
+# Renommer un fichier
+mv ancien_nom.txt nouveau_nom.txt
+
+# Déplacer un fichier dans un autre dossier
+mv fichier.txt /home/user/documents/
     </code></pre>
-    <h3>Commandes de Base</h3>
-    <h4>Créer un Répertoire</h4>
-    <p>La commande <code>mkdir</code> (make directory) permet de créer un nouveau répertoire.</p>
-    <pre><code class="language-sh">
-mkdir nom_du_repertoire
+    <h3>Suppression</h3>
+    <ul>
+      <li><strong><code>rm [nom_fichier]</code> (Remove) :</strong> Supprime un fichier. <strong>Attention, cette action est irréversible !</strong></li>
+      <li><strong><code>rmdir [nom_dossier]</code> (Remove Directory) :</strong> Supprime un répertoire <strong>vide</strong>.</li>
+      <li><strong><code>rm -r [nom_dossier]</code> :</strong> Supprime un répertoire et tout son contenu (fichiers et sous-dossiers). À utiliser avec une extrême prudence.</li>
+    </ul>
+
+    <h2>3. Consulter et Éditer des Fichiers</h2>
+    <ul>
+      <li><strong><code>cat [nom_fichier]</code> :</strong> Affiche tout le contenu d'un fichier dans le terminal.</li>
+      <li><strong><code>less [nom_fichier]</code> :</strong> Affiche le contenu d'un fichier page par page (très utile pour les longs fichiers). Appuyez sur <code>q</code> pour quitter.</li>
+      <li><strong><code>nano [nom_fichier]</code> :</strong> Ouvre un éditeur de texte simple directement dans le terminal.</li>
+    </ul>
+
+    <h2>4. Gestion du Système (Super-utilisateur)</h2>
+    <h3><code>sudo</code></h3>
+    <p>La commande <strong><code>sudo</code></strong> (Super User Do) permet d'exécuter une commande avec les privilèges d'administrateur (root). Elle est nécessaire pour les actions qui affectent le système, comme l'installation de logiciels.</p>
+    <pre><code class="language-bash">
+# Mettre à jour la liste des paquets disponibles (Debian/Ubuntu)
+sudo apt update
+
+# Installer le programme 'tree'
+sudo apt install tree
     </code></pre>
-    <h4>Lister les Fichiers et Répertoires</h4>
-    <p>La commande <code>ls</code> (list) permet de lister les fichiers et répertoires dans le répertoire courant.</p>
-    <pre><code class="language-sh">
-ls
-    </code></pre>
-    <p>Pour un affichage détaillé, utilisez l'option <code>-l</code> :</p>
-    <pre><code class="language-sh">
-ls -l
-    </code></pre>
-    <h4>Afficher le Chemin Courant</h4>
-    <p>La commande <code>pwd</code> (print working directory) affiche le chemin absolu du répertoire courant.</p>
-    <pre><code class="language-sh">
-pwd
-    </code></pre>
-    <h4>Naviguer dans le Système de Fichiers</h4>
-    <p>La commande <code>cd</code> (change directory) permet de changer de répertoire. Utilisée seule, elle vous ramène à votre répertoire home.</p>
-    <pre><code class="language-sh">
-cd nom_du_repertoire
-cd ..  # Remonter d'un répertoire
-    </code></pre>
-    <h4>Supprimer un Répertoire</h4>
-    <p>La commande <code>rmdir</code> (remove directory) permet de supprimer un répertoire vide.</p>
-    <pre><code class="language-sh">
-rmdir nom_du_repertoire
-    </code></pre>
-    <h4>Combiner les Commandes</h4>
-    <p>Vous pouvez combiner plusieurs commandes pour créer une arborescence de répertoires :</p>
-    <pre><code class="language-sh">
-mkdir travail/compta travail/achat travail/achat/2024 travail/achat/2025
-    </code></pre>
-    <h4>Installer et Gérer des Programmes</h4>
-    <p>La commande <code>apt</code> (Advanced Packaging Tool) est utilisée pour installer et gérer des programmes sur les distributions basées sur Debian (comme Ubuntu).</p>
-    <pre><code class="language-sh">
-apt update  # Met à jour la liste des applications disponibles
-    </code></pre>
-    <h4>Déplacer et Renommer des Fichiers</h4>
-    <p>La commande <code>mv</code> (move) permet de déplacer ou renommer des fichiers et répertoires.</p>
-    <pre><code class="language-sh">
-mv ancien_nom nouveau_nom  # Renomme un fichier ou répertoire
-    </code></pre>
-    <h4>Créer un Fichier Vide</h4>
-    <p>La commande <code>touch</code> permet de créer un fichier vide.</p>
-    <pre><code class="language-sh">
-touch nom_du_fichier
-    </code></pre>
-    <h4>Supprimer des Fichiers et Répertoires</h4>
-    <p>La commande <code>rm</code> (remove) permet de supprimer des fichiers.</p>
-    <pre><code class="language-sh">
-rm nom_du_fichier
-    </code></pre>
-    <p>Pour supprimer un répertoire et tout son contenu, utilisez l'option <code>-r</code> :</p>
-    <pre><code class="language-sh">
-rm -r nom_du_repertoire
-    </code></pre>
-    <h4>Architecture 3 Tiers</h4>
-    <p>L'architecture 3 tiers est une méthode de conception logicielle qui sépare les applications en trois couches :</p>
-    <ol>
-      <li><strong>Présentation</strong> : Comment les choses sont présentées à l'utilisateur (navigateur web).</li>
-      <li><strong>Traitement</strong> : Couche métier, algorithmes, serveur web.</li>
-      <li><strong>Données</strong> : Bases de données.</li>
-    </ol>
-    <p>Les requêtes entre les couches se font via HTTP et HTTPS sur les ports 80 et 443. Le serveur web cherche les fichiers et les renvoie au navigateur. Le langage PHP permet de générer le contenu de la page dynamiquement.</p>
-    <p>Le système LAMP (Linux, Apache, MySQL, PHP) est un exemple d'architecture 3 tiers.</p>
   </article>
+
   <article class="exercices">
-    <h2>Exercices Pratiques</h2>
+    <h2>Exercice Pratique : Mettre en place un projet</h2>
+    <p>Utilisez uniquement la ligne de commande pour réaliser les étapes suivantes dans votre répertoire personnel :</p>
     <ol>
-      <li>Créer une arborescence de répertoires pour un projet fictif avec les répertoires suivants : <code>projet/docs</code>, <code>projet/src</code>, <code>projet/tests</code>.</li>
-      <li>Naviguer dans cette arborescence et lister les fichiers et répertoires à chaque niveau.</li>
-      <li>Créer un fichier vide nommé <code>README.md</code> dans le répertoire <code>projet/docs</code>.</li>
-      <li>Renommer le répertoire <code>tests</code> en <code>unit_tests</code>.</li>
-      <li>Supprimer le répertoire <code>unit_tests</code> et tout son contenu.</li>
+      <li>Créez un répertoire <code>mon_site_web</code>.</li>
+      <li>Déplacez-vous à l'intérieur de ce répertoire.</li>
+      <li>Créez deux sous-répertoires : <code>pages</code> et <code>css</code>.</li>
+      <li>Dans le répertoire racine <code>mon_site_web</code>, créez un fichier <code>index.html</code>.</li>
+      <li>Dans le répertoire <code>css</code>, créez un fichier <code>style.css</code>.</li>
+      <li>Affichez l'arborescence de votre projet (astuce : installez et utilisez la commande <code>tree</code>).</li>
     </ol>
     <details>
       <summary>Corrigé</summary>
-      <pre><code class="language-sh">
-# Exercice 1
-mkdir projet/docs projet/src projet/tests
-
-# Exercice 2
-cd projet
-ls
-cd docs
-ls
-cd ../src
-ls
-cd ../tests
-ls
-
-# Exercice 3
-touch docs/README.md
-
-# Exercice 4
-mv tests unit_tests
-
-# Exercice 5
-rm -r unit_tests
+      <pre><code class="language-bash">
+mkdir mon_site_web
+cd mon_site_web
+mkdir pages css
+touch index.html
+touch css/style.css
+sudo apt install tree # Si non installé
+tree
       </code></pre>
     </details>
   </article>
+
   <aside class="ressources">
     <h2>Pour aller plus loin</h2>
     <ul>
-      <li><a href="https://www.linux.org/" target="_blank">Linux.org</a> - Ressources et documentation sur Linux</li>
-      <li><a href="https://www.debian.org/doc/manuals/debian-reference/ch02.en.html" target="_blank">Debian Reference - Commandes de base</a></li>
-      <li><a href="https://www.gnu.org/software/coreutils/manual/coreutils.html" target="_blank">GNU Core Utilities - Documentation</a></li>
+      <li><a href="https://linuxcommand.org/" target="_blank">LinuxCommand.org</a> - Un tutoriel complet (en anglais).</li>
+      <li><a href="https://explainshell.com/" target="_blank">Explain Shell</a> - Un outil qui décompose et explique n'importe quelle commande shell.</li>
+      <li><a href="https://tldr.sh/" target="_blank">tldr pages</a> - Des pages de manuel simplifiées et pratiques.</li>
     </ul>
   </aside>
 </section>

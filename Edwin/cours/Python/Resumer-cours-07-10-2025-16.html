@@ -7,105 +7,122 @@
   <article class="concepts">
     <h2>Concepts Clés</h2>
     <h3>Interaction avec Python</h3>
-    <p>Vous pouvez interagir avec Python de deux manières principales : via un script ou directement dans le terminal. Pour écrire du code Python dans le terminal, il suffit de taper <code>python</code> suivi de votre code.</p>
+    <p>Vous pouvez interagir avec Python de deux manières principales : via un script (un fichier avec l'extension <code>.py</code>) ou directement dans le terminal (l'interpréteur interactif).</p>
     <pre><code class="language-python">
+# Lancer l'interpréteur interactif
 python
-print("Hello, World!")
+
+# Écrire du code directement
+>>> print("Hello, World!")
+Hello, World!
+>>> exit()
     </code></pre>
-    <h3>Manipulation des Données Chiffrées</h3>
-    <p>Python permet de manipuler des données chiffrées facilement. Par exemple, pour calculer une puissance, vous utilisez l'opérateur <code>**</code>.</p>
-    <pre><code class="language-python">
-2 ** 3  # Cela signifie 2 puissance 3, soit 8
-    </code></pre>
-    <p>Python respecte les règles classiques des mathématiques, y compris l'utilisation des parenthèses pour définir l'ordre des opérations.</p>
-    <pre><code class="language-python">
-(2 + 3) * 4  # Cela signifie (2 + 3) multiplié par 4, soit 20
-    </code></pre>
-    <h3>Concaténation de Chaînes de Caractères</h3>
-    <p>En Python, vous pouvez ajouter des chaînes de caractères pour les concaténer.</p>
-    <pre><code class="language-python">
-"Hello, " + "World!"  # Cela donne "Hello, World!"
-    </code></pre>
-    <p>Vous pouvez utiliser des guillemets simples ou doubles pour définir une chaîne de caractères. Par convention, on utilise les guillemets doubles.</p>
-    <pre><code class="language-python">
-"j'ai faim"  # Utilisation de guillemets doubles
-'j\'ai faim'  # Utilisation de guillemets simples avec échappement
-    </code></pre>
-    <h3>Booléens</h3>
-    <p>Python utilise les booléens <code>True</code> et <code>False</code> (attention à la majuscule).</p>
-    <pre><code class="language-python">
-is_hungry = True
-is_full = False
-    </code></pre>
-    <h3>Constantes</h3>
-    <p>Python ne gère pas les constantes de manière stricte. Par convention, on utilise des majuscules pour les nommer, mais elles restent modifiables.</p>
-    <pre><code class="language-python">
-PI = 3.14
-PI = 3.14159  # La constante peut être modifiée
-    </code></pre>
-    <h3>None et Chaîne Vide</h3>
-    <p>Il est important de distinguer entre <code>None</code> (rien) et une chaîne vide <code>""</code>.</p>
-    <pre><code class="language-python">
-empty_string = ""
-no_value = None
-    </code></pre>
-    <h3>Conversion de Types</h3>
-    <p>Python ne peut pas traiter plusieurs types de données en même temps. Vous devez forcer la conversion des données en un type commun.</p>
-    <pre><code class="language-python">
-age = 25
-age_str = str(age)  # Conversion en chaîne de caractères
-    </code></pre>
-    <p>Les f-strings permettent de formatter des chaînes de caractères en incluant des variables.</p>
-    <pre><code class="language-python">
-name = "Alice"
-age = 30
-message = f"{name} a {age} ans."
-    </code></pre>
-    <h3>Conventions de Nommage</h3>
-    <p>Il existe plusieurs conventions de nommage en Python :</p>
+    <h3>Types de Données</h3>
+    <p>Python supporte plusieurs types de données de base :</p>
     <ul>
-      <li><strong>Snake Case</strong> : <code>rounded_average</code></li>
-      <li><strong>Camel Case</strong> : <code>roundedAverage</code></li>
-      <li><strong>Pascal Case</strong> : <code>RoundedAverage</code> (usage spécifique en Python)</li>
+      <li><strong>Nombres :</strong> <code>int</code> (entiers), <code>float</code> (nombres à virgule flottante).</li>
+      <li><strong>Texte :</strong> <code>str</code> (chaînes de caractères).</li>
+      <li><strong>Booléens :</strong> <code>bool</code> (<code>True</code> ou <code>False</code>).</li>
+      <li><strong>Collections :</strong> <code>list</code> (listes), <code>tuple</code>, <code>dict</code> (dictionnaires).</li>
     </ul>
-    <h3>Nommage des Variables</h3>
-    <p>Soyez attentif au nommage des variables. Évitez de commencer par un chiffre ou une majuscule, et n'utilisez pas de caractères spéciaux.</p>
     <pre><code class="language-python">
-valid_variable = 10
-invalid-variable = 20  # Invalide à cause du tiret
+# Exemples de types de données
+age = 25               # int
+pi = 3.14              # float
+nom = "Edwin"          # str
+est_majeur = True      # bool
+fruits = ["pomme", "banane"] # list
     </code></pre>
-    <p>Utiliser <code>is</code>, <code>has</code>, ou <code>can</code> dans le nom d'une variable peut indiquer une condition.</p>
+    <h3>Opérateurs</h3>
+    <p>Python utilise des opérateurs pour effectuer des opérations sur les variables et les valeurs.</p>
+    <ul>
+      <li><strong>Arithmétiques :</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (modulo), <code>**</code> (puissance).</li>
+      <li><strong>De comparaison :</strong> <code>==</code>, <code>!=</code>, <code>></code>, <code><</code>, <code>>=</code>, <code><=</code>.</li>
+      <li><strong>Logiques :</strong> <code>and</code>, <code>or</code>, <code>not</code>.</li>
+    </ul>
+    <h3>Structures de Contrôle : Conditions</h3>
+    <p>Les conditions permettent d'exécuter du code uniquement si une certaine condition est remplie. On utilise <code>if</code>, <code>elif</code> (sinon si), et <code>else</code> (sinon).</p>
     <pre><code class="language-python">
-is_valid = True
-has_permission = False
+age = 18
+if age >= 18:
+    print("Vous êtes majeur.")
+elif age < 0:
+    print("Âge invalide.")
+else:
+    print("Vous êtes mineur.")
     </code></pre>
-    <h3>Listes (ou Tableaux)</h3>
-    <p>Une liste est un élément ordonné. Vous pouvez manipuler les éléments de manière groupée ou individuellement.</p>
+    <h3>Structures de Contrôle : Boucles</h3>
+    <p>Les boucles permettent de répéter un bloc de code plusieurs fois.</p>
+    <h4>Boucle <code>for</code></h4>
+    <p>La boucle <code>for</code> est utilisée pour itérer sur une séquence (comme une liste).</p>
     <pre><code class="language-python">
-fruits = ["apple", "banana", "cherry"]
-print(fruits[0])  # Accès au premier élément
+fruits = ["pomme", "banane", "cerise"]
+for fruit in fruits:
+    print(fruit)
+    </code></pre>
+    <h4>Boucle <code>while</code></h4>
+    <p>La boucle <code>while</code> s'exécute tant qu'une condition est vraie.</p>
+    <pre><code class="language-python">
+compteur = 0
+while compteur < 5:
+    print(compteur)
+    compteur += 1  # Équivalent à compteur = compteur + 1
+    </code></pre>
+    <h3>Fonctions</h3>
+    <p>Une fonction est un bloc de code réutilisable qui effectue une action spécifique. On la définit avec le mot-clé <code>def</code>.</p>
+    <pre><code class="language-python">
+def saluer(nom):
+    return f"Bonjour, {nom} !"
+
+message = saluer("Edwin")
+print(message)  # Affiche "Bonjour, Edwin !"
     </code></pre>
   </article>
   <article class="exercices">
     <h2>Exercices Pratiques</h2>
     <ol>
-      <li>Créez un script Python qui demande à l'utilisateur son nom et son âge, puis affiche un message formaté avec ces informations.</li>
-    </ol>
-    <details>
-      <summary>Corrigé</summary>
-      <pre><code class="language-python">
-name = input("Quel est votre nom ? ")
+      <li>Créez un script qui demande à l'utilisateur son nom et son âge, puis affiche un message formaté.</li>
+      <details>
+        <summary>Corrigé</summary>
+        <pre><code class="language-python">
+nom = input("Quel est votre nom ? ")
 age = input("Quel est votre âge ? ")
-message = f"Bonjour, {name}. Vous avez {age} ans."
-print(message)
-      </code></pre>
-    </details>
+print(f"Bonjour, {nom}. Vous avez {age} ans.")
+        </code></pre>
+      </details>
+      <li>Écrivez un programme qui vérifie si un nombre est pair ou impair.</li>
+      <details>
+        <summary>Corrigé</summary>
+        <pre><code class="language-python">
+nombre = int(input("Entrez un nombre : "))
+if nombre % 2 == 0:
+    print("Ce nombre est pair.")
+else:
+    print("Ce nombre est impair.")
+        </code></pre>
+      </details>
+      <li>Créez une fonction qui prend une liste de nombres et renvoie la somme de tous les éléments.</li>
+      <details>
+        <summary>Corrigé</summary>
+        <pre><code class="language-python">
+def somme_liste(nombres):
+    total = 0
+    for nombre in nombres:
+        total += nombre
+    return total
+
+ma_liste = [1, 2, 3, 4, 5]
+print(f"La somme est : {somme_liste(ma_liste)}")
+        </code></pre>
+      </details>
+    </ol>
   </article>
   <aside class="ressources">
     <h2>Pour aller plus loin</h2>
     <ul>
       <li><a href="https://docs.python.org/3/tutorial/" target="_blank">Tutoriel officiel de Python</a></li>
       <li><a href="https://www.w3schools.com/python/" target="_blank">W3Schools Python Tutorial</a></li>
+      <li><a href="https://realpython.com/" target="_blank">Real Python</a></li>
     </ul>
   </aside>
 </section>

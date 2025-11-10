@@ -5,347 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../indexcss.css">
+    <link rel="stylesheet" href="courscss.css">
     <link rel="icon" href="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-192x192.png"
         sizes="192x192" />
     <link rel="apple-touch-icon"
         href="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-180x180.png" />
     <meta name="msapplication-TileImage"
         content="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-270x270.png" />
-    <title>Cours page</title>
-    <style>
-        .navi2 {
-            display: flex;
-            align-content: center;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            flex-wrap: nowrap;
-            text-align: center;
-            height: auto;
-            width: 1200px;
-            margin-bottom: 150px;
-        }
-
-        .navi2 button {
-            height: auto;
-            width: auto;
-        }
-
-        .navi2 button:hover {
-            border: 2px solid red;
-        }
-
-        body {
-            margin: 0 0;
-            background: linear-gradient(#1e3a8a, #9333ea, #be185d)no-repeat;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        main {
-            margin: auto;
-            width: 1200px;
-            text-align: center;
-            height: auto;
-        }
-
-        footer {
-            display: inline-block;
-            width: 100%;
-            height: 30px;
-            align-content: center;
-            flex-wrap: nowrap;
-            flex-direction: row;
-            align-items: stretch;
-            margin-bottom: 0px;
-            background: #1e3a8a;
-            position: fixed;
-            bottom: 0px;
-            left: 0px
-        }
-
-        div {
-            margin: auto;
-        }
-
-        .container {
-            max-width: 600px;
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            margin-bottom: 100px;
-        }
-
-        .construction-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .cours-item {
-            margin-bottom: 40px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 15px;
-            border-radius: 10px;
-            min-width: 80px;
-        }
-
-        .countdown-number {
-            font-size: 2em;
-            font-weight: bold;
-            display: block;
-        }
-
-        .countdown-label {
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-
-        .social-links {
-            margin-top: 30px;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5em;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
-            margin: 20px 0;
-            overflow: hidden;
-        }
-
-        .progress {
-            height: 100%;
-            background: #4CAF50;
-            width: 65%;
-            border-radius: 4px;
-            animation: progress 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(0);
-            }
-
-            40% {
-                transform: translateY(-10px);
-            }
-
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        @keyframes progress {
-            0% {
-                width: 65%;
-            }
-
-            50% {
-                width: 70%;
-            }
-
-            100% {
-                width: 65%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 15px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .construction-icon {
-                font-size: 60px;
-            }
-
-            .countdown {
-                gap: 10px;
-            }
-
-            .countdown-item {
-                min-width: 60px;
-                padding: 10px;
-            }
-        }
-    </style>
+    <title>Liste des Cours</title>
 </head>
 
 <body>
     <header>
         <nav>
-            <div>
-                <img src="../Images/header2.jpg" alt=" ">
+            <a href="../index.html">
+                <img src="../Images/header2.jpg" alt="Bannière du site">
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="../Video/video.html">Vidéo</a>
+                <a href="../Actu/actu.html">Actu Tech</a>
+                <a href="../cours/cours.html" class="active">Cours</a>
             </div>
-            <button>
-                <a href="../index.html" alt=" ">Home</a>
-            </button>
-            <button>
-                <a href="../Video/video.html" alt=" ">Video</a>
-            </button>
-            <button>
-                <a href="../Actu/actu.html" alt=" ">Actu Tech</a>
-            </button>
-            <button class="grobouton">
-                <a href="../cours/cours.html" alt=" ">Cours</a>
-            </button>
         </nav>
     </header>
     <main>
-        <h1><u>Cours par thématique</u></h1>
+        <h1>Cours par thématique</h1>
         <nav class="navi2">
             <button onclick="afficherFichiersThematique('Python')">Python</button>
-            <button onclick="afficherFichiersThematique('Reseau')">Reseau</button>
+            <button onclick="afficherFichiersThematique('Reseau')">Réseau</button>
             <button onclick="afficherFichiersThematique('Wordpress')">Wordpress</button>
             <button onclick="afficherFichiersThematique('Frontend')">Front-end</button>
             <button onclick="afficherFichiersThematique('CultureInfo')">Culture Informatique</button>
             <button onclick="afficherFichiersThematique('Autres')">Autres</button>
         </nav>
         <div id="contenu"></div>
-        <footer>
-            <a href="../Portfolio/index.html">Mon CV</a>
-        </footer>
     </main>
-    <script>
-        // Fonction pour charger la liste des fichiers depuis list-cours.json
-        async function chargerListeFichiers() {
-            try {
-                const response = await fetch('list-cours.json');
-                if (!response.ok) {
-                    throw new Error("Impossible de charger list-cours.json");
-                }
-                const listeFichiers = await response.json();
-                return listeFichiers;
-            } catch (e) {
-                console.error("Erreur lors du chargement de list-cours.json :", e);
-                return [];
-            }
-        }
-
-        // Fonction pour essayer de charger un fichier et retourner son contenu si trouvé
-        async function essayerChargerFichier(cheminFichier) {
-            try {
-                const response = await fetch(cheminFichier);
-                if (response.ok) {
-                    const content = await response.text();
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(content, 'text/html');
-                    const bodyContent = doc.querySelector('body').innerHTML;
-                    return { nom: cheminFichier, contenu: bodyContent };
-                }
-            } catch (e) {
-                return null;
-            }
-            return null;
-        }
-
-        // Fonction pour afficher les fichiers d'une thématique
-        async function afficherFichiersThematique(thematique) {
-            const contenuDiv = document.getElementById('contenu');
-            contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">🔍</div><h1>Recherche des cours en cours...</h1></div>';
-
-            try {
-                const listeFichiers = await chargerListeFichiers();
-                if (listeFichiers.length === 0) {
-                    contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun fichier trouvé</h1><p>Vérifie que list-cours.json existe et est correctement formaté.</p></div>';
-                    return;
-                }
-
-                // Filtrer les fichiers pour la thématique sélectionnée
-                // Utilise startsWith pour être strict sur le chemin
-                const fichiersThematique = listeFichiers
-                    .filter(fichier => fichier.path.startsWith(`Edwin/cours/${thematique}/`))
-                    .map(fichier => fichier.path);
-
-                if (fichiersThematique.length === 0) {
-                    contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun cours trouvé pour cette thématique</h1></div>';
-                    return;
-                }
-
-                // Retirer le préfixe "Edwin/cours/"
-                const cheminsRelatifs = fichiersThematique.map(fichier => fichier.replace('Edwin/cours/', ''));
-
-                // Charger tous les fichiers en parallèle
-                const promesses = cheminsRelatifs.map(chemin => essayerChargerFichier(chemin));
-                const resultats = await Promise.all(promesses);
-
-                // Filtrer les résultats valides
-                const fichiersValides = resultats.filter(result => result !== null);
-
-                if (fichiersValides.length === 0) {
-                    contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun cours trouvé</h1><p>Vérifie que les fichiers existent.</p></div>';
-                } else {
-                    // Construire le contenu à afficher
-                    let contenuComplet = '';
-                    fichiersValides.forEach(fichier => {
-                        contenuComplet += `<div class="cours-item"><h2>${fichier.nom}</h2>${fichier.contenu}</div>`;
-                    });
-                    contenuDiv.innerHTML = contenuComplet;
-                }
-            } catch (error) {
-                contenuDiv.innerHTML = `<div class="container"><div class="construction-icon">❌</div><h1>Erreur de chargement</h1><p>${error.message}</p></div>`;
-            }
-        }
-
-        // Chargement initial : affiche un message par défaut
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('contenu').innerHTML =
-                '<div class="container">' +
-                '<div class="construction-icon">📚</div>' +
-                '<h1>Sélectionne une thématique pour afficher les cours</h1>' +
-                '<p>Clique sur un bouton ci-dessus pour commencer.</p>' +
-                '</div>';
-        });
-    </script>
+    <footer>
+        <a href="../Portfolio/index.html">Mon CV</a>
+    </footer>
+    <script src="coursjs.js"></script>
 </body>
 
 </html>

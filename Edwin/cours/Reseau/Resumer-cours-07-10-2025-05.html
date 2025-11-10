@@ -1,64 +1,61 @@
 <section class="course">
-  <h1>Titre du Cours : Réseaux et Hébergement Web</h1>
+  <h1>Titre du Cours : Fondamentaux des Réseaux et de l'Hébergement Web</h1>
   <article class="introduction">
     <h2>Introduction</h2>
-    <p>Ce cours va vous rafraîchir la mémoire sur les adresses IP, le DHCP, les classes d'adresses IP, et les différents types d'hébergement web. Vous comprendrez comment les adresses IP sont allouées, comment le DNS fonctionne, et quelles sont les options d'hébergement disponibles pour vos sites web.</p>
+    <p>Ce cours vous propose une révision des concepts essentiels des réseaux informatiques et de l'hébergement web. Nous explorerons le fonctionnement des adresses IP, l'allocation dynamique avec DHCP, la résolution de noms avec DNS, et les différentes options pour héberger un site web.</p>
   </article>
   <article class="concepts">
-    <h2>Concepts Clés</h2>
-    <h3>DHCP (Dynamic Host Configuration Protocol)</h3>
-    <p>Le DHCP est un service qui alloue automatiquement des adresses IP aux appareils sur un réseau. Il est souvent installé sur le routeur, mais peut aussi être installé sur une machine, parfois virtuelle. C'est un programme qui tourne en permanence sur le réseau.</p>
-    <h3>Adresses IP</h3>
-    <p>Une adresse IP est constituée de 4 éléments pour IPv4 et de 8 éléments pour IPv6. Par exemple, une adresse IPv4 ressemble à ceci :</p>
-    <pre><code class="language-html">
-192.168.1.1
-    </code></pre>
-    <p>Avec l'augmentation du nombre d'équipements, IPv6 a été créé pour fournir plus d'adresses IP. Une adresse IPv6 ressemble à ceci :</p>
-    <pre><code class="language-html">
-2001:0db8:85a3:0000:0000:8a2e:0370:7334
-    </code></pre>
-    <h3>Classes d'Adresses IP</h3>
-    <p>Les adresses IPv4 sont divisées en classes :</p>
+    <h2>Le Modèle OSI</h2>
+    <p>Le modèle OSI (Open Systems Interconnection) est un modèle conceptuel qui divise les communications réseau en sept couches. Chaque couche a un rôle spécifique, ce qui permet de standardiser les protocoles.</p>
+    <ol>
+      <li><strong>Physique :</strong> Transmission des bits sur le média (câbles, ondes).</li>
+      <li><strong>Liaison de données :</strong> Adressage MAC, détection d'erreurs.</li>
+      <li><strong>Réseau :</strong> Routage des paquets, adressage IP.</li>
+      <li><strong>Transport :</strong> Connexion de bout en bout (TCP, UDP).</li>
+      <li><strong>Session :</strong> Gestion des sessions de communication.</li>
+      <li><strong>Présentation :</strong> Formatage des données, chiffrement.</li>
+      <li><strong>Application :</strong> Protocoles de haut niveau (HTTP, FTP, SMTP).</li>
+    </ol>
+
+    <h2>Adressage IP</h2>
+    <p>Une adresse IP (Internet Protocol) est un numéro d'identification unique attribué à chaque appareil connecté à un réseau.</p>
+    <h3>IPv4 vs IPv6</h3>
+    <p><strong>IPv4 :</strong> Codée sur 32 bits (4 octets), elle se présente sous la forme <code>192.168.1.1</code>. L'épuisement des adresses IPv4 a conduit à la création d'IPv6.</p>
+    <p><strong>IPv6 :</strong> Codée sur 128 bits, elle se présente sous la forme <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code> et offre un espace d'adressage quasi illimité.</p>
+    <h3>Masque de Sous-Réseau</h3>
+    <p>Le masque de sous-réseau (ex: <code>255.255.255.0</code>) permet de distinguer la partie réseau de la partie hôte dans une adresse IP. Il définit la taille du réseau local.</p>
+
+    <h2>DHCP (Dynamic Host Configuration Protocol)</h2>
+    <p>Le DHCP est un protocole qui permet à un serveur d'attribuer automatiquement une adresse IP et d'autres paramètres réseau (masque, passerelle, DNS) aux appareils d'un réseau. Cela simplifie grandement l'administration.</p>
+    <img src="https://i.imgur.com/L7bV9L4.png" alt="Schéma DHCP" style="max-width:100%; border-radius:8px;">
+
+    <h2>DNS (Domain Name System)</h2>
+    <p>Le DNS est un service qui traduit les noms de domaine (ex: <code>www.google.com</code>), faciles à retenir pour les humains, en adresses IP (ex: <code>142.250.179.196</code>), compréhensibles par les machines.</p>
+    <img src="https://i.imgur.com/wS4x2fD.png" alt="Schéma DNS" style="max-width:100%; border-radius:8px;">
+
+    <h2>Hébergement Web</h2>
+    <p>L'hébergement web consiste à stocker les fichiers d'un site web sur un serveur pour le rendre accessible sur Internet.</p>
     <ul>
-      <li>Classe A : 0 à 126 (numéro de réseau sur la première position, numéro d'hôte sur les trois positions restantes)</li>
-      <li>Classe B : 128 à 191 (numéro de réseau sur les deux premières positions, numéro d'hôte sur les deux positions restantes)</li>
-      <li>Classe C : 192 à 223 (numéro de réseau sur les trois premières positions, numéro d'hôte sur la position restante)</li>
-    </ul>
-    <p>Les classes D et E existent aussi, mais elles ne sont pas accessibles au grand public.</p>
-    <h3>Découpage en Plages</h3>
-    <p>Les adresses IP sont découpées en plages allouées par les fournisseurs d'accès. Par exemple, les adresses commençant par 10, 172, ou 192 sont réservées pour les réseaux locaux et n'existent pas sur Internet.</p>
-    <h3>DNS (Domain Name System)</h3>
-    <p>Le DNS fait le lien entre le nom de domaine et l'adresse IP où le site est stocké. Par exemple, lorsque vous tapez "www.example.com" dans votre navigateur, le DNS traduit ce nom en une adresse IP.</p>
-    <h3>Types d'Hébergement</h3>
-    <p>Il existe plusieurs types d'hébergement web :</p>
-    <ul>
-      <li>Hébergement mutualisé : plusieurs sites web partagent le même serveur.</li>
-      <li>VPS (Virtual Private Server) : un serveur virtuel privé, souvent avec une distribution Linux comme Debian.</li>
-      <li>Location d'un serveur physique entier : un serveur dédié uniquement à votre site web.</li>
+      <li><strong>Hébergement Mutualisé :</strong> Économique, mais les ressources sont partagées avec d'autres sites. Idéal pour les petits sites personnels.</li>
+      <li><strong>VPS (Virtual Private Server) :</strong> Un serveur virtuel qui offre plus de contrôle et de ressources dédiées qu'un hébergement mutualisé. Bon compromis performance/prix.</li>
+      <li><strong>Serveur Dédié :</strong> Un serveur physique entièrement à votre disposition. Offre des performances et une sécurité maximales, mais est plus cher et complexe à gérer.</li>
+      <li><strong>Cloud Hosting :</strong> Hébergement sur un réseau de serveurs connectés. Très flexible et scalable, vous ne payez que ce que vous consommez.</li>
     </ul>
   </article>
   <article class="exercices">
     <h2>Exercices Pratiques</h2>
     <ol>
-      <li>Recherchez et expliquez la différence entre une VM (Virtual Machine) et un container.</li>
-      <li>Utilisez un outil comme "whois" pour trouver le propriétaire d'un nom de domaine de votre choix.</li>
-      <li>Configurez un serveur DHCP sur une machine virtuelle et allouez une adresse IP à un autre appareil sur le même réseau.</li>
+      <li><strong>Identifier votre configuration IP :</strong> Ouvrez un terminal (CMD sur Windows, Terminal sur macOS/Linux) et tapez <code>ipconfig</code> (Windows) ou <code>ifconfig</code> (macOS/Linux). Identifiez votre adresse IP, votre masque de sous-réseau et votre passerelle par défaut.</li>
+      <li><strong>Interroger le DNS :</strong> Utilisez la commande <code>nslookup google.com</code> dans votre terminal pour trouver l'adresse IP associée au nom de domaine de Google.</li>
+      <li><strong>Comparer les offres d'hébergement :</strong> Choisissez deux hébergeurs web connus (ex: OVH, Hostinger, SiteGround) et comparez leurs offres d'hébergement mutualisé et VPS en termes de prix, de ressources (CPU, RAM, stockage) et de fonctionnalités.</li>
     </ol>
-    <details>
-      <summary>Corrigé</summary>
-      <pre><code class="language-html">
-<!-- Exemple de corrigé pour l'exercice 1 -->
-VM (Virtual Machine) : Une machine virtuelle est une émulation d'un ordinateur physique. Elle utilise un hyperviseur pour gérer les ressources matérielles.
-
-Container : Un container est une méthode de virtualisation au niveau du système d'exploitation. Il partage le noyau de l'OS avec d'autres containers, ce qui le rend plus léger et plus rapide qu'une VM.
-      </code></pre>
-    </details>
   </article>
   <aside class="ressources">
     <h2>Pour aller plus loin</h2>
     <ul>
-      <li><a href="https://www.iana.org/domains/root/db" target="_blank">Base de données des domaines de premier niveau</a></li>
-      <li><a href="https://www.whois.com/" target="_blank">Outil Whois pour rechercher des informations sur les noms de domaine</a></li>
+      <li><a href="https://www.cloudflare.com/learning/dns/what-is-dns/" target="_blank">Cloudflare - What is DNS?</a></li>
+      <li><a href="https://www.digitalocean.com/community/tutorials/what-is-dhcp" target="_blank">DigitalOcean - What is DHCP?</a></li>
+      <li><a href="https://fr.wikipedia.org/wiki/Mod%C3%A8le_OSI" target="_blank">Wikipédia - Modèle OSI</a></li>
     </ul>
   </aside>
 </section>

@@ -1,109 +1,109 @@
-```html
 <section class="course">
   <h1>Titre du Cours : Algorithmie et Introduction à Python</h1>
   <article class="introduction">
     <h2>Introduction</h2>
-    <p>Dans cette session, nous allons reprendre les exercices d'algorithmie rendus lors de la séance précédente. Nous aborderons des concepts clés comme les boucles, les conditions, et les structures de données. Ensuite, nous introduirons Python, un langage de programmation puissant et simple à utiliser, idéal pour les scripts et l'analyse de données.</p>
+    <p>Cette session se concentre sur l'algorithmie, la base de toute programmation. Nous allons explorer comment traduire une logique de résolution de problème en un algorithme, puis comment implémenter cet algorithme en Python. Nous aborderons des concepts clés comme les boucles, les conditions, et les structures de données.</p>
   </article>
   <article class="concepts">
     <h2>Concepts Clés</h2>
-    <h3>Reprise des Exercices</h3>
-    <p>Tous les problèmes algorithmiques peuvent être résolus de multiples façons. Par exemple, pour un problème de déplacement entre un point de départ et un point d'arrivée, on peut utiliser des boucles et des conditions.</p>
-    <pre><code class="language-python">
-# Exemple de boucle while en Python
-while liste_non_vide:
-    # Enlever le premier élément de la liste
-    liste_non_vide.pop(0)
-    </code></pre>
-    <h3>Concept de File d'Attente (FIFO)</h3>
-    <p>La file d'attente est une structure de données où le premier élément inséré est le premier à être retiré (First In, First Out). C'est un concept fondamental en informatique.</p>
-    <pre><code class="language-python">
-# Exemple de file d'attente en Python
-from collections import deque
-file_attente = deque(['a', 'b', 'c'])
-while file_attente:
-    print(file_attente.popleft())
-    </code></pre>
-    <h3>Représentation Visuelle de l'Algorithme</h3>
-    <p>Pour représenter visuellement un algorithme, on utilise des logigrammes (flowcharts). Un logigramme est un schéma conventionné pour représenter les étapes d'un algorithme.</p>
-    <pre><code class="language-python">
-# Exemple de pseudo-code pour "Devine le nombre"
-ALGORITHM GuessTheNumber
-
+    <h3>Qu'est-ce qu'un Algorithme ?</h3>
+    <p>Un algorithme est une suite d'instructions finies et non ambiguës permettant de résoudre un problème. Chaque problème peut être résolu de multiples façons, et l'objectif est de trouver une solution efficace et claire.</p>
+    <h3>Représentation d'un Algorithme</h3>
+    <p>On peut représenter un algorithme de deux manières principales :</p>
+    <ul>
+      <li><strong>Le pseudo-code :</strong> Un langage de description d'algorithmes qui ressemble à un langage de programmation mais qui est destiné à être lu par des humains.</li>
+      <li><strong>Le logigramme (ou organigramme) :</strong> Une représentation graphique de l'algorithme avec des formes standardisées pour chaque type d'opération (début/fin, instruction, condition, entrée/sortie).</li>
+    </ul>
+    <h4>Exemple : "Devine le nombre"</h4>
+    <p>Voici un exemple d'algorithme en pseudo-code pour le jeu "Devine le nombre" :</p>
+    <pre><code>
+ALGORITHME DevineLeNombre
 VARIABLES
-    targetNumber: INT  // Nombre à faire deviner
-    attempt: INT
-CONSTANTS
-    MIN: INT <-- 1
-    MAX: INT <-- 1000  // Éviter les "magic numbers"
+  nombre_secret: ENTIER
+  essai: ENTIER
+CONSTANTES
+  MIN: 1
+  MAX: 100
 
-BEGIN
-    targetNumber <-- RANDOM(MIN, MAX)
-
-    DO
-        READ(attempt)
-        IF attempt > targetNumber
-            PRINT("Trop grand")
-        ELSE IF attempt < targetNumber
-            PRINT("Trop petit")
-        ELSE
-            PRINT("Gagné")
-        EN-IF
-    WHILE(attempt != targetNumber)
-
-END
+DEBUT
+  nombre_secret <-- ALEATOIRE(MIN, MAX)
+  REPETER
+    LIRE essai
+    SI essai > nombre_secret ALORS
+      AFFICHER "Trop grand"
+    SINON SI essai < nombre_secret ALORS
+      AFFICHER "Trop petit"
+    FIN SI
+  JUSQU'A essai == nombre_secret
+  AFFICHER "Gagné !"
+FIN
     </code></pre>
-    <h3>Logigramme</h3>
-    <p>Un logigramme pour le même algorithme peut être représenté comme suit :</p>
-    <ol>
-      <li>Forme ronde avec "START" (point d'entrée)</li>
-      <li>Forme rectangle "targetNumber=RAND(1,1000)" (étape informatique)</li>
-      <li>Forme parallélépipède "READ(attempt)" (action de l'utilisateur)</li>
-      <li>Forme lozange "attempt > targetNumber" (condition)</li>
-      <li>Forme parallélo "trop grand" (première sortie)</li>
-      <li>Forme lozange "attempt < targetNumber" (condition)</li>
-      <li>Forme parallélo "trop petit" (si vrai)</li>
-      <li>Forme parallélo "PRINT('gagné')" (si vrai)</li>
-      <li>Forme ronde "END" (point de sortie)</li>
-    </ol>
-    <p>Une flèche de "trop petit" et "trop grand" vers la liaison entre target et attempt matérialise le while.</p>
-    <h3>Introduction à Python</h3>
-    <p>Python est un langage de programmation simple et puissant, utilisé pour des scripts et l'analyse de données.</p>
+    <h3>Structures de Données Fondamentales</h3>
+    <p>Les structures de données permettent d'organiser et de stocker les informations.</p>
+    <h4>La File (FIFO - First In, First Out)</h4>
+    <p>Dans une file, le premier élément ajouté est le premier à être retiré. C'est comme une file d'attente.</p>
     <pre><code class="language-python">
-# Création d'un premier fichier Python
-# Fichier : exemple.py
-print("Hello " + username + "!")  # Concaténation de chaînes de caractères
+# En Python, on peut utiliser le module `collections.deque`
+from collections import deque
+file = deque(['a', 'b', 'c'])
+file.append('d')  # Ajoute à la fin
+print(file.popleft()) # Retire et renvoie 'a'
+    </code></pre>
+    <h4>La Pile (LIFO - Last In, First Out)</h4>
+    <p>Dans une pile, le dernier élément ajouté est le premier à être retiré. C'est comme une pile d'assiettes.</p>
+    <pre><code class="language-python">
+# Une liste Python peut être utilisée comme une pile
+pile = ['a', 'b', 'c']
+pile.append('d') # Ajoute à la fin
+print(pile.pop()) # Retire et renvoie 'd'
+    </code></pre>
+    <h3>Implémentation en Python</h3>
+    <p>Traduire un algorithme en Python est une étape essentielle. Voici l'implémentation du jeu "Devine le nombre" :</p>
+    <pre><code class="language-python">
+import random
+
+nombre_secret = random.randint(1, 100)
+essai = 0
+
+while essai != nombre_secret:
+    try:
+        essai = int(input("Devinez le nombre (entre 1 et 100) : "))
+        if essai > nombre_secret:
+            print("Trop grand !")
+        elif essai < nombre_secret:
+            print("Trop petit !")
+    except ValueError:
+        print("Veuillez entrer un nombre valide.")
+
+print("Bravo, vous avez trouvé le nombre !")
     </code></pre>
   </article>
   <article class="exercices">
     <h2>Exercices Pratiques</h2>
     <ol>
-      <li>Créez un logigramme pour une machine à café en utilisant draw.io.</li>
-      <li>Vérifiez l'installation de Python sur votre PC.</li>
-      <li>Créez un fichier Python avec une fonction de salutation personnalisée.</li>
+      <li>Créez un logigramme pour une machine à café en utilisant un outil comme <a href="https://draw.io" target="_blank">draw.io</a>. Pensez aux différentes étapes : choix de la boisson, paiement, préparation.</li>
+      <li>Écrivez un programme Python qui inverse une chaîne de caractères en utilisant une pile.</li>
+      <details>
+        <summary>Corrigé</summary>
+        <pre><code class="language-python">
+def inverser_chaine(chaine):
+    pile = list(chaine)
+    chaine_inversee = ""
+    while pile:
+        chaine_inversee += pile.pop()
+    return chaine_inversee
+
+print(inverser_chaine("Bonjour")) # Affiche "ruojnoB"
+        </code></pre>
+      </details>
     </ol>
-    <details>
-      <summary>Corrigé</summary>
-      <pre><code class="language-python">
-# Exemple de logigramme pour une machine à café
-# Utilisez draw.io pour créer le schéma
-
-# Vérification de l'installation de Python
-# Ouvrez un terminal et tapez : python --version
-
-# Fichier : salutation.py
-username = "Alice"
-print("Hello " + username + "!")
-      </code></pre>
-    </details>
   </article>
   <aside class="ressources">
     <h2>Pour aller plus loin</h2>
     <ul>
       <li><a href="https://www.python.org/" target="_blank">Site officiel de Python</a></li>
-      <li><a href="https://draw.io/" target="_blank">Draw.io pour créer des logigrammes</a></li>
-      <li><a href="https://mermaid-js.github.io/mermaid/" target="_blank">Mermaid pour la création de diagrammes</a></li>
+      <li><a href="https://www.khanacademy.org/computing/computer-science/algorithms" target="_blank">Khan Academy - Algorithmes</a></li>
+      <li><a href="https://visualgo.net/en" target="_blank">VisuAlgo - Visualisation d'algorithmes et de structures de données</a></li>
     </ul>
   </aside>
 </section>
-```

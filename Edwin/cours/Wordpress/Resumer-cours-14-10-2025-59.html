@@ -1,126 +1,68 @@
-```html
 <section class="course">
-  <h1>Cours du 16 septembre 2025 : Introduction à WordPress</h1>
+  <h1>Titre du Cours : Introduction à WordPress</h1>
   <article class="introduction">
-    <h2>Introduction</h2>
-    <p>Le cours débute par une présentation sommaire de chacun. Quelques mots sur son parcours, son lien avec WordPress, ses attentes.</p>
-    <p>WordPress est un CMS (Content Management System). D'autres CMS existent, comme Shopify, Wix (très utile en ligne et pour une maquette), Joomla, Drupal, Odoo...</p>
-    <p>WordPress fonctionne avec le langage PHP. À l'origine, WordPress servait plutôt pour des blogs, mais il est tellement efficace qu'il est utilisé à présent pour des sites classiques. Il est aujourd'hui très adapté au mobile first.</p>
-  </article>
-  <article class="concepts">
-    <h2>Prérequis</h2>
-    <p>Avant d'utiliser WordPress, il faut préparer son projet :</p>
+    <h2>Qu'est-ce que WordPress ?</h2>
+    <p>WordPress est un <strong>CMS (Content Management System)</strong>, ou système de gestion de contenu. Lancé en 2003, il est aujourd'hui le CMS le plus populaire au monde, propulsant plus de 40% des sites web. Bien qu'à l'origine conçu pour les blogs, sa flexibilité lui permet de créer toutes sortes de sites : vitrines, e-commerce, portfolios, etc. Il est basé sur le langage PHP et utilise une base de données MySQL.</p>
+    <h3>WordPress.org vs WordPress.com</h3>
+    <p>Il est crucial de ne pas les confondre :</p>
     <ul>
-      <li>Suivre un cahier des charges et préparer une maquette.</li>
-      <li>Trouver un hébergeur pour stocker en ligne le site internet.</li>
-      <li>Trouver un nom de domaine. Il faut être attentif à la disponibilité et à la sensibilité sémantique en d'autres langues. Choisir un nom qui peut aider au référencement naturel, par exemple un .alsace si notre activité est typiquement de la région!</li>
+      <li><strong>WordPress.org :</strong> C'est le logiciel open-source et auto-hébergé que nous allons utiliser. Il offre une flexibilité totale mais nécessite un hébergement et un nom de domaine.</li>
+      <li><strong>WordPress.com :</strong> C'est un service commercial qui utilise le logiciel WordPress. Il est plus simple à démarrer mais est plus limité, sauf si vous optez pour des abonnements coûteux.</li>
     </ul>
-    <p>Installer WordPress ! (<a href="https://wordpress.org" target="_blank">wordpress.org</a>)</p>
-    <p>L'IA WebSim peut être une aide à la création de maquette.</p>
   </article>
+
   <article class="concepts">
-    <h2>Charte graphique</h2>
-    <p>Par convention, nous utilisons 4 couleurs dont le blanc dans une charte graphique.</p>
-    <p>Les couleurs sont définies :</p>
+    <h2>1. Avant de commencer : La Préparation</h2>
+    <p>Un projet web réussi commence bien avant la première ligne de code ou le premier clic.</p>
     <ul>
-      <li>Soit en RVB (Rouge, Vert, Bleu) dont les valeurs vont de 0 à 255.</li>
-      <li>Soit en hexadécimal de 0 à 9 et de a à f sous un format #00ff99 par exemple.</li>
+      <li><strong>Cahier des charges et Maquette :</strong> Définissez les objectifs de votre site, son public cible, et sa structure. Une maquette (wireframe), même simple, est essentielle pour visualiser l'agencement des pages.</li>
+      <li><strong>Hébergement et Nom de Domaine :</strong> Vous aurez besoin d'un hébergeur (ex: OVH, Hostinger) pour stocker les fichiers de votre site et d'un nom de domaine (ex: <code>mon-site.fr</code>) qui sera votre adresse sur Internet.</li>
+      <li><strong>Charte Graphique :</strong> Définissez l'identité visuelle de votre site : un logo, une palette de 2 à 4 couleurs, et 1 ou 2 polices de caractères.</li>
     </ul>
-    <p>Nous utiliserons 2 polices de caractères.</p>
-    <p>Les couleurs ont des significations (orange = communication, bleu = innovation...etc). Nous discutons des différentes significations, des logos, des chartes graphiques, avec comme exemple les marques comme Orange, Word, Excel ou encore la région GrandEst pour la charte graphique.</p>
+
+    <h2>2. Installation de WordPress</h2>
+    <p>La plupart des hébergeurs proposent une installation en 1 clic de WordPress. C'est la méthode la plus simple. Sinon, vous pouvez le faire manuellement :</p>
+    <ol>
+      <li>Téléchargez la dernière version de WordPress sur <a href="https://wordpress.org" target="_blank">WordPress.org</a>.</li>
+      <li>Transférez les fichiers sur votre hébergement via FTP.</li>
+      <li>Créez une base de données MySQL.</li>
+      <li>Lancez l'installateur en accédant à votre nom de domaine et suivez les instructions.</li>
+    </ol>
+
+    <h2>3. Premiers Pas dans l'Interface</h2>
+    <p>Une fois installé, vous accéderez au tableau de bord (Dashboard) de WordPress. C'est votre centre de contrôle.</p>
+    <img src="https://i.imgur.com/8Yv9z5A.png" alt="Tableau de bord WordPress" style="max-width:100%; border-radius:8px;">
+    <p>Les sections principales sont :</p>
+    <ul>
+      <li><strong>Articles :</strong> Pour rédiger des actualités, des articles de blog.</li>
+      <li><strong>Pages :</strong> Pour créer les pages statiques de votre site (Accueil, À propos, Contact...).</li>
+      <li><strong>Apparence :</strong> Pour gérer les thèmes, les menus, les widgets.</li>
+      <li><strong>Extensions (Plugins) :</strong> Pour ajouter de nouvelles fonctionnalités à votre site.</li>
+      <li><strong>Réglages :</strong> Pour configurer les paramètres généraux de votre site.</li>
+    </ul>
+
+    <h2>4. Personnalisation : Thèmes et Extensions</h2>
+    <h3>Thèmes</h3>
+    <p>Un thème contrôle l'apparence visuelle de votre site. Il existe des milliers de thèmes gratuits et payants. Vous pouvez en changer à tout moment sans perdre votre contenu.</p>
+    <h3>Extensions (Plugins)</h3>
+    <p>Les extensions sont le point fort de WordPress. Ce sont des modules que vous pouvez installer pour ajouter des fonctionnalités : formulaire de contact, boutique en ligne (WooCommerce), optimisation pour le référencement (SEO), etc.</p>
   </article>
-  <article class="concepts">
-    <h2>Construction d'une page internet</h2>
-    <p>Schéma de la page web :</p>
-    <pre><code class="language-html">
-      &lt;!DOCTYPE html&gt;
-      &lt;html lang="fr"&gt;
-      &lt;head&gt;
-        &lt;meta charset="UTF-8"&gt;
-        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-        &lt;title&gt;Exemple de page web&lt;/title&gt;
-      &lt;/head&gt;
-      &lt;body&gt;
-        &lt;header&gt;
-          &lt;h1&gt;Titre de la page&lt;/h1&gt;
-        &lt;/header&gt;
-        &lt;nav&gt;
-          &lt;ul&gt;
-            &lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#"&gt;À propos&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/nav&gt;
-        &lt;main&gt;
-          &lt;section&gt;
-            &lt;h2&gt;Section 1&lt;/h2&gt;
-            &lt;p&gt;Contenu de la section 1.&lt;/p&gt;
-          &lt;/section&gt;
-          &lt;section&gt;
-            &lt;h2&gt;Section 2&lt;/h2&gt;
-            &lt;p&gt;Contenu de la section 2.&lt;/p&gt;
-          &lt;/section&gt;
-        &lt;/main&gt;
-        &lt;footer&gt;
-          &lt;p&gt;Footer de la page&lt;/p&gt;
-        &lt;/footer&gt;
-      &lt;/body&gt;
-      &lt;/html&gt;
-    </code></pre>
-  </article>
+
   <article class="exercices">
     <h2>Exercices Pratiques</h2>
     <ol>
-      <li>Créer une maquette simple de votre futur site WordPress en utilisant un outil de votre choix (comme WebSim).</li>
-      <li>Choisir un nom de domaine pertinent pour votre projet et vérifier sa disponibilité.</li>
-      <li>Définir une charte graphique avec 4 couleurs et 2 polices de caractères.</li>
+      <li><strong>Explorer des thèmes :</strong> Rendez-vous dans <code>Apparence > Thèmes > Ajouter</code> et explorez le répertoire officiel. Installez et activez un thème qui vous plaît (par exemple, "Astra" ou "GeneratePress").</li>
+      <li><strong>Créer vos premières pages :</strong> Allez dans <code>Pages > Ajouter</code> et créez une page "Accueil" et une page "Contact".</li>
+      <li><strong>Installer une extension :</strong> Allez dans <code>Extensions > Ajouter</code>, recherchez "Contact Form 7", puis installez et activez cette extension pour créer un formulaire de contact simple.</li>
     </ol>
-    <details>
-      <summary>Corrigé</summary>
-      <pre><code class="language-html">
-        &lt;!DOCTYPE html&gt;
-        &lt;html lang="fr"&gt;
-        &lt;head&gt;
-          &lt;meta charset="UTF-8"&gt;
-          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-          &lt;title&gt;Maquette de site&lt;/title&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-          &lt;header&gt;
-            &lt;h1&gt;Nom de votre site&lt;/h1&gt;
-          &lt;/header&gt;
-          &lt;nav&gt;
-            &lt;ul&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/nav&gt;
-          &lt;main&gt;
-            &lt;section&gt;
-              &lt;h2&gt;À propos&lt;/h2&gt;
-              &lt;p&gt;Présentation de votre entreprise.&lt;/p&gt;
-            &lt;/section&gt;
-            &lt;section&gt;
-              &lt;h2&gt;Services&lt;/h2&gt;
-              &lt;p&gt;Détails des services proposés.&lt;/p&gt;
-            &lt;/section&gt;
-          &lt;/main&gt;
-          &lt;footer&gt;
-            &lt;p&gt;Footer avec informations de contact.&lt;/p&gt;
-          &lt;/footer&gt;
-        &lt;/body&gt;
-        &lt;/html&gt;
-      </code></pre>
-    </details>
   </article>
+
   <aside class="ressources">
     <h2>Pour aller plus loin</h2>
     <ul>
-      <li><a href="https://wordpress.org" target="_blank">WordPress.org</a></li>
-      <li><a href="https://www.w3schools.com/colors/colors_picker.asp" target="_blank">Sélecteur de couleurs W3Schools</a></li>
-      <li><a href="https://www.websim.co" target="_blank">WebSim pour la création de maquettes</a></li>
+      <li><a href="https://www.wpbeginner.com/" target="_blank">WPBeginner (en anglais)</a> - Une excellente ressource pour les débutants.</li>
+      <li><a href="https://wpmarmite.com/" target="_blank">WPMarmite (en français)</a> - Le site de référence francophone sur WordPress.</li>
+      <li><a href="https://fr.wordpress.org/themes/" target="_blank">Répertoire officiel des thèmes WordPress</a></li>
     </ul>
   </aside>
 </section>
-```

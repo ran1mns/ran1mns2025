@@ -1,104 +1,90 @@
 <section class="course">
-  <h1>Titre du Cours : Déploiement d'Applications sur Serveurs</h1>
+  <h1>Titre du Cours : Déploiement d'Applications sur un Serveur Linux</h1>
   <article class="introduction">
     <h2>Introduction</h2>
-    <p>Dans ce cours, nous allons explorer comment déployer nos applications sur des serveurs. Nous aborderons les concepts essentiels tels que l'hébergement de bases de données, le fonctionnement des réseaux, et les systèmes d'exploitation des serveurs. Ce cours est crucial pour comprendre comment rendre vos applications accessibles en ligne de manière efficace et sécurisée.</p>
+    <p>Ce cours vous guidera à travers les étapes fondamentales du déploiement d'une application web sur un serveur Linux. Nous verrons comment préparer le serveur, transférer vos fichiers, configurer un serveur web et une base de données pour rendre votre application accessible en ligne.</p>
   </article>
+
   <article class="concepts">
-    <h2>Concepts Clés</h2>
-    <h3>Héberger la Base de Données</h3>
-    <p>L'hébergement de la base de données est une étape essentielle pour assurer que vos applications puissent stocker et récupérer des données de manière fiable. Les bases de données peuvent être hébergées sur le même serveur que l'application ou sur un serveur dédié. Voici un exemple de configuration de base de données MySQL sur un serveur Linux:</p>
+    <h2>1. Préparation du Serveur</h2>
+    <h3>Systèmes d'Exploitation pour Serveurs</h3>
+    <p>La grande majorité des serveurs web tournent sous des distributions Linux (comme Debian, Ubuntu Server, CentOS) pour leur stabilité, leur sécurité et leur gratuité. Ces serveurs sont généralement gérés via la ligne de commande, sans interface graphique.</p>
+    <h3>Connexion à distance avec SSH</h3>
+    <p>Pour vous connecter à votre serveur, vous utiliserez le protocole SSH (Secure Shell), qui assure une communication chiffrée.</p>
     <pre><code class="language-bash">
-# Installer MySQL
-sudo apt-get update
-sudo apt-get install mysql-server
-
-# Sécuriser l'installation MySQL
-sudo mysql_secure_installation
-
-# Se connecter à MySQL
-mysql -u root -p
+# Syntaxe de connexion SSH
+ssh utilisateur@adresse_ip_du_serveur
     </code></pre>
-    <h3>Fonctionnement d'un Réseau</h3>
-    <p>Pour déployer une application sur un serveur, il est crucial de comprendre comment fonctionne un réseau. Les réseaux permettent aux ordinateurs de communiquer entre eux. Voici un schéma simplifié du fonctionnement d'un réseau:</p>
-    <pre><code class="language-text">
-Hardware -> OS -> Application
-    </code></pre>
-    <p>L'application interagit avec le système d'exploitation (OS), et cette interaction peut varier en fonction de l'OS utilisé.</p>
-    <h3>Systèmes d'Exploitation des Serveurs</h3>
-    <p>La majorité des serveurs utilisent Linux comme système d'exploitation. Les hébergeurs ne fournissent généralement pas d'interfaces graphiques sur leurs serveurs, ce qui signifie que vous devrez utiliser des lignes de commande pour interagir avec le serveur. Voici quelques commandes de base pour naviguer dans un système Linux:</p>
+    <h3>Mises à jour et Commandes de Base</h3>
+    <p>Une fois connecté, la première étape est de mettre à jour le système.</p>
     <pre><code class="language-bash">
-# Lister les fichiers et dossiers
-ls
-
-# Changer de répertoire
-cd /path/to/directory
-
-# Afficher le contenu d'un fichier
-cat filename
+# Mettre à jour la liste des paquets et les paquets installés
+sudo apt update && sudo apt upgrade
     </code></pre>
-    <h3>Historique et Évolution des Systèmes Informatiques</h3>
-    <p>Avant 1981, l'informatique était centralisée. Les machines étaient souvent fabriquées par le même constructeur et utilisaient des systèmes multi-utilisateurs. En 1981, IBM a lancé le premier PC, et Bill Gates a proposé MS DOS avec le concept de licence. Les ordinateurs ont commencé à être interconnectés, d'abord par disquettes, puis par câbles Ethernet.</p>
-    <h3>Protocoles de Communication</h3>
-    <p>Les protocoles de communication sont des règles qui permettent aux ordinateurs de communiquer entre eux sur un réseau. Parmi les protocoles les plus courants, on trouve HTTP, TCP/IP, SMTP, FTP, et DHCP. Voici un exemple de configuration d'un serveur web utilisant HTTP:</p>
+    <p>Quelques commandes Linux essentielles : <code>ls</code> (lister les fichiers), <code>cd</code> (changer de répertoire), <code>mkdir</code> (créer un répertoire), <code>cat</code> (afficher un fichier), <code>nano</code> (éditer un fichier).</p>
+
+    <h2>2. Déploiement de l'Application</h2>
+    <p>Pour déployer votre application, vous devez transférer ses fichiers sur le serveur. Vous pouvez utiliser des outils comme <code>scp</code> (Secure Copy) ou <code>git</code>.</p>
+    <pre><code class="language-bash">
+# Exemple avec scp pour copier un dossier local vers le serveur
+scp -r /chemin/local/mon-projet utilisateur@adresse_ip_du_serveur:/var/www/
+    </code></pre>
+
+    <h2>3. Configuration du Serveur Web</h2>
+    <p>Un serveur web est un logiciel qui reçoit les requêtes HTTP des clients (navigateurs) et leur envoie les pages web correspondantes. Les plus populaires sont Apache et Nginx.</p>
+    <h3>Exemple avec Apache</h3>
     <pre><code class="language-bash">
 # Installer Apache
-sudo apt-get update
-sudo apt-get install apache2
+sudo apt install apache2
 
-# Démarrer Apache
-sudo systemctl start apache2
+# Le dossier par défaut pour les sites web est /var/www/html
+# Placez vos fichiers dans ce dossier ou configurez un "Virtual Host"
+    </code></pre>
 
-# Vérifier le statut d'Apache
-sudo systemctl status apache2
+    <h2>4. Configuration de la Base de Données</h2>
+    <p>Si votre application nécessite une base de données, vous devrez l'installer et la configurer. MySQL et PostgreSQL sont des choix courants.</p>
+    <h3>Exemple avec MySQL</h3>
+    <pre><code class="language-bash">
+# Installer le serveur MySQL
+sudo apt install mysql-server
+
+# Lancer le script de sécurisation
+sudo mysql_secure_installation
+
+# Se connecter et créer une base de données et un utilisateur
+sudo mysql
+CREATE DATABASE ma_base;
+CREATE USER 'mon_utilisateur'@'localhost' IDENTIFIED BY 'mot_de_passe_solide';
+GRANT ALL PRIVILEGES ON ma_base.* TO 'mon_utilisateur'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
     </code></pre>
-    <h3>Réseaux Locaux (LAN)</h3>
-    <p>Pour relier plusieurs ordinateurs, on utilise un switch. Un réseau local (LAN) permet de connecter des ordinateurs sans accès à Internet. Voici un schéma simplifié d'un réseau local:</p>
-    <pre><code class="language-text">
-Computer 1 -> Switch -> Computer 2
-    </code></pre>
-    <h3>Règles de Sauvegarde</h3>
-    <p>Il est crucial de suivre des règles de sauvegarde pour protéger vos données. La règle des 3-2-1 est souvent recommandée:</p>
+
+    <h2>5. Sauvegarde des Données</h2>
+    <p>La sauvegarde est cruciale. La règle du <strong>3-2-1</strong> est un excellent principe de base :</p>
     <ul>
-      <li>3 versions du fichier</li>
-      <li>Sur 2 supports différents</li>
-      <li>1 copie en interne et 1 copie ailleurs</li>
+      <li><strong>3</strong> copies de vos données.</li>
+      <li>Sur <strong>2</strong> supports différents (ex: disque dur du serveur + disque externe).</li>
+      <li>Dont <strong>1</strong> copie hors site (ex: dans le cloud).</li>
     </ul>
   </article>
+
   <article class="exercices">
     <h2>Exercices Pratiques</h2>
     <ol>
-      <li>Installez et configurez un serveur MySQL sur une machine Linux.</li>
-      <li>Configurez un serveur web Apache et démarrez-le.</li>
-      <li>Créez un réseau local en utilisant un switch et connectez deux ordinateurs.</li>
+      <li><strong>Prise en main d'un serveur :</strong> Si vous avez accès à un VPS ou une machine virtuelle Linux, connectez-vous en SSH et mettez à jour le système.</li>
+      <li><strong>Installation d'un serveur web :</strong> Installez Apache ou Nginx sur votre serveur. Vérifiez qu'il fonctionne en accédant à l'adresse IP du serveur dans votre navigateur.</li>
+      <li><strong>Déploiement d'un site statique :</strong> Créez une simple page <code>index.html</code> et transférez-la sur votre serveur dans le bon répertoire (<code>/var/www/html</code> pour Apache) pour la rendre accessible en ligne.</li>
+      <li><strong>Installation de MySQL :</strong> Installez et sécurisez MySQL sur votre serveur.</li>
     </ol>
-    <details>
-      <summary>Corrigé</summary>
-      <pre><code class="language-bash">
-# Exercice 1: Installer et configurer MySQL
-sudo apt-get update
-sudo apt-get install mysql-server
-sudo mysql_secure_installation
-mysql -u root -p
-
-# Exercice 2: Configurer Apache
-sudo apt-get update
-sudo apt-get install apache2
-sudo systemctl start apache2
-sudo systemctl status apache2
-
-# Exercice 3: Créer un réseau local
-# Connectez physiquement les ordinateurs au switch
-# Configurez les adresses IP des ordinateurs pour qu'ils soient sur le même réseau
-      </code></pre>
-    </details>
   </article>
+
   <aside class="ressources">
     <h2>Pour aller plus loin</h2>
     <ul>
-      <li><a href="https://www.cisco.com/c/en/us/training-events/training-certifications/training-series/it-essentials.html" target="_blank">Cisco Academy IT Essentials</a></li>
-      <li><a href="https://www.mysql.com/why-mysql/benefits/" target="_blank">Avantages de MySQL</a></li>
-      <li><a href="https://httpd.apache.org/docs/" target="_blank">Documentation Apache</a></li>
+      <li><a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04" target="_blank">DigitalOcean - Initial Server Setup</a></li>
+      <li><a href="https://www.ionos.fr/digitalguide/serveur/know-how/nginx-vs-apache/" target="_blank">IONOS - Nginx vs Apache</a></li>
+      <li><a href="https://www.backblaze.com/blog/the-3-2-1-backup-strategy/" target="_blank">Backblaze - The 3-2-1 Backup Strategy</a></li>
     </ul>
   </aside>
 </section>

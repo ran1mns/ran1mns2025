@@ -1,263 +1,127 @@
-body {
+/* Réinitialisation des styles par défaut */
+* {
     margin: 0;
-    background: linear-gradient(#1e3a8a, #9333ea, #be185d)no-repeat;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(#1e3a8a, #9333ea, #be185d) no-repeat;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
-    margin: auto;
-    width: 1200px;
+    flex: 1; /* Permet au main de prendre toute la hauteur disponible */
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
     text-align: center;
+    padding: 20px 0;
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    height: auto;
-    width: auto;
-    /*max-height: 500px;*/
-    margin-bottom: 2%;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 header nav img {
+    max-width: 100%;
     height: auto;
-    width: 100%;
     max-height: 350px;
     border: 10px double black;
 }
 
-nav a,
-button a {
-    color: white;
-    font-size: 25px;
-}
-
-nav {
-    display: inline-block;
-    align-content: center;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: nowrap;
-    text-align: center;
-}
-
-.grobouton {
-    transform: scale(1.5);
-}
-
 h1 {
-    display: flex;
-    align-content: flex-end;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-    font-size: 40px;
-    color: white;
-    margin: 0 0 60px 0;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    text-decoration: underline;
 }
 
-
-nav button {
-    display: inline-block;
-    background: linear-gradient(#1e3a8a, #9333ea, #be185d);
-    font-size: 100%;
-    border: white groove 2px;
-    margin: 15px 15px 0 15px;
-    border-radius: 20px;
-    height: 40px;
-    overflow: hidden;
-
-}
-
-div button {
-    display: inline-block;
-    background: linear-gradient(#1e3a8a, #9333ea, #be185d);
-    font-size: 100%;
-    border: white groove 2px;
-    margin: 0 0.5% 0 0.5%;
-    border-radius: 20px;
-    height: auto;
-    overflow: hidden;
-}
-
-div button img {
-    height: auto;
-    width: 200px;
+.menu-container {
+    margin-bottom: 4rem;
 }
 
 .menu {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    align-content: center;
-    flex-direction: row;
-    height: 100%;
-    width: 100%;
-    margin-bottom: auto;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-header nav button:hover {
-    border: 2px solid red;
-}
-
-section {
-    margin-bottom: 200px;
+.menu-item {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-}
-
-a span {
-    display: flex;
-    align-content: center;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    background: linear-gradient(#1e3a8a, #9333ea, #be185d);
+    border: 2px groove white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.menu-item img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 footer {
-    display: inline-block;
     width: 100%;
-    height: 30px;
-    justify-content: bottom;
-    align-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: stretch;
-    margin-bottom: 0px;
     background: #1e3a8a;
-    margin: auto;
-
+    padding: 15px 0;
+    text-align: center;
 }
 
 footer a {
     color: white;
-    font-size: 20px;
+    font-size: 1.25rem;
+    text-decoration: none;
 }
 
-@media screen and (max-width: 1200px) and (min-width: 769px) {
-    main {
-        width: 100%;
-    }
+footer a:hover {
+    text-decoration: underline;
+}
 
-    header nav img {
-        width: 97%;
-        margin-top: 5px;
-    }
-
-    nav a,
-    button a {
-        font-size: 20px;
-    }
-
-    .menu {
-        flex-direction: row;
-    }
-
+/* Media Queries pour la responsivité */
+@media screen and (max-width: 768px) {
     h1 {
-        font-size: 30px;
-    }
-
-    nav button {
-        height: 35px;
-        font-size: 14px;
-    }
-
-    div button {
-        margin: 10px 0;
-    }
-
-    div button img {
-        width: 200px;
-    }
-
-    section {
-        margin: 10%;
-    }
-}
-
-@media screen and (max-width: 768px) and (min-width: 481px) {
-    main {
-        width: 100%;
-    }
-
-    header nav img {
-        width: 92%;
-        margin-top: 5px;
-    }
-
-    nav a,
-    button a {
-        font-size: 20px;
+        font-size: 2rem;
     }
 
     .menu {
         flex-direction: column;
     }
 
-    h1 {
-        font-size: 30px;
-    }
-
-    nav button {
-        height: 35px;
-        font-size: 14px;
-    }
-
-    div button {
-        margin: 10px 0;
-    }
-
-    div button img {
-        width: 200px;
-    }
-
-    section {
-        margin: 10%;
+    .menu-item {
+        width: 80%;
+        max-width: 300px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    main {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .menu-item {
         width: 100%;
     }
 
-    header nav img {
-        width: 90%;
-        margin-top: 5px;
-    }
-
-    nav a,
-    button a {
-        font-size: 20px;
-    }
-
-    .menu {
-        flex-direction: column;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    nav button {
-        height: 35px;
-        font-size: 14px;
-    }
-
-    div button {
-        margin: 5px 0;
-    }
-
-    div button img {
+    .menu-item img {
         width: 150px;
-    }
-
-    section {
-        margin: 10%;
     }
 }

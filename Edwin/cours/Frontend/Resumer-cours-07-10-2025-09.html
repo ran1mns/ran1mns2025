@@ -1,101 +1,115 @@
 <section class="course">
-  <h1>Titre du Cours : HTML Basique</h1>
+  <h1>Titre du Cours : Les Fondamentaux du HTML</h1>
   <article class="introduction">
-    <h2>Introduction</h2>
-    <p>Le HTML, ou HyperText Markup Language, est le langage de base utilisé pour créer des pages web. Il permet de structurer le contenu d'une page en utilisant des balises spécifiques. Apprendre le HTML est la première étape pour devenir un développeur web.</p>
+    <h2>Introduction au HTML</h2>
+    <p>HTML (HyperText Markup Language) est le langage standard pour créer et structurer le contenu des pages web. Il fonctionne à l'aide d'un système de balises qui indiquent au navigateur comment afficher les différents éléments comme les titres, les paragraphes, les images, etc.</p>
   </article>
+
   <article class="concepts">
-    <h2>Concepts Clés</h2>
-    <h3>Structure de Base d'un Document HTML</h3>
-    <p>Tout document HTML commence par une déclaration de type de document (doctype) suivie des balises <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> et <code>&lt;body&gt;</code>. Voici un exemple de structure de base :</p>
+    <h2>1. Structure d'un Document HTML</h2>
+    <p>Chaque page HTML suit une structure de base :</p>
     <pre><code class="language-html">
 &lt;!DOCTYPE html&gt;
-&lt;html&gt;
+&lt;html lang="fr"&gt;
   &lt;head&gt;
+    &lt;!-- Les méta-informations vont ici --&gt;
+    &lt;meta charset="UTF-8"&gt;
     &lt;title&gt;Titre de la page&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;h1&gt;Bienvenue sur ma page web&lt;/h1&gt;
-    &lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
+    &lt;!-- Le contenu visible de la page va ici --&gt;
   &lt;/body&gt;
 &lt;/html&gt;
     </code></pre>
-    <h3>Balises de Titre</h3>
-    <p>Les balises de titre, de <code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code>, sont utilisées pour définir les titres et sous-titres dans un document HTML. <code>&lt;h1&gt;</code> est le plus important et <code>&lt;h6&gt;</code> le moins important.</p>
-    <pre><code class="language-html">
-&lt;h1&gt;Titre principal&lt;/h1&gt;
-&lt;h2&gt;Sous-titre&lt;/h2&gt;
-&lt;h3&gt;Sous-sous-titre&lt;/h3&gt;
-    </code></pre>
-    <h3>Balises de Paragraphe</h3>
-    <p>La balise <code>&lt;p&gt;</code> est utilisée pour définir un paragraphe de texte. Chaque paragraphe est automatiquement séparé par un espace.</p>
-    <pre><code class="language-html">
-&lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
-&lt;p&gt;Ceci est un autre paragraphe.&lt;/p&gt;
-    </code></pre>
-    <h3>Balises de Liste</h3>
-    <p>Il existe deux types de listes en HTML : les listes ordonnées (<code>&lt;ol&gt;</code>) et les listes non ordonnées (<code>&lt;ul&gt;</code>). Chaque élément de la liste est défini par la balise <code>&lt;li&gt;</code>.</p>
-    <pre><code class="language-html">
-&lt;!-- Liste non ordonnée --&gt;
-&lt;ul&gt;
-  &lt;li&gt;Élément 1&lt;/li&gt;
-  &lt;li&gt;Élément 2&lt;/li&gt;
-&lt;/ul&gt;
+    <ul>
+      <li><code>&lt;!DOCTYPE html&gt;</code> : Définit le type de document.</li>
+      <li><code>&lt;html&gt;</code> : L'élément racine de la page.</li>
+      <li><code>&lt;head&gt;</code> : Contient les méta-informations (titre, encodage, liens CSS...).</li>
+      <li><code>&lt;body&gt;</code> : Contient le contenu visible de la page.</li>
+    </ul>
 
-&lt;!-- Liste ordonnée --&gt;
-&lt;ol&gt;
-  &lt;li&gt;Élément 1&lt;/li&gt;
-  &lt;li&gt;Élément 2&lt;/li&gt;
-&lt;/ol&gt;
-    </code></pre>
-    <h3>Balises de Lien</h3>
-    <p>La balise <code>&lt;a&gt;</code> est utilisée pour créer des liens hypertextes. L'attribut <code>href</code> spécifie l'URL de la page vers laquelle le lien pointe.</p>
+    <h2>2. Balises de Contenu Courantes</h2>
+    <h3>Titres et Paragraphes</h3>
+    <p><code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code> pour les titres (du plus au moins important) et <code>&lt;p&gt;</code> pour les paragraphes.</p>
+    <h3>Listes</h3>
+    <p><code>&lt;ul&gt;</code> pour les listes à puces (non ordonnées) et <code>&lt;ol&gt;</code> pour les listes numérotées (ordonnées). Chaque élément de liste est défini par <code>&lt;li&gt;</code>.</p>
+    <h3>Liens (Hyperliens)</h3>
+    <p>La balise <code>&lt;a&gt;</code> crée un lien. L'attribut <code>href</code> contient l'URL de destination. On ajoute souvent <code>target="_blank"</code> pour ouvrir le lien dans un nouvel onglet.</p>
     <pre><code class="language-html">
-&lt;a href="https://www.example.com"&gt;Visitez Example.com&lt;/a&gt;
+&lt;a href="https://www.wikipedia.org" target="_blank"&gt;Visiter Wikipédia&lt;/a&gt;
     </code></pre>
-    <h3>Balises d'Image</h3>
-    <p>La balise <code>&lt;img&gt;</code> est utilisée pour insérer une image dans une page web. Les attributs <code>src</code> et <code>alt</code> sont obligatoires.</p>
+    <h3>Images</h3>
+    <p>La balise <code>&lt;img&gt;</code> insère une image. L'attribut <code>src</code> contient le chemin vers l'image et l'attribut <code>alt</code> fournit un texte alternatif essentiel pour l'accessibilité.</p>
     <pre><code class="language-html">
-&lt;img src="chemin/vers/image.jpg" alt="Description de l'image"&gt;
+&lt;img src="images/logo.png" alt="Logo de mon site" width="150"&gt;
     </code></pre>
-    <aside class="astuce">
-      <h3>Astuce</h3>
-      <p>Utilisez toujours l'attribut <code>alt</code> pour décrire l'image. Cela améliore l'accessibilité de votre site pour les personnes utilisant des lecteurs d'écran.</p>
-    </aside>
+
+    <h2>3. HTML Sémantique (HTML5)</h2>
+    <p>HTML5 a introduit des balises sémantiques qui décrivent mieux la structure de la page. Leur utilisation est une bonne pratique pour le référencement (SEO) et l'accessibilité.</p>
+    <ul>
+      <li><code>&lt;header&gt;</code> : Pour l'en-tête de la page (logo, titre principal, navigation).</li>
+      <li><code>&lt;nav&gt;</code> : Pour le menu de navigation principal.</li>
+      <li><code>&lt;main&gt;</code> : Pour le contenu principal et unique de la page.</li>
+      <li><code>&lt;section&gt;</code> : Pour regrouper un contenu thématique.</li>
+      <li><code>&lt;article&gt;</code> : Pour un contenu autonome (un article de blog, un produit).</li>
+      <li><code>&lt;footer&gt;</code> : Pour le pied de page (informations de contact, liens annexes).</li>
+    </ul>
   </article>
+
   <article class="exercices">
-    <h2>Exercices Pratiques</h2>
+    <h2>Exercice Pratique</h2>
+    <p>Créez une page HTML simple sur votre animal préféré en utilisant les balises sémantiques. La page doit contenir :</p>
     <ol>
-      <li>Créez une page HTML de base avec un titre, un paragraphe, une liste non ordonnée de trois éléments, un lien vers votre site préféré et une image avec une description alternative.</li>
+      <li>Un <strong>header</strong> avec un titre <code>&lt;h1&gt;</code>.</li>
+      <li>Un <strong>main</strong> contenant :
+        <ul>
+          <li>Une <strong>section</strong> avec un titre <code>&lt;h2&gt;</code> et une image de l'animal.</li>
+          <li>Une autre <strong>section</strong> avec un titre <code>&lt;h2&gt;</code> et une liste <code>&lt;ul&gt;</code> de ses caractéristiques.</li>
+        </ul>
+      </li>
+      <li>Un <strong>footer</strong> avec un paragraphe <code>&lt;p&gt;</code> contenant un lien vers une page d'information (ex: Wikipédia).</li>
     </ol>
     <details>
-      <summary>Corrigé</summary>
+      <summary>Voir un exemple de structure</summary>
       <pre><code class="language-html">
 &lt;!DOCTYPE html&gt;
-&lt;html&gt;
+&lt;html lang="fr"&gt;
   &lt;head&gt;
-    &lt;title&gt;Ma Première Page&lt;/title&gt;
+    &lt;title&gt;Le Panda Roux&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;h1&gt;Bienvenue sur ma page&lt;/h1&gt;
-    &lt;p&gt;Ceci est un paragraphe de texte.&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Élément 1&lt;/li&gt;
-      &lt;li&gt;Élément 2&lt;/li&gt;
-      &lt;li&gt;Élément 3&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;a href="https://www.example.com"&gt;Visitez Example.com&lt;/a&gt;
-    &lt;img src="chemin/vers/image.jpg" alt="Description de l'image"&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Le fascinant Panda Roux&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Qui est-il ?&lt;/h2&gt;
+        &lt;img src="panda.jpg" alt="Un panda roux dans un arbre"&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;h2&gt;Caractéristiques&lt;/h2&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Pelage roux et doux&lt;/li&gt;
+          &lt;li&gt;Longue queue touffue&lt;/li&gt;
+          &lt;li&gt;Se nourrit principalement de bambou&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+      &lt;p&gt;Pour en savoir plus, visitez la page &lt;a href="..." target="_blank"&gt;Wikipédia&lt;/a&gt;.&lt;/p&gt;
+    &lt;/footer&gt;
   &lt;/body&gt;
 &lt;/html&gt;
       </code></pre>
     </details>
   </article>
+
   <aside class="ressources">
     <h2>Pour aller plus loin</h2>
     <ul>
-      <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank">Documentation MDN sur HTML</a></li>
-      <li><a href="https://www.w3schools.com/html/" target="_blank">Tutoriel HTML sur W3Schools</a></li>
+      <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank">MDN Web Docs : HTML</a></li>
+      <li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank">W3Schools : HTML Semantic Elements</a></li>
+      <li><a href="https://htmlreference.io/" target="_blank">HTML Reference</a> - Un guide de toutes les balises HTML.</li>
     </ul>
   </aside>
 </section>

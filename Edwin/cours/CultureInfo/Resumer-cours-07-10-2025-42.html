@@ -2,116 +2,100 @@
   <h1>Titre du Cours : Introduction à l'Hébergement Web et aux Serveurs</h1>
   <article class="introduction">
     <h2>Introduction</h2>
-    <p>L'hébergement web est une étape cruciale dans le développement et la mise en ligne de sites internet. Il consiste à louer un espace sur un serveur pour y stocker les fichiers de votre site web. Ce cours vous guidera à travers les différentes options d'hébergement, les configurations de serveurs, et les bases de la gestion de serveurs sous Linux.</p>
+    <p>Ce cours vous introduit au monde de l'hébergement web et de l'administration de serveurs. Vous découvrirez les différentes manières d'héberger un site, le concept de virtualisation, les bases de la gestion d'un serveur Linux, et les bonnes pratiques de sécurité.</p>
   </article>
-  <article class="concepts">
-    <h2>Concepts Clés</h2>
-    <h3>Hébergement Web</h3>
-    <p>L'hébergement web est un service qui permet de stocker les fichiers de votre site web sur un serveur accessible via Internet. Il existe plusieurs types d'hébergement, chacun avec ses avantages et inconvénients.</p>
-    <h4>Hébergement Mutualisé</h4>
-    <p>L'hébergement mutualisé est une place préconfigurée sur un serveur partagé avec d'autres sites. C'est une option peu coûteuse où vous êtes responsable uniquement de votre site, tandis que tous les autres aspects sont gérés par l'hébergeur. Cependant, il est limité en termes de langages de programmation et de personnalisation.</p>
-    <h4>VPS (Virtual Private Server)</h4>
-    <p>Un VPS est une machine virtuelle dédiée où vous avez plus de contrôle sur la configuration du serveur. Vous pouvez choisir les caractéristiques techniques (processeur, RAM, disque dur) en fonction de vos besoins. C'est une option intermédiaire entre l'hébergement mutualisé et le serveur dédié.</p>
-    <pre><code class="language-html">
-<!-- Exemple de configuration VPS -->
-# Configuration de base d'un VPS
-hostname myvps
-memory 2048
-cpus 2
-</code></pre>
-    <h4>Serveur Dédié</h4>
-    <p>Un serveur dédié est une machine physique entièrement à votre disposition. C'est l'option la plus personnalisable mais aussi la plus coûteuse. Vous avez un contrôle total sur les configurations matérielles et logicielles.</p>
-    <h3>Hyperviseurs</h3>
-    <p>Les hyperviseurs sont des logiciels qui permettent de créer et de gérer des machines virtuelles. Ils existent en deux types principaux :</p>
-    <h4>Hyperviseur de Type 2</h4>
-    <p>Les hyperviseurs de type 2, comme VirtualBox, sont utilisés principalement pour des tests et des environnements de développement. Ils s'exécutent sur un système d'exploitation hôte.</p>
-    <h4>Hyperviseur de Type 1</h4>
-    <p>Les hyperviseurs de type 1, comme VMware ESXi, sont des systèmes d'exploitation à part entière dédiés à la gestion de machines virtuelles. Ils sont plus performants et utilisés dans des environnements professionnels.</p>
-    <h3>Réseaux et Ports</h3>
-    <p>La configuration réseau est essentielle pour permettre l'accès à votre serveur. Voici quelques ports couramment utilisés :</p>
-    <ul>
-      <li>HTTP : Port 80</li>
-      <li>HTTPS : Port 443</li>
-      <li>FTP : Port 22</li>
-    </ul>
-    <p>Vous pouvez configurer votre routeur pour la redirection de ports afin de contrôler quelles informations passent selon les protocoles.</p>
-    <pre><code class="language-html">
-<!-- Exemple de redirection de port -->
-# Redirection de port dans un fichier de configuration de routeur
-port_forwarding {
-  from_port = 80
-  to_port = 8080
-  protocol = tcp
-}
-</code></pre>
-    <h3>Gestion de Serveurs sous Linux</h3>
-    <p>Sous Linux, la gestion des fichiers et des répertoires est différente de celle sous Windows. Linux ne gère pas les extensions de fichiers de la même manière.</p>
-    <h4>Types de Fichiers</h4>
-    <p>Linux identifie les fichiers en tant que "répertoire", "périphérique", ou "normal" (texte, vidéo, etc.). Nous nous intéresserons principalement aux fichiers répertoire et normal.</p>
-    <h4>Commandes de Base</h4>
-    <p>Voici quelques commandes de base pour gérer votre serveur sous Linux :</p>
-    <ul>
-      <li><code>clear</code> : Nettoie l'écran de la console.</li>
-      <li><code>apt update</code> : Met à jour la liste des programmes disponibles sur les serveurs Debian.</li>
-    </ul>
-    <pre><code class="language-html">
-<!-- Exemple de commandes Linux -->
-# Nettoyer l'écran
-clear
 
-# Mettre à jour la liste des programmes
-apt update
-</code></pre>
-    <h4>Sécurité des Mots de Passe</h4>
-    <p>La robustesse des mots de passe est cruciale pour la sécurité de votre serveur. Utilisez des mots de passe complexes et suivez les recommandations de l'ANSSI (KeePass).</p>
-    <aside>
-      <h4>Astuce : Technique du Texte de Base</h4>
-      <p>Une méthode pour créer des mots de passe robustes est d'utiliser un texte de base, un numéro de ligne, et une méthode pour créer le mot de passe. Par exemple, utilisez une fable de La Fontaine.</p>
-    </aside>
-    <h4>Connexion SSH</h4>
-    <p>SSH (Secure Shell) est un protocole sécurisé pour se connecter à distance à votre serveur. Il utilise un échange de clés privée et publique pour authentifier la connexion.</p>
-    <pre><code class="language-html">
-<!-- Exemple de connexion SSH -->
-# Connexion SSH
-ssh user@hostname
-</code></pre>
+  <article class="concepts">
+    <h2>1. Les Types d'Hébergement Web</h2>
+    <p>Choisir le bon hébergement est une étape clé pour votre projet.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Idéal pour</th>
+          <th>Avantages</th>
+          <th>Inconvénients</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Mutualisé</strong></td>
+          <td>Votre site partage les ressources d'un serveur avec de nombreux autres.</td>
+          <td>Blogs, sites vitrines, débutants.</td>
+          <td>Peu coûteux, facile à gérer.</td>
+          <td>Performances limitées, peu de contrôle.</td>
+        </tr>
+        <tr>
+          <td><strong>VPS</strong> (Serveur Privé Virtuel)</td>
+          <td>Une machine virtuelle avec des ressources dédiées sur un serveur physique partagé.</td>
+          <td>Sites à trafic moyen, applications web.</td>
+          <td>Bon rapport performance/prix, plus de contrôle.</td>
+          <td>Nécessite des connaissances en administration.</td>
+        </tr>
+        <tr>
+          <td><strong>Dédié</strong></td>
+          <td>Un serveur physique entièrement pour vous.</td>
+          <td>Sites à fort trafic, applications critiques.</td>
+          <td>Performances maximales, contrôle total.</td>
+          <td>Coûteux, complexe à gérer.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2. La Virtualisation</h2>
+    <p>La virtualisation permet de créer plusieurs environnements virtuels (machines virtuelles) sur une seule machine physique. C'est la technologie derrière les VPS. Elle est gérée par un logiciel appelé <strong>hyperviseur</strong>.</p>
+    <img src="https://i.imgur.com/3g2Q4sJ.png" alt="Hyperviseur Type 1 vs Type 2" style="max-width:100%; border-radius:8px;">
+    <ul>
+      <li><strong>Type 1 (Bare Metal) :</strong> Installé directement sur le matériel (ex: VMware ESXi). Très performant, utilisé en production.</li>
+      <li><strong>Type 2 (Hébergé) :</strong> Installé sur un système d'exploitation existant (ex: VirtualBox, VMware Workstation). Idéal pour les tests et le développement local.</li>
+    </ul>
+
+    <h2>3. Administration de base d'un serveur Linux</h2>
+    <p>La plupart des serveurs web tournent sous Linux. La gestion se fait en ligne de commande.</p>
+    <h3>Commandes Essentielles</h3>
+    <ul>
+      <li><code>ls</code> : Lister les fichiers.</li>
+      <li><code>cd [dossier]</code> : Changer de répertoire.</li>
+      <li><code>pwd</code> : Afficher le répertoire actuel.</li>
+      <li><code>touch [fichier]</code> : Créer un fichier vide.</li>
+      <li><code>mkdir [dossier]</code> : Créer un répertoire.</li>
+      <li><code>rm [fichier]</code> : Supprimer un fichier.</li>
+      <li><code>sudo apt update</code> : Mettre à jour la liste des paquets (Debian/Ubuntu).</li>
+    </ul>
+
+    <h2>4. Sécurité et Connexion</h2>
+    <h3>Connexion via SSH (Secure Shell)</h3>
+    <p>SSH est le protocole standard pour se connecter de manière sécurisée à un serveur distant. L'authentification par clés (une clé privée sur votre machine, une clé publique sur le serveur) est beaucoup plus sécurisée que l'authentification par mot de passe.</p>
+    <pre><code class="language-bash">
+# Générer une paire de clés SSH sur votre machine locale
+ssh-keygen -t rsa -b 4096
+
+# Copier la clé publique sur le serveur
+ssh-copy-id utilisateur@adresse_du_serveur
+
+# Se connecter
+ssh utilisateur@adresse_du_serveur
+    </code></pre>
+    <h3>Sécurité des Mots de Passe</h3>
+    <p>Si vous devez utiliser des mots de passe, assurez-vous qu'ils sont longs, complexes et uniques. Des gestionnaires de mots de passe comme KeePass ou Bitwarden sont fortement recommandés.</p>
   </article>
+
   <article class="exercices">
     <h2>Exercices Pratiques</h2>
     <ol>
-      <li>Configurez un VPS avec les caractéristiques suivantes : 2 Go de RAM, 2 CPU, 50 Go de disque dur.</li>
-      <li>Installez et configurez VirtualBox pour créer une machine virtuelle avec un réseau NAT.</li>
-      <li>Configurez la redirection de port sur votre routeur pour rediriger le port 80 vers le port 8080.</li>
+      <li><strong>Installer VirtualBox :</strong> Téléchargez et installez VirtualBox sur votre ordinateur.</li>
+      <li><strong>Créer une Machine Virtuelle :</strong> Créez une nouvelle VM et installez-y une distribution Linux légère comme Lubuntu.</li>
+      <li><strong>Pratiquer les commandes de base :</strong> Dans votre VM, utilisez le terminal pour créer une structure de dossiers : <code>projets/site_web/images</code>. Créez un fichier <code>index.html</code> dans le dossier <code>site_web</code>.</li>
     </ol>
-    <details>
-      <summary>Corrigé</summary>
-      <pre><code class="language-html">
-<!-- Corrigé Exercice 1 -->
-# Configuration VPS
-hostname myvps
-memory 2048
-cpus 2
-disk 50G
-
-<!-- Corrigé Exercice 2 -->
-# Configuration VirtualBox avec réseau NAT
-VBoxManage modifyvm "NomDeLaVM" --nic1 nat
-
-<!-- Corrigé Exercice 3 -->
-# Redirection de port
-port_forwarding {
-  from_port = 80
-  to_port = 8080
-  protocol = tcp
-}
-</code></pre>
-    </details>
   </article>
+
   <aside class="ressources">
     <h2>Pour aller plus loin</h2>
     <ul>
-      <li><a href="https://www.it-connect.fr/configurer-le-port-forwarding-sur-une-vm-virtualbox%EF%BB%BF/" target="_blank">Configurer le port forwarding sur une VM VirtualBox</a></li>
-      <li><a href="https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-virtualbox/" target="_blank">Comprendre les différents types de réseaux VirtualBox</a></li>
+      <li><a href="https://www.virtualbox.org/" target="_blank">Site officiel de VirtualBox</a></li>
+      <li><a href="https://ubuntu.com/tutorials/command-line-for-beginners" target="_blank">Tutoriel : La ligne de commande pour les débutants (Ubuntu)</a></li>
+      <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04" target="_blank">DigitalOcean - Configurer des clés SSH</a></li>
     </ul>
   </aside>
 </section>
