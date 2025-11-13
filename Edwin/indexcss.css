@@ -1,40 +1,3 @@
-/* Réinitialisation des styles par défaut */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: linear-gradient(#1e3a8a, #9333ea, #be185d) no-repeat;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1; /* Permet au main de prendre toute la hauteur disponible */
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px 0;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-header nav img {
-    max-width: 100%;
-    height: auto;
-    max-height: 350px;
-    border: 10px double black;
-}
-
 h1 {
     font-size: 2.5rem;
     margin-bottom: 4rem;
@@ -79,22 +42,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-footer {
-    width: 100%;
-    background: #1e3a8a;
-    padding: 15px 0;
-    text-align: center;
-}
 
-footer a {
-    color: white;
-    font-size: 1.25rem;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
 
 /* Media Queries pour la responsivité */
 @media screen and (max-width: 768px) {
