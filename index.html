@@ -684,6 +684,13 @@
                 font-size: 1.5rem;
             }
         }
+
+        .footer-primary {
+            color: #ff6b35;
+            font-size: xx-large;
+            font-weight: 600;
+
+        }
     </style>
 </head>
 
@@ -758,7 +765,7 @@
     </div>
 
     <footer>
-        <div class="footer-logo">MNS Campus</div>
+        <p class="footer-primary">MNS Campus</p>
         <p>Metz Numeric School - Formation Développement Web & Applications</p>
         <p>Promotion MNS-Ran1-2025 | Campus de Metz</p>
         <p>&copy; 2025 Tous droits réservés.</p>
@@ -795,20 +802,25 @@
             img.src = `${student.folder}/avatar.jpg`;
             img.alt = student.name;
             img.onerror = function () {
-                // Si l'image échoue, utiliser l'avatar par défaut
-                this.style.display = 'none';
-                const initial = document.createElement('div');
-                initial.className = 'avatar-initial';
-                initial.textContent = student.name.charAt(0);
-                initial.style.display = 'flex';
-                initial.style.alignItems = 'center';
-                initial.style.justifyContent = 'center';
-                initial.style.width = '100%';
-                initial.style.height = '100%';
-                initial.style.fontSize = '3rem';
-                initial.style.fontWeight = '700';
-                initial.style.color = 'white';
-                avatarDiv.appendChild(initial);
+                // Si avatar.jpg échoue, utiliser l'avatar par défaut selon le genre
+                this.src = student.gender === 'F' ? 'avatarF.png' : 'avatarH.png';
+
+                // Si l'avatar par défaut échoue aussi, alors afficher l'initiale
+                this.onerror = function () {
+                    this.style.display = 'none';
+                    const initial = document.createElement('div');
+                    initial.className = 'avatar-initial';
+                    initial.textContent = student.name.charAt(0);
+                    initial.style.display = 'flex';
+                    initial.style.alignItems = 'center';
+                    initial.style.justifyContent = 'center';
+                    initial.style.width = '100%';
+                    initial.style.height = '100%';
+                    initial.style.fontSize = '3rem';
+                    initial.style.fontWeight = '700';
+                    initial.style.color = 'white';
+                    avatarDiv.appendChild(initial);
+                };
             };
 
             avatarDiv.appendChild(img);
