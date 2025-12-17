@@ -4,28 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des utilisateurs</title>
+    <title>MNS Campus | Annuaire Étudiants</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome pour les icônes -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --primary-color: #6C63FF;
-            --secondary-color: #FF6584;
-            --accent-color: #36D1DC;
-            --success-color: #4CAF50;
+            --primary-color: #0A2E5A;
+            /* Bleu MNS */
+            --secondary-color: #00A3E0;
+            /* Bleu clair MNS */
+            --accent-color: #FF6B35;
+            /* Orange MNS */
+            --success-color: #2ECC71;
+            --warning-color: #F39C12;
+            --purple-color: #8E44AD;
             --card-bg: #ffffff;
-            --text-color: #2D3748;
-            --text-light: #718096;
-            --hover-color: #5a52d4;
-            --background-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --text-color: #1A1A2E;
+            --text-light: #7F8C8D;
+            --hover-color: #083064;
+            --background-gradient: linear-gradient(135deg, #0A2E5A 0%, #00A3E0 100%);
             --card-gradient: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
-            --shadow-color: rgba(108, 99, 255, 0.2);
-            --glow-color: rgba(108, 99, 255, 0.4);
+            --shadow-color: rgba(10, 46, 90, 0.15);
+            --glow-color: rgba(0, 163, 224, 0.3);
+            --delegue-gradient: linear-gradient(135deg, #FF6B35 0%, #F39C12 100%);
         }
 
         * {
@@ -46,7 +53,6 @@
             position: relative;
         }
 
-
         /* Effet de particules animées en arrière-plan */
         .particles {
             position: absolute;
@@ -60,7 +66,7 @@
 
         .particle {
             position: absolute;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             animation: float 15s infinite linear;
         }
@@ -85,10 +91,11 @@
             }
         }
 
+        /* Header amélioré MNS */
         header {
             width: 100%;
-            padding: 80px 20px;
-            background: rgba(255, 255, 255, 0.15);
+            padding: 100px 20px 80px;
+            background: linear-gradient(135deg, rgba(10, 46, 90, 0.9) 0%, rgba(0, 163, 224, 0.8) 100%);
             backdrop-filter: blur(15px);
             color: white;
             text-align: center;
@@ -96,7 +103,7 @@
             position: relative;
             overflow: hidden;
             margin-bottom: 50px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 3px solid var(--accent-color);
         }
 
         header::before {
@@ -106,30 +113,73 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(108, 99, 255, 0.4), rgba(255, 101, 132, 0.4));
-            z-index: -1;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .mns-logo {
+            position: absolute;
+            top: 25px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mns-logo i {
+            color: var(--accent-color);
         }
 
         header h1 {
             margin: 0;
-            font-size: 3.8em;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
             font-weight: 800;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             animation: fadeInDown 1s ease-out;
             letter-spacing: 1.5px;
-            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            background: linear-gradient(135deg, #fff 0%, #E3F2FD 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 15px;
         }
 
         header p {
-            font-size: 1.3em;
-            margin-top: 15px;
+            font-size: 1.4rem;
+            margin-top: 10px;
             opacity: 0.95;
             animation: fadeIn 1.5s ease-out;
-            font-weight: 500;
+            font-weight: 400;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .promo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 2s ease-out;
+        }
+
+        .promo-badge i {
+            color: var(--accent-color);
         }
 
         @keyframes fadeInDown {
@@ -156,7 +206,7 @@
 
         .container {
             width: 90%;
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto 80px;
             animation: fadeInUp 1s ease-out;
         }
@@ -173,11 +223,32 @@
             }
         }
 
+        /* Section Délégué Mise en avant */
+        .delegue-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title i {
+            color: var(--accent-color);
+        }
+
+        /* Grille des étudiants */
         ul {
             list-style-type: none;
             padding: 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             width: 100%;
         }
@@ -206,6 +277,10 @@
             z-index: 2;
         }
 
+        li.delegue-card::before {
+            background: var(--delegue-gradient);
+        }
+
         li::after {
             content: '';
             position: absolute;
@@ -227,29 +302,39 @@
         }
 
         .user-card {
-            padding: 35px 25px;
+            padding: 40px 25px;
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
         }
 
+        /* Avatar avec système de secours */
         .user-avatar {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 25px;
             color: white;
-            font-size: 2.2em;
-            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+            font-size: 2.5rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(10, 46, 90, 0.3);
             transition: all 0.4s ease;
             overflow: hidden;
-            border: 4px solid white;
+            border: 5px solid white;
             position: relative;
+        }
+
+        .user-avatar.female {
+            background: linear-gradient(135deg, var(--purple-color), var(--accent-color));
+        }
+
+        .user-avatar.delegue {
+            background: var(--delegue-gradient);
         }
 
         .user-avatar::before {
@@ -266,6 +351,10 @@
             transition: opacity 0.3s ease;
         }
 
+        .user-avatar.delegue::before {
+            background: var(--delegue-gradient);
+        }
+
         .user-avatar img {
             width: 100%;
             height: 100%;
@@ -273,9 +362,14 @@
             transition: transform 0.3s ease;
         }
 
+        .avatar-initial {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
         li:hover .user-avatar {
             transform: scale(1.15) rotate(8deg);
-            box-shadow: 0 12px 30px rgba(108, 99, 255, 0.6);
+            box-shadow: 0 15px 40px rgba(0, 163, 224, 0.4);
         }
 
         li:hover .user-avatar::before {
@@ -287,12 +381,13 @@
         }
 
         .user-name {
-            font-size: 1.5em;
+            font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 12px;
             color: var(--text-color);
             position: relative;
-            padding-bottom: 8px;
+            padding-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .user-name::after {
@@ -301,43 +396,59 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 40px;
+            width: 50px;
             height: 3px;
             background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             border-radius: 2px;
         }
 
-        .user-role {
-            font-size: 1em;
-            color: var(--text-light);
-            margin-bottom: 25px;
-            font-style: italic;
-            padding: 6px 15px;
-            background: rgba(108, 99, 255, 0.08);
-            border-radius: 20px;
-            font-weight: 500;
+        .delegue-card .user-name::after {
+            background: var(--delegue-gradient);
         }
 
-        .user-role[data-role="Déléguée"] {
-            background: rgba(76, 175, 80, 0.15);
-            color: var(--success-color);
+        .user-role {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            padding: 8px 20px;
+            background: rgba(10, 46, 90, 0.08);
+            border-radius: 25px;
             font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .user-role[data-role="Délégué"] {
+            background: rgba(255, 107, 53, 0.15);
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        li:hover .user-role {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        li:hover .user-role[data-role="Délégué"] {
+            background: var(--accent-color);
+            color: white;
         }
 
         a {
             text-decoration: none;
             color: var(--primary-color);
             font-weight: 600;
-            font-size: 1.1em;
+            font-size: 1.1rem;
             transition: all 0.4s ease;
             display: inline-flex;
             align-items: center;
-            padding: 12px 28px;
+            padding: 14px 32px;
             border-radius: 50px;
-            background: rgba(108, 99, 255, 0.12);
-            border: 2px solid rgba(108, 99, 255, 0.2);
+            background: rgba(10, 46, 90, 0.1);
+            border: 2px solid rgba(10, 46, 90, 0.2);
             position: relative;
             overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
         }
 
         a::before {
@@ -363,31 +474,92 @@
         a:hover {
             color: white;
             background: var(--primary-color);
-            box-shadow: 0 8px 25px rgba(108, 99, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(10, 46, 90, 0.4);
             border-color: var(--primary-color);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         a:hover i {
             transform: translateX(8px) scale(1.1);
         }
 
-        footer {
-            width: 100%;
-            padding: 30px 20px;
+        .delegue-card a {
+            background: rgba(255, 107, 53, 0.1);
+            border-color: rgba(255, 107, 53, 0.3);
+            color: var(--accent-color);
+        }
+
+        .delegue-card a:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Stats MNS */
+        .mns-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-item {
             text-align: center;
             color: white;
-            font-size: 1em;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #fff 0%, #E3F2FD 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        footer {
+            width: 100%;
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            font-size: 1rem;
             opacity: 0.9;
             margin-top: auto;
-            padding-top: 50px;
-            background: rgba(0, 0, 0, 0.1);
+            padding-top: 60px;
+            background: rgba(0, 0, 0, 0.15);
             backdrop-filter: blur(10px);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         footer p {
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
         }
 
         /* Animation de pulse subtile */
@@ -415,13 +587,37 @@
             animation-delay: 1s;
         }
 
+        @media (max-width: 1024px) {
+            header h1 {
+                font-size: 3.2rem;
+            }
+
+            .mns-logo {
+                position: static;
+                display: inline-flex;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.8em;
+                font-size: 2.5rem;
             }
 
             header {
-                padding: 60px 20px;
+                padding: 80px 20px 60px;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
             }
 
             ul {
@@ -434,18 +630,33 @@
             }
 
             .user-avatar {
-                width: 90px;
-                height: 90px;
+                width: 100px;
+                height: 100px;
+                font-size: 2rem;
+            }
+
+            .avatar-initial {
+                font-size: 2.5rem;
+            }
+
+            .mns-stats {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 20px;
             }
         }
 
         @media (max-width: 480px) {
             header h1 {
-                font-size: 2.3em;
+                font-size: 2rem;
             }
 
             header p {
-                font-size: 1.1em;
+                font-size: 1rem;
+            }
+
+            .promo-badge {
+                font-size: 0.9rem;
+                padding: 8px 16px;
             }
 
             ul {
@@ -453,23 +664,25 @@
             }
 
             .user-avatar {
-                width: 80px;
-                height: 80px;
+                width: 90px;
+                height: 90px;
             }
-        }
 
-        #delegue {
-            margin: 20px;
-        }
+            .avatar-initial {
+                font-size: 2.2rem;
+            }
 
-        #delegue>ul:nth-child(1)>li:nth-child(1)>div:nth-child(1) {
-            flex-direction: row;
-            justify-content: space-around;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
-        }
+            .mns-stats {
+                grid-template-columns: 1fr;
+            }
 
-        #voirprofil {
-            width: 40%;
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .footer-logo {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -479,199 +692,171 @@
     <div class="particles" id="particles"></div>
 
     <header>
-        <h1>Liste des utilisateurs</h1>
-        <p>Découvrez notre équipe exceptionnelle</p>
+        <div class="mns-logo">
+            <i class="fas fa-laptop-code"></i>
+            <span>MNS Dev Web App</span>
+        </div>
+        <h1>Metz Numeric School</h1>
+        <p>Annuaire de la promotion MNS-DevWeb-2025</p>
+        <div class="promo-badge">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Formation Développement Web & Applications</span>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Campus Metz Numeric School</span>
+        </div>
     </header>
 
     <div class="container">
-        <div id="delegue">
+        <!-- Stats MNS -->
+        <div class="mns-stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalStudents">17</div>
+                <div class="stat-label">Étudiants</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Filles</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">14</div>
+                <div class="stat-label">Garçons</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Délégué</div>
+            </div>
+        </div>
+
+        <!-- Section Délégué -->
+        <div class="delegue-section">
+            <h2 class="section-title">
+                <i class="fas fa-crown"></i>
+                Notre Délégué de Promotion
+            </h2>
             <ul>
-                <li>
+                <li class="delegue-card">
                     <div class="user-card">
-                        <div class="user-avatar">
-                            <img src="Zouhair/avatar.jpg" alt="Zouhair" onerror="this.src='avatarH.png'">
+                        <div class="user-avatar delegue" id="delegue-avatar">
+                            <!-- L'image sera gérée par JavaScript -->
                         </div>
                         <div class="user-name">Zouhair</div>
-                        <div class="user-role" data-role="Déléguée">Délégué</div>
-                        <div id="voirprofil">
-                            <a href="Zouhair/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        <div class="user-role" data-role="Délégué">Délégué MNS</div>
+                        <a href="Zouhair/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </li>
             </ul>
         </div>
-        <ul>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Adrien/avatar.jpg" alt="Adrien" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Adrien</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Adrien/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Banu/avatar.jpg" alt="Banu" onerror="this.src='avatarF.png'">
-                    </div>
-                    <div class="user-name">Banu</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Banu/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Cyr/avatar.jpg" alt="Cyr" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Cyr</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Cyr/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Edwin/avatar.jpg" alt="Edwin" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Edwin</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Edwin/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Gregory/avatar.jpg" alt="Gregory" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Gregory</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Gregory/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Idriss/avatar.jpg" alt="Idriss" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Idriss</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Idriss/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Imtiyez/avatar.jpg" alt="Imtiyez" onerror="this.src='avatarF.png'">
-                    </div>
-                    <div class="user-name">Imtiyez</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Imtiyez/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Julien/avatar.jpg" alt="Julien" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Julien</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Julien/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Kevin/avatar.jpg" alt="Kevin" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Kevin</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Kevin/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Khaled/avatar.jpg" alt="Khaled" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Khaled</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Khaled/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Lila/avatar.jpg" alt="Lila" onerror="this.src='avatarF.png'">
-                    </div>
-                    <div class="user-name">Lila</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Lila/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Paul/avatar.jpg" alt="Paul" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Paul</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Paul/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Quentin/avatar.jpg" alt="Quentin" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Quentin</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Quentin/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Quentin(japon)/avatar.jpg" alt="QuentinB" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Quentin 🎌​</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Quentin(japon)/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Thybaut/avatar.jpg" alt="Thybaut" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Thybaut</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Thybaut/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Zakarie/avatar.jpg" alt="Zakarie" onerror="this.src='avatarH.png'">
-                    </div>
-                    <div class="user-name">Zakarie</div>
-                    <div class="user-role" data-role="Student">Student</div>
-                    <a href="Zakarie/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
 
+        <!-- Grid des étudiants -->
+        <h2 class="section-title">
+            <i class="fas fa-users"></i>
+            Tous les Étudiants
+        </h2>
+        <ul id="studentsList">
+            <!-- Les étudiants seront générés par JavaScript -->
         </ul>
     </div>
 
     <footer>
-        <p>&copy; MNS-Ran1-2025 Tous droits réservés.</p>
+        <div class="footer-logo">MNS Campus</div>
+        <p>Metz Numeric School - Formation Développement Web & Applications</p>
+        <p>Promotion MNS-Ran1-2025 | Campus de Metz</p>
+        <p>&copy; 2025 Tous droits réservés.</p>
     </footer>
 
     <script>
+        // Données des étudiants MNS
+        const mnsStudents = [
+            { name: "Adrien", gender: "M", role: "Dev Web App", folder: "Adrien" },
+            { name: "Banu", gender: "F", role: "Dev Web App", folder: "Banu" },
+            { name: "Cyr", gender: "M", role: "Dev Web App", folder: "Cyr" },
+            { name: "Edwin", gender: "M", role: "Dev Web App", folder: "Edwin" },
+            { name: "Gregory", gender: "M", role: "Dev Web App", folder: "Gregory" },
+            { name: "Idriss", gender: "M", role: "Dev Web App", folder: "Idriss" },
+            { name: "Imtiyez", gender: "F", role: "Dev Web App", folder: "Imtiyez" },
+            { name: "Julien", gender: "M", role: "Dev Web App", folder: "Julien" },
+            { name: "Kevin", gender: "M", role: "Dev Web App", folder: "Kevin" },
+            { name: "Khaled", gender: "M", role: "Dev Web App", folder: "Khaled" },
+            { name: "Lila", gender: "F", role: "Dev Web App", folder: "Lila" },
+            { name: "Paul", gender: "M", role: "Dev Web App", folder: "Paul" },
+            { name: "Quentin", gender: "M", role: "Dev Web App", folder: "Quentin" },
+            { name: "Quentin 🎌", gender: "M", role: "Dev Web App", folder: "Quentin(japon)" },
+            { name: "Thybaut", gender: "M", role: "Dev Web App", folder: "Thybaut" },
+            { name: "Zakarie", gender: "M", role: "Dev Web App", folder: "Zakarie" }
+        ];
+
+        // Fonction pour créer l'avatar avec système de secours
+        function createAvatar(student, isDelegue = false) {
+            const avatarDiv = document.createElement('div');
+            avatarDiv.className = `user-avatar ${student.gender === 'F' ? 'female' : ''} ${isDelegue ? 'delegue' : ''}`;
+
+            // Essayer de charger l'image
+            const img = document.createElement('img');
+            img.src = `${student.folder}/avatar.jpg`;
+            img.alt = student.name;
+            img.onerror = function () {
+                // Si l'image échoue, utiliser l'avatar par défaut
+                this.style.display = 'none';
+                const initial = document.createElement('div');
+                initial.className = 'avatar-initial';
+                initial.textContent = student.name.charAt(0);
+                initial.style.display = 'flex';
+                initial.style.alignItems = 'center';
+                initial.style.justifyContent = 'center';
+                initial.style.width = '100%';
+                initial.style.height = '100%';
+                initial.style.fontSize = '3rem';
+                initial.style.fontWeight = '700';
+                initial.style.color = 'white';
+                avatarDiv.appendChild(initial);
+            };
+
+            avatarDiv.appendChild(img);
+            return avatarDiv;
+        }
+
+        // Créer la carte du délégué
+        function createDelegueCard() {
+            const delegue = { name: "Zouhair", gender: "M", role: "Délégué", folder: "Zouhair" };
+            const avatarContainer = document.getElementById('delegue-avatar');
+
+            // Créer et ajouter l'avatar
+            const avatarDiv = createAvatar(delegue, true);
+            avatarContainer.parentNode.replaceChild(avatarDiv, avatarContainer);
+            avatarDiv.id = 'delegue-avatar';
+        }
+
+        // Générer les cartes des étudiants
+        function generateStudentCards() {
+            const studentsList = document.getElementById('studentsList');
+            studentsList.innerHTML = '';
+
+            mnsStudents.forEach((student, index) => {
+                const li = document.createElement('li');
+                li.style.animationDelay = `${index * 0.08}s`;
+
+                const cardHTML = `
+                    <div class="user-card">
+                        <div class="user-avatar-placeholder"></div>
+                        <div class="user-name">${student.name}</div>
+                        <div class="user-role">${student.role}</div>
+                        <a href="${student.folder}/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                `;
+
+                li.innerHTML = cardHTML;
+
+                // Remplacer le placeholder par l'avatar réel
+                const avatarPlaceholder = li.querySelector('.user-avatar-placeholder');
+                const avatarDiv = createAvatar(student);
+                avatarPlaceholder.parentNode.replaceChild(avatarDiv, avatarPlaceholder);
+
+                studentsList.appendChild(li);
+            });
+        }
+
         // Création des particules animées
-        document.addEventListener('DOMContentLoaded', function () {
+        function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 40;
 
@@ -696,11 +881,48 @@
 
                 particlesContainer.appendChild(particle);
             }
+        }
 
-            // Animation d'apparition progressive des cartes
+        // Animation des stats
+        function animateStats() {
+            const statNumber = document.getElementById('totalStudents');
+            let count = 0;
+            const target = mnsStudents.length + 1; // +1 pour le délégué
+
+            const interval = setInterval(() => {
+                count++;
+                statNumber.textContent = count;
+
+                if (count >= target) {
+                    clearInterval(interval);
+                }
+            }, 50);
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function () {
+            createParticles();
+            createDelegueCard();
+            generateStudentCards();
+            animateStats();
+
+            // Message console MNS
+            console.log('%c🎓 MNS Campus - Annuaire Étudiant 🎓', 'color: #00A3E0; font-size: 18px; font-weight: bold;');
+            console.log('%cPromotion MNS-Ran1-2025 - Développement Web & Applications', 'color: #FF6B35; font-size: 14px;');
+        });
+
+        // Effet de survol amélioré
+        document.addEventListener('DOMContentLoaded', function () {
             const cards = document.querySelectorAll('li');
-            cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.08}s`;
+
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.zIndex = '10';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    this.style.zIndex = '1';
+                });
             });
         });
     </script>
