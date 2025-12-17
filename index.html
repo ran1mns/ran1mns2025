@@ -46,6 +46,7 @@
             position: relative;
         }
 
+
         /* Effet de particules animées en arrière-plan */
         .particles {
             position: absolute;
@@ -456,6 +457,20 @@
                 height: 80px;
             }
         }
+
+        #delegue {
+            margin: 20px;
+        }
+
+        #delegue>ul:nth-child(1)>li:nth-child(1)>div:nth-child(1) {
+            flex-direction: row;
+            justify-content: space-around;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+        }
+
+        #voirprofil {
+            width: 40%;
+        }
     </style>
 </head>
 
@@ -469,17 +484,23 @@
     </header>
 
     <div class="container">
-        <ul>
-            <li>
-                <div class="user-card">
-                    <div class="user-avatar">
-                        <img src="Zouhair/avatar.jpg" alt="Zouhair" onerror="this.src='avatarH.png'">
+        <div id="delegue">
+            <ul>
+                <li>
+                    <div class="user-card">
+                        <div class="user-avatar">
+                            <img src="Zouhair/avatar.jpg" alt="Zouhair" onerror="this.src='avatarH.png'">
+                        </div>
+                        <div class="user-name">Zouhair</div>
+                        <div class="user-role" data-role="Déléguée">Délégué</div>
+                        <div id="voirprofil">
+                            <a href="Zouhair/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="user-name">Zouhair</div>
-                    <div class="user-role" data-role="Déléguée">Délégué</div>
-                    <a href="Zouhair/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </li>
+                </li>
+            </ul>
+        </div>
+        <ul>
             <li>
                 <div class="user-card">
                     <div class="user-avatar">
