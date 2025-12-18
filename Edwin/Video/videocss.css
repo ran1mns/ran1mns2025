@@ -1,43 +1,350 @@
+/* Galerie moderne avec effets visuels */
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-    border: 10px double white;
-    border-radius: 20px;
-    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    margin-bottom: 60px;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
 }
 
 .gallery figure {
-    width: calc(33.333% - 20px);
     margin: 0;
     text-align: center;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: linear-gradient(145deg, rgba(30, 58, 138, 0.3), rgba(147, 51, 234, 0.2));
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.gallery figure:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(147, 51, 234, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    z-index: 10;
+}
+
+/* Conteneur vidéo avec effets */
+.video-container {
+    position: relative;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    aspect-ratio: 16/9;
 }
 
 .gallery video {
     width: 100%;
-    height: auto;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.1), 10px 10px 15px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    border-radius: 12px 12px 0 0;
+    display: block;
+    transition: transform 0.5s ease;
+    filter: brightness(1.05) contrast(1.05);
 }
 
+.gallery figure:hover video {
+    transform: scale(1.05);
+    filter: brightness(1.15) contrast(1.1);
+}
+
+/* Overlay sur la vidéo au survol */
+.video-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(30, 58, 138, 0.2) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px 12px 0 0;
+}
+
+.gallery figure:hover .video-container::after {
+    opacity: 1;
+}
+
+/* Play button overlay */
+.video-container::before {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.gallery figure:hover .video-container::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Légende stylisée */
 .gallery figcaption {
     color: white;
-    margin-top: 10px;
-    font-size: 1.1rem;
+    padding: 20px 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(to right,
+            rgba(30, 58, 138, 0.8),
+            rgba(147, 51, 234, 0.7));
+    border-radius: 0 0 12px 12px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gallery figure:hover figcaption {
+    background: linear-gradient(to right,
+            rgba(59, 130, 246, 0.9),
+            rgba(168, 85, 247, 0.8));
+    transform: translateY(0);
+}
+
+/* Effet de lueur sur le bord */
+.gallery figcaption::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.6),
+            transparent);
+}
+
+/* Indicateur de durée pour les vidéos */
+.video-duration {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.gallery figure:hover .video-duration {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Animation d'apparition des éléments */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery figure {
+    animation: slideUpFade 0.6s ease forwards;
+    opacity: 0;
+}
+
+.gallery figure:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.gallery figure:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.gallery figure:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.gallery figure:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.gallery figure:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.gallery figure:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.gallery figure:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.gallery figure:nth-child(8) {
+    animation-delay: 0.8s;
 }
 
 /* Media Queries pour la responsivité */
+@media screen and (max-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 30px;
+    }
+}
+
 @media screen and (max-width: 992px) {
-    .gallery figure {
-        width: calc(50% - 20px);
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 25px;
+    }
+
+    .gallery figcaption {
+        font-size: 1.1rem;
+        padding: 16px 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        padding: 20px;
+        border-width: 1px;
+        margin-bottom: 40px;
+    }
+
+    .video-container::before {
+        font-size: 2.5rem;
+        width: 60px;
+        height: 60px;
+    }
+
+    .gallery figcaption {
+        font-size: 1rem;
+        padding: 14px 10px;
     }
 }
 
 @media screen and (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .gallery figure:hover {
+        transform: translateY(-8px) scale(1.01);
+    }
+
+    .video-container::before {
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+    }
+
+    .video-duration {
+        font-size: 0.8rem;
+        padding: 3px 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery {
+        padding: 12px;
+        border-radius: 16px;
+    }
+
     .gallery figure {
-        width: 100%;
+        border-radius: 12px;
+    }
+
+    .gallery video {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .gallery figcaption {
+        padding: 12px 8px;
+        font-size: 0.95rem;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .video-container::before {
+        font-size: 1.8rem;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Effet de focus pour l'accessibilité */
+.gallery figure:focus-within {
+    outline: 2px solid rgba(59, 130, 246, 0.8);
+    outline-offset: 4px;
+}
+
+/* Amélioration du contraste pour l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+
+    .gallery figure,
+    .gallery video,
+    .gallery figcaption,
+    .video-container::before,
+    .video-container::after {
+        transition: none;
+        animation: none;
     }
 }
