@@ -65,21 +65,6 @@ img {
     height: auto;
 }
 
-footer {
-    background-color: white;
-    border-top: 1px solid #808080;
-}
-
-footer .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0;
-}
-
-footer p {
-    margin: auto;
-}
 
 main .container {
     padding: 0 50px;
@@ -146,14 +131,6 @@ main .container {
     justify-content: center;
 }
 
-footer .mentions {
-    font-size: 1em;
-    color: grey;
-}
-
-.footer img {
-    min-width: 30px;
-}
 
 
 
@@ -413,12 +390,6 @@ h3 {
     font-size: 15px;
 }
 
-.footer .container p {
-    font-size: 1em;
-    color: black;
-    text-align: center;
-}
-
 .hero_item {
     flex: 1, 0, 50%;
 }
@@ -435,14 +406,218 @@ h3 {
     border-radius: 25%;
 }
 
+.burger {
+    display: none;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    font-size: 2.5rem;
+    padding: 10px;
+    margin: 10px auto 50px;
+    background-color: #c26040;
+    color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+h2 {
+    font-size: 22px;
+    border: 2px solid #c26040;
+    border-radius: 5px;
+    background: white;
+}
+
+h4 {
+    color: black;
+}
+
+.category {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 100%;
+}
+
+.container_one {
+
+    color: white;
+    margin: 0 10px 0 50px;
+}
+
+.container_one ul {
+    padding: 20px auto;
+    margin: 20px auto;
+    background: #c26040;
+}
+
+.container_one {
+    background: #c26040;
+    color: black;
+}
+
+.container_one h4 {
+    color: white;
+}
+
+.photo {
+    width: 100%;
+    background: #c26040;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    outline: auto;
+}
+
+.container_two {
+    margin: 0 50px 0 10px;
+    grid-column: 2 / 4;
+}
+
+.container_two li {
+    margin-bottom: 20px;
+}
+
+.formation {
+    margin-bottom: 20px;
+}
+
+.item {
+    margin: 10px 50px;
+    border: 1px solid #c26040;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: white;
+    border-top: 1px solid #808080;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+footer p {
+    margin: auto;
+}
+
+footer .mentions {
+    font-size: 1em;
+    color: grey;
+}
+
+.footer img {
+    min-width: 30px;
+}
+
 .footer .container p {
     font-size: 1em;
     color: black;
     text-align: center;
 }
 
-.burger {
-    display: none;
+/*Media Queries pour desktop*/
+@media screen and (min-width:820px) {
+    .container_one h4 {
+        color: #fff2de;
+    }
+
+    .footer .container p {
+        font-size: 1em;
+        color: black;
+        text-align: center;
+    }
+}
+
+/*Media Queries pour tablettes*/
+@media screen and (max-width:819px) {
+
+    main {
+        margin: 10px 20px;
+    }
+
+    h1 {
+        display: flex;
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+
+    .container_one {
+        background: #c26040;
+        color: black;
+    }
+
+    .container_one h4 {
+        color: white;
+    }
+
+    .container_two {
+        text-align: justify;
+    }
+
+    .item {
+        margin-left: 50px;
+        margin-right: 50px;
+        border: 1px solid #c26040;
+        border-radius: 10px;
+    }
+}
+
+/*Media Queries pour mobiles*/
+@media screen and (max-width:499px) {
+    main {
+        margin: 0 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    h4 {
+        color: gray;
+    }
+
+    .category {
+        display: block;
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .container_one,
+    .container_two {
+        display: flex;
+
+    }
+
+    .container_one {
+        display: none;
+        order: 2;
+    }
+
+    .container_two {
+        order: 1;
+        margin: 0 20px;
+    }
+
+    .formation h3,
+    .certification h3 {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .item {
+        margin: 0 20px 10px;
+        border: 1px solid #c26040;
+        border-radius: 10px;
+    }
 }
 
 /*Media Queries pour tablettes*/
