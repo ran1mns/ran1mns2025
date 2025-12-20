@@ -27,12 +27,6 @@ header .container {
     margin: 0;
 }
 
-main {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1200px;
-}
-
 /*Pour réduire la taille du logo*/
 header img,
 footer img {
@@ -65,6 +59,11 @@ img {
     height: auto;
 }
 
+main {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
 
 main .container {
     padding: 0 50px;
@@ -131,15 +130,51 @@ main .container {
     justify-content: center;
 }
 
-
-
-
 h1 {
     display: flex;
     text-align: center;
     padding: 20px 0;
     font-size: 35px;
     color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: black;
+    line-height: 1;
+}
+
+h2,
+.h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    font-size: 2.5rem;
+    padding: 20px;
+    margin: 10px auto 40px;
+    background-color: #c26040;
+    color: black;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h3,
+.h3 {
+    font-size: 1rem;
+    padding: 5px auto;
+    margin: 10px auto;
 }
 
 .grid {
@@ -173,39 +208,6 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: black;
-    line-height: 1;
-}
-
-h2,
-.h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    font-size: 2.5rem;
-    padding: 20px;
-    margin: 10px auto 40px;
-    background-color: #c26040;
-    color: black;
-    border: 2px solid black;
-    border-radius: 20px;
-}
-
-h3,
-.h3 {
-    font-size: 1rem;
-    padding: 5px auto;
-    margin: 10px auto;
 }
 
 p {
@@ -313,7 +315,6 @@ p {
     background-color: RGBA(0, 0, 0, 0.5);
 }
 
-
 .grid_filter {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -380,11 +381,7 @@ p {
     padding: 10px 50px;
 }
 
-h3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .dev_web {
     font-size: 15px;
@@ -490,6 +487,42 @@ h4 {
     border-radius: 10px;
 }
 
+label {
+    color: black;
+}
+
+.form {
+    max-width: 800px;
+    padding: 0;
+    margin: 20px auto 0 auto;
+}
+
+.form input,
+.form textarea {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    outline: auto;
+}
+
+.form textarea {
+    min-height: 200px;
+}
+
+form .bouton {
+    background: #c26040;
+    color: #fff2de;
+    width: 150px;
+    margin: 50px auto;
+    border: none;
+}
+
+form .bouton:hover {
+    cursor: pointer;
+    background-color: RGBA(0, 0, 0, 0.5);
+}
+
 footer {
     background-color: white;
     border-top: 1px solid #808080;
@@ -567,6 +600,22 @@ footer .mentions {
         border: 1px solid #c26040;
         border-radius: 10px;
     }
+
+    form .bouton {
+        background-color: maroon;
+        border: black;
+        color: white;
+    }
+
+    h2 {
+        color: white;
+    }
+
+    .footer .container p {
+        font-size: 1em;
+        color: gray;
+        text-align: center;
+    }
 }
 
 /*Media Queries pour mobiles*/
@@ -617,6 +666,11 @@ footer .mentions {
         margin: 0 20px 10px;
         border: 1px solid #c26040;
         border-radius: 10px;
+    }
+
+    form .bouton {
+        background-color: #c26040;
+        color: white;
     }
 }
 
