@@ -1,18 +1,42 @@
-header > div.container{
+header > div.container {
     display: flex;
     align-items: center;
 }
 header > div.container > div:first-child{
     width: 100px;
 }
-header .logo{
+header .logo {
     max-width: 100%;
 }
-main .hero{
+header > nav {
+    text-align: right;
+}
+header > nav > li {
+    display: inline-block;
+    padding: 10px 10px;
+
+    
+}
+main .hero {
     background-color: rgb(31, 112, 112);
     text-align: center;
     font-size: 3rem;
     text-transform: uppercase;
     padding: 50px 0;
     
+}
+nav a {
+    background-color: rgb(160, 146, 118,0.3);
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none ;
+    color: black;
+    font-weight: bold ;
+    border: 2px solid rgb(160, 146, 118);
+    
+}
+a:hover {
+    background-color: black;
+    color: white;
+    border-color: rgb(160, 146, 118,);
 }
