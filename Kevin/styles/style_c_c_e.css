@@ -1,3 +1,25 @@
+@media screen and (max-width: 500px) {
+    .content2 {
+        width: 500px;
+        
+    }
+    .content {
+        width: 500px;
+    }
+    li {
+        width: 115px;
+    }
+    ul li {
+        width: 72px;
+
+    }
+    ul li a {
+        width: 50px;
+        height: 40px;
+
+    }
+
+}
 html, body {
     font-family: Arial, sans-serif;
     color: black;
@@ -41,7 +63,7 @@ html body::after {
 	box-sizing: border-box;
 }
 
-footer {margin-top: auto;}
+footer {margin-bottom: auto;}
 .footer-copy { font-size: 1.4rem; margin: 0.2rem 0;}
 
 img.logo {
@@ -94,28 +116,4 @@ nav li a:hover {
 
 a:focus {
     outline: 5px solid red;
-}
-
-
-@media screen and (max-width: 500px) {
-    .content2 {
-        width: 400px;
-        
-    }
-    .content {
-        width: 500px;
-    }
-    li {
-        width: 115px;
-    }
-    ul li {
-        width: 72px;
-
-    }
-    ul li a {
-        width: 50px;
-        height: 40px;
-
-    }
-
 }
