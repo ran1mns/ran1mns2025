@@ -22,7 +22,7 @@ header {
 
 header .container {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
     margin: 0;
 }
@@ -469,7 +469,9 @@ p {
     max-width: 100%;
 }
 
-
+.contact p {
+    font-size: 1.2em;
+}
 
 label {
     color: black;
@@ -495,19 +497,16 @@ label {
 }
 
 form .bouton {
-    background: #c26040;
+    background-color: #c26040;
     color: #fff2de;
     width: 150px;
     margin: 50px auto;
+    border-radius: 15px;
 }
 
 form .bouton:hover {
     cursor: pointer;
     background-color: RGBA(0, 0, 0, 0.5);
-}
-
-.contact p {
-    font-size: 1.5em;
 }
 
 footer {
@@ -522,32 +521,19 @@ footer .container {
     margin: 0;
 }
 
-footer .mentions {
-    font-size: 1em;
-    color: grey;
-}
-
 .footer img {
     min-width: 30px;
 }
 
-.footer .container p {
+.footer .container a {
     font-size: 1em;
-    color: black;
-    text-align: center;
+    color: #404040;
 }
 
-/*Media Queries pour desktop*/
-@media screen and (min-width:820px) {
-    .container_one h4 {
-        color: #fff2de;
-    }
-
-    .footer .container p {
-        font-size: 1em;
-        color: black;
-        text-align: center;
-    }
+.footer .container p {
+    font-size: 1em;
+    color: #404040;
+    text-align: center;
 }
 
 /*Media Queries pour tablettes*/
