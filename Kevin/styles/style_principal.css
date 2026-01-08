@@ -1,42 +1,107 @@
-header > div.container {
+body{
+    font-family: fantasy;
+}
+
+header .container{
     display: flex;
     align-items: center;
 }
-header > div.container > div:first-child{
-    width: 100px;
-}
-header .logo {
-    max-width: 100%;
-}
-header > nav {
-    text-align: right;
-}
-header > nav > li {
-    display: inline-block;
-    padding: 10px 10px;
 
-    
+header .logo{
+    max-width: 80px;
 }
-main .hero {
-    background-color: rgb(31, 112, 112);
+
+header #sitename{
+    font-size: 30px;
+    text-shadow: 5px 0px #b2b478;
+}
+
+header nav ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+header nav ul li{
     text-align: center;
-    font-size: 3rem;
-    text-transform: uppercase;
-    padding: 50px 0;
-    
+    border-bottom: 1px solid #dedede;
+    background-color: rgba(0, 0, 0, 0.697);
 }
-nav a {
-    background-color: rgb(160, 146, 118,0.3);
-    display: inline-block;
-    padding: 10px;
-    text-decoration: none ;
-    color: black;
-    font-weight: bold ;
-    border: 2px solid rgb(160, 146, 118);
-    
+
+header nav a{
+    text-decoration: none;
+    color: #b2b478;
+    display: block;
+    padding: 20px 20px;
 }
-a:hover {
+header nav a:hover{
     background-color: black;
     color: white;
-    border-color: rgb(160, 146, 118,);
+}
+
+main .banner{
+    height: 400px;
+    background-image: url(../../images/font3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+main .hero{
+    text-align: center;
+    font-size: 4rem;
+    background-color: rgba(0, 0, 0, 0.697);
+    color: #b2b478;
+    padding: 50px;
+}
+
+@media (min-width: 576px){
+    .container{
+        width: 526px;
+        margin: auto;
+    }
+}
+@media (min-width: 768px){
+    .container{
+        width: 718px;
+    }
+    header .logo{
+        max-width: 100px;
+    }
+    header #sitename {
+        font-size: 50px;
+    }
+}
+@media (min-width: 992px){
+    .container{
+        width: 942px;
+    }
+    header nav ul{
+        display:flex;
+        justify-content:center;
+    }
+    header nav ul li{
+        border-bottom-width: 0;
+        width: 25%;
+        box-sizing: border-box;
+    }
+    header nav ul li:not(:last-child){
+        border-right: 1px solid #dedede;
+    }
+    main .columns{
+        display: flex;
+        gap: 20px;
+    }
+    
+}
+@media (min-width: 1200px){
+    .container{
+        width: 1150px;
+    }
+    
+}
+@media (min-width: 1400px){
+    .container{
+        width: 1350px;
+    }
+    
 }
