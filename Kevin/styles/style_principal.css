@@ -1,5 +1,25 @@
 body{
     font-family: fantasy;
+    background-color: rgba(109, 0, 128, 0.705);
+}
+
+html body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+    linear-gradient(to bottom, var(--bg-overlay), var(--bg-overlay)),
+    var(--bg-image) center/cover no-repeat;
+    z-index: -2;
+}
+
+html body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(1px);
+    z-index: -1;
+    pointer-events: none;
 }
 
 header .container{
@@ -31,11 +51,16 @@ header nav a{
     text-decoration: none;
     color: #b2b478;
     display: block;
-    padding: 20px 20px;
+    padding: 10px 10px;
 }
 header nav a:hover{
     background-color: black;
     color: white;
+}
+
+h1{
+    color: black;
+    text-shadow: 5px 0px #b2b478;
 }
 
 main .banner{
@@ -50,7 +75,8 @@ main .hero{
     text-align: center;
     font-size: 4rem;
     background-color: rgba(0, 0, 0, 0.697);
-    color: #b2b478;
+    color: black;
+    text-shadow: 5px 0px #b2b478;
     padding: 50px;
 }
 
