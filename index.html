@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MNS | Étudiants DevWeb</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MNS | Étudiants DevWeb</title>
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
         :root {
             --primary-color: #0A2E5A;
             /* Bleu MNS */
@@ -691,87 +687,80 @@
             font-weight: 600;
 
         }
-    </style>
-</head>
-
-<body>
-    <!-- Particules d'arrière-plan -->
-    <div class="particles" id="particles"></div>
-
-    <header>
-        <div class="mns-logo">
-            <i class="fas fa-laptop-code"></i>
-            <span>MNS Dev Web App</span>
-        </div>
-        <h1>Metz Numeric School</h1>
-        <p>Annuaire de la promotion MNS-DevWeb-2025</p>
-        <div class="promo-badge">
-            <i class="fas fa-graduation-cap"></i>
-            <span>Formation Développement Web & Applications</span>
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Campus Metz Numeric School</span>
-        </div>
-    </header>
-
-    <div class="container">
-        <!-- Stats MNS -->
-        <div class="mns-stats">
-            <div class="stat-item">
-                <div class="stat-number" id="totalStudents">17</div>
-                <div class="stat-label">Étudiants</div>
+        </style>
+    </head>
+    <body>
+        <!-- Particules d'arrière-plan -->
+        <div class="particles" id="particles"></div>
+        <header>
+            <div class="mns-logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>MNS Dev Web App</span>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">3</div>
-                <div class="stat-label">Filles</div>
+            <h1>Metz Numeric School</h1>
+            <p>Annuaire de la promotion MNS-DevWeb-2025</p>
+            <div class="promo-badge">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Formation Développement Web & Applications</span>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Campus Metz Numeric School</span>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">14</div>
-                <div class="stat-label">Garçons</div>
+        </header>
+        <div class="container">
+            <!-- Stats MNS -->
+            <div class="mns-stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalStudents">17</div>
+                    <div class="stat-label">Étudiants</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Filles</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">14</div>
+                    <div class="stat-label">Garçons</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Délégué</div>
+                </div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">1</div>
-                <div class="stat-label">Délégué</div>
-            </div>
-        </div>
-
-        <!-- Section Délégué -->
-        <div class="delegue-section">
-            <h2 class="section-title">
-                <i class="fas fa-crown"></i>
-                Notre Délégué de Promotion
-            </h2>
-            <ul>
-                <li class="delegue-card">
-                    <div class="user-card">
-                        <div class="user-avatar delegue" id="delegue-avatar">
-                            <!-- L'image sera gérée par JavaScript -->
+            <!-- Section Délégué -->
+            <div class="delegue-section">
+                <h2 class="section-title">
+                    <i class="fas fa-crown"></i>
+                    Notre Délégué de Promotion
+                </h2>
+                <ul>
+                    <li class="delegue-card">
+                        <div class="user-card">
+                            <div class="user-avatar delegue" id="delegue-avatar">
+                                <!-- L'image sera gérée par JavaScript --></div>
+                            <div class="user-name">Zouhair</div>
+                            <div class="user-role" data-role="Délégué">Délégué MNS</div>
+                            <a href="Zouhair/index.html">Voir le profil
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <div class="user-name">Zouhair</div>
-                        <div class="user-role" data-role="Délégué">Délégué MNS</div>
-                        <a href="Zouhair/index.html">Voir le profil <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Grid des étudiants -->
+            <h2 class="section-title">
+                <i class="fas fa-users"></i>
+                Tous les Étudiants
+            </h2>
+            <ul id="studentsList">
+                <!-- Les étudiants seront générés par JavaScript --></ul>
         </div>
-
-        <!-- Grid des étudiants -->
-        <h2 class="section-title">
-            <i class="fas fa-users"></i>
-            Tous les Étudiants
-        </h2>
-        <ul id="studentsList">
-            <!-- Les étudiants seront générés par JavaScript -->
-        </ul>
-    </div>
-
-    <footer>
-        <p class="footer-primary">MNS Campus</p>
-        <p>Metz Numeric School - Formation Développement Web & Applications</p>
-        <p>Promotion MNS-DevWebApp-2025 | Campus de Metz</p>
-        <p>&copy; 2025 Tous droits réservés.</p>
-    </footer>
-
-    <script>
+        <footer>
+            <p class="footer-primary">MNS Campus</p>
+            <p>Metz Numeric School - Formation Développement Web & Applications</p>
+            <p>Promotion MNS-DevWebApp-2025 | Campus de Metz</p>
+            <p>&copy; 2025 Tous droits réservés.</p>
+        </footer>
+        <script>
         // Données des étudiants MNS
         const mnsStudents = [
             { name: "Adrien", gender: "M", role: "Dev Web App", folder: "Adrien" },
@@ -795,38 +784,48 @@
 
         // Fonction pour créer l'avatar avec système de secours
         function createAvatar(student, isDelegue = false) {
-            const avatarDiv = document.createElement('div');
-            avatarDiv.className = `user-avatar ${student.gender === 'F' ? 'female' : ''} ${isDelegue ? 'delegue' : ''}`;
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = `user-avatar ${student.gender === 'F' ? 'female' : ''} ${isDelegue ? 'delegue' : ''}`;
 
-            // Essayer de charger l'image
-            const img = document.createElement('img');
-            img.src = `${student.folder}/avatar.jpg`;
-            img.alt = student.name;
+    const img = document.createElement('img');
+    img.alt = student.name;
+
+    const extensions = ['jpg', 'png'];
+    let index = 0;
+
+    function tryNextImage() {
+        if (index < extensions.length) {
+            img.src = `${student.folder}/avatar.${extensions[index]}`;
+            index++;
+        } else {
+            // Avatar par défaut selon le genre
+            img.src = student.gender === 'F' ? 'avatarF.png' : 'avatarH.png';
+
             img.onerror = function () {
-                // Si avatar.jpg échoue, utiliser l'avatar par défaut selon le genre
-                this.src = student.gender === 'F' ? 'avatarF.png' : 'avatarH.png';
+                img.style.display = 'none';
 
-                // Si l'avatar par défaut échoue aussi, alors afficher l'initiale
-                this.onerror = function () {
-                    this.style.display = 'none';
-                    const initial = document.createElement('div');
-                    initial.className = 'avatar-initial';
-                    initial.textContent = student.name.charAt(0);
-                    initial.style.display = 'flex';
-                    initial.style.alignItems = 'center';
-                    initial.style.justifyContent = 'center';
-                    initial.style.width = '100%';
-                    initial.style.height = '100%';
-                    initial.style.fontSize = '3rem';
-                    initial.style.fontWeight = '700';
-                    initial.style.color = 'white';
-                    avatarDiv.appendChild(initial);
-                };
+                const initial = document.createElement('div');
+                initial.className = 'avatar-initial';
+                initial.textContent = student.name.charAt(0);
+                initial.style.display = 'flex';
+                initial.style.alignItems = 'center';
+                initial.style.justifyContent = 'center';
+                initial.style.width = '100%';
+                initial.style.height = '100%';
+                initial.style.color = 'white';
+
+                avatarDiv.appendChild(initial);
             };
-
-            avatarDiv.appendChild(img);
-            return avatarDiv;
         }
+    }
+
+    img.onerror = tryNextImage;
+    tryNextImage();
+
+    avatarDiv.appendChild(img);
+    return avatarDiv;
+}
+
 
         // Créer la carte du délégué
         function createDelegueCard() {
@@ -939,7 +938,6 @@
                 });
             });
         });
-    </script>
-</body>
-
+        </script>
+    </body>
 </html>
