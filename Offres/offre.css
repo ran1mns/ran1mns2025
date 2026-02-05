@@ -183,7 +183,7 @@ a:hover {
 }
 
 a::after {
-  content: "→";
+  content: "";
   margin-left: 10px;
   transition: transform 0.4s ease;
 }
@@ -385,4 +385,9 @@ section.visible {
 
 .back-button:hover {
   transform: translateX(-5px);
+}
+.navigation-buttons {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
 }
