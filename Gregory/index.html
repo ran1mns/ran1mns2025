@@ -2,99 +2,348 @@
 <html lang="fr">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Isuke</title>
-	<link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Gregory Hartmann</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://cdn.boxicons.com/3.0.7/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-	<header>
-		<div class="container">
-			<div class="topheader">
-				<img src="img/logo.png" class="logoheader">
-				<span class=titre>ISUKE</span>
-				<ul class="headersocial">
-					<li>
-						<a href="https://github.com/Ghartmann01" target="_blank">
-							<svg class="githubicon" width="18" style=vertical-align: top;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-								<path d="M64 512c0 195.2 124.8 361.6 300.8 422.4 22.4 6.4 19.2-9.6 19.2-22.4v-76.8c-134.4 16-140.8-73.6-150.4-89.6-19.2-32-60.8-38.4-48-54.4 32-16 64 3.2 99.2 57.6 25.6 38.4 76.8 32 105.6 25.6 6.4-22.4 19.2-44.8 35.2-60.8-144-22.4-201.6-108.8-201.6-211.2 0-48 16-96 48-131.2-22.4-60.8 0-115.2 3.2-121.6 57.6-6.4 118.4 41.6 124.8 44.8 32-9.6 70.4-12.8 112-12.8 41.6 0 80 6.4 112 12.8 12.8-9.6 67.2-48 121.6-44.8 3.2 6.4 25.6 57.6 6.4 118.4 32 38.4 48 83.2 48 131.2 0 102.4-57.6 188.8-201.6 214.4 22.4 22.4 38.4 54.4 38.4 92.8v112c0 9.6 0 19.2 16 19.2C832 876.8 960 710.4 960 512c0-246.4-201.6-448-448-448S64 265.6 64 512z"  />
-						</svg>
-						</a>
-					</li>
-					</li>
-					<li>
-						<a href="https://x.com/Isuke___" target="_blank">
-							<svg width="18" class="icontwitter" xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 512 512">
-								<path
-									d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
-							</svg>
-						</a>
-					</li>
-					<li>
-						<a href="https://fr.linkedin.com" target="_blank">
-							<svg width="18" class="iconlinkedin" xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 448 512">
-								<path
-									d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
-							</svg>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<nav class="navheader">
-				<ul>
-					<li><a href="index.html">Accueil</a></li>
-					<li><a href="setup.html">Setup</a></li>
-					<li><a href="planning.html">Planning</a></li>
-					<li><a href="ressource.html">Ressource</a></li>
+    <header>
+        <div>
+            <div class="logo">
+                <a href="#" class="logo"><img src="img/logo.png"></a>
+            </div>
+        </div>
 
-				</ul>
-			</nav>
+        <div class="menu-header">
+            <nav>
+                <button id="burger-button-display">
+                    <i class="bxr bx-menu" id="bx-menu"></i>
+                    <i class="bxr bx-x" id="bx-x"></i>
+                </button>
+
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M6.5 8C7.32843 8 8 7.32843 8 6.5C8 5.67157 7.32843 5 6.5 5C5.67157 5 5 5.67157 5 6.5C5 7.32843 5.67157 8 6.5 8Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M5 10C5 9.44772 5.44772 9 6 9H7C7.55228 9 8 9.44771 8 10V18C8 18.5523 7.55228 19 7 19H6C5.44772 19 5 18.5523 5 18V10Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M11 19H12C12.5523 19 13 18.5523 13 18V13.5C13 12 16 11 16 13V18.0004C16 18.5527 16.4477 19 17 19H18C18.5523 19 19 18.5523 19 18V12C19 10 17.5 9 15.5 9C13.5 9 13 10.5 13 10.5V10C13 9.44771 12.5523 9 12 9H11C10.4477 9 10 9.44772 10 10V18C10 18.5523 10.4477 19 11 19Z"
+                            fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z"
+                            fill="currentColor"></path>
+                    </g>
+                </svg>
+            </a>
+            <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
+                <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <title>github [#142]</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs> </defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                            <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)"
+                                fill="currentColor">
+                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                    <path
+                                        d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
+                                        id="github-[#142]"> </path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <div>
+                <h1>Bienvenue</h1>
+                <p>Description du site</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, ab voluptatum recusandae quidem
+                    voluptatibus quaerat in ipsa quisquam itaque officiis reiciendis assumenda debitis laboriosam,
+                    deserunt repellat iste placeat nam dignissimos!
+                    Consectetur nostrum iure eveniet? Itaque maxime laudantium a. Blanditiis ut veniam provident ea
+                    explicabo ipsam qui, quasi deserunt esse nulla cupiditate! Placeat, ipsa voluptas laudantium et cum
+                    libero reprehenderit ad!
+                    Qui nihil culpa nulla. Ipsum nulla aperiam dolorum qui natus maiores consequuntur magnam! Facere
+                    itaque adipisci fuga in laudantium eius sequi minima ipsam omnis, veritatis vel magni rem inventore
+                    sunt?
+                    Quaerat quibusdam minima vel. Excepturi, praesentium reprehenderit. Nam velit vero molestias
+                    repellendus ullam incidunt dolores harum eum provident sapiente, commodi quos unde mollitia, saepe
+                    tenetur earum cupiditate, asperiores quisquam neque.
+                    Delectus atque exercitationem nostrum enim totam eos ducimus id rem non nobis quia esse nemo
+                    doloribus unde magni distinctio, veritatis quidem debitis corrupti eveniet nihil. Illum eligendi
+                    autem vel facere.</p>
+            </div>
+
+            <div class="hero-image">
+                <img src="img/test.png" alt="" width="300">
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div>
+                <h2>Mes projets/Mes réalisations</h2>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="modal-projet " id="project-1">
+                        <div>
+                            <img src="./img/projet1.png" alt="">
+
+                            
+
+                        </div>
+
+                        <div>
+                            <h3>Projet 1 - Site vitrine</h3>
+                            <p>Site vitrine realiser dans le cadre de mes etude en suivant une maquette et des consigne precise,
+                                site realiser pour une evalution des competences</p>
+
+                            <button class="modal-button-open" aria-controls="modal-project-1">Voir plus</button>
+                        </div>
+                    </div>
+                </article>
+
+                <div id="modal-project-1" class="modal-wrapper">
+                    <div tabindex="-1">
+                         <h2>🌐 Projet 1 — Site vitrine (HTML / CSS)</h2>
+
+    <p>
+      Site vitrine développé en <strong>HTML5</strong> et <strong>CSS3</strong>,
+      réalisé à partir d’une <strong>maquette</strong> et de
+      <strong>consignes précises</strong>.
+      Projet effectué dans le cadre d’une <strong>évaluation de compétences</strong>
+      lors de mes études.
+    </p>
+
+    <h3>🎯 Objectifs du projet</h3>
+    <ul>
+      <li>Respect d’une maquette fournie</li>
+      <li>Structuration correcte du HTML</li>
+      <li>Mise en page CSS sans framework</li>
+      <li>Responsive design (desktop & mobile)</li>
+      <li>Accessibilité et sémantique</li>
+    </ul>
+
+    <h3>⚙️ Fonctionnalités</h3>
+    <ul>
+      <li>Navigation multi-pages</li>
+      <li>Header fixe (sticky)</li>
+      <li>Mise en page en colonnes</li>
+      <li>Tableau de planning</li>
+      <li>Footer structuré</li>
+    </ul>
+
+    <h3>📌 Code clé — Navigation sticky</h3>
+    <pre><code>
+.mainnav {
+  position: sticky;
+  top: 0;
+  background-color: #ff4da6;
+}
+    </code></pre>
+
+    <p>
+      ➜ La navigation reste visible lors du scroll pour améliorer l’expérience utilisateur.
+    </p>
+
+    <h3>📱 Code clé — Responsive design</h3>
+    <pre><code>
+@media (max-width: 600px) {
+  .colonne,
+  .footerlink {
+    width: 100%;
+    float: none;
+  }
+}
+    </code></pre>
+
+    <p>
+      ➜ Les media queries permettent d’adapter la mise en page aux écrans mobiles.
+    </p>
+
+    <p>
+      <strong>Technos :</strong> HTML5 · CSS3 · Responsive design · Accessibilité
+    </p>
+
+    <p> Le code complet est disponible sur <a href="https://github.com/Ghartmann01/exament-frontend" target="_blank">GitHub</a></p>
+
+                        <button class="modal-button-close">Fermer</button>
+                    </div>
+                    <a href="#" class="sr-only">retour</a>
+                </div>
+
+                <article class="project-card">
+                    <div class="modal-projet " id="project-2">
+                        <div>
+                            <img src="./img/projet2.png" alt="">
+
+                            
+
+                        </div>
+
+                        <div>
+                            <h3>Projet 2 - Reservation cinema avec ticket + historique</h3>
+                            <p>Ce projet python est un système de réservation de billets de cinéma avec historique des réservations. il a ete realiser dans le cadre d'une evaluation des competence lors de ma formation.</p>
+
+                            <button class="modal-button-open" aria-controls="modal-project-2">Voir plus</button>
+                        </div>
+                    </div>
+                </article>
+
+                <div id="modal-project-2" class="modal-wrapper">
+                    <div tabindex="-1">
+                         <h2>🎬 Projet 2 — Réservation de cinéma (Python)</h2>
+
+    <p>
+      Application console développée en <strong>Python</strong> permettant de gérer
+      la réservation de billets de cinéma avec <strong>calcul automatique des tarifs</strong>
+      et <strong>historique des ventes</strong>.
+      Projet réalisé dans le cadre d’une <strong>évaluation de compétences</strong>.
+    </p>
+
+    <h3>⚙️ Fonctionnalités</h3>
+    <ul>
+      <li>Saisie sécurisée du nombre de billets</li>
+      <li>Validation des entrées utilisateur</li>
+      <li>Catégorisation par âge (Enfant / Adulte / Senior)</li>
+      <li>Calcul du total à payer</li>
+      <li>Historique des réservations en CSV</li>
+    </ul>
+
+    <h3>🧩 Code clé — Validation des entrées</h3>
+    <pre><code>
+while True:
+    if not nbticket.isdigit() or int(nbticket) <= 0:
+        nbticket = input("Valeur invalide : ")
+    else:
+        break
+    </code></pre>
+
+    <p>
+      ➜ Cette boucle garantit que seules des valeurs numériques positives
+      sont acceptées, évitant les erreurs de calcul.
+    </p>
+
+    <h3>🧠 Logique de tarification</h3>
+    <pre><code>
+if age < 12:
+    categorie = "Enfant"
+elif age <= 65:
+    categorie = "Adulte"
+else:
+    categorie = "Senior"
+    </code></pre>
+
+    <p>
+      ➜ La catégorie et le prix sont attribués automatiquement selon l’âge.
+    </p>
+
+    <p><strong>Technos :</strong> Python · CSV · DateTime</p>
+
+    <p> Le code complet est disponible sur <a href="https://github.com/Ghartmann01/Systeme-de-reservation-de-cinema" target="_blank">GitHub</a></p>
+
+                        <button class="modal-button-close">Fermer</button>
+                    </div>
+                    <a href="#" class="sr-only">retour</a>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>À propos</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor culpa vitae aut, iure quia nostrum optio,
+                saepe cupiditate dignissimos laudantium sint aspernatur mollitia, officia quo natus eum quos tempora
+                commodi!</p>
+        </section>
 
 
 
-		</div>
-	</header>
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <p>Coordonnées de contact</p>
 
-	<main>
-		<div class="container">
+        </section>
+    </main>
 
-		</div>
-	</main>
+    <footer>
 
-	<footer>
-		<div class="container">
-			<div class="footer-social">
-				<a href="https://github.com/Ghartmann01" target="_blank">
-							<svg class="githubicon" width="18" style=vertical-align: top;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-								<path d="M64 512c0 195.2 124.8 361.6 300.8 422.4 22.4 6.4 19.2-9.6 19.2-22.4v-76.8c-134.4 16-140.8-73.6-150.4-89.6-19.2-32-60.8-38.4-48-54.4 32-16 64 3.2 99.2 57.6 25.6 38.4 76.8 32 105.6 25.6 6.4-22.4 19.2-44.8 35.2-60.8-144-22.4-201.6-108.8-201.6-211.2 0-48 16-96 48-131.2-22.4-60.8 0-115.2 3.2-121.6 57.6-6.4 118.4 41.6 124.8 44.8 32-9.6 70.4-12.8 112-12.8 41.6 0 80 6.4 112 12.8 12.8-9.6 67.2-48 121.6-44.8 3.2 6.4 25.6 57.6 6.4 118.4 32 38.4 48 83.2 48 131.2 0 102.4-57.6 188.8-201.6 214.4 22.4 22.4 38.4 54.4 38.4 92.8v112c0 9.6 0 19.2 16 19.2C832 876.8 960 710.4 960 512c0-246.4-201.6-448-448-448S64 265.6 64 512z"  />
-						</svg>
-						</a>
-				<a href="https://x.com/Isuke___" target="_blank">
-					<svg width="25" class="xicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 462.799">
-						<path fill-rule="nonzero"
-							d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z" />
-					</svg>
-				</a>
-				<a href="https://fr.linkedin.com" target="_blank">
-							<svg width="18" class="iconlinkedin" xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 448 512">
-								<path
-									d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
-							</svg>
-						</a>
-			</div>
-			<p class="footer-copy">© 2025 Isuke. Tous droits réservés.</p>
-			<p class="footer-copy">Site réalisé par Isuke</p>
-		</div>
-	</footer>
+        <div class="social-icons">
+            <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M6.5 8C7.32843 8 8 7.32843 8 6.5C8 5.67157 7.32843 5 6.5 5C5.67157 5 5 5.67157 5 6.5C5 7.32843 5.67157 8 6.5 8Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M5 10C5 9.44772 5.44772 9 6 9H7C7.55228 9 8 9.44771 8 10V18C8 18.5523 7.55228 19 7 19H6C5.44772 19 5 18.5523 5 18V10Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M11 19H12C12.5523 19 13 18.5523 13 18V13.5C13 12 16 11 16 13V18.0004C16 18.5527 16.4477 19 17 19H18C18.5523 19 19 18.5523 19 18V12C19 10 17.5 9 15.5 9C13.5 9 13 10.5 13 10.5V10C13 9.44771 12.5523 9 12 9H11C10.4477 9 10 9.44772 10 10V18C10 18.5523 10.4477 19 11 19Z"
+                            fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z"
+                            fill="currentColor"></path>
+                    </g>
+                </svg>
+            </a>
+            <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
+                <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <title>github [#142]</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs> </defs>
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                            <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)"
+                                fill="currentColor">
+                                <g id="icons" transform="translate(56.000000, 160.000000)">
+                                    <path
+                                        d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
+                                        id="github-[#142]"> </path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        </div>
 
+        <p>&copy; 2026 Mon Site Personnel</p>
+    </footer>
 </body>
 
 </html>
