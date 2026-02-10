@@ -17,20 +17,14 @@ body {
 
 header {
     background-color: white;
-    border-bottom: 1px solid #808080;
+    border-bottom: 1px solid #c26040;
 }
 
 header .container {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
     margin: 0;
-}
-
-main {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1200px;
 }
 
 /*Pour réduire la taille du logo*/
@@ -47,17 +41,18 @@ footer img {
 
 ul {
     list-style: none;
-    margin: 0;
     padding: 0;
 }
 
 a {
     text-decoration: none;
+    padding: 10px;
 }
 
 a:hover {
     cursor: pointer;
-    background-color: maroon;
+    background-color: #c26040;
+    border-radius: 10px;
 }
 
 img {
@@ -65,20 +60,10 @@ img {
     height: auto;
 }
 
-footer {
-    background-color: white;
-    border-top: 1px solid #808080;
-}
-
-footer .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0;
-}
-
-footer p {
-    margin: auto;
+main {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
 }
 
 main .container {
@@ -146,23 +131,119 @@ main .container {
     justify-content: center;
 }
 
-footer .mentions {
-    font-size: 1em;
-    color: grey;
-}
-
-.footer img {
-    min-width: 30px;
-}
-
-
-
 h1 {
     display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 20px 0;
-    font-size: 35px;
+    width: 100%;
+    font-size: 2.5rem;
+    padding: 10px;
+    margin: 10px auto 50px;
+    background-color: #c26040;
+    color: beige;
+    border: 2px solid maroon;
+    border-radius: 20px;
+}
+
+h2 {
+    border: 2px solid #c26040;
+    border-radius: 5px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: black;
+    line-height: 1;
+}
+
+h2,
+.h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    padding: 10px;
+    margin: 0px auto 20px;
+    background-color: #c26040;
+    color: beige;
+    border: 2px solid maroon;
+    border-radius: 20px;
+}
+
+h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h3,
+.h3 {
+    font-size: 1.5rem;
+    padding: 5px auto;
+    margin: 10px auto;
+}
+
+p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    text-align: justify;
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.container_one {
+    margin: 0 10px 0 50px;
+    border: 2px solid maroon;
+    border-radius: 10px;
+    background: #c26040;
+    color: black;
+}
+
+.container_one .aside h4 {
+    color: beige;
+    padding-left: 10px;
+}
+
+.container_one ul {
+    padding: 20px auto;
+    margin: 20px auto;
+}
+
+.photo {
+    width: 100%;
+    background: #c26040;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    outline: auto;
+}
+
+.container_two {
+    margin: 0 50px 0 10px;
+    grid-column: 2 / 4;
+}
+
+.container_two li {
+    margin-bottom: 20px;
+}
+
+.formation {
+    margin-bottom: 20px;
+}
+
+.item {
+    margin: 10px 50px;
+    border: 1px solid #c26040;
+    border-radius: 10px;
 }
 
 .grid {
@@ -198,51 +279,6 @@ h1 {
     align-items: center;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: black;
-    line-height: 1;
-}
-
-h2,
-.h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    font-size: 2.5rem;
-    padding: 20px;
-    margin: 10px auto 40px;
-    background-color: maroon;
-    color: black;
-    border: 2px solid black;
-    border-radius: 20px;
-}
-
-h3,
-.h3 {
-    font-size: 1rem;
-    padding: 5px auto;
-    margin: 10px auto;
-}
-
-p {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-    text-align: justify;
-    font-size: 0.8em;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: black;
-}
-
 .sous_titre {
     font-size: 1em;
     padding: 10px 0;
@@ -258,7 +294,7 @@ p {
     margin: auto;
     width: 50px;
     height: 50px;
-    border: 2px solid maroon;
+    border: 2px solid #c26040;
     border-radius: 20px;
 }
 
@@ -299,7 +335,7 @@ p {
 /* MES COMPETENCES */
 .skills li {
     background-color: white;
-    border-left: 5px solid maroon;
+    border-left: 5px solid #c26040;
     padding: 5px 10px;
     margin: 5px 10px;
 }
@@ -312,7 +348,7 @@ p {
 }
 
 .skills .bar {
-    background: maroon;
+    background: #c26040;
     padding: 10px;
 }
 
@@ -323,7 +359,7 @@ p {
 
 .grid_filter a {
     color: white;
-    background: maroon;
+    background: #c26040;
     display: flex;
     justify-content: center;
     width: 90%;
@@ -335,7 +371,6 @@ p {
     cursor: pointer;
     background-color: RGBA(0, 0, 0, 0.5);
 }
-
 
 .grid_filter {
     display: grid;
@@ -403,20 +438,8 @@ p {
     padding: 10px 50px;
 }
 
-h3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .dev_web {
     font-size: 15px;
-}
-
-.footer .container p {
-    font-size: 1em;
-    color: black;
-    text-align: center;
 }
 
 .hero_item {
@@ -435,19 +458,85 @@ h3 {
     border-radius: 25%;
 }
 
-.footer .container p {
-    font-size: 1em;
-    color: black;
-    text-align: center;
-}
-
 .burger {
     display: none;
 }
 
+.category {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 100%;
+}
+
+.contact p {
+    font-size: 1.2em;
+}
+
+label {
+    color: black;
+}
+
+.form {
+    max-width: 800px;
+    padding: 0;
+    margin: 20px auto 0 auto;
+}
+
+.form input,
+.form textarea {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    outline: auto;
+}
+
+.form textarea {
+    min-height: 200px;
+}
+
+form .bouton {
+    background-color: #c26040;
+    color: #fff2de;
+    width: 150px;
+    margin: 50px auto;
+    border-radius: 15px;
+}
+
+form .bouton:hover {
+    cursor: pointer;
+    background-color: RGBA(0, 0, 0, 0.5);
+}
+
+footer {
+    background-color: white;
+    border-top: 1px solid #c26040;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.footer img {
+    min-width: 30px;
+}
+
+.footer .container a {
+    font-size: 1em;
+    color: #404040;
+}
+
+.footer .container p {
+    font-size: 1em;
+    color: #404040;
+    text-align: center;
+}
+
 /*Media Queries pour tablettes*/
 @media screen and (max-width:819px) {
-
 
     html {
         background: rgb(186, 196, 206);
@@ -458,15 +547,8 @@ h3 {
         padding: 0;
     }
 
-    footer .container {
-        padding: 0;
-    }
 
-    footer .mentions {
-        font-size: 0.8em;
-        color: grey;
-        text-align: center;
-    }
+
     .grid {
         display: flex;
         flex-direction: column;
@@ -492,7 +574,15 @@ h3 {
         color: black;
     }
 
+    h1 {
+        display: flex;
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+
     h2 {
+        color: white;
         display: flex;
         text-align: center;
         font-size: 2rem;
@@ -507,6 +597,7 @@ h3 {
     }
 
     main .container {
+        margin: 10px 20px;
         padding: 0 10px;
     }
 
@@ -528,19 +619,136 @@ h3 {
         margin: 0;
     }
 
-    .footer .container p {
+    .container_one {
+        background: #c26040;
+        color: black;
+    }
+
+    .container_one h4 {
+        color: white;
+    }
+
+    .container_two {
+        text-align: justify;
+    }
+
+    .item {
+        margin-left: 50px;
+        margin-right: 50px;
+        border: 1px solid #c26040;
+        border-radius: 10px;
+    }
+
+    form .bouton {
+        background-color: maroon;
+        border: black;
+        color: white;
+    }
+
+    footer .container p {
         font-size: 1em;
         color: gray;
         text-align: center;
+        padding: 0;
     }
-}
 
+    footer .mentions {
+        font-size: 0.8em;
+        color: grey;
+        text-align: center;
+    }
+
+}
 
 /*Media Queries pour mobiles*/
 @media screen and (max-width:499px) {
+    main {
+        margin: 0 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    h4 {
+        color: gray;
+    }
+
+    .category {
+        display: block;
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .container_one,
+    .container_two {
+        display: flex;
+
+    }
+
+    .container_one {
+        display: none;
+        order: 2;
+    }
+
+    .container_two {
+        order: 1;
+        margin: 0 20px;
+    }
+
+    .formation h3,
+    .certification h3 {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .item {
+        margin: 0 20px 10px;
+        border: 1px solid #c26040;
+        border-radius: 10px;
+    }
+
+    form .bouton {
+        background-color: #c26040;
+        color: white;
+    }
+
+    html {
+        background: none;
+    }
+
+    nav {
+        display: none;
+    }
+
+    header .logo {
+        width: 50px;
+    }
+
     .header {
         position: sticky;
         top: 0;
+    }
+
+    .header .container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .header img {
+        width: 40px;
+    }
+
+    .header .logo {
+        width: 50px;
+    }
+
+    .burger {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
     }
 
     h2 {
@@ -561,6 +769,17 @@ h3 {
         display: flex;
         flex-wrap: wrap;
         text-align: justify;
+    }
+
+    .container {
+        margin: 0 10px;
+        padding: 0 10px;
+        background-color: white;
+        color: black;
+    }
+
+    .container .logo {
+        width: 50px;
     }
 
     /* MES SERVICES */
@@ -600,7 +819,7 @@ h3 {
     /* MES COMPETENCES */
     .skills li {
         background-color: #fff2de;
-        border-left: 5px solid maroon;
+        border-left: 5px solid #c26040;
         padding: 5px 10px;
         margin: 5px 10px;
     }
@@ -667,48 +886,6 @@ h3 {
 
     .hero_item.left {
         order: 2;
-    }
-
-    nav {
-        display: none;
-    }
-
-    html {
-        background: none;
-    }
-
-    .header .container {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .container {
-        margin: 0 10px;
-        padding: 0 10px;
-        background-color: white;
-        color: black;
-    }
-
-    .burger {
-        display: flex;
-        align-items: center;
-        margin-left: 1rem;
-    }
-
-    .header img {
-        width: 40px;
-    }
-
-    header .logo {
-        width: 50px;
-    }
-
-    .header .logo {
-        width: 50px;
-    }
-
-    .container .logo {
-        width: 50px;
     }
 
     footer .mentions {
