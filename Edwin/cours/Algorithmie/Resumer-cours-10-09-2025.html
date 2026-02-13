@@ -1,0 +1,125 @@
+<section class="course">
+  <h1>Titre du Cours : Cours Algorithmie – 10 Septembre 2025</h1>
+  <article class="concepts">
+    <h2>Session 1 – Matin</h2>
+    <p>Découverte et histoire de l’algorithmie. Les instructions doivent être précises pour obtenir un résultat attendu : suite finie et ordonnée.</p>
+<p>Le formateur partage ses slides sur le classroom : <a href="01. Introduction à l'algorithmique.pdf" target="_blank">Slides premier cours algorithme</a></p>
+<div class="focus">
+<h4>Algorithme vs Programme</h4>
+<ul>
+<li><strong>Algorithme :</strong> idée → suite d'étapes pour réaliser une tâche (ex: recette de tarte aux pommes)</li>
+<li><strong>Programme :</strong> algorithme traduit dans un langage compréhensible par la machine</li>
+<li>Algorithmes : deux catégories
+    <strong>visibles</strong> (recette, notice),
+    <strong>invisibles</strong> (GPS, Netflix – suite d’étapes non visibles pour l’utilisateur)
+</li>
+</ul>
+</div>
+<p>Pour réussir un algorithme, il faut anticiper toutes les étapes et erreurs possibles. Tester systématiquement pour garantir le résultat.</p>
+<h3>Structures fondamentales</h3>
+<ul>
+<li><strong>Séquences :</strong> ordre précis, chaque étape dépend de la précédente (algorithme séquentiel)</li>
+<li><strong>Conditions :</strong> Si… alors… (booléen vrai/faux) – ex : "Si le bord de la pâte est trop large, on coupe"</li>
+<li><strong>Répétitions :</strong> Boucles <code>tant que</code> (while) ou <code>pour chaque</code> (for)</li>
+</ul>
+<h3>Notion de performance</h3>
+<ul>
+<li>Coût serveur et infrastructure (finops)</li>
+<li>Finitude : le programme doit s’arrêter</li>
+<li>Précision : étapes claires et sans ambiguïté</li>
+<li>Efficacité : atteindre le but avec le minimum d’effort</li>
+<li>Notation Big-O : mesurer la complexité et la performance</li>
+<li>Prévoir l’imprévu : gestion des erreurs pour garantir une expérience utilisateur optimale</li>
+</ul>
+<img alt="notation bigO" src="BigO.png"/>
+<p>notation big-O pour noter la performance s'approcher de O(1)(difficilement ateignable)
+
+le but c'est de réduire la courbe du rapport Opérations/éléments </p>
+  </article>
+  <article class="concepts">
+    <h2>Logigramme et UML</h2>
+    <p>En milieu professionnel, on utilise des logigrammes et du pseudo-code structurel pour documenter et transmettre l’algorithme.</p>
+<div class="schéma">
+<img alt="Logigramme vs UML" src="Logigramme_vs_UML.png"/>
+<p>Exemple de Logigramme comparé à UML</p>
+</div>
+<p>Le logigramme sert à représenter visuellement la logique séquentielle d’un algorithme,
+tandis que l’UML modélise la structure et le comportement global d’un système logiciel.</p>
+<p>Ces outils permettent de visualiser les étapes de l’algorithme, de vérifier la logique et de communiquer plus efficacement avec d’autres développeurs.</p>
+  </article>
+  <article class="concepts">
+    <h2>Session 1 – Après-midi</h2>
+    <p>Petit travail individuel sur pseudo-code naturel. Rendu sur Classroom et vérification des commentaires du formateur.</p>
+  </article>
+  <article class="concepts">
+    <h2>Pseudo-code naturel</h2>
+    <p>Hybride entre langage naturel français et code informatique, outil de transition vers le langage machine.</p>
+<p>Exemple : Algorithme à nommer</p>
+<div class="schéma">
+<img alt="pseudocode_naturel_thé" src="pseudocode_naturel_thé.png"/>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Pseudo-code structuré</h2>
+    <p>Exemple : Calculer l’aire d’un cercle</p>
+<pre>
+ALGORITHME CalculerAireCercle
+
+CONSTANTES
+    PI &lt;-- 3.14
+
+VARIABLES
+    a : flottant     // aire du cercle
+    r : flottant     // rayon du cercle
+
+DEBUT
+    LIRE (r)
+    SI r &gt;= 0 ALORS
+        a &lt;-- PI * r * r
+        AFFICHER (a)
+    SINON
+        AFFICHER ("r invalide")
+    FIN_SI
+FIN
+</pre>
+<h3>Autres structures et logigrammes</h3>
+<ul>
+<li>FOR n IN ["a","b",…] ... END_FOR</li>
+<li>FOR n IN RANGE(10)</li>
+<li>WHILE ...</li>
+<li>Logigrammes : schémas pour documenter et transmettre l’algorithme</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Exemples de symboles en pseudo-code structuré</h2>
+    <ul>
+<li><code>&lt;--</code> : affectation</li>
+<li><code>=</code> : égalité</li>
+<li><code>&gt;</code> : supérieur</li>
+<li><code>&lt;</code> : inférieur</li>
+<li><code>&lt;&gt;</code> : différent de</li>
+<li>Voir liste complète des opérateurs par le formateur</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Fonctions</h2>
+    <p>Créer des fonctions pour encapsuler des opérations :</p>
+<pre>
+FUNCTION Square(n : flottant)
+    RETURN n * n
+END_FUNCTION
+
+BEGIN
+    x &lt;-- Square(5.0)
+END
+</pre>
+<ul>
+<li>Les fonctions doivent être déclarées avant leur utilisation</li>
+<li>Une fonction peut avoir plusieurs paramètres</li>
+<li><code>RETURN</code> renvoie une valeur vers l’algorithme principal</li>
+</ul>
+<div class="note">
+<p>Cheat sheet recommandé : <a href="https://formations.nicolas.sh/algorithms/pseudo-code-cheatsheet" target="_blank">Pseudo-code Cheat Sheet</a></p>
+</div>
+  </article>
+</section>

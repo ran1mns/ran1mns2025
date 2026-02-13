@@ -1,0 +1,62 @@
+<section class="course">
+  <h1>Titre du Cours : Cours CSS – 01 Octobre 2025</h1>
+  <article class="concepts">
+    <h2>Positionnement en CSS</h2>
+    <p>Il existe deux types d'éléments : <b>block</b> et <b>inline</b> :</p>
+<ul>
+<li><b>Block :</b> prend toute la largeur disponible (celle du parent), l’élément suivant passe en dessous</li>
+<li><b>Inline :</b> prend uniquement la largeur de son contenu, permet de placer plusieurs éléments sur la même ligne</li>
+</ul>
+<div class="note">
+Par défaut, chaque élément HTML se comporte soit en block, soit en inline.
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Propriété CSS display</h2>
+    <p>On peut modifier le comportement par défaut avec la propriété <code>display</code> :</p>
+<ul>
+<li><code>display: block;</code></li>
+<li><code>display: inline;</code></li>
+</ul>
+<p>Voir fichier projet HTML 2 pour des exemples pratiques.</p>
+  </article>
+  <article class="concepts">
+    <h2>Marges et paddings</h2>
+    <ul>
+<li><b>Intérieures :</b> <code>padding</code></li>
+<li><b>Extérieures :</b> <code>margin</code></li>
+</ul>
+<p>On peut cibler chaque côté :</p>
+<ul>
+<li><code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code></li>
+<li>Ou utiliser la notation raccourcie :</li>
+<pre>
+margin: 50px;             /* haut et bas 50px, gauche et droite 50px */
+margin: 50px 20px;        /* haut/bas 50px, gauche/droite 20px */
+margin: 50px 20px 30px 40px; /* haut, droite, bas, gauche */
+</pre>
+<li>Propriétés importantes : <code>margin</code>, <code>padding</code>, <code>border</code></li>
+</ul>
+<div class="note">
+À retenir : ne pas dimensionner un élément avec <code>height</code> fixe pour éviter des problèmes de flexibilité.
+</div>
+<p>Pour les éléments inline, la propriété <code>text-align</code> peut être utilisée pour aligner le contenu.</p>
+  </article>
+  <article class="concepts">
+    <h2>Pseudo-classes</h2>
+    <ul>
+<li><code>:hover</code> → appliquée quand la souris passe dessus (éviter de modifier la taille pour ne pas tout décaler)</li>
+<li><code>:visited</code> → pour les liens déjà visités (vérifier le contraste pour l’accessibilité)</li>
+<li><code>:focus</code> → pour les éléments interactifs lorsqu’ils sont sélectionnés, souvent utilisé avec <code>outline</code> pour l’accessibilité</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2><div> et container</h2>
+    <p>La balise <code>&lt;div&gt;</code> est un élément neutre de type block.</p>
+<p>On l’utilise couramment avec la classe <code>container</code> pour :</p>
+<ul>
+<li>Regrouper plusieurs éléments et les positionner ensemble</li>
+<li>Garder la possibilité de positionner d’autres éléments différemment</li>
+</ul>
+  </article>
+</section>

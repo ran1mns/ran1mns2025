@@ -1,0 +1,135 @@
+<section class="course">
+  <h1>Titre du Cours : Cours Python – 8 Octobre 2025</h1>
+  <article class="concepts">
+    <h2>Introduction du cours</h2>
+    <p>Lors de cette séance, nous avons discuté des <b>exercices du projet Spotify</b>. Les corrections seront effectuées au fur et à mesure des cours.
+Nous avons également introduit l’utilisation de <b>Google Colab</b>, un <b>notebook interactif</b> qui permettra d’exécuter du code Python directement dans les exercices à venir.</p>
+<div class="note">
+<b>📅 Information :</b> Mardi après-midi prochain, une <b>évaluation</b> est prévue afin de vérifier la progression et la compréhension des notions abordées.
+</div>
+<p>👉 Lien vers le Google Colab du jour :
+<a href="https://colab.research.google.com/drive/1PfXoHHN7V9A6act0lRe7mtK2THDv9tRf#scrollTo=3QMNoBItNste" target="_blank">
+https://colab.research.google.com/drive/1PfXoHHN7V9A6act0lRe7mtK2THDv9tRf
+</a></p>
+  </article>
+  <article class="concepts">
+    <h2>Focus sur les conditions – structures fondamentales</h2>
+    <p>Les conditions sont l’un des fondements de la logique en programmation. Elles permettent d’exécuter du code seulement si certaines règles sont respectées.
+Voici un rappel sur les <b>opérateurs de comparaison</b> et quelques subtilités importantes.</p>
+<div class="focus">
+<h4>Exemples d’opérateurs de comparaison</h4>
+<ul>
+<li><code>==</code> → égalité</li>
+<li><code>!=</code> → différence</li>
+<li><code>&lt;</code> → inférieur à</li>
+<li><code>&lt;=</code> → inférieur ou égal</li>
+<li><code>&gt;</code> → supérieur à</li>
+<li><code>&gt;=</code> → supérieur ou égal</li>
+</ul>
+</div>
+<div class="note">
+<b>💡 Subtilité :</b> Les opérateurs mathématiques peuvent aussi comparer des <b>chaînes de caractères</b>.
+Cette comparaison repose sur les valeurs décimales des caractères dans la table <b>ASCII</b> et <b>Unicode</b>.
+Cependant, il est fortement déconseillé de le faire car cela peut produire des résultats inattendus.
+</div>
+<div class="focus">
+<h4>Opérateurs d’appartenance et d’identité</h4>
+<p>Python propose également des opérateurs permettant de vérifier si un élément appartient à un ensemble, ou si deux objets sont identiques :</p>
+<ul>
+<li><code>in</code> : vérifie si un élément est présent dans une collection.</li>
+<li><code>not in</code> : vérifie l’inverse.</li>
+<li><code>is</code> : teste l’identité d’un objet (et non son égalité de valeur).</li>
+</ul>
+<div class="note">
+<b>À retenir :</b> L’opérateur <code>is</code> est principalement utilisé avec <code>None</code>.</div>
+<pre><code class="language-python">
+a = None
+
+if a is None:
+    print("La variable a est bien None.")
+</code></pre>
+<p>⚠️ Attention : on écrit <code>is None</code> et non <code>== None</code>.</p>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Structure if / elif / else</h2>
+    <p>Cette structure conditionnelle permet de gérer plusieurs cas possibles :</p>
+<ul>
+<li><code>if</code> : vérifie une première condition.</li>
+<li><code>elif</code> (équivalent de <i>else if</i>) : vérifie d’autres conditions si la précédente est fausse.</li>
+<li><code>else</code> : s’exécute si aucune des conditions précédentes n’est vraie.</li>
+</ul>
+<p>Les blocs <code>else</code> et <code>elif</code> sont optionnels.</p>
+<pre><code class="language-python">
+age = 18
+
+if age &lt; 18:
+    print("Mineur")
+elif age == 18:
+    print("Tout juste majeur")
+else:
+    print("Majeur")
+</code></pre>
+<p>💻 Exemple : un script similaire est disponible sur le Google Colab du jour.</p>
+  </article>
+  <article class="concepts">
+    <h2>Opérateurs logiques et notion de court-circuit</h2>
+    <ul>
+<li><code>and</code> → les deux conditions doivent être <code>True</code></li>
+<li><code>or</code> → au moins une condition doit être <code>True</code></li>
+</ul>
+<div class="note">
+<b>⛔ Notion de court-circuit :</b>
+Lorsqu’un opérateur logique est évalué, Python s’arrête dès qu’il connaît le résultat :
+<ul>
+<li>Avec <code>and</code> : si la première condition est <code>False</code>, la suite n’est pas évaluée.</li>
+<li>Avec <code>or</code> : si la première condition est <code>True</code>, la suite n’est pas évaluée.</li>
+</ul>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Notion de "truthiness"</h2>
+    <p>La <b>truthiness</b> désigne la capacité d’un objet Python à être évalué comme <code>True</code> ou <code>False</code> sans passer explicitement par ces valeurs.
+En d’autres termes, certains objets sont "véridiques" (truthy) ou "faux" (falsy) par nature.</p>
+<div class="focus">
+<h4>Exemples :</h4>
+<ul>
+<li>Les listes vides, chaînes vides ou le nombre <code>0</code> sont considérés comme <b>falsy</b>.</li>
+<li>Les objets non vides ou non nuls sont <b>truthy</b>.</li>
+</ul>
+<pre><code class="language-python">
+if 0:
+    print("Cette ligne ne s'affiche pas")  # 0 est falsy
+else:
+    print("Zéro est considéré comme False")
+</code></pre>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Expression conditionnelle ternaire</h2>
+    <p>Une forme compacte d’écriture d’une condition simple :</p>
+<pre><code class="language-python">
+age = 20
+statut = "majeur" if age &gt;= 18 else "mineur"
+print(statut)
+</code></pre>
+<div class="note">
+Cette syntaxe doit être réservée aux conditions simples.
+Pour les cas plus complexes, il vaut mieux utiliser une structure <code>if</code> classique pour plus de lisibilité.
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Optimisation et bonnes pratiques</h2>
+    <p>Lorsqu’on enchaîne de nombreuses conditions imbriquées, on risque de créer une structure appelée <b>"Pyramid of Doom"</b> (pyramide du malheur), rendant le code difficile à lire et à maintenir.</p>
+<div class="note">
+<b>💡 Astuce :</b> Il est possible d’alléger son code en stockant des conditions dans des variables booléennes.
+Si une variable retourne un booléen, il est inutile de comparer avec <code>== True</code> ou <code>== False</code>.
+La vérification est implicite.</div>
+<pre><code class="language-python">
+is_admin = True
+
+if is_admin:
+    print("Accès autorisé")
+</code></pre>
+  </article>
+</section>

@@ -1,0 +1,108 @@
+<section class="course">
+  <h1>Titre du Cours : Cours Réseau – 18 Septembre 2025</h1>
+  <article class="concepts">
+    <h2>Adresse IP et DNS</h2>
+    <p>L’adresse IP sert à identifier un point sur un réseau. Chaque équipement doit posséder une adresse unique :</p>
+<ul>
+<li>Deux équipements ne peuvent pas avoir la même IP simultanément</li>
+<li>Il existe des IP statiques et dynamiques</li>
+</ul>
+<div class="schéma">
+<p>Schéma simplifié réseau LAN et Internet avec IP :</p>
+<img alt="Schéma IP LAN et Internet" src="LAN_IP.png"/>
+</div>
+<p><strong>DNS (Domain Name System)</strong> : traduit les noms de domaine (ex : google.com) en adresses IP.</p>
+  </article>
+  <article class="concepts">
+    <h2>Machines virtuelles et ligne de commande</h2>
+    <p>Les environnements préconfigurés des hébergeurs sont rarement parfaitement adaptés, d’où la nécessité de construire sa propre structure réseau et serveur.</p>
+<ul>
+<li>Exécution de machines virtuelles via ligne de commande</li>
+<li>Déploiement d’applications et tests en ligne de commande</li>
+</ul>
+<div class="focus">
+<h4>Utilisation de CMD (Invite de commandes)</h4>
+<ul>
+<li>Commande <code>ipconfig</code> pour observer les cartes réseau et IP attribuées</li>
+<li>Passerelle par défaut : IP interne du routeur</li>
+<li>Le routeur utilise son IP publique pour accéder à Internet et gérer les flux demande/réponse</li>
+<li>Commande <code>ping</code> : tester la disponibilité d’une adresse (ex : <code>ping google.com</code>)</li>
+</ul>
+</div>
+<div class="note">
+<h4>Astuce</h4>
+<p>Pour interpréter <code>ipconfig /all</code> :</p>
+<ul>
+<li><strong>Adresse IPv4 :</strong> IP locale attribuée à la carte réseau</li>
+<li><strong>Passerelle par défaut :</strong> adresse IP du routeur pour sortir du réseau local</li>
+<li><strong>Adresse physique :</strong> MAC unique de la carte réseau</li>
+<li><strong>Serveurs DNS :</strong> adresses des serveurs utilisés pour résoudre les noms de domaine</li>
+</ul>
+<p>Cette commande permet de vérifier que la machine est correctement configurée pour communiquer sur le réseau et accéder à Internet.</p>
+</div>
+<p>Outils pratiques : <strong>Angry IP Scanner</strong> pour scanner les adresses IP sur un réseau.</p>
+<p>Exemple : <code>172.16.1.254</code> – IP pour changer le mot de passe Wi-Fi via interface de gestion du routeur.(sur réseau mns)</p>
+<div class="section" id="plages-ip">
+<h2>Plages IP et octets</h2>
+<p>Une adresse IP comporte 4 nombres (0 à 255) – chaque nombre = 1 octet :</p>
+<ul>
+<li>0.0.0.0 → 255.255.255.255</li>
+<li>Chaque octet correspond à 8 positions binaires : 00000000 = 0 à 11111111 = 255</li>
+</ul>
+<div class="schéma">
+<p>Comparaison binaire / décimal :</p>
+<img alt="Comparaison binaire et décimal" src="conversion_binaire_decimal.jpg"/>
+</div>
+</div>
+<div class="section" id="ascii">
+<h2>ASCII et codage binaire</h2>
+<p>Le codage ASCII permet de représenter les caractères (alphabet, chiffres, symboles) en binaire.</p>
+<div class="schéma">
+<p>Exemple de table ASCII :</p>
+<img alt="Table ASCII pour alphabet et chiffres" src="ASCII-Table.png"/>
+</div>
+<p>Ce codage est essentiel pour que les ordinateurs puissent stocker et transmettre les informations textuelles.</p>
+</div>
+<div class="section" id="stockage">
+<h2>Stockage : disques durs et CD-ROM</h2>
+<p>Les disques durs et CD-ROM stockent les informations en octets. Chaque octet est l’unité de base de l’information numérique :</p>
+<ul>
+<li>Lecture et écriture d’octets</li>
+<li>Organisation des fichiers et répertoires</li>
+<li>CD-ROM : stockage optique, lecture via laser</li>
+</ul>
+<p>Film recommandé : <em>"Nos ordinateurs ont-ils la mémoire courte"</em> pour comprendre la gestion de la mémoire et du stockage.</p>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Plages IP et octets</h2>
+    <p>Une adresse IP comporte 4 nombres (0 à 255) – chaque nombre = 1 octet :</p>
+<ul>
+<li>0.0.0.0 → 255.255.255.255</li>
+<li>Chaque octet correspond à 8 positions binaires : 00000000 = 0 à 11111111 = 255</li>
+</ul>
+<div class="schéma">
+<p>Comparaison binaire / décimal :</p>
+<img alt="Comparaison binaire et décimal" src="conversion_binaire_decimal.jpg"/>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>ASCII et codage binaire</h2>
+    <p>Le codage ASCII permet de représenter les caractères (alphabet, chiffres, symboles) en binaire.</p>
+<div class="schéma">
+<p>Exemple de table ASCII :</p>
+<img alt="Table ASCII pour alphabet et chiffres" src="ASCII-Table.png"/>
+</div>
+<p>Ce codage est essentiel pour que les ordinateurs puissent stocker et transmettre les informations textuelles.</p>
+  </article>
+  <article class="concepts">
+    <h2>Stockage : disques durs et CD-ROM</h2>
+    <p>Les disques durs et CD-ROM stockent les informations en octets. Chaque octet est l’unité de base de l’information numérique :</p>
+<ul>
+<li>Lecture et écriture d’octets</li>
+<li>Organisation des fichiers et répertoires</li>
+<li>CD-ROM : stockage optique, lecture via laser</li>
+</ul>
+<p>Film recommandé : <em>"Nos ordinateurs ont-ils la mémoire courte"</em> pour comprendre la gestion de la mémoire et du stockage.</p>
+  </article>
+</section>

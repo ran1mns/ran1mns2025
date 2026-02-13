@@ -1,0 +1,91 @@
+<section class="course">
+  <h1>Titre du Cours : Cours Python – 25 Septembre 2025</h1>
+  <article class="concepts">
+    <h2>Introduction aux fonctions</h2>
+    <p>Les fonctions permettent d’isoler et de réutiliser du code pour simplifier la lecture, la maintenance et l’exécution d’un programme.
+Elles peuvent aussi être utilisées pour automatiser des traitements, comme la transformation d’un fichier CSV en base de données manipulable par d’autres scripts Python.</p>
+<pre><code class="language-python">
+def welcome(name: str):
+    print(f"Hello, {name}!")
+
+print("Starting the greeting process...")
+</code></pre>
+<div class="note">
+<b>Remarque :</b> Une fonction est définie avec <code>def</code> puis appelée plus tard dans le programme.
+L’indentation est essentielle : une ligne mal indentée sortira du bloc fonction.
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Exemples et exercices</h2>
+    <div class="focus">
+<h4>Exemple 1 – Fonction simple</h4>
+<pre><code class="language-python">
+def greet(name):
+    print(f"Hello, {name}!")
+
+print("Starting the greeting process...")
+
+greet("Alice")
+greet("Bob")
+greet("Charlie")
+</code></pre>
+<p>➡️ La fonction permet d’éviter la répétition de code et d’améliorer sa lisibilité.</p>
+</div>
+<div class="focus">
+<h4>Exemple 2 – Typage et sécurité</h4>
+<pre><code class="language-python">
+def greet(name: str) -&gt; None:
+    print(f"Hello, {name}!")
+</code></pre>
+<p>Le typage <code>: str</code> précise le type attendu de l’argument.
+L’indication <code>-&gt; None</code> signifie que la fonction ne renvoie aucune valeur.</p>
+</div>
+<div class="focus">
+<h4>Exemple 3 – Calcul et retour de valeur</h4>
+<pre><code class="language-python">
+def square(num):
+    print("Calculating the square...")
+    return num * num
+
+result = square(2)
+print(result)
+
+# Fonctions imbriquées :
+print(square(square(square(2))))
+</code></pre>
+</div>
+<div class="focus">
+<h4>Exemple 4 – Conditions dans une fonction</h4>
+<pre><code class="language-python">
+def square(num):
+    print("Calculating the square...")
+    if num &lt; 0:
+        return 1  # mathématiquement faux, juste pour l'exemple
+    return num * num
+
+result = square(21)
+print(result)
+</code></pre>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Importer des fonctions depuis un autre fichier</h2>
+    <p>Pour organiser le code, on peut isoler les fonctions dans un autre fichier Python et les importer :</p>
+<pre><code class="language-python">
+# Importation depuis un autre module
+from fonctions import welcome
+
+welcome("Charlie")
+</code></pre>
+<p>Cette approche favorise la modularité du code et facilite la maintenance.</p>
+  </article>
+  <article class="concepts">
+    <h2>Projet Python – Spotify Database</h2>
+    <ul>
+<li>Exercice : manipuler une base de données Spotify avec des scripts Python</li>
+<li>Objectif : push du projet complet sur GitHub après transformation du CSV en base de données</li>
+<li><a href="Spotify - Problématiques.pdf" target="_blank">📄 Liste des exercices (PDF)</a></li>
+<li><a href="https://github.com/AdiH18/projetPythonSpotify" target="_blank">💻 Lien vers le dépôt GitHub</a></li>
+</ul>
+  </article>
+</section>

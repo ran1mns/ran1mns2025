@@ -1,0 +1,53 @@
+<section class="course">
+  <h1>Titre du Cours : Cours Python – 14 Octobre 2025</h1>
+  <article class="concepts">
+    <h2>Correction des exercices Python de la semaine passée</h2>
+    <p>La séance a débuté par la <b>correction collective</b> des exercices Python réalisés la semaine précédente.
+L’objectif était de consolider la compréhension des structures conditionnelles et des manipulations de chaînes de caractères.</p>
+  </article>
+  <article class="concepts">
+    <h2>Évaluation sur Google Colab</h2>
+    <p>Une petite évaluation a ensuite été réalisée directement sur <b>Google Colab</b> :</p>
+<p><a href="https://colab.research.google.com/drive/1GkKunRwI6Qlg0S1wF3684QAI7shXG0xT#scrollTo=95e1eb2f" target="_blank">👉 Lien vers l’évaluation</a></p>
+  </article>
+  <article class="concepts">
+    <h2>Exercice : vérifier si une chaîne de caractères est un palindrome</h2>
+    <p>Consigne : <b>Créer un code à partir de rien</b> permettant de déterminer si une chaîne de caractères est un <i>palindrome</i>
+(c’est-à-dire une chaîne qui se lit dans les deux sens, comme “kayak” ou “radar”).</p>
+<div class="focus">
+<h4>Exemple d’une approche incorrecte ou trop complexe :</h4>
+<pre><code class="language-python">
+moite = len(texte) / 2
+newtext = []
+letter = ""
+if letter in texte not in newtext:
+    newtext.append(letter)
+if texte == newtext:
+    return True
+if texte != newtext:
+    return False
+</code></pre>
+<p>➡️ Cette approche montre une tentative de comparaison, mais elle est <b>inutilement compliquée</b> et ne fonctionne pas correctement.
+L’idée de base (parcourir et comparer) est bonne, mais l’implémentation doit être simplifiée.</p>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Solution correcte : fonction est_palindrome()</h2>
+    <p>Voici une version fonctionnelle, plus claire et plus efficace, utilisant la manipulation de chaînes et la fonction <code>reversed()</code> :</p>
+<pre><code class="language-python">
+def est_palindrome(texte):
+    texte2 = (texte).casefold()         # Met en minuscule pour ignorer la casse
+    texte2 = (texte2).replace(" ", "")  # Supprime les espaces
+
+    texte1 = "".join(reversed(texte2))  # Inverse la chaîne
+    if texte2 == texte1:
+        return True
+    else:
+        return False
+</code></pre>
+<div class="note">
+💡 <b>Astuce :</b> La méthode <code>casefold()</code> est plus robuste que <code>lower()</code> pour comparer des chaînes sans tenir compte de la casse.
+En supprimant les espaces, la fonction peut détecter les palindromes même dans des phrases.
+</div>
+  </article>
+</section>

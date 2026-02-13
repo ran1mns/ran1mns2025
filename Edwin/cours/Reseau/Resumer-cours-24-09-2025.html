@@ -1,0 +1,80 @@
+<section class="course">
+  <h1>Titre du Cours : Cours Réseau – 24 Septembre 2025</h1>
+  <article class="concepts">
+    <h2>DHCP et adresse IP</h2>
+    <p>Le <strong>DHCP</strong> (Dynamic Host Configuration Protocol) alloue automatiquement une adresse IP aux équipements du réseau. Il s'agit d'un service (programme) qui tourne en permanence, souvent installé sur le routeur ou sur une machine (physique ou virtuelle).</p>
+<p>Chaque adresse IP est unique sur le réseau. L'adresse IPv4 est composée de 4 nombres :</p>
+<div class="schéma">
+<p>Exemple IPv4 : |__|.|__|.|__|.|__|</p>
+<img alt="Schéma adresse IPv4" src="Adresse_Ipv4.svg.png"/>
+</div>
+<p><strong>Remarque :</strong> Le dernier octet à 0 est réservé pour l'identifiant réseau dans certaines plages, il ne doit donc pas être utilisé pour un équipement.</p>
+  </article>
+  <article class="concepts">
+    <h2>Classes d'adresses IP</h2>
+    <p>Les adresses IP étaient historiquement classées :</p>
+<ul>
+<li><strong>Classe A :</strong> 0 à 126 → numéro réseau sur la première position, numéro d'hôte sur les 3 suivantes</li>
+<li><strong>Classe B :</strong> 128 à 191 → numéro réseau sur les 2 premières positions, numéro d'hôte sur les 2 suivantes</li>
+<li><strong>Classe C :</strong> 192 à 223 → numéro réseau sur les 3 premières positions, numéro d'hôte sur la dernière</li>
+<li>Classes D et E existent mais ne sont pas accessibles aux utilisateurs</li>
+</ul>
+<p>La classe détermine la taille maximale du réseau :</p>
+<ul>
+<li>Classe A : 255 * 255 * 255 * 126 IP</li>
+<li>Classe B : 255 * 255 IP</li>
+<li>Classe C : 255 IP</li>
+</ul>
+<p>Le système de classes n’est plus utilisé sur Internet mais reste pertinent pour les réseaux locaux.</p>
+<div class="note">
+<p>Plages privées : 10.x.x.x, 172.x.x.x, 192.x.x.x → réservées aux réseaux locaux, pas accessibles sur Internet.</p>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>IPv6</h2>
+    <p>Pour gérer le grand nombre d’équipements, IPv6 a été créé :</p>
+<div class="schéma">
+<p>Exemple IPv6 : |__|.|__|.|__|.|__|.|__|.|__|.|__|.|__|</p>
+<img alt="Schéma adresse IPv6" src="Ipv6_address-fr.svg.png"/>
+</div>
+<p>Chaque bloc correspond à 16 bits (2 octets), représentés en hexadécimal, pour permettre un très grand nombre d’adresses uniques.</p>
+<p>Le système hexadécimal utilise 16 symboles : 0-9 et A-F (majuscules ou minuscules).</p>
+  </article>
+  <article class="concepts">
+    <h2>Hébergement et DNS</h2>
+    <p>Pour qu’un utilisateur accède à notre site :</p>
+<ul>
+<li>On dépose notre dossier sur le serveur</li>
+<li>Le routeur gère l'accès vers le serveur hébergeant le site</li>
+<li>Le <strong>DNS (Domain Name System)</strong> fait le lien entre le nom de domaine et l'adresse IP</li>
+<li>Le FAI interroge les serveurs DNS pour trouver le site demandé</li>
+</ul>
+<p>Le DNS garantit que le nom de domaine correspond à la bonne adresse IP.</p>
+  </article>
+  <article class="concepts">
+    <h2>Noms de domaine</h2>
+    <ul>
+<li>Hébergement mutualisé : plusieurs utilisateurs déposent leurs dossiers sur le même serveur</li>
+<li>Nom de domaine = nom + extension (géographique : .fr, .bzh, .alsace ; thématique : .com, .edu, .gov, .org)</li>
+<li>Sous-domaines possibles : sousdomaine.nom.extension</li>
+<li><strong>who.is</strong> : permet de connaître le propriétaire d’un nom de domaine</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>VPS, VM et cloud computing</h2>
+    <ul>
+<li>VPS (Serveur Privé Virtuel) : souvent sous Linux (ex : Debian)</li>
+<li>Location d’un serveur physique entier possible</li>
+<li>Différence VM vs containers :</li>
+<ul>
+<li>VM (Virtual Machine) : machine virtuelle complète</li>
+<li>Container : compartiment léger pour exécuter des applications</li>
+</ul>
+<li>Cloud computing : hébergement et déploiement sur des infrastructures partagées ou dédiées</li>
+</ul>
+<div class="schéma">
+<p>Image schématique VM vs Containers</p>
+<img alt="Schéma VM vs Containers" src="container-vs-vm.avif"/>
+</div>
+  </article>
+</section>

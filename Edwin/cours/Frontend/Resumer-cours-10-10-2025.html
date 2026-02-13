@@ -1,0 +1,103 @@
+<section class="course">
+  <h1>Titre du Cours : Cours CSS – 10 Octobre 2025</h1>
+  <article class="concepts">
+    <h2>Menu et positionnement des éléments</h2>
+    <p>On revoit le menu et comment positionner les éléments avec CSS. Exemple :</p>
+<pre><code class="language-css">
+header nav ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+</code></pre>
+<p>➡️ Supprime les puces et l’espace par défaut des listes.</p>
+  </article>
+  <article class="concepts">
+    <h2>Polices et mise en majuscule</h2>
+    <ul>
+<li>Limiter le nombre de polices à <b>2 par site</b> maximum.</li>
+<li>Appliquer la police via le sélecteur <code>body</code>.</li>
+<li>Pour le texte en majuscule : laisser le code source en minuscule et utiliser CSS pour afficher en majuscule.</li>
+<li>Justification du texte : pas une bonne pratique, mais peut être utilisée pour améliorer l’apparence.</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Images et attribut alt</h2>
+    <ul>
+<li>L’attribut <code>alt</code> s’affiche si l’image ne se charge pas.</li>
+<li>Si l’image est décorative, laisser <code>alt</code> vide.
+Si l’image contient des informations importantes, les inclure dans <code>alt</code>.</li>
+<li>Si l’image est dans le même dossier que l’index, utiliser un chemin relatif.</li>
+<li>Format recommandé : <b>webp</b> pour optimisation.</li>
+<li>Ne pas agrandir ou déformer les images avec <code>width</code> et <code>height</code> ; mieux vaut redimensionner l’image avant le CSS.</li>
+<li>En contexte professionnel : le backend ou le graphiste se charge du redimensionnement.</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Positionnement avec float</h2>
+    <ul>
+<li>Propriétés : <code>float: left | right | none;</code> puis <code>margin</code> pour ajuster.</li>
+<li>L’image flotte devant le paragraphe mais pas devant le texte.</li>
+<li>Pour éviter que le contenu remonte à cause du float, utiliser :</li>
+<pre><code class="language-css">
+.clear {
+    clear: both;
+}
+</code></pre>
+<li>Float fonctionne toujours avec <code>clear</code>. On peut aussi utiliser le pseudo-élément <code>::after</code> pour ce rôle.</li>
+<div class="note">
+💡 Explication détaillée :<br/>
+Le pseudo-élément <code>::after</code> permet de créer un élément virtuel qui "clear" les flottants sans ajouter de div supplémentaire dans le HTML.
+Exemple :
+<pre><code class="language-css">
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</code></pre>
+- <code>content: ""</code> → crée un contenu vide.<br/>
+- <code>display: table</code> → permet au pseudo-élément de générer une boîte qui englobe les floats.<br/>
+- <code>clear: both</code> → annule les flottants à gauche et à droite.<br/>
+Cette méthode garde le code HTML propre et est très utilisée dans les mises en page modernes.
+</div>
+<li>Exemple pour éléments côte à côte :</li>
+<pre><code class="language-css">
+.float {
+    width: 50%;
+    float: left;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+</code></pre>
+<li>Le <code>box-sizing: border-box</code> inclut contenu, padding et border, évitant d’augmenter la largeur totale au-delà de 50%.</li>
+<li>Pour float sur images, les images doivent avoir la même taille.</li>
+</ul>
+<div class="note">
+💡 Penser à faire des exercices pour bien manipuler le float et le positionnement.
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Responsive et media queries</h2>
+    <p>Le <b>contenu responsive</b> s’adapte à la taille de l’écran (smartphone → grand écran).</p>
+<ul>
+<li>Avant le responsive, il fallait développer plusieurs versions d’un site et rediriger selon le device.</li>
+<li><b>Media queries :</b> définir des règles CSS selon la taille de l’écran.</li>
+<pre><code class="language-css">
+@media screen {
+    /* Règles CSS selon la taille */
+}
+</code></pre>
+<li>Approche <b>mobile first</b> : premières règles pour les petits écrans, puis ajustements progressifs avec les media queries.</li>
+<li>On définit les tailles par paliers successifs.</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Exercice pratique</h2>
+    <p>TP : créer un <b>site one-page avec 2 colonnes responsive</b> :</p>
+<ul>
+<li>Sur grand écran : 2 colonnes ou galerie photo 4 images côte à côte.</li>
+<li>Sur petit écran (smartphone) : une seule colonne ou 1 image par ligne.</li>
+<li>Utiliser un élément CSS qui se modifie selon la taille pour voir l’effet du responsive.</li>
+</ul>
+  </article>
+</section>

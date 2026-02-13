@@ -1,0 +1,66 @@
+<section class="course">
+  <h1>Titre du Cours : Cours Git – 24 Septembre 2025</h1>
+  <article class="concepts">
+    <h2>Introduction</h2>
+    <p><strong>Git</strong> : moteur de gestion de versions (versioning).</p>
+<p><strong>GitHub</strong> : plateforme qui exploite Git, avec fonctionnalités collaboratives, issues, pull requests, CI/CD, etc.</p>
+<p>Objectifs principaux :</p>
+<ul>
+<li>Sauvegarder chaque étape d’un projet</li>
+<li>Travailler à plusieurs</li>
+<li>Revenir en arrière si besoin</li>
+</ul>
+<p>Git est <strong>décentralisé</strong>.</p>
+  </article>
+  <article class="concepts">
+    <h2>Concepts clés</h2>
+    <ul>
+<li><strong>Repository :</strong> équivalent d’un projet (dépôt)</li>
+<li><strong>Commit :</strong> un point de sauvegarde. Créer de petits commits atomiques avec un message clair</li>
+<li><strong>Tag :</strong> marque un commit pour lui donner une version. Il existe des tags <em>annotés</em> et <em>légers</em></li>
+<li><strong>Branche :</strong> créer une autre version du projet pour une nouvelle fonctionnalité</li>
+<li><strong>Merge :</strong> intégrer les commits d’une branche dans la branche principale. Attention au fast-forward merge</li>
+<li><strong>Rebase :</strong> réécrit l’historique d’une branche. Utile pour nettoyer l’historique avant un merge, mais risqué si la branche a été partagée</li>
+<li><strong>CI/CD :</strong> <em>Continuous Integration / Continuous Deployment</em> :
+    <ul>
+<li>Intégration continue : chaque commit déclenche automatiquement des tests pour détecter rapidement les erreurs</li>
+<li>Déploiement continu : automatisation du déploiement de nouvelles versions, souvent sur des environnements de test ou production</li>
+<li>Permet de réduire les bugs, standardiser les déploiements et accélérer la livraison</li>
+</ul>
+</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Commits et conventions</h2>
+    <p>Un commit doit représenter <strong>une seule idée</strong> et ne pas être un "fourre-tout".</p>
+<p>Bonnes pratiques :</p>
+<ul>
+<li>Petit nombre de fichiers modifiés par commit</li>
+<li>Commits fréquents pour un historique lisible</li>
+<li>Exemple de format de message :</li>
+<pre><code>&lt;type&gt;(&lt;scope&gt;): &lt;message&gt;</code></pre>
+<li>Types courants : <code>feat</code> = nouvelle fonctionnalité, <code>fix</code> = correction, <code>docs</code> = documentation, <code>chore</code> = tâche technique</li>
+<li>Scope : préciser la partie du projet impactée</li>
+<li>Message : verbe à l’infinitif, clair et concis</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Branches et merge</h2>
+    <p>Branches permettent de développer de nouvelles fonctionnalités sans impacter la branche principale.</p>
+<p>Merge réinjecte les commits d’une branche dans la principale. Selon le contexte, le merge peut créer un nouveau commit ou faire un fast-forward.</p>
+<p>Rebase : modifie la base d’une branche pour éviter conflits et nettoyer l’historique. Ne jamais rebaser des commits déjà partagés avec d’autres.</p>
+  </article>
+  <article class="concepts">
+    <h2>Workflows Git</h2>
+    <ul>
+<li><strong>Gitflow :</strong> workflow structuré avec branches dédiées pour dev, release, hotfix</li>
+<li><strong>GitHub Flow :</strong> simple, branche principale + feature branches</li>
+<li><strong>Trunk-based :</strong> intégration fréquente sur la branche principale, petites itérations</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>.gitignore</h2>
+    <p>Fichier qui contient les fichiers que Git doit ignorer lors du push : infos sensibles, fichiers caches…</p>
+<p>On peut générer facilement un fichier via <a href="https://www.toptal.com/developers/gitignore" target="_blank">gitignore.io</a></p>
+  </article>
+</section>

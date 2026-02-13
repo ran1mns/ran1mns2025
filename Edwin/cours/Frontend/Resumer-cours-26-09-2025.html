@@ -1,0 +1,75 @@
+<section class="course">
+  <h1>Titre du Cours : Cours HTML/CSS – 26 Septembre 2025</h1>
+  <article class="concepts">
+    <h2>Attribut ALT pour les images</h2>
+    <p>L'attribut <code>alt</code> est utilisé pour remplacer l'image par un texte :</p>
+<ul>
+<li>En cas d'erreur de chargement de l'image</li>
+<li>Pour l'accessibilité, uniquement si l'information n'est pas présente ailleurs</li>
+</ul>
+<div class="note">
+<b>Remarque :</b> <code>alt</code> est obligatoire, même vide.
+</div>
+  </article>
+  <article class="concepts">
+    <h2>CSS pour le design</h2>
+    <p>Avant de positionner les éléments, commencez par appliquer des couleurs :</p>
+<ul>
+<li>Le positionnement peut se faire via <code>float</code> (obsolète mais encore utile à connaître)</li>
+<li>Flexbox et Grid sont les méthodes modernes et recommandées</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Début du CSS</h2>
+    <p>Différentes façons d'ajouter du CSS :</p>
+<ul>
+<li>Inline : <code>style="color: brown;"</code> (doit être répété sur chaque élément)</li>
+<li>Dans le <code>&lt;head&gt;</code> avec une balise <code>&lt;style&gt; ... &lt;/style&gt;</code> :</li>
+<pre>
+&lt;style&gt;
+h1 { color: red; }
+&lt;/style&gt;
+</pre>
+<li>Fichier externe <code>style.css</code> : recommandé pour centraliser les styles :</li>
+<pre>
+&lt;link rel="stylesheet" href="style.css"&gt;
+</pre>
+</ul>
+<p>Les styles peuvent être appliqués selon la hiérarchie DOM et la spécificité des sélecteurs :</p>
+<ul>
+<li>Plus le sélecteur est précis, plus il a de poids</li>
+<li>Exemple : <code>.class balise &gt; balise</code> applique le style uniquement aux enfants de <code>.class</code></li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Classes et IDs</h2>
+    <ul>
+<li>Les <code>id=""</code> sont uniques (comme une plaque d'immatriculation)</li>
+<li>En CSS, on utilise <code>#id</code></li>
+<li>Utile pour JavaScript, peu recommandé pour CSS moderne (souvent considéré comme un "refuge")</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Balises sémantiques</h2>
+    <p>Utilisation des balises pour structurer correctement la page :</p>
+<ul>
+<li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code></li>
+<li><code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code></li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Listes imbriquées</h2>
+    <p>Exemple : menu de navigation</p>
+<pre>
+&lt;ul&gt;
+    &lt;li&gt;Accueil&lt;/li&gt;
+    &lt;li&gt;Cours
+        &lt;ul&gt;
+            &lt;li&gt;HTML&lt;/li&gt;
+            &lt;li&gt;CSS&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+  </article>
+</section>
