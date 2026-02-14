@@ -1,53 +1,64 @@
-/* Styles pour la page d'actualités */
-hr {
-    border: none;
-    border-top: 3px solid #adadad;
-    margin: 20px 0;
+/* Styles pour les actualités */
+
+.edition-header {
+    text-align: right;
+    margin-bottom: 20px;
 }
 
-#contenu {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    color: #333;
+.date-badge {
+    background: var(--accent-purple);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .article {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
 }
 
-.article:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
+.article:hover {
+    border-color: var(--accent-blue);
+    background: var(--card-hover);
+}
+
+.category-tag {
+    display: inline-block;
+    color: var(--accent-blue);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .article h3 {
-    color: #db226f;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.article h4 {
-    color: #2c3e50;
-    font-size: 1.4em;
-    margin-bottom: 10px;
-}
-
-.article p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
     margin-bottom: 15px;
-    line-height: 1.6;
+    color: white;
 }
 
-.article a {
-    color: #e74c3c;
-    text-decoration: none;
-    font-weight: bold;
+.article-body p {
+    margin-bottom: 15px;
+    color: var(--text-main);
 }
 
-.article a:hover {
+.source-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+}
+
+.source-link:hover {
     text-decoration: underline;
 }

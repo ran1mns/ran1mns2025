@@ -1,96 +1,72 @@
 <section class="course">
-  <h1>Titre du Cours : Cours – 09 Septembre 2025</h1>
+  <h1>Fondamentaux du Web & Accessibilité</h1>
+
   <article class="concepts">
-    <h2>Accessibilité numérique</h2>
-    <p>L’accessibilité numérique est un enjeu essentiel dans la conception de sites web modernes. Elle permet à tous les utilisateurs, y compris ceux en situation de handicap, d’accéder au contenu en ligne.</p>
-<div class="focus">
-<h4>Domaines concernés</h4>
-<ul>
-<li><strong>HTML</strong> → structure du contenu</li>
-<li><strong>CSS</strong> → design, présentation visuelle</li>
-</ul>
-</div>
-<p>Les lois évoluent et imposent une <strong>mise en conformité</strong> des sites web, sous peine d’amendes proportionnelles au chiffre d’affaires.</p>
-<div class="note">
-⚠️ <strong>Important :</strong> Ne pas négliger le front-end pour l’accessibilité !
-</div>
+    <h2>Accessibilité Numérique (A11y)</h2>
+    <p>Concevoir pour le web, c'est concevoir pour TOUS. L'accessibilité n'est pas une option, c'est une responsabilité légale et éthique.</p>
+
+    <div class="note">
+        <h3>RGAA & WCAG :</h3>
+        <p>Le <strong>RGAA</strong> (Référentiel Général d’Amélioration de l’Accessibilité) est le cadre français basé sur les standards internationaux <strong>WCAG</strong>.</p>
+        <ul>
+            <li>Perceptible : Information et composants d'interface doivent être perceptibles.</li>
+            <li>Utilisable : Les composants doivent être utilisables (clavier, voix).</li>
+            <li>Compréhensible : L'information doit être claire.</li>
+            <li>Robuste : Le contenu doit être compatible avec les technologies d'assistance.</li>
+        </ul>
+    </div>
   </article>
+
   <article class="concepts">
-    <h2>RGPD et RGAA</h2>
-    <h3>RGPD</h3>
-<p><a href="https://www.economie.gouv.fr/entreprises/gerer-son-entreprise-au-quotidien/assurer-sa-cybersecurite-et-la-protection-de-ses/le#:~:text=Ressources%20compl%C3%A9mentaires-,Le%20RGPD%2C%20qu'est%2Dce%20que%20c'est,dans%20toute%20l'Union%20europ%C3%A9enne." target="_blank">Règlement Général sur la Protection des Données</a></p>
-<p>Le RGPD vise à garantir la protection des données personnelles des utilisateurs dans toute l’Union Européenne.</p>
-<h3>RGAA</h3>
-<p><a href="https://accessibilite.numerique.gouv.fr/" target="_blank">Référentiel Général d’Amélioration de l’Accessibilité</a></p>
-<p>Le RGAA définit les règles techniques permettant de rendre les sites accessibles à tous.</p>
-<div class="note">
-💬 “Les lois sont en mutation, il est nécessaire de se conformer aux nouvelles exigences pour éviter des sanctions financières.”
-</div>
+    <h2>Structure Sémantique HTML5</h2>
+    <p>Utiliser les bonnes balises pour le bon contenu améliore le SEO et l'accessibilité.</p>
+
+    <pre><code class="language-html">
+&lt;header&gt; &lt;!-- En-tête du site --&gt;
+  &lt;nav&gt; &lt;!-- Menu de navigation --&gt; &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt; &lt;!-- Contenu principal --&gt;
+  &lt;section&gt; &lt;!-- Groupe thématique --&gt;
+    &lt;article&gt; &lt;!-- Unité de contenu autonome --&gt; &lt;/article&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt; &lt;!-- Pied de page --&gt; &lt;/footer&gt;
+    </code></pre>
+
+    <div class="focus">
+        <h3>Hiérarchie des Titres (H1-H6) :</h3>
+        <p>Ne sautez jamais de niveau ! La structure doit être logique : H1 > H2 > H3.</p>
+    </div>
   </article>
+
   <article class="concepts">
-    <h2>Front-end et Back-end</h2>
-    <ul>
-<li><strong>Front-end :</strong> HTML, CSS, JavaScript → visible par l’utilisateur</li>
-<li><strong>Back-end :</strong> PHP, SQL... → serveurs et bases de données</li>
-</ul>
-<div class="schéma">
-Ordinateur → Serveur → Base de données
-</div>
-<div class="focus">
-<h4>Différences Front Office / Back Office</h4>
-<ul>
-<li><strong>Front Office :</strong> partie visible par le client</li>
-<li><strong>Back Office :</strong> espace d’administration (réservé aux gestionnaires)</li>
-</ul>
-</div>
+    <h2>Le rôle du CSS</h2>
+    <p>Le CSS (Cascading Style Sheets) gère la présentation. Il doit être séparé du contenu (HTML).</p>
+
+    <div class="note">
+        <strong>Bonnes pratiques :</strong>
+        <ul>
+            <li>Ne pas utiliser la couleur comme seul moyen d'information.</li>
+            <li>Assurer un contraste suffisant entre le texte et le fond.</li>
+            <li>Utiliser des unités relatives (rem, em) plutôt que des pixels fixes.</li>
+        </ul>
+    </div>
+
+    <img alt="Structure de page" src="structure_page.png">
   </article>
+
   <article class="concepts">
-    <h2>HTML et CSS : rôles distincts</h2>
-    <ul>
-<li><strong>HTML :</strong> structure du contenu</li>
-<li><strong>CSS :</strong> design et présentation</li>
-</ul>
-<p>Le HTML est interprété par le navigateur, lu par les moteurs de recherche et les outils d’assistance (lecteurs d’écran). D’où l’importance d’un code propre et bien structuré.</p>
-<div class="note">
-🔍 <strong>Bon réflexe :</strong> tester ses pages avec des outils d’accessibilité pour vérifier le rendu et la compatibilité.
-</div>
-<p>⚠️ Le CSS ne doit pas contenir de contenu caché (risque de blacklist).
-Ne pas utiliser uniquement la couleur pour transmettre une information.</p>
-<div class="focus">
-<h4>Digression IA</h4>
-<p>Le formateur a exprimé des réserves sur l’usage de l’intelligence artificielle : risques liés à la sécurité et à la propriété intellectuelle.</p>
-</div>
-  </article>
-  <article class="concepts">
-    <h2>Début du cours HTML</h2>
-    <p>Création d’une première page sur VS Code. Être attentif à la langue (<code>lang="fr"</code>), élément essentiel pour l’accessibilité.</p>
-<div class="focus">
-<h4>Structure de base</h4>
-<ul>
-<li><code>&lt;html&gt;</code> → balise principale, avec attribut <code>lang</code></li>
-<li><code>&lt;head&gt;</code> → informations destinées au navigateur (métadonnées, encodage, titre...)</li>
-<li><code>&lt;body&gt;</code> → contenu visible du site</li>
-</ul>
-</div>
-<h3>Balises essentielles</h3>
-<ul>
-<li><code>&lt;meta charset="UTF-8"&gt;</code> → encodage universel (UTF-8)</li>
-<li><code>&lt;meta name="viewport"&gt;</code> → adaptation à la taille d’écran</li>
-<li><code>&lt;title&gt;</code> → titre de la page (affiché sur l’onglet du navigateur)</li>
-</ul>
-<div class="note">
-💡 <strong>Accessibilité &amp; SEO :</strong> choisir un titre clair et pertinent améliore le référencement et la compréhension du contenu.
-</div>
-<h3>Hiérarchie des titres</h3>
-<p>La structure des balises <code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code> doit être respectée :</p>
-<ul>
-<li>Un seul <code>&lt;h1&gt;</code> par page</li>
-<li>Suivre l’ordre hiérarchique : pas de <code>&lt;h5&gt;</code> après un <code>&lt;h1&gt;</code></li>
-</ul>
-<div class="schéma">
-&lt;h1&gt;Titre principal&lt;/h1&gt;<br/>
-&lt;h2&gt;Sous-titre&lt;/h2&gt;<br/>
-&lt;h3&gt;Sous-partie&lt;/h3&gt;
-</div>
+    <h2>Introduction à la Confidentialité (RGPD)</h2>
+    <p>Le Règlement Général sur la Protection des Données impose des règles strictes sur la collecte et le traitement des données personnelles.</p>
+
+    <div class="focus">
+        <ul>
+            <li>Transparence : Informer l'utilisateur.</li>
+            <li>Consentement : Obtenir l'accord explicite (Cookies).</li>
+            <li>Droit à l'oubli : Permettre la suppression des données.</li>
+        </ul>
+    </div>
   </article>
 </section>

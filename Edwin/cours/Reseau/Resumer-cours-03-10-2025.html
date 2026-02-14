@@ -1,71 +1,91 @@
 <section class="course">
-  <h1>Titre du Cours : Cours Réseau – 03 Octobre 2025</h1>
+  <h1>Architecture Réseau & Virtualisation</h1>
+
   <article class="concepts">
-    <h2>Hébergement web, VPS et Serveur dédié</h2>
-    <p><strong>Hébergement mutualisé :</strong> place préconfigurée sur un serveur, peu cher. L'hébergeur gère tout sauf votre site. Limité en langages disponibles.</p>
-<p><strong>VPS (Virtual Private Server) :</strong> serveur virtuel complet. Vous configurez le serveur, choisissez les caractéristiques (CPU, RAM, HDD). Plus de liberté qu’un mutualisé. Plus de liberté qu’un mutualisé.</p>
-<p><strong>Serveur dédié physique :</strong> configuration complète, pour des besoins très personnalisés et ressources exclusives.</p>
+    <h2>Hébergement & Serveurs</h2>
+    <p>Le choix de l'infrastructure d'hébergement dépend des besoins en ressources et en contrôle.</p>
+
+    <div class="focus">
+        <ul>
+            <li><strong>Mutualisé :</strong> Plusieurs sites partagent les mêmes ressources. Économique mais limité.</li>
+            <li><strong>VPS (Virtual Private Server) :</strong> Une partition virtuelle d'un serveur physique avec ses propres ressources dédiées.</li>
+            <li><strong>Serveur Dédié :</strong> Un serveur physique entier réservé à un seul client. Puissance maximale.</li>
+            <li><strong>Cloud :</strong> Infrastructure scalable et distribuée (AWS, Azure, GCP).</li>
+        </ul>
+    </div>
   </article>
+
   <article class="concepts">
-    <h2>Hyperviseurs</h2>
-    <p><strong>VirtualBox :</strong> hyperviseur de type 2, utilisé pour tests et formation. Nécessite un OS hôte.</p>
-<p>Hyperviseurs de type 1 : utilisés en production et datacenter, OS à part entière, gestion directe des VM.</p>
-<div class="schéma">
-<p>Schéma VirtualBox NAT :</p>
-<img alt="Schéma réseau NAT VirtualBox" src="virtualbox-schema-reseau-nat-2022.png"/>
-</div>
+    <h2>La Virtualisation</h2>
+    <p>La virtualisation permet de faire tourner plusieurs systèmes d'exploitation sur une seule machine physique.</p>
+
+    <div class="note">
+        <h3>Types d'Hyperviseurs :</h3>
+        <ul>
+            <li><strong>Type 1 (Bare Metal) :</strong> S'installe directement sur le matériel (ex: ESXi, Proxmox).</li>
+            <li><strong>Type 2 (Hosted) :</strong> S'exécute sur un système d'exploitation hôte (ex: VirtualBox, VMware Workstation).</li>
+        </ul>
+    </div>
+
+    <img alt="VM vs Containers" src="container-vs-vm.avif">
+    <p>Contrairement aux machines virtuelles, les conteneurs (Docker) partagent le noyau de l'OS hôte, ce qui les rend beaucoup plus légers.</p>
   </article>
+
   <article class="concepts">
-    <h2>Réseaux & ports</h2>
-    <p>Ports et protocoles principaux :</p>
-<table>
-<tr><th>Protocole</th><th>Port</th></tr>
-<tr><td>HTTP</td><td>80</td></tr>
-<tr><td>HTTPS</td><td>443</td></tr>
-<tr><td>FTP</td><td>21</td></tr>
-<tr><td>SSH</td><td>22</td></tr>
-</table>
-<p>Redirection de ports : configuration sur routeur pour autoriser certains flux réseau.</p>
-<p>Réseau NAT : VM → Hôte → Internet.</p>
-<p>Connexion sécurisée via SSH.</p>
+    <h2>Modèles OSI & TCP/IP</h2>
+    <p>La communication réseau repose sur des couches normalisées.</p>
+
+    <img alt="Modèle OSI vs TCP/IP" src="OSI_TCPIP.png" style="max-width: 600px; display: block; margin: 20px auto;">
+
+    <h3>Protocoles & Ports Communs :</h3>
+    <table>
+        <tr>
+            <th>Service</th>
+            <th>Protocole</th>
+            <th>Port</th>
+        </tr>
+        <tr>
+            <td>Web (Non-sécurisé)</td>
+            <td>HTTP</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Web (Sécurisé)</td>
+            <td>HTTPS</td>
+            <td>443</td>
+        </tr>
+        <tr>
+            <td>Accès à distance</td>
+            <td>SSH</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>Transfert de fichiers</td>
+            <td>FTP</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>Base de données</td>
+            <td>MySQL</td>
+            <td>3306</td>
+        </tr>
+    </table>
   </article>
+
   <article class="concepts">
-    <h2>CMD & Linux</h2>
-    <ul>
-<li>Commande <code>clear</code> : nettoie l’écran</li>
-<li><code>apt update</code> : récupère la liste des paquets disponibles sur Debian, ne met rien à jour</li>
-<li>Sous Linux, le système ne gère pas les extensions des fichiers (uniquement pour l’utilisateur humain)</li>
-<li>Types de fichiers Linux : répertoire, périphérique, normal (texte, vidéo…)</li>
-</ul>
-<div class="note">
-<p>Le contenu des fichiers est géré par d’autres applications (ex : éditeurs, lecteurs).</p>
-</div>
-  </article>
-  <article class="concepts">
-    <h2>Sécurité mots de passe</h2>
-    <p>Recommandations pour créer des mots de passe robustes :</p>
-<ul>
-<li>Minimum 12 caractères, mélange de majuscules, minuscules, chiffres et symboles</li>
-<li>Exemples : utiliser un texte de base et le transformer (numéro de ligne, substitution)</li>
-<li>Outils recommandés : KeePass, ANSSI guidelines</li>
-</ul>
-<div class="schéma">
-<p>Exemple de robustesse selon nombre et type de caractères :</p>
-<img alt="Graphique robustesse mot de passe" src="etude-mots-de-passe-hive-systems.webp"/>
-</div>
-  </article>
-  <article class="concepts">
-    <h2>SSH et clés</h2>
-    <p>SSH (Secure Shell) permet une connexion sécurisée entre machines :</p>
-<ul>
-<li>Échange de clé privée / clé publique</li>
-<li>Authentification sans mot de passe possible via clés</li>
-<li>Commande utile : <code>ssh-keygen</code> pour générer des clés</li>
-</ul>
-<p>Liens utiles :</p>
-<ul>
-<li><a href="https://www.it-connect.fr/configurer-le-port-forwarding-sur-une-vm-virtualbox%EF%BB%BF/" target="_blank">Configuration port forwarding VirtualBox</a></li>
-<li><a href="https://www.it-connect.fr/comprendre-les-differents-types-de-reseaux-virtualbox/" target="_blank">Types de réseaux VirtualBox</a></li>
-</ul>
+    <h2>Sécurité & SSH</h2>
+    <p>Le protocole SSH (Secure Shell) est indispensable pour l'administration sécurisée à distance.</p>
+
+    <div class="focus">
+        <h3>Authentification par clés :</h3>
+        <p>Plus sécurisée que les mots de passe. Repose sur une paire de clés :</p>
+        <ul>
+            <li><strong>Clé Publique :</strong> Déposée sur le serveur.</li>
+            <li><strong>Clé Privée :</strong> Conservée précieusement par l'utilisateur.</li>
+        </ul>
+    </div>
+
+    <pre><code>ssh-keygen -t rsa -b 4096
+ssh-copy-id utilisateur@serveur</code></pre>
   </article>
 </section>

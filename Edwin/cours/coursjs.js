@@ -21,7 +21,7 @@ async function essayerChargerFichier(cheminFichier) {
             const content = await response.text();
             const parser = new DOMParser();
             const doc = parser.parseFromString(content, 'text/html');
-            const bodyContent = doc.querySelector('body').innerHTML;
+            const bodyContent = doc.querySelector('section.course') ? doc.querySelector('section.course').innerHTML : doc.querySelector('body').innerHTML;
             return { nom: cheminFichier, contenu: bodyContent };
         }
     } catch (e) {
@@ -33,12 +33,23 @@ async function essayerChargerFichier(cheminFichier) {
 // Fonction pour afficher les fichiers d'une thématique
 async function afficherFichiersThematique(thematique) {
     const contenuDiv = document.getElementById('contenu');
-    contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">🔍</div><h1>Recherche des cours en cours...</h1></div>';
+    contenuDiv.innerHTML = `
+        <div class="loading-container">
+            <div class="construction-icon">🚀</div>
+            <h2>Initialisation du module ${thematique}...</h2>
+        </div>
+    `;
 
     try {
         const listeFichiers = await chargerListeFichiers();
         if (listeFichiers.length === 0) {
-            contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">⚠️</div><h1>Aucun fichier de cours trouvé.</h1><p>Veuillez vérifier que le fichier list-cours.json est présent et correctement formaté.</p></div>';
+            contenuDiv.innerHTML = `
+                <div class="glass-card">
+                    <div class="construction-icon">⚠️</div>
+                    <h2>Erreur système</h2>
+                    <p>La base de données des cours est inaccessible.</p>
+                </div>
+            `;
             return;
         }
 
@@ -47,7 +58,13 @@ async function afficherFichiersThematique(thematique) {
             .map(fichier => fichier.path.replace('Edwin/cours/', ''));
 
         if (fichiersThematique.length === 0) {
-            contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">📚</div><h1>Aucun cours trouvé pour cette thématique.</h1></div>';
+            contenuDiv.innerHTML = `
+                <div class="glass-card">
+                    <div class="construction-icon">📚</div>
+                    <h2>Module vide</h2>
+                    <p>Aucune donnée trouvée pour la thématique : ${thematique}.</p>
+                </div>
+            `;
             return;
         }
 
@@ -56,26 +73,32 @@ async function afficherFichiersThematique(thematique) {
         const fichiersValides = resultats.filter(result => result !== null);
 
         if (fichiersValides.length === 0) {
-            contenuDiv.innerHTML = '<div class="container"><div class="construction-icon">😕</div><h1>Impossible de charger le contenu des cours.</h1><p>Vérifiez que les fichiers de cours existent.</p></div>';
+            contenuDiv.innerHTML = `
+                <div class="glass-card">
+                    <div class="construction-icon">😕</div>
+                    <h2>Erreur de chargement</h2>
+                    <p>Impossible de récupérer le contenu des fichiers.</p>
+                </div>
+            `;
         } else {
             let contenuComplet = '';
             fichiersValides.forEach(fichier => {
-                contenuComplet += `<div class="cours-item"><h2>${fichier.nom}</h2>${fichier.contenu}</div>`;
+                contenuComplet += `<article class="cours-item">${fichier.contenu}</article>`;
             });
             contenuDiv.innerHTML = contenuComplet;
         }
     } catch (error) {
-        contenuDiv.innerHTML = `<div class="container"><div class="construction-icon">❌</div><h1>Erreur de chargement</h1><p>${error.message}</p></div>`;
+        contenuDiv.innerHTML = `
+            <div class="glass-card">
+                <div class="construction-icon">❌</div>
+                <h2>Erreur critique</h2>
+                <p>${error.message}</p>
+            </div>
+        `;
     }
 }
 
 // Chargement initial
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('contenu').innerHTML = `
-        <div class="container">
-            <div class="construction-icon">📚</div>
-            <h1>Sélectionnez une thématique pour afficher les cours</h1>
-            <p>Cliquez sur un des boutons ci-dessus pour commencer.</p>
-        </div>
-    `;
+    // On pourrait charger une thématique par défaut ici si on voulait
 });

@@ -1,0 +1,99 @@
+<section class="course">
+  <h1>Cours Python – Fondamentaux & Environnement</h1>
+
+  <article class="concepts">
+    <h2>Introduction & Outils</h2>
+    <p>Cette séance marque le début de notre immersion dans l'écosystème Python. Nous avons configuré nos outils de travail pour une efficacité maximale.</p>
+
+    <div class="focus">
+        <h3>Google Colab : Le Notebook Interactif</h3>
+        <p>Google Colab est une version cloud de Jupyter Notebook. Il permet :</p>
+        <ul>
+            <li>D'exécuter du code Python dans le navigateur sans installation locale.</li>
+            <li>De mélanger du texte riche (Markdown) et du code exécutable.</li>
+            <li>D'accéder gratuitement à des ressources de calcul (GPU/TPU) pour le Machine Learning.</li>
+        </ul>
+        <p>👉 Accéder au workspace : <a href="https://colab.research.google.com/" target="_blank">Google Colab</a></p>
+    </div>
+  </article>
+
+  <article class="concepts">
+    <h2>La Logique Conditionnelle</h2>
+    <p>Les conditions permettent de diriger le flux d'exécution du programme en fonction de critères logiques.</p>
+
+    <pre><code class="language-python">
+# Structure de base
+age = int(input("Entrez votre âge : "))
+
+if age >= 18:
+    print("Accès autorisé : Majeur")
+elif age >= 13:
+    print("Accès restreint : Adolescent")
+else:
+    print("Accès refusé : Mineur")
+    </code></pre>
+
+    <div class="note">
+        <strong>💡 Règle d'or :</strong> L'indentation (4 espaces) est obligatoire en Python pour définir les blocs de code. Une erreur d'indentation provoquera une <code>IndentationError</code>.
+    </div>
+  </article>
+
+  <article class="concepts">
+    <h2>Opérateurs de Comparaison & Logiques</h2>
+    <p>Pour construire des conditions complexes, nous utilisons des opérateurs dédiés.</p>
+
+    <table>
+        <tr>
+            <th>Opérateur</th>
+            <th>Signification</th>
+            <th>Exemple</th>
+        </tr>
+        <tr>
+            <td><code>==</code></td>
+            <td>Égal à</td>
+            <td><code>x == 5</code></td>
+        </tr>
+        <tr>
+            <td><code>!=</code></td>
+            <td>Différent de</td>
+            <td><code>y != "Admin"</code></td>
+        </tr>
+        <tr>
+            <td><code>and</code></td>
+            <td>ET logique</td>
+            <td><code>(x > 0) and (x < 10)</code></td>
+        </tr>
+        <tr>
+            <td><code>or</code></td>
+            <td>OU logique</td>
+            <td><code>is_admin or is_mod</code></td>
+        </tr>
+        <tr>
+            <td><code>not</code></td>
+            <td>NON logique</td>
+            <td><code>not is_empty</code></td>
+        </tr>
+    </table>
+  </article>
+
+  <article class="concepts">
+    <h2>La notion de "Truthiness"</h2>
+    <p>En Python, tout objet a une valeur booléenne intrinsèque. Certains sont considérés comme <strong>Falsy</strong> (évalués à False dans une condition) et d'autres comme <strong>Truthy</strong>.</p>
+
+    <div class="focus">
+        <h3>Objets Falsy communs :</h3>
+        <ul>
+            <li><code>None</code></li>
+            <li><code>0</code> (entier), <code>0.0</code> (flottant)</li>
+            <li><code>""</code> (chaîne vide)</li>
+            <li><code>[]</code> (liste vide), <code>{}</code> (dict vide)</li>
+        </ul>
+    </div>
+
+    <pre><code class="language-python">
+username = ""
+if not username:
+    print("Erreur : Le nom d'utilisateur ne peut pas être vide")
+    </code></pre>
+  </article>
+</section>

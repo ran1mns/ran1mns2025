@@ -1,5 +1,6 @@
-/* Styles pour la page des cours */
-.navi2 {
+/* Styles spécifiques pour la page des cours */
+
+.course-nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -7,62 +8,143 @@
     margin-bottom: 50px;
 }
 
-.navi2 button {
-    background: linear-gradient(#1e3a8a, #9333ea, #be185d);
-    color: white;
-    border: 2px groove white;
-    border-radius: 20px;
+.category-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
     padding: 10px 20px;
-    font-size: 1rem;
+    border-radius: 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: all 0.3s ease;
 }
 
-.navi2 button:hover {
-    transform: scale(1.05);
-    border-color: red;
+.category-btn:hover {
+    background: var(--accent-blue);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--accent-glow);
+    transform: translateY(-2px);
 }
 
 #contenu {
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    min-height: 200px;
+    min-height: 400px;
 }
 
-.container {
-    text-align: center;
-}
-
-.construction-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    animation: bounce 2s infinite;
-}
-
+/* Style des cours chargés dynamiquement */
 .cours-item {
-    margin-bottom: 30px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.cours-item h1 {
+    font-size: 2rem;
     text-align: left;
+    margin-bottom: 30px;
+    color: var(--accent-blue);
+    background: none;
+    -webkit-text-fill-color: initial;
 }
 
 .cours-item h2 {
-    margin-bottom: 15px;
-    color: #ffdd57;
+    font-size: 1.4rem;
+    margin-top: 30px;
+    border-bottom: 1px solid var(--glass-border);
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-10px);
-    }
-    60% {
-        transform: translateY(-5px);
-    }
+.cours-item h3 {
+    color: var(--accent-purple);
+    margin: 20px 0 10px;
+}
+
+.cours-item ul, .cours-item ol {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+.cours-item li {
+    margin-bottom: 10px;
+}
+
+.cours-item pre {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    border: 1px solid var(--glass-border);
+    margin: 20px 0;
+}
+
+.cours-item code {
+    font-family: 'Fira Code', monospace;
+    color: #f8f8f2;
+}
+
+.cours-item .note {
+    background: rgba(157, 80, 187, 0.1);
+    border-left: 4px solid var(--accent-purple);
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.cours-item .focus {
+    background: rgba(0, 210, 255, 0.05);
+    border: 1px solid var(--accent-glow);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+}
+
+.cours-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 1px solid var(--glass-border);
+}
+
+.cours-item table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.cours-item th, .cours-item td {
+    padding: 12px;
+    border: 1px solid var(--glass-border);
+    text-align: left;
+}
+
+.cours-item th {
+    background: var(--glass-bg);
+    color: var(--accent-blue);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.loading-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.construction-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
 }

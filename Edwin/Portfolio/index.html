@@ -3,450 +3,117 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="indexcss.css">
+    <title>Portfolio | Edwin Duriez</title>
+    <link rel="stylesheet" href="../globalcss.css">
     <link rel="stylesheet" href="styleplanete.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
-    <style>
-        #btnSUI {
-            position: relative;
-            display: inline-block;
-            padding: 25px 30px;
-            /* margin: 40px 0; */
-            color: #03e9f4;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            overflow: hidden;
-
-        }
-
-        #btnSUI:hover {
-            background: #03e9f4;
-            color: #050801;
-            box-shadow: 0 0 5px #f40303,
-                0 0 25px #03f423,
-                0 0 50px #f403cc;
-
-        }
-
-        #btnSsui {
-            display: flex;
-            flex-wrap: nowrap;
-            flex-direction: column;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 87%;
-            left: 35%;
-        }
-
-        @media (max-width: 1100px) {
-            #btnSsui {
-                top: 57%;
-                left: 35%;
-            }
-        }
-
-        @media (max-width: 800px) {
-            #btnSsui {
-                top: 47%;
-                left: 5%;
-            }
-        }
-
-        @media (max-width: 600px) {
-            #btnSsui {
-                top: 27%;
-                left: 0%;
-            }
-        }
-
-        nav a {
-            background-color: black;
-            color: white;
-            font-size: 35px;
-        }
-
-        nav {
-            background-color: black;
-            display: inline-flex;
-            align-items: center;
-            /*text-align: center;*/
-            /*justify-content: flex-start;*/
-            align-content: center;
-            flex-wrap: wrap;
-            flex-direction: row;
-            margin: auto;
-            width: 100%;
-        }
-
-        nav div.menu {
-            margin: 0 50px;
-            display: inline;
-            text-align: center;
-            margin: auto;
-
-        }
-
-        nav div.menu a {
-            font-size: xx-large;
-            margin: 0 155px;
-        }
-
-        nav div.menu a:hover {
-            background: #03e9f4;
-            color: #050801;
-            box-shadow: 0 0 5px #f40303,
-                0 0 25px #03f423,
-                0 0 50px #f403cc;
-        }
-
-        nav div.return_site {
-            display: inline;
-            flex-direction: row;
-            margin: 5px 5px;
-        }
-
-        nav div.return_site a:hover {
-            background: #03e9f4;
-            color: #050801;
-            box-shadow: 0 0 5px #f40303,
-                0 0 25px #03f423,
-                0 0 50px #f403cc;
-        }
-
-        a.contact {
-            color: white;
-            font-size: 20px;
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="indexcss.css">
 </head>
 
 <body>
-    <nav>
-        <div class="return_site">
-            <a href="https://ran1mns.github.io/ran1mns2025/Edwin/index.html">🔙🌍</a>
-        </div>
-
-        <div class="menu">
-            <a href="index.html">Accueil</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
     <header>
+        <div class="header-container">
+            <button class="back-btn" onclick="window.history.back();">⬅️</button>
+            <div class="nav-brand">EDWIN.DEV</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="../cours/cours.html" class="nav-link">Cours</a></li>
+                    <li><a href="../Actu/actu.html" class="nav-link">Actu Tech</a></li>
+                    <li><a href="../Video/video.html" class="nav-link">Vidéos</a></li>
+                    <li><a href="index.html" class="nav-link active">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <container id="planete">
-            <p id="portofolio">PORTFOLIO</p><br>
-            <p id="nameporto">Duriez Edwin</p>
-
+    <main class="animate-fade" style="max-width: 100%; padding: 0;">
+        <section id="planete" style="position: relative; height: 80vh; overflow: hidden;">
             <div class="star-field" id="star-field"></div>
+            <div style="position: absolute; z-index: 10; text-align: center; width: 100%; pointer-events: none;">
+                <h1 style="margin-bottom: 10px;">PORTFOLIO</h1>
+                <p style="font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--accent-blue);">Edwin Duriez</p>
+            </div>
+
             <div class="globe-container">
                 <div class="globe" id="globe">
                     <div class="logos-container">
-                        <!-- Langages de programmation -->
-                        <img src="images/HTML5_Badge.svg" alt="HTML5 logo" class="logo"
-                            style="top: 60%; left: 55%; transform: translate(-50%, -50%);">
-                        <img src="images/CSS3_logo.svg" alt="CSS3 logo" class="logo"
-                            style="top: 35%; left: 45%; transform: translate(-50%, -50%);">
-                        <img src="images/JavaScript-logo.png" alt="JavaScript logo" class="logo"
-                            style="top: 40%; left: 70%; transform: translate(-50%, -50%);">
-                        <img src="images/Python-logo-notext.svg" alt="Python logo" class="logo"
-                            style="top: 65%; left: 40%; transform: translate(-50%, -50%);">
-                        <img src="images/Java_programming_language_logo.svg" alt="Java logo" class="logo"
-                            style="top: 60%; left: 80%; transform: translate(-50%, -50%);">
-                        <img src="images/Ruby_logo.svg" alt="Ruby logo" class="logo"
-                            style="top: 10%; left: 20%; transform: translate(-50%, -50%);">
-                        <img src="images/PHP-logo.svg" alt="PHP logo" class="logo"
-                            style="top: 20%; left: 30%; transform: translate(-50%, -50%);">
-                        <img src="images/Csharp_Logo.png" alt="C# logo" class="logo"
-                            style="top: 70%; left: 20%; transform: translate(-50%, -50%);">
-                        <img src="images/C_Programming_Language.svg" alt="C logo" class="logo"
-                            style="top: 80%; left: 50%; transform: translate(-50%, -50%);">
-                        <img src="images/Typo3-logo-2019.svg" alt="C++ logo" class="logo"
-                            style="top: 90%; left: 30%; transform: translate(-50%, -50%);">
-                        <img src="images/TypeScript.svg" alt="TypeScript" class="logo"
-                            style="top: 35%; left: 90%; transform: translate(-50%, -50%);">
-                        <img src="images/Go.svg" alt="Go" class="logo"
-                            style="top: 25%; left: 75%; transform: translate(-50%, -50%);">
-                        <img src="images/Swift.svg" alt="Swift" class="logo"
-                            style="top: 35%; left: 15%; transform: translate(-50%, -50%);">
-                        <img src="images/Kotlin.svg" alt="Kotlin" class="logo"
-                            style="top: 45%; left: 55%; transform: translate(-50%, -50%);">
-                        <!-- Frameworks -->
-                        <img src="images/React-icon.svg" alt="React logo" class="logo"
-                            style="top: 80%; left: 70%; transform: translate(-50%, -50%);">
-                        <img src="images/Node.js_logo.svg" alt="Node.js logo" class="logo"
-                            style="top: 10%; left: 70%; transform: translate(-50%, -50%);">
-                        <img src="images/AngularJS_logo.svg" alt="Angular logo" class="logo"
-                            style="top: 90%; left: 50%; transform: translate(-50%, -50%);">
-                        <img src="images/Redux.png" alt="Redux logo" class="logo"
-                            style="top: 18%; left: 62%; transform: translate(-50%, -50%);">
-                        <img src="images/Ajax_Logo.svg" alt="AJAX logo" class="logo"
-                            style="top: 60%; left: 20%; transform: translate(-50%, -50%);">
-                        <img src="images/gatsby-svgrepo-com.svg" alt="Gatsby logo" class="logo"
-                            style="top: 80%; left: 10%; transform: translate(-50%, -50%);">
-                        <img src="images/Official_Joomla_Logo.png" alt="Joomla logo" class="logo"
-                            style="top: 70%; left: 80%; transform: translate(-50%, -50%);">
-                        <img src="images/WordPress_logo.svg" alt="WordPress logo" class="logo"
-                            style="top: 50%; left: 70%; transform: translate(-50%, -50%);">
-                        <img src="images/Django.svg" alt="Django" class="logo"
-                            style="top: 35%; left: 30%; transform: translate(-50%, -50%);">
-                        <img src="images/Spring.svg" alt="Spring" class="logo"
-                            style="top: 40%; left: 5%; transform: translate(-50%, -50%);">
-                        <img src="images/Nextjs.svg" alt="Next.js" class="logo"
-                            style="top: 50%; left: 40%; transform: translate(-50%, -50%);">
-                        <img src="images/Svelte.svg" alt="Svelte" class="logo"
-                            style="top: 60%; left: 80%; transform: translate(-50%, -50%);">
-                        <!-- IDE -->
-                        <img src="images/Visual_Studio_Code_1.35_icon.svg" alt="VS Code logo" class="logo"
-                            style="top: 70%; left: 60%; transform: translate(-50%, -50%);">
-                        <img src="images/Eclipse-Luna-Logo.svg" alt="Eclipse logo" class="logo"
-                            style="top: 50%; left: 20%; transform: translate(-50%, -50%);">
-                        <img src="images/IntelliJ_IDEA_Icon.svg" alt="IntelliJ IDEA logo" class="logo"
-                            style="top: 10%; left: 50%; transform: translate(-50%, -50%);">
-                        <!-- CMS -->
-                        <img src="images/Drupal.svg" alt="Drupal" class="logo"
-                            style="top: 20%; left: 15%; transform: translate(-50%, -50%);">
-                        <img src="images/Magento.svg" alt="Magento" class="logo"
-                            style="top: 25%; left: 55%; transform: translate(-50%, -50%);">
+                        <!-- Langages & Frameworks -->
+                        <img src="images/HTML5_Badge.svg" alt="HTML5" class="logo" style="top: 60%; left: 55%;">
+                        <img src="images/CSS3_logo.svg" alt="CSS3" class="logo" style="top: 35%; left: 45%;">
+                        <img src="images/JavaScript-logo.png" alt="JS" class="logo" style="top: 40%; left: 70%;">
+                        <img src="images/Python-logo-notext.svg" alt="Python" class="logo" style="top: 65%; left: 40%;">
+                        <img src="images/React-icon.svg" alt="React" class="logo" style="top: 80%; left: 70%;">
+                        <img src="images/Node.js_logo.svg" alt="Node" class="logo" style="top: 10%; left: 70%;">
+                        <img src="images/PHP-logo.svg" alt="PHP" class="logo" style="top: 20%; left: 30%;">
+                        <img src="images/WordPress_logo.svg" alt="WordPress" class="logo" style="top: 50%; left: 70%;">
                     </div>
                 </div>
             </div>
-    </header>
-    <section id="btnSsui"><a id="btnSUI" href="#realisation">Voir le Portofolio</a></section>
-
-    <main>
-        </container>
-        <section class="realisation">
-            <div id="realisation">Mes realisation :</h1>
-            </div>
-            <container>
-                <div>
-                    <h2 style="margin-top:-20px;">Mes creations</h2><br>
-                </div>
-                <section class="galleryS">
-                    <img class="gallery" src="images/gallerie/image12.jpg" style="transform: scaleY(1.3);">
-                    <img class="gallery" src="images/gallerie/image1.PNG">
-                    <img class="gallery" src="images/gallerie/image2.jpg">
-                    <img class="gallery" src="images/gallerie/image3.jpg">
-                    <img class="gallery" src="images/gallerie/image4.png">
-                    <img class="gallery" src="images/gallerie/image5.png">
-                    <img class="gallery" src="images/gallerie/image9.png">
-                    <img class="gallery" src="images/gallerie/image6.png">
-                    <img class="gallery" src="images/gallerie/image8.png">
-                    <img class="gallery" src="images/gallerie/image7.png">
-                    <img class="gallery" src="images/gallerie/image10.png">
-                    <img class="gallery" src="images/gallerie/image11.png">
-                </section>
-            </container>
-
-
+            <a href="#realisations" class="btn-primary" style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 20;">Découvrir mes projets</a>
         </section>
-        <div>
-            <container class="calendrier">
-                <div>
-                    <h2>Calendrier</h2><br>
-                </div>
-                <container class="block3x">
-                    <section class="parti1g">
-                        <p>Démarrage formation Num&Boost</p>
-                        <p class="details">Initialisation au métier du développement<br>Mise à niveau des bases du
-                            développement informatique.</p>
-                    </section>
-                    <section class="parti1d">
-                        <p class="details">Initiation aux conditions du métier de développeur : Apprentissage des bases
-                            du code HTML et CSS, deux langages fondamentaux pour la création de sites web.</p>
-                    </section>
-                    <section class="parti1c">
-                        <!-- <p class="centre">center</p> -->
-                        <p class="centre"><img class="valide" src="images/téléchargement__2_-removebg-preview.png"></p>
-                    </section>
-                </container>
-                <container class="block3x">
-                    <section class="parti1g">
-                        <p>Langages de programmation HTML et CSS</p>
-                        <p class="details">Apprentissage du langage HTML : Formation approfondie au HTML au sein de la
-                            formation Num&Boost avec l'école MNS<span style="text-decoration: underline;">(Metz
-                                Numérique School).</span></p><br>
-                        <p class="details"><span style="text-decoration: underline;">Maîtrise des
-                                balises HTML et CSS
-                                :</span><br><span style="text-decoration: underline;">Création de pages web :</span><br>
-                            <span style="text-decoration: underline;">Mise en place de services Front-end :</span>
-                        </p>
-                    </section>
-                    <section class="parti1d">
-                        <p class="details">Utilisation des balises HTML pour
-                            structurer une page web et application des styles CSS pour améliorer son
-                            apparence.<br>Réalisation de projets web personnels et professionnels pour mettre en
-                            pratique les
-                            compétences acquises.<br>Utilisation de frameworks et d'outils pour intégrer
-                            des services interactifs côté client (Front-end).
-                        </p>
-                    </section>
-                    <section class="parti1c">
-                        <!-- <p class="centre">center</p> -->
-                        <p class="centre"><img class="valide" src="images/téléchargement__2_-removebg-preview.png"></p>
-                    </section>
-                </container>
-                <container class="block3x">
-                    <section class="parti1g">
-                        <p>Langue Anglaise</p>
-                        <p class="details">Apprentissage de l'anglais : Formation en langue anglaise pour faciliter la
-                            compréhension des langages de programmation, car de nombreux termes techniques sont en
-                            anglais
-                        <p>
-                    </section>
-                    <section class="parti1d">
-                        <p class="details">Utilisation d'applications de learning : Apprentissage interactif via des
-                            applications de langue, ainsi que des cours spécialisés dans le domaine professionnel et la
-                            langue courante.</p>
-                    </section>
-                    <section class="parti1c">
-                        <p class="centre"><img class="valide" src="images/téléchargement__2_-removebg-preview.png"></p>
-                    </section>
-                </container>
-                <container class="block3x">
-                    <section class="parti1g">
-                        <p>Langage de programmation JavaScript</p>
-                        <p class="details">Apprentissage du langage JavaScript : Formation approfondie à JavaScript au
-                            sein de l'école MNS. Ce langage est essentiel pour rendre les pages web interactives et
-                            dynamiques.</p>
-                    </section>
-                    <section class="parti1d">
-                        <p class="details">Mise en œuvre de JavaScript : Création de scripts pour ajouter des
-                            fonctionnalités interactives à des pages web, tels que des animations, des formulaires
-                            dynamiques, et la gestion des événements utilisateur.
-                            utilisateur.</p>
-                    </section>
-                    <section class="parti1c">
-                        <p class="centre"><img class="valide" src="images/téléchargement__1_-removebg-preview (2).png">
-                    </section>
-                </container>
-                <container class="block3x">
-                    <section class="parti1g">
-                        <p>Apprentissage du langage de programmation Node.js</p>
-                        <p class="details">Introduction à Node.js : Node.js est une plateforme JavaScript qui permet de
-                            développer des applications serveur.Apprentissage des bases de Node.js pour pouvoir créer
-                            des serveurs web et gérer des
-                            requêtes HTTP.</p>
-                    </section>
-                    <section class="parti1d">
-                        <p class="details">Mise en pratique de Node.js : Création de serveurs web simples et gestion des
-                            requêtes réseau.Utilisation de NPM (Node Package Manager) pour intégrer des modules externes
-                            et enrichir les fonctionnalités des projets.</p>
-                    </section>
-                    <section class="parti1c">
-                        <p class="centre"><img class="valide" src="images/téléchargement__1_-removebg-preview (2).png">
-                        </p>
-                    </section>
-                </container>
-                <container class="block3x">
-                    <section class="parti1g">
-                        <p>Apprentissage du langage de programmation Python</p>
-                        <p class="details">Introduction au Python : Python est un langage de programmation polyvalent et
-                            accessible, très utilisé dans le développement web, l'analyse de données, l'intelligence
-                            artificielle, et bien plus.</p>
-                    </section>
-                    <section class="parti1d">
-                        <p class="details">Apprentissage des bases de Python pour comprendre ses
-                            principes fondamentaux.<br>Mise en œuvre de Python : Développement de scripts simples pour
-                            automatiser
-                            des tâches, créer des applications basées sur des interfaces graphiques, ou effectuer des
-                            calculs complexes.</p>
-                    </section>
-                    <section class="parti1c">
-                        <p class="centre">
-                        <p class="centre"><img class="valide" src="images/téléchargement__1_-removebg-preview (2).png">
-                        </p>
-                    </section>
-                </container>
-            </container>
-            <container class="calendrier2">
-                <div>
-                    <h2 class="h2cal2">Langage de programation</h2>
-                </div>
-                <container class="packimgcode">
-                    <section class="imageg1">
-                        <img class="code" src="images/html.png" alt="html">
-                        <img class="code" src="images/diplome2-removebg-preview.png" alt="diplome"
-                            style="margin-top: -50px;">
-                    </section>
-                    <section class="imagec1">
-                        <img class="code">
-                    </section>
-                    <section class="imageg1l2">
-                        <img class="code" src="images/css.png" alt="css">
-                        <img class="code" src="images/diplome2-removebg-preview.png" alt="diplome"
-                            style="margin-top: -50px;">
-                    </section>
-                    <section class="imaged1">
-                        <img class="code" src="images/langue-removebg-preview (1).png" alt="anglais"
-                            style="background-color: rgb(255, 255, 255); border-radius: 50%;">
-                        <img class="code" src="images/diplome2-removebg-preview.png" alt="diplome"
-                            style="margin-top: -50px;">
-                    </section>
 
-                    <section class="imageg1l3">
-                        <img class="code" src="images/javascript.png" alt="javascript">
-                    </section>
-                    <section class="imaged1l2">
-                        <img class="code" src="images/nodejs.png" alt="nodejs">
-                    </section>
-                    <section class="imaged1l3">
-                        <img class="code" src="images/python.png" alt="python">
-                    </section>
-                    <section class="imageg1l4">
-                        <img class="code" src="images/PHP-logo.svg" alt="php">
-                    </section>
-                    <section class="imaged1l4">
-                        <img class="code" src="images/React-icon.svg" alt="react">
-                    </section>
-                </container>
-            </container>
+        <section id="realisations" style="padding: 80px 20px; max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; display: block; margin-bottom: 50px;">Mes Réalisations</h2>
+            <div class="gallery-grid">
+                <div class="glass-card"><img src="images/gallerie/image1.PNG" alt="Project 1"></div>
+                <div class="glass-card"><img src="images/gallerie/image2.jpg" alt="Project 2"></div>
+                <div class="glass-card"><img src="images/gallerie/image3.jpg" alt="Project 3"></div>
+                <div class="glass-card"><img src="images/gallerie/image4.png" alt="Project 4"></div>
+                <div class="glass-card"><img src="images/gallerie/image5.png" alt="Project 5"></div>
+                <div class="glass-card"><img src="images/gallerie/image6.png" alt="Project 6"></div>
+            </div>
+        </section>
+
+        <section style="padding: 80px 20px; max-width: 1200px; margin: 0 auto; background: rgba(255,255,255,0.02); border-radius: 30px;">
+            <h2 style="text-align: center; display: block; margin-bottom: 50px;">Mon Parcours</h2>
+            <div class="timeline">
+                <div class="glass-card">
+                    <h3>Formation Num&Boost</h3>
+                    <p>Initialisation au métier du développement et mise à niveau des bases informatiques à MNS.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Développement Front-End</h3>
+                    <p>Maîtrise de HTML5 et CSS3 pour la création d'interfaces web modernes et responsives.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>JavaScript & Node.js</h3>
+                    <p>Apprentissage de la programmation asynchrone et du développement côté serveur.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Python & Data</h3>
+                    <p>Utilisation de Python pour l'automatisation et le traitement de données.</p>
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center; padding: 100px 0;">
+            <a href="contact.html" class="btn-primary">Me Contacter</a>
         </div>
     </main>
-    <!-- <hr> -->
+
     <footer>
-        <div id="footer-star-field" class="star-field"></div>
-        <section id="footer">
-            <container class="imgfooter">
-                <a href="https://google.fr"><img class="footer1" src="images/mnschool.png"></a>
-                <a href="https://google.fr"><img class="footer2" src="images/images (1).png"></a>
-                <img class="footer3" src="images/qualiopi.png" style="background-color: white;">
-            </container>
-        </section>
-        <section id="footer2">
-            <a href="CV2024 Duriez.pdf" target="blank">Mon CV</a><br><a href="https://fr.linkedin.com/">Linkedin</a><a
-                href="https://x.com">Twiter</a><a href="https://www.facebook.com">Facebook</a><a
-                href="https://google.fr">YouTube</a>
-        </section>
+        <div class="footer-content">
+            <p class="copyright">&copy; 2025 Edwin Duriez. Fait avec passion pour le Web.</p>
+        </div>
     </footer>
-    <section id="pfooter">
-        <p class="pfooter">&copy;- Copyright - My Footer - 2024<br></p>
-    </section>
+
     <script>
-        function createStars(containerId) {
-            const starsContainer = document.getElementById(containerId);
-            const numberOfStars = 200;
+        function createStars() {
+            const starsContainer = document.getElementById('star-field');
+            const numberOfStars = 150;
             for (let i = 0; i < numberOfStars; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
-                star.style.width = Math.random() * 3 + 'px';
+                star.style.width = Math.random() * 2 + 'px';
                 star.style.height = star.style.width;
                 star.style.left = Math.random() * 100 + '%';
                 star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 1 + 's'; // Optional for staggered movement
+                star.style.animationDelay = Math.random() * 2 + 's';
                 starsContainer.appendChild(star);
             }
         }
-        // Call the function to create stars for both sections
-        createStars('star-field');
-        createStars('footer-star-field');
+        createStars();
     </script>
 </body>
 
