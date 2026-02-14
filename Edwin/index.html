@@ -4,49 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="indexcss.css">
     <link rel="stylesheet" href="globalcss.css">
     <link rel="icon" href="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-192x192.png"
         sizes="192x192" />
-    <link rel="apple-touch-icon"
-        href="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-180x180.png" />
-    <meta name="msapplication-TileImage"
-        content="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-270x270.png" />
-    <title>Page d'accueil d'Edwin</title>
+    <title>Edwin Duriez | DevWeb MNS</title>
 </head>
 
 <body>
     <header>
-        <div>
-            <img src="Images/header2.jpg" alt="Bannière du site">
-        </div>
-        <div>
-            <button onclick="window.history.back();">⬅️</button>
+        <div class="header-container">
+            <div class="nav-brand">EDWIN.DEV</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                    <li><a href="cours/cours.html" class="nav-link">Cours</a></li>
+                    <li><a href="Actu/actu.html" class="nav-link">Actu Tech</a></li>
+                    <li><a href="Video/video.html" class="nav-link">Vidéos</a></li>
+                    <li><a href="Portfolio/index.html" class="nav-link">Portfolio</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    <main>
-        <h1>Bienvenue sur ma page d'accueil</h1>
 
-        <section class="menu-container">
-            <div class="menu">
-                <a class="menu-item" href="Video/video.html">
-                    <img src="Images/video.jpg" alt="Lien vers la page video">
-                    <span>Vidéo</span>
-                </a>
-                <a class="menu-item" href="Actu/actu.html">
-                    <img src="Images/actu.jpg" alt="Lien vers la page actualité technologique">
-                    <span>Actu Tech</span>
-                </a>
-                <a class="menu-item" href="cours/cours.html">
-                    <img src="Images/ia.jpg" alt="Lien vers la page des cours">
-                    <span>Cours</span>
-                </a>
-            </div>
+    <main class="animate-fade">
+        <section class="hero">
+            <h1>Bienvenue dans mon univers numérique</h1>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.2rem; color: var(--text-muted);">
+                Étudiant en développement web à Metz Numérique School. Passionné par la tech, le code et l'innovation.
+            </p>
         </section>
+
+        <section class="menu-grid">
+            <a href="cours/cours.html" class="glass-card menu-card">
+                <img src="Images/ia.jpg" alt="Cours">
+                <span>Cours</span>
+                <p>Mes résumés de cours et notes d'apprentissage.</p>
+            </a>
+            <a href="Actu/actu.html" class="glass-card menu-card">
+                <img src="Images/actu.jpg" alt="Actu Tech">
+                <span>Actu Tech</span>
+                <p>Veille technologique et actualités du monde numérique.</p>
+            </a>
+            <a href="Video/video.html" class="glass-card menu-card">
+                <img src="Images/video.jpg" alt="Vidéos">
+                <span>Vidéos</span>
+                <p>Galerie de vidéos pédagogiques et démonstrations.</p>
+            </a>
+        </section>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="Portfolio/index.html" class="btn-primary">Voir mon Portfolio</a>
+        </div>
     </main>
 
     <footer>
-        <a href="https://ran1mns.github.io/ran1mns2025/Edwin/Portfolio/index.html">Mon CV</a>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="Portfolio/index.html">Portfolio</a>
+                <a href="https://www.metz-numeric-school.fr/" target="_blank">MNS</a>
+            </div>
+            <p class="copyright">&copy; 2025 Edwin Duriez. Fait avec passion pour le Web.</p>
+        </div>
     </footer>
 </body>
 

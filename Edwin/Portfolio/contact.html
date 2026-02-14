@@ -1,308 +1,88 @@
 <!DOCTYPE html>
-<html lang="fr-FR">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactez-moi</title>
-    <link rel="stylesheet" href="./styleplanete.css">
-    <link rel="stylesheet" href="./indexcss.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+    <title>Contact | Edwin Duriez</title>
+    <link rel="stylesheet" href="../globalcss.css">
+    <link rel="stylesheet" href="indexcss.css">
     <style>
-        body,
-        main {
-            background-color: rgba(0, 0, 0, 0);
-            margin: 0 0;
+        .contact-form {
+            max-width: 600px;
+            margin: 50px auto;
         }
-
-        #btnSUI {
-            position: relative;
-            display: inline-block;
-            padding: 25px 30px;
-            margin: 20px 0;
-            color: #03e9f4;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: 1ms;
-            letter-spacing: 4px;
-            overflow: hidden;
-            font-size: 50px;
-
+        .form-group {
+            margin-bottom: 25px;
         }
-
-        #btnSUI:hover {
-            background: #03e9f4;
-            color: #050801;
-            box-shadow: 0 0 5px #f40303,
-                0 0 25px #03f423,
-                0 0 50px #f403cc;
-
-        }
-
-        #btnSsui {
-            display: flex;
-            flex-wrap: nowrap;
-            flex-direction: column;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 82%;
-        }
-
-        #planete {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-            /* transform: scale(0.9); */
-        }
-
-        nav a {
-            background-color: black;
-            color: white;
-            font-size: 35px;
-        }
-
-        nav {
-            background-color: black;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            justify-content: space-around;
-            align-content: center;
-            flex-wrap: wrap;
-            flex-direction: row;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-        }
-
-        fieldset {
-            display: flex;
-            align-content: center;
-            justify-content: center;
-            flex-direction: column;
-            align-items: stretch;
-            font-size: 20px;
-            margin-top: 20px;
-            background-color: white;
-            border-radius: 20px;
-        }
-
-        fieldset:hover {
-            /* width: 80%; */
-            border: 5px double black;
-            transform: scale(1.5);
-        }
-
-        fieldset:nth-of-type(3) {
-            display: flex;
-            align-content: center;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            /* font-size: 20px; */
-            padding: 10px;
-            width: min-content;
-        }
-
-        form:nth-of-type(1) {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-        }
-
         label {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 10px;
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            color: var(--accent-blue);
         }
-
-        #submit {
-            font-size: 20px;
+        input, textarea {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            padding: 15px;
             color: white;
-            background-color: black;
+            border-radius: 10px;
+            font-family: inherit;
         }
-
-        #contact {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            align-content: center;
-            flex-direction: column;
-        }
-
-        #contact-star-field,
-        #footer-star-field {
-            overflow: hidden;
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: rgba(255,255,255,0.1);
         }
     </style>
+</head>
 
 <body>
-    <nav>
-        <a href="index.html">Accueil</a><a href="contact.html">Contact</a>
-    </nav>
     <header>
-
-        <container id="planete">
-            <p id="portofolio">PORTFOLIO</p><br>
-            <p id="nameporto">Duriez Edwin</p>
-
-            <div class="star-field" id="star-field"></div>
-            <div class="globe-container">
-                <div class="globe" id="globe">
-                    <div class="logos-container">
-                        <!-- Langages de programmation -->
-                        <img src="images/HTML5_Badge.svg" alt="HTML5 logo" class="logo"
-                            style="top: 60%; left: 55%; transform: translate(-50%, -50%);">
-                        <img src="images/CSS3_logo.svg" alt="CSS3 logo" class="logo"
-                            style="top: 35%; left: 45%; transform: translate(-50%, -50%);">
-                        <img src="images/JavaScript-logo.png" alt="JavaScript logo" class="logo"
-                            style="top: 40%; left: 70%; transform: translate(-50%, -50%);">
-                        <img src="images/Python-logo-notext.svg" alt="Python logo" class="logo"
-                            style="top: 65%; left: 40%; transform: translate(-50%, -50%);">
-                        <img src="images/Java_programming_language_logo.svg" alt="Java logo" class="logo"
-                            style="top: 60%; left: 80%; transform: translate(-50%, -50%);">
-                        <img src="images/Ruby_logo.svg" alt="Ruby logo" class="logo"
-                            style="top: 10%; left: 20%; transform: translate(-50%, -50%);">
-                        <img src="images/PHP-logo.svg" alt="PHP logo" class="logo"
-                            style="top: 20%; left: 30%; transform: translate(-50%, -50%);">
-                        <img src="images/Csharp_Logo.png" alt="C# logo" class="logo"
-                            style="top: 70%; left: 20%; transform: translate(-50%, -50%);">
-                        <img src="images/C_Programming_Language.svg" alt="C logo" class="logo"
-                            style="top: 80%; left: 50%; transform: translate(-50%, -50%);">
-                        <img src="images/Typo3-logo-2019.svg" alt="C++ logo" class="logo"
-                            style="top: 90%; left: 30%; transform: translate(-50%, -50%);">
-                        <img src="images/TypeScript.svg" alt="TypeScript" class="logo"
-                            style="top: 35%; left: 90%; transform: translate(-50%, -50%);">
-                        <img src="images/Go.svg" alt="Go" class="logo"
-                            style="top: 25%; left: 75%; transform: translate(-50%, -50%);">
-                        <img src="images/Swift.svg" alt="Swift" class="logo"
-                            style="top: 35%; left: 15%; transform: translate(-50%, -50%);">
-                        <img src="images/Kotlin.svg" alt="Kotlin" class="logo"
-                            style="top: 45%; left: 55%; transform: translate(-50%, -50%);">
-                        <!-- Frameworks -->
-                        <img src="images/React-icon.svg" alt="React logo" class="logo"
-                            style="top: 80%; left: 70%; transform: translate(-50%, -50%);">
-                        <img src="images/Node.js_logo.svg" alt="Node.js logo" class="logo"
-                            style="top: 10%; left: 70%; transform: translate(-50%, -50%);">
-                        <img src="images/AngularJS_logo.svg" alt="Angular logo" class="logo"
-                            style="top: 90%; left: 50%; transform: translate(-50%, -50%);">
-                        <img src="images/Redux.png" alt="Redux logo" class="logo"
-                            style="top: 18%; left: 62%; transform: translate(-50%, -50%);">
-                        <img src="images/Ajax_Logo.svg" alt="AJAX logo" class="logo"
-                            style="top: 60%; left: 20%; transform: translate(-50%, -50%);">
-                        <img src="images/gatsby-svgrepo-com.svg" alt="Gatsby logo" class="logo"
-                            style="top: 80%; left: 10%; transform: translate(-50%, -50%);">
-                        <img src="images/Official_Joomla_Logo.png" alt="Joomla logo" class="logo"
-                            style="top: 70%; left: 80%; transform: translate(-50%, -50%);">
-                        <img src="images/WordPress_logo.svg" alt="WordPress logo" class="logo"
-                            style="top: 50%; left: 70%; transform: translate(-50%, -50%);">
-                        <img src="images/Django.svg" alt="Django" class="logo"
-                            style="top: 35%; left: 30%; transform: translate(-50%, -50%);">
-                        <img src="images/Spring.svg" alt="Spring" class="logo"
-                            style="top: 40%; left: 5%; transform: translate(-50%, -50%);">
-                        <img src="images/Nextjs.svg" alt="Next.js" class="logo"
-                            style="top: 50%; left: 40%; transform: translate(-50%, -50%);">
-                        <img src="images/Svelte.svg" alt="Svelte" class="logo"
-                            style="top: 60%; left: 80%; transform: translate(-50%, -50%);">
-                        <!-- IDE -->
-                        <img src="images/Visual_Studio_Code_1.35_icon.svg" alt="VS Code logo" class="logo"
-                            style="top: 70%; left: 60%; transform: translate(-50%, -50%);">
-                        <img src="images/Eclipse-Luna-Logo.svg" alt="Eclipse logo" class="logo"
-                            style="top: 50%; left: 20%; transform: translate(-50%, -50%);">
-                        <img src="images/IntelliJ_IDEA_Icon.svg" alt="IntelliJ IDEA logo" class="logo"
-                            style="top: 10%; left: 50%; transform: translate(-50%, -50%);">
-                        <!-- CMS -->
-                        <img src="images/Drupal.svg" alt="Drupal" class="logo"
-                            style="top: 20%; left: 15%; transform: translate(-50%, -50%);">
-                        <img src="images/Magento.svg" alt="Magento" class="logo"
-                            style="top: 25%; left: 55%; transform: translate(-50%, -50%);">
-                    </div>
-                </div>
-            </div>
-            <section id="btnSsui"><a id="btnSUI" href="#contact">˅</a></section>
+        <div class="header-container">
+            <button class="back-btn" onclick="window.history.back();">⬅️</button>
+            <div class="nav-brand">EDWIN.DEV</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="../cours/cours.html" class="nav-link">Cours</a></li>
+                    <li><a href="../Actu/actu.html" class="nav-link">Actu Tech</a></li>
+                    <li><a href="../Video/video.html" class="nav-link">Vidéos</a></li>
+                    <li><a href="index.html" class="nav-link">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
 
-        <section id="contact">
-            <div id="contact-star-field" class="star-field"></div>
-            <fieldset>
-                <form>
-                    <label>Nom :</label>
-                    <input id="nom" type="text">
-                    <br>
-                    <label>Email :</label>
-                    <input id="email" type="email">
-            </fieldset>
-            <fieldset>
-                <label for="bigText">Votre message içi :</label>
-                <textarea cols="60" rows="10"></textarea>
-                <!-- </fieldset>
-            <fieldset> -->
-                <input id="submit" type="submit" value="Envoyer le formulaire" oneclick='alert("Formulaire envoyer")'>
-            </fieldset>
+    <main class="animate-fade">
+        <h1>Entrer en contact</h1>
+
+        <div class="glass-card contact-form">
+            <form action="#">
+                <div class="form-group">
+                    <label for="name">Nom Complet</label>
+                    <input type="text" id="name" placeholder="Votre nom...">
+                </div>
+                <div class="form-group">
+                    <label for="email">Adresse Email</label>
+                    <input type="email" id="email" placeholder="votre@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="6" placeholder="Comment puis-je vous aider ?"></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Envoyer le message</button>
             </form>
-        </section>
+        </div>
     </main>
 
-</body>
-<footer>
-
-    <section id="footer">
-        <container class="imgfooter">
-            <a href="https://google.fr"><img class="footer1" src="images/mnschool.png"></a>
-            <a href="https://google.fr"><img class="footer2" src="images/images (1).png"></a>
-            <img class="footer3" src="images/qualiopi.png" style="background-color: white;">
-        </container>
-
-    </section>
-    <section id="footer2">
-        <a href="CV2024 Duriez.pdf" target="blank">Mon CV</a><br><a href="https://fr.linkedin.com/">Linkedin</a><a
-            href="https://x.com">Twiter</a><a href="https://www.facebook.com">Facebook</a><a
-            href="https://google.fr">YouTube</a>
-    </section>
-
-</footer>
-<section id="pfooter">
-    <p class="pfooter">&copy;- Copyright - My Footer - 2024<br></p>
-</section>
-<script>
-    function createStars(containerId) {
-        const starsContainer = document.getElementById(containerId);
-        const numberOfStars = 200;
-        for (let i = 0; i < numberOfStars; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.width = Math.random() * 3 + 'px';
-            star.style.height = star.style.width;
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 100 + '%';
-            star.style.animationDelay = Math.random() * 1 + 's'; // Optional for staggered movement
-            starsContainer.appendChild(star);
-        }
-    }
-    // Call the function to create stars for both sections
-    createStars('star-field');
-    createStars('contact-star-field');
-    createStars('footer-star-field');
-</script>
+    <footer>
+        <div class="footer-content">
+            <p class="copyright">&copy; 2025 Edwin Duriez. Fait avec passion pour le Web.</p>
+        </div>
+    </footer>
 </body>
 
 </html>

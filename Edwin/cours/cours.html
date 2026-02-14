@@ -8,59 +8,50 @@
     <link rel="stylesheet" href="courscss.css">
     <link rel="icon" href="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-192x192.png"
         sizes="192x192" />
-    <link rel="apple-touch-icon"
-        href="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-180x180.png" />
-    <meta name="msapplication-TileImage"
-        content="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-270x270.png" />
-    <title>Liste des Cours</title>
+    <title>Cours | Edwin Duriez</title>
 </head>
 
 <body>
     <header>
-        <div>
-            <img src="../Images/header2.jpg" alt="Bannière du site">
+        <div class="header-container">
+            <button class="back-btn" onclick="window.history.back();">⬅️</button>
+            <div class="nav-brand">EDWIN.DEV</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="cours.html" class="nav-link active">Cours</a></li>
+                    <li><a href="../Actu/actu.html" class="nav-link">Actu Tech</a></li>
+                    <li><a href="../Video/video.html" class="nav-link">Vidéos</a></li>
+                    <li><a href="../Portfolio/index.html" class="nav-link">Portfolio</a></li>
+                </ul>
+            </nav>
         </div>
-        <div>
-            <button onclick="window.history.back();">⬅️</button>
-        </div>
-        <nav>
-            <div class="nav-links">
-                <div class="menu">
-                    <a class="menu-item" href="../index.html">
-                        <img src="../Images/accueil.jpg" alt="Lien vers la page accueil">
-                        <span>Accueil</span>
-                    </a>
-                    <a class="menu-item" href="../Video/video.html">
-                        <img src="../Images/video.jpg" alt="Lien vers la page video">
-                        <span>Vidéo</span>
-                    </a>
-                    <a class="menu-item" href="../Actu/actu.html">
-                        <img src="../Images/actu.jpg" alt="Lien vers la page actualité technologique">
-                        <span>Actu Tech</span>
-                    </a>
-                    <a class="menu-item" href="../cours/cours.html">
-                        <img src="../Images/ia.jpg" alt="Lien vers la page des cours">
-                        <span>Cours</span>
-                    </a>
-                </div>
-            </div>
-        </nav>
     </header>
-    <main>
-        <h1>Cours par thématique</h1>
-        <nav class="navi2">
-            <button onclick="afficherFichiersThematique('Algorithmie')">Algorithmie</button>
-            <button onclick="afficherFichiersThematique('Python')">Python</button>
-            <button onclick="afficherFichiersThematique('Reseau')">Réseau</button>
-            <button onclick="afficherFichiersThematique('Wordpress')">Wordpress</button>
-            <button onclick="afficherFichiersThematique('Frontend')">Front-end</button>
-            <button onclick="afficherFichiersThematique('CultureInfo')">Culture Informatique</button>
-            <button onclick="afficherFichiersThematique('Autres')">Autres</button>
+
+    <main class="animate-fade">
+        <h1>Ressources de formation</h1>
+
+        <nav class="course-nav">
+            <button class="category-btn" onclick="afficherFichiersThematique('Algorithmie')">Algorithmie</button>
+            <button class="category-btn" onclick="afficherFichiersThematique('Python')">Python</button>
+            <button class="category-btn" onclick="afficherFichiersThematique('Reseau')">Réseau</button>
+            <button class="category-btn" onclick="afficherFichiersThematique('Wordpress')">Wordpress</button>
+            <button class="category-btn" onclick="afficherFichiersThematique('Frontend')">Front-end</button>
+            <button class="category-btn" onclick="afficherFichiersThematique('CultureInfo')">Culture Info</button>
+            <button class="category-btn" onclick="afficherFichiersThematique('Autres')">Autres</button>
         </nav>
-        <div id="contenu"></div>
+
+        <div id="contenu">
+            <div class="glass-card" style="text-align: center;">
+                <p>Sélectionnez une thématique pour explorer les notes de cours.</p>
+            </div>
+        </div>
     </main>
+
     <footer>
-        <a href="../Portfolio/index.html">Mon CV</a>
+        <div class="footer-content">
+            <p class="copyright">&copy; 2025 Edwin Duriez. Fait avec passion pour le Web.</p>
+        </div>
     </footer>
     <script src="coursjs.js"></script>
 </body>

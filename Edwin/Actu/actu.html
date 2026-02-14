@@ -8,53 +8,43 @@
     <link rel="stylesheet" href="actucss.css">
     <link rel="icon" href="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-192x192.png"
         sizes="192x192" />
-    <link rel="apple-touch-icon"
-        href="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-180x180.png" />
-    <meta name="msapplication-TileImage"
-        content="https://www.metz-numeric-school.fr/wp-content/uploads/2025/01/cropped-favicon-270x270.png" />
-    <title>Actualités Tech</title>
+    <title>Actu Tech | Edwin Duriez</title>
 </head>
 
 <body>
     <header>
-        <div>
-            <img src="../Images/header2.jpg" alt="Bannière du site">
+        <div class="header-container">
+            <button class="back-btn" onclick="window.history.back();">⬅️</button>
+            <div class="nav-brand">EDWIN.DEV</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="../cours/cours.html" class="nav-link">Cours</a></li>
+                    <li><a href="actu.html" class="nav-link active">Actu Tech</a></li>
+                    <li><a href="../Video/video.html" class="nav-link">Vidéos</a></li>
+                    <li><a href="../Portfolio/index.html" class="nav-link">Portfolio</a></li>
+                </ul>
+            </nav>
         </div>
-        <div>
-            <button onclick="window.history.back();">⬅️</button>
-        </div>
-        <nav>
-            <div class="nav-links">
-                <div class="menu">
-                    <a class="menu-item" href="../index.html">
-                        <img src="../Images/accueil.jpg" alt="Lien vers la page accueil">
-                        <span>Accueil</span>
-                    </a>
-                    <a class="menu-item" href="../Video/video.html">
-                        <img src="../Images/video.jpg" alt="Lien vers la page video">
-                        <span>Vidéo</span>
-                    </a>
-                    <a class="menu-item" href="../Actu/actu.html">
-                        <img src="../Images/actu.jpg" alt="Lien vers la page actualité technologique">
-                        <span>Actu Tech</span>
-                    </a>
-                    <a class="menu-item" href="../cours/cours.html">
-                        <img src="../Images/ia.jpg" alt="Lien vers la page des cours">
-                        <span>Cours</span>
-                    </a>
-                </div>
-            </div>
-        </nav>
     </header>
-    <main>
-        <h1>Actualités Tech</h1>
+
+    <main class="animate-fade">
+        <h1>Veille Technologique</h1>
+
         <div id="contenu">
-            <p>Chargement des actualités...</p>
+            <div class="loading-container">
+                <div class="construction-icon">📡</div>
+                <h2>Synchronisation des flux...</h2>
+            </div>
         </div>
     </main>
+
     <footer>
-        <a href="../Portfolio/index.html">Mon CV</a>
+        <div class="footer-content">
+            <p class="copyright">&copy; 2025 Edwin Duriez. Fait avec passion pour le Web.</p>
+        </div>
     </footer>
+
     <script>
         fetch('newsletter.html')
             .then(response => {
@@ -64,13 +54,14 @@
                 return response.text();
             })
             .then(data => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(data, 'text/html');
-                const bodyContent = doc.body.innerHTML;
-                document.getElementById('contenu').innerHTML = bodyContent;
+                document.getElementById('contenu').innerHTML = data;
             })
             .catch(error => {
-                document.getElementById('contenu').innerHTML = `<p>${error.message}</p>`;
+                document.getElementById('contenu').innerHTML = `
+                    <div class="glass-card">
+                        <p>${error.message}</p>
+                    </div>
+                `;
             });
     </script>
 </body>
