@@ -1,0 +1,121 @@
+<section class="course">
+  <h1>Titre du Cours : Cours – 12 Septembre 2025</h1>
+  <article class="concepts">
+    <h2>Récapitulatif de la session précédente</h2>
+    <p>Retour sur les notions vues précédemment : accessibilité numérique, structure HTML et importance de la sémantique dans le code.</p>
+  </article>
+  <article class="concepts">
+    <h2>Référencement – Introduction</h2>
+    <p>Le <strong>référencement</strong> est un ensemble de techniques permettant d’améliorer la visibilité d’un site sur les moteurs de recherche.</p>
+<div class="focus">
+<h4>Principe du système d’enchères</h4>
+<p>Les moteurs de recherche utilisent un <strong>système d’enchères</strong> basé sur le <strong>prix au clic</strong> (PPC).
+Les annonceurs paient lorsqu’un utilisateur clique sur leur lien sponsorisé.</p>
+</div>
+<p>Le <strong>SEO</strong> (Search Engine Optimization), ou <em>référencement naturel</em>, consiste à aider les moteurs de recherche à interpréter le contenu d’un site et à aider les internautes à le trouver.</p>
+<div class="note">
+💡 <strong>Objectif :</strong> améliorer la compréhension du contenu par les moteurs de recherche pour augmenter le trafic organique.
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Différence entre SEO et SEA</h2>
+    <p>Ces deux approches sont complémentaires mais reposent sur des stratégies distinctes :</p>
+<table style="width:100%; border-collapse:collapse; text-align:left;">
+<tr style="background-color:#eaf2f8;">
+<th style="padding:8px;">Critère</th>
+<th style="padding:8px;">SEO (Search Engine Optimization)</th>
+<th style="padding:8px;">SEA (Search Engine Advertising)</th>
+</tr>
+<tr>
+<td style="padding:8px;">Type de trafic</td>
+<td style="padding:8px;">Organique (gratuit, long terme)</td>
+<td style="padding:8px;">Payant (publicités, court terme)</td>
+</tr>
+<tr>
+<td style="padding:8px;">Outils</td>
+<td style="padding:8px;">Optimisation du code, contenu, mots-clés</td>
+<td style="padding:8px;">Campagnes Google Ads, Microsoft Ads…</td>
+</tr>
+<tr>
+<td style="padding:8px;">Objectif</td>
+<td style="padding:8px;">Améliorer la visibilité naturelle</td>
+<td style="padding:8px;">Attirer immédiatement du trafic ciblé</td>
+</tr>
+</table>
+<div class="note">
+⚙️ Un code HTML propre et bien structuré améliore à la fois le <strong>référencement</strong> et <strong>l’accessibilité</strong>.
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Accessibilité et outils d’assistance</h2>
+    <p>Les outils d’assistance permettent de rendre le web accessible aux personnes en situation de handicap.</p>
+<ul>
+<li><strong>NVDA :</strong> gratuit et open-source</li>
+<li><strong>JAWS :</strong> logiciel payant (~2000€)</li>
+</ul>
+<div class="focus">
+<p><em>“Essentiel pour certains, utile pour tous !”</em></p>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Reprise du cours : Contenu HTML</h2>
+    <p>Les textes et paragraphes sont placés dans la balise <code>&lt;p&gt;</code>.</p>
+<p><strong>Lorem ipsum</strong> est un texte factice utilisé pour tester la mise en page sans ajouter de contenu réel.</p>
+<h3>Balises de mise en forme</h3>
+<ul>
+<li><code>&lt;br&gt;</code> → saut de ligne (balise orpheline)</li>
+<li><code>&lt;strong&gt;</code> → texte important (gras sémantique)</li>
+<li><code>&lt;em&gt;</code> → texte mis en évidence (italique sémantique)</li>
+<li><code>&lt;mark&gt;</code> → texte surligné</li>
+</ul>
+<div class="schéma">
+&lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;<br/>
+&lt;p&gt;Ceci est un autre paragraphe avec &lt;strong&gt;du texte important&lt;/strong&gt; et &lt;em&gt;un mot en italique&lt;/em&gt;.&lt;/p&gt;<br/>
+&lt;p&gt;On peut aussi &lt;mark&gt;surligner&lt;/mark&gt; une partie du texte.&lt;/p&gt;
+</div>
+<div class="note">
+💬 Voir les commentaires sur le fichier test dans VS Code pour les exemples de code et de structure.
+<a download="test.zip" href="test.zip">
+Télécharger le fichier test
+</a>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Création de liens – Base du web</h2>
+    <p>La balise <code>&lt;a&gt;</code> permet de créer un lien hypertexte.</p>
+<ul>
+<li><strong>href :</strong> destination du lien (URL ou identifiant de section)</li>
+<li><strong>target :</strong> ouverture dans un nouvel onglet (<code>_blank</code>)</li>
+<li><strong>id :</strong> ancre interne pour navigation dans la page</li>
+</ul>
+<div class="schéma">
+&lt;a href="https://www.example.com" target="_blank"&gt;Visiter le site&lt;/a&gt;<br/>
+&lt;a href="#section2"&gt;Aller à la section 2&lt;/a&gt;
+</div>
+<div class="note">
+🌐 <strong>Les liens sont la base du web :</strong> ils relient les contenus entre eux et structurent la navigation.
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Balises de tableau</h2>
+    <p>Les tableaux se construisent avec les balises suivantes :</p>
+<ul>
+<li><code>&lt;table&gt;</code> → structure du tableau</li>
+<li><code>&lt;tr&gt;</code> → ligne du tableau</li>
+<li><code>&lt;td&gt;</code> → cellule de données</li>
+</ul>
+<div class="schéma">
+&lt;table&gt;<br/>
+  &lt;tr&gt;&lt;td&gt;Nom&lt;/td&gt;&lt;td&gt;Prénom&lt;/td&gt;&lt;/tr&gt;<br/>
+  &lt;tr&gt;&lt;td&gt;Dupont&lt;/td&gt;&lt;td&gt;Marie&lt;/td&gt;&lt;/tr&gt;<br/>
+&lt;/table&gt;
+</div>
+<p>On découvre également la <strong>fusion de cellules</strong> avec les attributs <code>colspan</code> et <code>rowspan</code>.</p>
+<div class="schéma">
+&lt;td colspan="2"&gt;Cellule fusionnée&lt;/td&gt;
+</div>
+<div class="note">
+📘 Voir le fichier test sur VS Code pour les exemples pratiques de fusion de cellules.
+</div>
+  </article>
+</section>

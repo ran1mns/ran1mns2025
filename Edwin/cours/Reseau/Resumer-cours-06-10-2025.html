@@ -1,0 +1,81 @@
+<section class="course">
+  <h1>Titre du Cours : Cours Réseau – 06 Octobre 2025</h1>
+  <article class="concepts">
+    <h2>Commandes Linux</h2>
+    <p>Syntaxe générale :</p>
+<ul>
+<li><code>nom-commande [-option] [paramètre]</code></li>
+<li>Exemples :</li>
+</ul>
+<table>
+<tr><th>Commande</th><th>Fonction</th></tr>
+<tr><td>mkdir</td><td>Créer un répertoire</td></tr>
+<tr><td>ls</td><td>Lister fichiers/répertoires</td></tr>
+<tr><td>ls -l</td><td>Affichage détaillé (long)</td></tr>
+<tr><td>pwd</td><td>Afficher chemin absolu du répertoire courant</td></tr>
+<tr><td>cd</td><td>Changer de répertoire (sans paramètre retourne à <code>/home</code>)</td></tr>
+<tr><td>cd ..</td><td>Remonter d’un dossier</td></tr>
+<tr><td>cd /</td><td>Retour à la racine</td></tr>
+<tr><td>rmdir</td><td>Supprimer un répertoire vide</td></tr>
+<tr><td>touch</td><td>Créer un fichier vide (considéré comme texte)</td></tr>
+<tr><td>rm</td><td>Supprimer un fichier (attention, définitif)</td></tr>
+<tr><td>rm -r</td><td>Supprimer un dossier et tout son contenu (attention aux dossiers critiques)</td></tr>
+<tr><td>mv</td><td>Déplacer ou renommer un fichier/dossier</td></tr>
+<tr><td>exit</td><td>Quitter la session</td></tr>
+<tr><td>apt update</td><td>Met à jour la liste des paquets disponibles (ne met pas à jour les programmes installés)</td></tr>
+<tr><td>apt upgrade</td><td>Met à jour les programmes installés sur le système</td></tr>
+<tr><td>man commande</td><td>Affiche le manuel d’utilisation d’une commande</td></tr>
+</table>
+  </article>
+  <article class="concepts">
+    <h2>Chemins et arborescence</h2>
+    <ul>
+<li>Pas de lettres comme Windows ; tout commence par <code>/</code></li>
+<li>Principaux dossiers : <code>/home</code>, <code>/bin</code>, <code>/var</code>, <code>/media</code> (USB dans <code>/media/usb</code>)</li>
+<li>Linux est sensible à la casse : <code>Fichier.txt</code> ≠ <code>fichier.txt</code></li>
+<li>Combinaison de commandes possible : <code>mkdir travail/compta travail/achat/2024</code></li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Installation et gestion de fichiers</h2>
+    <p>Exemples pratiques :</p>
+<ul>
+<li><code>mv sport loisir</code> : renommer ou déplacer un fichier/dossier</li>
+<li><code>touch salaire.xls</code> : créer un fichier vide</li>
+<li><code>rm -r travail</code> : supprimer le dossier travail et tout son contenu</li>
+<li><code>chmod</code> : modifier les permissions d’un fichier ou dossier</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Exercice</h2>
+    <p>Annonce d'un exercice pratique : Aventure "GameShell"</p>
+<p>Objectifs :</p>
+<ul>
+<li>attendre les instructions</li>
+<li>resoudre les enigmes</li>
+<li>competition!</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Architecture 3 tiers</h2>
+    <ol>
+<li><strong>Présentation :</strong> comment les informations sont affichées à l’utilisateur (client universel : navigateur interprète HTML/CSS/JS)</li>
+<li><strong>Traitement :</strong> couche métier, algorithmes, serveur web</li>
+<li><strong>Données :</strong> base de données relationnelle (MySQL, MariaDB, Oracle)</li>
+</ol>
+<p>Communication entre tiers via HTTP/HTTPS (ports 80 et 443). Le serveur web cherche les fichiers et les renvoie au navigateur.</p>
+<p><strong>PHP :</strong> permet de générer dynamiquement le contenu d’une page web. Exemple : <code>index.php</code> génère du HTML à renvoyer au navigateur.</p>
+  </article>
+  <article class="concepts">
+    <h2>Systèmes LAMP et Nginx</h2>
+    <ul>
+<li><strong>LAMP :</strong> Linux, Apache2, MySQL, PHP</li>
+<li>MANP et WAMP : équivalents pour Mac et Windows</li>
+<li>Installation de Nginx avec PHP et interpréteur PHP-FPM (FastCGI Process Manager)</li>
+<li><strong>Différence Apache vs Nginx :</strong> Nginx est plus performant pour gérer de nombreux accès simultanés (sites dynamiques)</li>
+</ul>
+<div class="note">
+<p>PHP-FPM : interpréteur PHP optimisé pour les serveurs web modernes. Permet d’améliorer la performance sur les serveurs Nginx.</p>
+</div>
+  </article>
+</section>

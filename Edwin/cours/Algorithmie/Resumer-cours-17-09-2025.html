@@ -1,0 +1,94 @@
+<section class="course">
+  <h1>Titre du Cours : Cours Algorithmie – 17 Septembre 2025</h1>
+  <article class="concepts">
+    <h2>Session 2 – Algorithmie</h2>
+    <p>Reprise des exercices rendus lors de la séance précédente. Chaque problème peut être résolu de multiples façons.</p>
+<div class="focus">
+<h4>Exemple d'entrée/sortie</h4>
+<ul>
+<li><strong>Entrée :</strong> Départ, Arrivée, mode de transport</li>
+<li><strong>Sortie :</strong> Arrivée MNS</li>
+</ul>
+</div>
+<p>L’idée est d’intégrer des boucles <code>for</code> ou <code>while</code>, ainsi que des conditions.</p>
+<div class="focus">
+<h4>Concept FIFO – File d’attente</h4>
+<p>Boucle <code>tant que</code> la liste n’est pas vide : on enlève le premier élément de la file.</p>
+</div>
+<p>On aborde maintenant des problèmes plus liés à l’informatique et une représentation plus visuelle des algorithmes : logigrammes (flowchart, UML).</p>
+  </article>
+  <article class="concepts">
+    <h2>Pseudo-code structuré : "Devine le nombre"</h2>
+    <pre>
+ALGORITHM GuessTheNumber
+
+VARIABLES
+    targetNumber : INT  // nombre à faire deviner
+    attempt : INT
+
+CONSTANTS
+    MIN : INT &lt;-- 1
+    MAX : INT &lt;-- 1000  // éviter les "magic numbers"
+
+BEGIN
+    targetNumber &lt;-- RANDOM(MIN, MAX)
+
+    DO
+        READ(attempt)
+        IF attempt &gt; targetNumber
+            PRINT("trop grand")
+        ELSE IF attempt &lt; targetNumber
+            PRINT("trop petit")
+        ELSE
+            PRINT("gagné")
+        EN-IF
+    WHILE(attempt != targetNumber)
+
+END
+</pre>
+<p>Commentaires :</p>
+<ul>
+<li><code>!=</code> signifie "différent de" (peut aussi être noté <code>&lt;&gt;</code>)</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Logigramme & UML</h2>
+    <p>Représentation du pseudo-code "Devine le nombre" :</p>
+<ul>
+<li>Forme ronde : <strong>START</strong></li>
+<li>Rectangle : <code>targetNumber = RANDOM(1,1000)</code> (étape automatique)</li>
+<li>Parallélogramme : <code>READ(attempt)</code> (entrée utilisateur)</li>
+<li>Losange : <code>attempt &gt; targetNumber</code> (condition, deux sorties)</li>
+<li>Parallélogramme : <code>PRINT("trop grand")</code> ou <code>PRINT("trop petit")</code></li>
+<li>Parallélogramme : <code>PRINT("gagné")</code> si condition finale</li>
+<li>Flèche de retour vers <code>READ(attempt)</code> matérialise la boucle <code>while</code></li>
+<li>Forme ronde : <strong>END</strong></li>
+</ul>
+<p>Utilité : logigrammes pour cahier des charges, parcours utilisateur, documentation.</p>
+<p>Outils : <strong>Google Drawings</strong>, <strong>draw.io</strong>, <strong>Mermaid</strong></p>
+<div class="focus">
+<h4>Exercice pratique</h4>
+<p>Créer un logigramme de machine à café sur <code>draw.io</code>. Correction disponible sur Mermaid (partagée par le formateur).</p>
+</div>
+<div class="schéma">
+<img alt="Logigramme vs UML" src="Logigramme_vs_UML.png"/>
+<p>Exemple de Logigramme comparé à UML</p>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Introduction à Python</h2>
+    <p>Vérification de l'installation sur le PC. Python est utilisé pour des scripts et de l'analyse de données, simple mais puissant.</p>
+<h3>Premier script</h3>
+<pre>
+# fichier : extension.py
+username = "Alice"
+print("Hello " + username + "!")  # concaténation avec variable
+</pre>
+<p>Notes :</p>
+<ul>
+<li><code>print()</code> : fonction pour afficher du texte</li>
+<li>Les variables permettent de stocker des données et de les réutiliser</li>
+<li>Concaténation : + permet de combiner chaînes et variables</li>
+</ul>
+  </article>
+</section>

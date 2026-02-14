@@ -1,0 +1,404 @@
+<section class="course">
+  <h1>Titre du Cours : Cours de Culture Informatique – 06 Octobre 2025</h1>
+  <article class="concepts">
+    <h2>Interconnexion des ordinateurs</h2>
+    <p>Les ordinateurs s’interconnectent via un réseau maillé, couvrant la planète grâce à des câbles sous-marins et terrestres. Ce maillage assure la résilience : si un élément tombe en panne, une liaison secondaire prend le relais.</p>
+<div class="focus">
+<h4>Focus : Réseau maillé</h4>
+<p>Chaque nœud est connecté à plusieurs autres, garantissant redondance et optimisation des chemins de communication. Structure utilisée pour Internet global.</p>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>LAN et WAN</h2>
+    <ul>
+<li>LAN (Local Area Network) : réseau local, typiquement dans un bâtiment ou un campus</li>
+<li>WAN (Wide Area Network) : réseau étendu, interconnecte plusieurs LAN, ex. Internet</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Émulation et Simulation</h2>
+    <ul>
+<li>Émulation : reproduit le comportement exact d’un système sur un autre (ex. machine virtuelle)</li>
+<li>Simulation : modèle mathématique pour étudier le comportement d’un système sans reproduire tous les détails</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Exploration de Cisco Packet Tracer</h2>
+    <p>Mise en place de 2 réseaux avec PCs, switches, routeurs et serveurs. Observation de l’envoi des requêtes et de la gestion des adresses IP.</p>
+<div class="focus">
+<h4>Focus : Packet Tracer</h4>
+<p>Logiciel de simulation réseau permettant de configurer et visualiser des réseaux LAN/WAN sans matériel réel.</p>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Appareils réseau et câbles</h2>
+    <ul>
+<li>Switch : interconnexion LAN</li>
+<li>Routeur : interconnexion LAN-WAN</li>
+<li>Firewall : protection du réseau</li>
+<li>Câbles :</li>
+<ul>
+<li>Droit Ethernet : connecte PC à switch</li>
+<li>Fast Ethernet : 100 Mbps</li>
+<li>Gigabit Ethernet : 1 Gbps</li>
+</ul>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Adresses IP, VLSM et sous-réseaux</h2>
+    <p>Une adresse IP est composée de 4 octets (32 bits pour IPv4). Chaque réseau peut être subdivisé en sous-réseaux pour organiser les machines et optimiser l'utilisation des adresses.</p>
+<div class="subnet-diagram">
+<!-- /24 -->
+<div class="network-box">
+<strong>192.168.1.0 /24</strong>
+<p>Plage : 192.168.1.1 → 192.168.1.254</p>
+</div>
+<!-- /25 -->
+<div class="subnet-row">
+<div class="network-box">
+<strong>192.168.1.0 /25</strong>
+<p>Plage : 192.168.1.1 → 192.168.1.126</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.128 /25</strong>
+<p>Plage : 192.168.1.129 → 192.168.1.254</p>
+</div>
+</div>
+<!-- /26 -->
+<div class="subnet-row">
+<div class="network-box">
+<strong>192.168.1.0 /26</strong>
+<p>Plage : 192.168.1.1 → 192.168.1.62</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.64 /26</strong>
+<p>Plage : 192.168.1.65 → 192.168.1.126</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.128 /26</strong>
+<p>Plage : 192.168.1.129 → 192.168.1.190</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.192 /26</strong>
+<p>Plage : 192.168.1.193 → 192.168.1.254</p>
+</div>
+</div>
+<!-- /27 ajouté -->
+<div class="subnet-row">
+<div class="network-box">
+<strong>192.168.1.0 /27</strong>
+<p>Plage : 192.168.1.1 → 192.168.1.30</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.32 /27</strong>
+<p>Plage : 192.168.1.33 → 192.168.1.62</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.64 /27</strong>
+<p>Plage : 192.168.1.65 → 192.168.1.94</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.96 /27</strong>
+<p>Plage : 192.168.1.97 → 192.168.1.126</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.128 /27</strong>
+<p>Plage : 192.168.1.129 → 192.168.1.158</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.160 /27</strong>
+<p>Plage : 192.168.1.161 → 192.168.1.190</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.192 /27</strong>
+<p>Plage : 192.168.1.193 → 192.168.1.222</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.224 /27</strong>
+<p>Plage : 192.168.1.225 → 192.168.1.254</p>
+</div>
+</div>
+<!-- /28 -->
+<div class="subnet-row" style="display: grid; grid-template-columns: repeat(16, 1fr); gap: 5px; width: 100%;">
+<div class="network-box">
+<strong>192.168.1.0 /28</strong>
+<p>Plage : 192.168.1.1 → 192.168.1.14</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.16 /28</strong>
+<p>Plage : 192.168.1.17 → 192.168.1.30</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.32 /28</strong>
+<p>Plage : 192.168.1.33 → 192.168.1.46</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.48 /28</strong>
+<p>Plage : 192.168.1.49 → 192.168.1.62</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.64 /28</strong>
+<p>Plage : 192.168.1.65 → 192.168.1.78</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.80 /28</strong>
+<p>Plage : 192.168.1.81 → 192.168.1.94</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.96 /28</strong>
+<p>Plage : 192.168.1.97 → 192.168.1.110</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.112 /28</strong>
+<p>Plage : 192.168.1.113 → 192.168.1.126</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.128 /28</strong>
+<p>Plage : 192.168.1.129 → 192.168.1.142</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.144 /28</strong>
+<p>Plage : 192.168.1.145 → 192.168.1.158</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.160 /28</strong>
+<p>Plage : 192.168.1.161 → 192.168.1.174</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.176 /28</strong>
+<p>Plage : 192.168.1.177 → 192.168.1.190</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.192 /28</strong>
+<p>Plage : 192.168.1.193 → 192.168.1.206</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.208 /28</strong>
+<p>Plage : 192.168.1.209 → 192.168.1.222</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.224 /28</strong>
+<p>Plage : 192.168.1.225 → 192.168.1.238</p>
+</div>
+<div class="network-box">
+<strong>192.168.1.240 /28</strong>
+<p>Plage : 192.168.1.241 → 192.168.1.254</p>
+</div>
+</div>
+<!-- Exemple pas à pas pour débutant -->
+<div class="focus">
+<h4>Exemple pas à pas – Calcul IP</h4>
+<p>On prend 192.168.1.0 /27 comme exemple :</p>
+<p><strong>Explication /27 :</strong> 27 bits sont pour le réseau et 5 bits pour les hôtes → 2^5 - 2 = 30 adresses disponibles.</p>
+<ol>
+<li>Adresse réseau : 192.168.1.0</li>
+<li>Conversion en binaire : 11000000.10101000.00000001.<strong>00000000</strong></li>
+<li>Bits hôtes : derniers 5 bits → 2^5 = 32 adresses totales, dont 2 réservées (réseau et broadcast)</li>
+<li>Adresse broadcast : 192.168.1.31 (tous bits hôtes à 1)</li>
+<li>Adresses valides pour les hôtes : 192.168.1.1 → 192.168.1.30</li>
+</ol>
+</div>
+<div class="focus">
+<h4>Focus : Calcul des plages IP</h4>
+<p>Pour calculer la plage d’un sous-réseau :</p>
+<ol>
+<li>Convertir l’adresse réseau et le masque en binaire</li>
+<li>Déterminer les bits disponibles pour l’hôte</li>
+<li>Calculer l’adresse broadcast (tous les bits hôtes à 1)</li>
+<li>Les adresses hôtes valides : toutes entre l’adresse réseau et l’adresse broadcast</li>
+</ol>
+</div>
+<div class="focus">
+<h4>VLSM</h4>
+<p><strong>Définition :</strong> VLSM (Variable Length Subnet Mask) permet de découper un réseau en sous-réseaux de tailles différentes selon le nombre d’hôtes.</p>
+<p><strong>Principe :</strong> On commence par le plus grand sous-réseau, puis on attribue les adresses restantes aux sous-réseaux plus petits.</p>
+<p><strong>Relation binaire :</strong> Chaque sous-réseau a un masque différent indiquant quels bits sont réseau et quels bits sont hôtes.</p>
+<p><strong>Avantage :</strong> Optimisation des adresses IP et compatibilité avec le routage moderne.</p>
+</div>
+<h3>Conversion binaire ↔ décimal (octet)</h3>
+<pre class="schéma">
+Binaire       Décimal   Valeur de chaque bit
+00000000      0         128 64 32 16 8 4 2 1
+00000001      1         128 64 32 16 8 4 2 1
+00000010      2         128 64 32 16 8 4 2 1
+00000011      3         128 64 32 16 8 4 2 1
+00000100      4         128 64 32 16 8 4 2 1
+00000101      5         128 64 32 16 8 4 2 1
+00000110      6         128 64 32 16 8 4 2 1
+00000111      7         128 64 32 16 8 4 2 1
+...
+11111000      248       128 64 32 16 8 4 2 1
+11111001      249       128 64 32 16 8 4 2 1
+11111100      252       128 64 32 16 8 4 2 1
+11111101      253       128 64 32 16 8 4 2 1
+11111110      254       128 64 32 16 8 4 2 1
+11111111      255       128 64 32 16 8 4 2 1
+        </pre>
+</div>
+<div class="section">
+<h3>Masques de sous-réseau IPv4 (/n) et plages d'adresses</h3>
+<p>En IPv4, le masque de sous-réseau est exprimé par le nombre de bits réseau, noté /n. Comme une adresse IPv4 fait 32 bits, n peut aller de 0 à 32. Chaque /n correspond à un nombre différent d’adresses hôtes possibles dans le sous-réseau.</p>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th>CIDR</th>
+<th>Masque décimal</th>
+<th>Bits réseau</th>
+<th>Bits hôtes</th>
+<th>Nombre d’adresses totales</th>
+<th>Adresses utilisables</th>
+</tr>
+<tr><td>/0</td><td>0.0.0.0</td><td>0</td><td>32</td><td>4 294 967 296</td><td>4 294 967 294</td></tr>
+<tr><td>/1</td><td>128.0.0.0</td><td>1</td><td>31</td><td>2 147 483 648</td><td>2 147 483 646</td></tr>
+<tr><td>/2</td><td>192.0.0.0</td><td>2</td><td>30</td><td>1 073 741 824</td><td>1 073 741 822</td></tr>
+<tr><td>/3</td><td>224.0.0.0</td><td>3</td><td>29</td><td>536 870 912</td><td>536 870 910</td></tr>
+<tr><td>/4</td><td>240.0.0.0</td><td>4</td><td>28</td><td>268 435 456</td><td>268 435 454</td></tr>
+<tr><td>/5</td><td>248.0.0.0</td><td>5</td><td>27</td><td>134 217 728</td><td>134 217 726</td></tr>
+<tr><td>/6</td><td>252.0.0.0</td><td>6</td><td>26</td><td>67 108 864</td><td>67 108 862</td></tr>
+<tr><td>/7</td><td>254.0.0.0</td><td>7</td><td>25</td><td>33 554 432</td><td>33 554 430</td></tr>
+<tr><td>/8</td><td>255.0.0.0</td><td>8</td><td>24</td><td>16 777 216</td><td>16 777 214</td></tr>
+<tr><td>/9</td><td>255.128.0.0</td><td>9</td><td>23</td><td>8 388 608</td><td>8 388 606</td></tr>
+<tr><td>/10</td><td>255.192.0.0</td><td>10</td><td>22</td><td>4 194 304</td><td>4 194 302</td></tr>
+<tr><td>/11</td><td>255.224.0.0</td><td>11</td><td>21</td><td>2 097 152</td><td>2 097 150</td></tr>
+<tr><td>/12</td><td>255.240.0.0</td><td>12</td><td>20</td><td>1 048 576</td><td>1 048 574</td></tr>
+<tr><td>/13</td><td>255.248.0.0</td><td>13</td><td>19</td><td>524 288</td><td>524 286</td></tr>
+<tr><td>/14</td><td>255.252.0.0</td><td>14</td><td>18</td><td>262 144</td><td>262 142</td></tr>
+<tr><td>/15</td><td>255.254.0.0</td><td>15</td><td>17</td><td>131 072</td><td>131 070</td></tr>
+<tr><td>/16</td><td>255.255.0.0</td><td>16</td><td>16</td><td>65 536</td><td>65 534</td></tr>
+<tr><td>/17</td><td>255.255.128.0</td><td>17</td><td>15</td><td>32 768</td><td>32 766</td></tr>
+<tr><td>/18</td><td>255.255.192.0</td><td>18</td><td>14</td><td>16 384</td><td>16 382</td></tr>
+<tr><td>/19</td><td>255.255.224.0</td><td>19</td><td>13</td><td>8 192</td><td>8 190</td></tr>
+<tr><td>/20</td><td>255.255.240.0</td><td>20</td><td>12</td><td>4 096</td><td>4 094</td></tr>
+<tr><td>/21</td><td>255.255.248.0</td><td>21</td><td>11</td><td>2 048</td><td>2 046</td></tr>
+<tr><td>/22</td><td>255.255.252.0</td><td>22</td><td>10</td><td>1 024</td><td>1 022</td></tr>
+<tr><td>/23</td><td>255.255.254.0</td><td>23</td><td>9</td><td>512</td><td>510</td></tr>
+<tr><td>/24</td><td>255.255.255.0</td><td>24</td><td>8</td><td>256</td><td>254</td></tr>
+<tr><td>/25</td><td>255.255.255.128</td><td>25</td><td>7</td><td>128</td><td>126</td></tr>
+<tr><td>/26</td><td>255.255.255.192</td><td>26</td><td>6</td><td>64</td><td>62</td></tr>
+<tr><td>/27</td><td>255.255.255.224</td><td>27</td><td>5</td><td>32</td><td>30</td></tr>
+<tr><td>/28</td><td>255.255.255.240</td><td>28</td><td>4</td><td>16</td><td>14</td></tr>
+<tr><td>/29</td><td>255.255.255.248</td><td>29</td><td>3</td><td>8</td><td>6</td></tr>
+<tr><td>/30</td><td>255.255.255.252</td><td>30</td><td>2</td><td>4</td><td>2</td></tr>
+<tr><td>/31</td><td>255.255.255.254</td><td>31</td><td>1</td><td>2</td><td>0 (utilisé pour point-à-point)</td></tr>
+<tr><td>/32</td><td>255.255.255.255</td><td>32</td><td>0</td><td>1</td><td>1 (une seule IP)</td></tr>
+</table>
+<div class="note">
+    💡 Résumé pratique pour les débutants :<br/>
+    Plus le /n est grand, plus le réseau est petit et moins il y a d’hôtes possibles.<br/>
+    Plus le /n est petit, plus le réseau est grand, pouvant accueillir beaucoup d’hôtes.<br/>
+    /24 est très courant pour un LAN standard (~254 hôtes).<br/>
+    /30 ou /31 sont utilisés pour des liens point-à-point (routeur ↔ routeur).
+  </div>
+</div>
+<div class="section" id="dhcp">
+<h2>DHCP</h2>
+<p>Le serveur DHCP attribue automatiquement les adresses IP aux appareils via un pool défini, simplifiant la gestion des réseaux.</p>
+<div class="focus">
+<h4>Focus : DHCP</h4>
+<p>Dynamic Host Configuration Protocol : permet l’attribution automatique des IP aux hôtes d’un réseau local, évitant la configuration manuelle.</p>
+</div>
+</div>
+<div class="section" id="schema-reseau">
+<h2>Schéma ASCII – Interconnexion LAN/WAN</h2>
+<pre class="schéma">
+         [Internet / WAN]
+                |
+             [Routeur]
+                |
+         -------------------
+         |                 |
+      [Switch1]        [Switch2]
+      /     \          /     \
+   [PC1]   [PC2]  [Serveur1] [Serveur2]
+         |
+     [PC3 / périphérique]
+    </pre>
+<div class="focus">
+<h4>Focus : Interconnexion réseau</h4>
+<p>Ce schéma illustre un réseau LAN relié à Internet via un routeur, avec des switches pour interconnecter les PC et serveurs. Le maillage LAN peut être redondant pour éviter les pannes.</p>
+</div>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Partie</h2>
+    <h3>Masques de sous-réseau IPv4 (/n) et plages d'adresses</h3>
+<p>En IPv4, le masque de sous-réseau est exprimé par le nombre de bits réseau, noté /n. Comme une adresse IPv4 fait 32 bits, n peut aller de 0 à 32. Chaque /n correspond à un nombre différent d’adresses hôtes possibles dans le sous-réseau.</p>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr>
+<th>CIDR</th>
+<th>Masque décimal</th>
+<th>Bits réseau</th>
+<th>Bits hôtes</th>
+<th>Nombre d’adresses totales</th>
+<th>Adresses utilisables</th>
+</tr>
+<tr><td>/0</td><td>0.0.0.0</td><td>0</td><td>32</td><td>4 294 967 296</td><td>4 294 967 294</td></tr>
+<tr><td>/1</td><td>128.0.0.0</td><td>1</td><td>31</td><td>2 147 483 648</td><td>2 147 483 646</td></tr>
+<tr><td>/2</td><td>192.0.0.0</td><td>2</td><td>30</td><td>1 073 741 824</td><td>1 073 741 822</td></tr>
+<tr><td>/3</td><td>224.0.0.0</td><td>3</td><td>29</td><td>536 870 912</td><td>536 870 910</td></tr>
+<tr><td>/4</td><td>240.0.0.0</td><td>4</td><td>28</td><td>268 435 456</td><td>268 435 454</td></tr>
+<tr><td>/5</td><td>248.0.0.0</td><td>5</td><td>27</td><td>134 217 728</td><td>134 217 726</td></tr>
+<tr><td>/6</td><td>252.0.0.0</td><td>6</td><td>26</td><td>67 108 864</td><td>67 108 862</td></tr>
+<tr><td>/7</td><td>254.0.0.0</td><td>7</td><td>25</td><td>33 554 432</td><td>33 554 430</td></tr>
+<tr><td>/8</td><td>255.0.0.0</td><td>8</td><td>24</td><td>16 777 216</td><td>16 777 214</td></tr>
+<tr><td>/9</td><td>255.128.0.0</td><td>9</td><td>23</td><td>8 388 608</td><td>8 388 606</td></tr>
+<tr><td>/10</td><td>255.192.0.0</td><td>10</td><td>22</td><td>4 194 304</td><td>4 194 302</td></tr>
+<tr><td>/11</td><td>255.224.0.0</td><td>11</td><td>21</td><td>2 097 152</td><td>2 097 150</td></tr>
+<tr><td>/12</td><td>255.240.0.0</td><td>12</td><td>20</td><td>1 048 576</td><td>1 048 574</td></tr>
+<tr><td>/13</td><td>255.248.0.0</td><td>13</td><td>19</td><td>524 288</td><td>524 286</td></tr>
+<tr><td>/14</td><td>255.252.0.0</td><td>14</td><td>18</td><td>262 144</td><td>262 142</td></tr>
+<tr><td>/15</td><td>255.254.0.0</td><td>15</td><td>17</td><td>131 072</td><td>131 070</td></tr>
+<tr><td>/16</td><td>255.255.0.0</td><td>16</td><td>16</td><td>65 536</td><td>65 534</td></tr>
+<tr><td>/17</td><td>255.255.128.0</td><td>17</td><td>15</td><td>32 768</td><td>32 766</td></tr>
+<tr><td>/18</td><td>255.255.192.0</td><td>18</td><td>14</td><td>16 384</td><td>16 382</td></tr>
+<tr><td>/19</td><td>255.255.224.0</td><td>19</td><td>13</td><td>8 192</td><td>8 190</td></tr>
+<tr><td>/20</td><td>255.255.240.0</td><td>20</td><td>12</td><td>4 096</td><td>4 094</td></tr>
+<tr><td>/21</td><td>255.255.248.0</td><td>21</td><td>11</td><td>2 048</td><td>2 046</td></tr>
+<tr><td>/22</td><td>255.255.252.0</td><td>22</td><td>10</td><td>1 024</td><td>1 022</td></tr>
+<tr><td>/23</td><td>255.255.254.0</td><td>23</td><td>9</td><td>512</td><td>510</td></tr>
+<tr><td>/24</td><td>255.255.255.0</td><td>24</td><td>8</td><td>256</td><td>254</td></tr>
+<tr><td>/25</td><td>255.255.255.128</td><td>25</td><td>7</td><td>128</td><td>126</td></tr>
+<tr><td>/26</td><td>255.255.255.192</td><td>26</td><td>6</td><td>64</td><td>62</td></tr>
+<tr><td>/27</td><td>255.255.255.224</td><td>27</td><td>5</td><td>32</td><td>30</td></tr>
+<tr><td>/28</td><td>255.255.255.240</td><td>28</td><td>4</td><td>16</td><td>14</td></tr>
+<tr><td>/29</td><td>255.255.255.248</td><td>29</td><td>3</td><td>8</td><td>6</td></tr>
+<tr><td>/30</td><td>255.255.255.252</td><td>30</td><td>2</td><td>4</td><td>2</td></tr>
+<tr><td>/31</td><td>255.255.255.254</td><td>31</td><td>1</td><td>2</td><td>0 (utilisé pour point-à-point)</td></tr>
+<tr><td>/32</td><td>255.255.255.255</td><td>32</td><td>0</td><td>1</td><td>1 (une seule IP)</td></tr>
+</table>
+<div class="note">
+    💡 Résumé pratique pour les débutants :<br/>
+    Plus le /n est grand, plus le réseau est petit et moins il y a d’hôtes possibles.<br/>
+    Plus le /n est petit, plus le réseau est grand, pouvant accueillir beaucoup d’hôtes.<br/>
+    /24 est très courant pour un LAN standard (~254 hôtes).<br/>
+    /30 ou /31 sont utilisés pour des liens point-à-point (routeur ↔ routeur).
+  </div>
+  </article>
+  <article class="concepts">
+    <h2>DHCP</h2>
+    <p>Le serveur DHCP attribue automatiquement les adresses IP aux appareils via un pool défini, simplifiant la gestion des réseaux.</p>
+<div class="focus">
+<h4>Focus : DHCP</h4>
+<p>Dynamic Host Configuration Protocol : permet l’attribution automatique des IP aux hôtes d’un réseau local, évitant la configuration manuelle.</p>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Schéma ASCII – Interconnexion LAN/WAN</h2>
+    <pre class="schéma">
+         [Internet / WAN]
+                |
+             [Routeur]
+                |
+         -------------------
+         |                 |
+      [Switch1]        [Switch2]
+      /     \          /     \
+   [PC1]   [PC2]  [Serveur1] [Serveur2]
+         |
+     [PC3 / périphérique]
+    </pre>
+<div class="focus">
+<h4>Focus : Interconnexion réseau</h4>
+<p>Ce schéma illustre un réseau LAN relié à Internet via un routeur, avec des switches pour interconnecter les PC et serveurs. Le maillage LAN peut être redondant pour éviter les pannes.</p>
+</div>
+  </article>
+</section>

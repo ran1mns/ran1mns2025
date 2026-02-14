@@ -1,0 +1,139 @@
+<section class="course">
+  <h1>Titre du Cours : Cours HTML/CSS – 15 Octobre 2025</h1>
+  <article class="concepts">
+    <h2>Introduction</h2>
+    <p><b>Prochain cours :</b> évaluation.</p>
+<p>Au programme d’aujourd’hui : les <b>formulaires</b>, la <b>position CSS</b>, et peut-être une introduction à <b>Flexbox</b>.</p>
+  </article>
+  <article class="concepts">
+    <h2>Les formulaires</h2>
+    <p>Au programme aujourd’hui : formulaire, CSS position, et peut-être Flexbox.</p>
+<h3>Zones de saisie et backend</h3>
+<p>Les zones de saisie permettent de collecter des données. Ces données sont envoyées à un serveur (backend), qui les traite.
+Pour l’instant, nous n’aborderons pas le backend.</p>
+<h3>L’élément &lt;form&gt;</h3>
+<p>Le formulaire contient tous les champs de saisie. Les attributs principaux :</p>
+<ul>
+<li><code>action</code> → indique où les données doivent être envoyées.</li>
+<li><code>method</code> → fortement recommandé pour éviter d’afficher les données dans l’URL (ex. POST).
+    <ul>
+<li>GET → envoie les données dans l’URL (moins sécurisé, utile pour recherches).</li>
+<li>POST → envoie les données dans le corps de la requête (plus sûr).</li>
+</ul>
+</li>
+<li><code>enctype="multipart/form-data"</code> → utilisé si le formulaire contient autre chose que du texte (ex. fichiers).</li>
+</ul>
+<h3>Les champs de saisie</h3>
+<p>On précise le type du champ pour aider le navigateur :</p>
+<pre><code class="language-html">
+&lt;input type="email"&gt;
+&lt;input type="password"&gt;
+&lt;input type="number"&gt;
+&lt;input type="date"&gt;
+</code></pre>
+<p>Le type indique ce qui est attendu et permet d’éviter les erreurs.</p>
+<h3>Bouton submit</h3>
+<p>Le bouton <code>submit</code> permet de soumettre le formulaire.
+⚠️ Attention à ne pas confondre <code>button</code> et <code>input type="submit"</code> :</p>
+<pre><code class="language-html">
+&lt;input type="submit" value="OK"&gt;
+</code></pre>
+<p>L’attribut <code>value</code> définit le texte affiché sur le bouton.</p>
+<h3>Attribut hidden</h3>
+<p><code>hidden</code> permet de masquer des éléments à l’utilisateur, pour confort visuel ou pour transmettre des informations inutiles à l’utilisateur final.
+⚠️ Ce n’est pas un mécanisme de sécurité.</p>
+<pre><code class="language-html">
+&lt;input type="hidden" name="info" value="valeur"&gt;
+</code></pre>
+<h3>Checkbox et radio</h3>
+<pre><code class="language-html">
+&lt;input type="checkbox"&gt; &lt;!-- choix multiple --&gt;
+&lt;input type="radio"&gt;    &lt;!-- choix unique --&gt;
+</code></pre>
+<h3>Placeholder et label</h3>
+<p>Le <code>placeholder</code> guide l’utilisateur mais n’est pas suffisant : il disparaît si l’utilisateur tape un espace et peut être difficile à lire (gris clair sur fond blanc).
+Exemple de format attendu : jj/mm/aaaa.</p>
+<pre><code class="language-html">
+&lt;label for="texte"&gt;Texte :&lt;/label&gt;
+&lt;input type="text" id="texte" name="texte" placeholder="jj/mm/aaaa"&gt;
+</code></pre>
+<p>L’attribut <code>name</code> nomme la valeur pour le backend. Pas besoin de label pour les boutons submit.</p>
+<h3>Fieldset et legend</h3>
+<p>Ces balises permettent de regrouper des champs pour une meilleure organisation et pour faciliter le traitement côté backend :</p>
+<pre><code class="language-html">
+&lt;fieldset&gt;
+    &lt;legend&gt;Informations personnelles&lt;/legend&gt;
+    &lt;label for="nom"&gt;Nom :&lt;/label&gt;
+    &lt;input type="text" id="nom" name="nom"&gt;
+&lt;/fieldset&gt;
+</code></pre>
+  </article>
+  <article class="concepts">
+    <h2>Position CSS</h2>
+    <p>Il faut comprendre le <b>flux</b> : la manière dont les éléments s’affichent et s’enchaînent par défaut dans la page.</p>
+<p>La propriété <code>position</code> permet de modifier le comportement d’un élément dans ce flux.</p>
+<h3>Position relative</h3>
+<pre><code class="language-css">
+.element {
+    position: relative;
+    top: 10px;
+    left: 0;
+}
+</code></pre>
+<p>➡️ Cela déplace l’élément par rapport à sa position d’origine dans le flux (ici, 10px vers le bas).</p>
+<h3>Position absolute</h3>
+<pre><code class="language-css">
+.element {
+    position: absolute;
+    top: 10px;
+}
+</code></pre>
+<p><b>Relative</b> et <b>absolute</b> fonctionnent ensemble :</p>
+<ul>
+<li><code>absolute</code> positionne l’élément par rapport à son premier parent “positionné”.</li>
+<li>Si aucun parent n’est positionné, le repère devient le document <code>html</code>.</li>
+<li><code>relative</code> peut être utilisée sans décalage, simplement pour créer un repère pour un élément <code>absolute</code>.</li>
+</ul>
+<div class="note">
+💡 <b>Astuce :</b> ce positionnement “sort” l’élément du flux, comme s’il était sur un calque.
+On peut ainsi superposer des éléments (par exemple, deux images presque identiques dans une même div).
+</div>
+<p>Ce type de positionnement est souvent un <b>dernier recours</b> : il existe d’autres méthodes plus modernes pour la mise en page.</p>
+<h3>Position fixed</h3>
+<p><code>fixed</code> retire aussi l’élément du flux, mais le positionne par rapport à la <b>fenêtre</b> (viewport).</p>
+<p>Exemple typique : un bouton “Retour en haut” positionné à 10px de la droite et 100px du haut.</p>
+<pre><code class="language-css">
+.back-to-top {
+    position: fixed;
+    right: 10px;
+    top: 100px;
+}
+</code></pre>
+<p>➡️ Les valeurs de <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code> peuvent être <b>négatives</b>.</p>
+<h3>Position sticky</h3>
+<p><code>sticky</code> est un positionnement hybride entre <code>relative</code> et <code>fixed</code>.</p>
+<p>⚠️ À utiliser avec précaution : un header complet en sticky n’est pas recommandé.
+De plus, une <code>nav</code> sticky doit disposer d’un espace libre pour pouvoir “coller” au scroll.</p>
+<p> Voir experimentations dans le projet html2 : <a download="projet_html_CSS.zip" href="projet_html_CSS.zip"> lien vers projet html 2 </a>
+</p>
+  </article>
+  <article class="concepts">
+    <h2>Tableau d’explication détaillé sur les sélecteurs CSS</h2>
+    <table border="1" cellpadding="6" style="border-collapse:collapse; width:100%;">
+<tr><th>Sélecteur</th><th>Description</th><th>Exemple</th></tr>
+<tr><td><code>&gt;</code></td><td>Sélectionne uniquement les enfants directs.</td><td><code>div &gt; p</code> → sélectionne les <code>p</code> enfants directs d’un <code>div</code>.</td></tr>
+<tr><td><code> </code>(espace)</td><td>Sélectionne tous les descendants (même lointains).</td><td><code>div p</code> → sélectionne tous les <code>p</code> à l’intérieur d’un <code>div</code>.</td></tr>
+<tr><td><code>+</code></td><td>Sélectionne l’élément directement suivant.</td><td><code>h1 + p</code> → sélectionne le premier <code>p</code> après un <code>h1</code>.</td></tr>
+<tr><td><code>~</code></td><td>Sélectionne les frères suivants.</td><td><code>h1 ~ p</code> → sélectionne tous les <code>p</code> qui suivent un <code>h1</code>.</td></tr>
+<tr><td><code>::before</code> / <code>::after</code></td><td>Ajoutent du contenu avant ou après un élément (pseudo-éléments).</td><td><code>.box::after { content:""; }</code></td></tr>
+</table>
+  </article>
+  <article class="concepts">
+    <h2>Introduction à Flexbox</h2>
+    <p>Faute de temps, Flexbox n’a été qu’évoqué rapidement. Cependant :</p>
+<ul>
+<li>Avec Chrome (ou tout autre navigateur moderne), on peut utiliser l’<b>inspecteur de code</b> pour tester et modifier les attributs de flex en temps réel.</li>
+<li>Flexbox permet de positionner, aligner et distribuer les éléments de manière dynamique et flexible.</li>
+</ul>
+  </article>
+</section>

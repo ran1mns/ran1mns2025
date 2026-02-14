@@ -1,33 +1,60 @@
 [
     {
+        "path": "Edwin/cours/Algorithmie/Resumer-cours-08-10-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Algorithmie/Resumer-cours-09-10-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Algorithmie/Resumer-cours-10-09-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Algorithmie/Resumer-cours-14-10-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Algorithmie/Resumer-cours-16-10-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Algorithmie/Resumer-cours-17-09-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Algorithmie/Resumer-cours-18-09-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Algorithmie/Resumer-cours-24-09-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Algorithmie/Resumer-cours-25-09-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Algorithmie/Resumer-cours.html"
+    },
+    {
         "path": "Edwin/cours/Autres/Autres-Resumer-cours-07-10-2025-08.html"
     },
     {
         "path": "Edwin/cours/Autres/Autres-Resumer-cours-07-10-2025-22.html"
     },
     {
-        "path": "Edwin/cours/Autres/Autres-Resumer-cours-07-10-2025-37.html"
+        "path": "Edwin/cours/Autres/Resumer-cours-03-10-2025.html"
     },
     {
-        "path": "Edwin/cours/Autres/Autres-Resumer-cours-07-10-2025-55.html"
+        "path": "Edwin/cours/Autres/Resumer-cours-09-09-2025.html"
     },
     {
-        "path": "Edwin/cours/CultureInfo/Resumer-cours-07-10-2025-11.html"
+        "path": "Edwin/cours/Autres/Resumer-cours-10-10-2025.html"
     },
     {
-        "path": "Edwin/cours/CultureInfo/Resumer-cours-07-10-2025-16.html"
+        "path": "Edwin/cours/Autres/Resumer-cours-23-09-2025.html"
     },
     {
-        "path": "Edwin/cours/CultureInfo/Resumer-cours-07-10-2025-20.html"
+        "path": "Edwin/cours/Autres/Resumer-cours-30-09-2025.html"
     },
     {
-        "path": "Edwin/cours/CultureInfo/Resumer-cours-07-10-2025-23.html"
+        "path": "Edwin/cours/CultureInfo/Resumer-cours-06-10-2025.html"
     },
     {
         "path": "Edwin/cours/CultureInfo/Resumer-cours-07-10-2025-26.html"
-    },
-    {
-        "path": "Edwin/cours/CultureInfo/Resumer-cours-07-10-2025-28.html"
     },
     {
         "path": "Edwin/cours/CultureInfo/Resumer-cours-07-10-2025-42.html"
@@ -42,16 +69,40 @@
         "path": "Edwin/cours/CultureInfo/Resumer-cours-07-10-2025-59.html"
     },
     {
+        "path": "Edwin/cours/CultureInfo/Resumer-cours-13-10-2025.html"
+    },
+    {
+        "path": "Edwin/cours/CultureInfo/Resumer-cours-15-09-2025.html"
+    },
+    {
+        "path": "Edwin/cours/CultureInfo/Resumer-cours-22-09-2025.html"
+    },
+    {
+        "path": "Edwin/cours/CultureInfo/Resumer-cours-29-09-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Frontend/Resumer-cours-01-10-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Frontend/Resumer-cours-02-10-2025.html"
+    },
+    {
         "path": "Edwin/cours/Frontend/Resumer-cours-07-10-2025-09.html"
     },
     {
         "path": "Edwin/cours/Frontend/Resumer-cours-07-10-2025-32.html"
     },
     {
-        "path": "Edwin/cours/Frontend/Resumer-cours-07-10-2025-35.html"
+        "path": "Edwin/cours/Frontend/Resumer-cours-07-10-2025-51.html"
     },
     {
-        "path": "Edwin/cours/Frontend/Resumer-cours-07-10-2025-51.html"
+        "path": "Edwin/cours/Frontend/Resumer-cours-09-09-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Frontend/Resumer-cours-10-10-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Frontend/Resumer-cours-12-09-2025.html"
     },
     {
         "path": "Edwin/cours/Frontend/Resumer-cours-14-10-2025-15.html"
@@ -63,10 +114,25 @@
         "path": "Edwin/cours/Frontend/Resumer-cours-14-10-2025-35.html"
     },
     {
+        "path": "Edwin/cours/Frontend/Resumer-cours-15-09-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Frontend/Resumer-cours-15-10-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Frontend/Resumer-cours-26-09-2025.html"
+    },
+    {
         "path": "Edwin/cours/Python/Resumer-cours-07-10-2025-16.html"
     },
     {
         "path": "Edwin/cours/Python/Resumer-cours-07-10-2025-53.html"
+    },
+    {
+        "path": "Edwin/cours/Reseau/Resumer-cours-03-10-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Reseau/Resumer-cours-06-10-2025.html"
     },
     {
         "path": "Edwin/cours/Reseau/Resumer-cours-07-10-2025-05.html"
@@ -87,9 +153,24 @@
         "path": "Edwin/cours/Reseau/Resumer-cours-07-10-2025-38.html"
     },
     {
+        "path": "Edwin/cours/Reseau/Resumer-cours-12-09-2025.html"
+    },
+    {
         "path": "Edwin/cours/Reseau/Resumer-cours-14-10-2025-17.html"
     },
     {
+        "path": "Edwin/cours/Reseau/Resumer-cours-16-09-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Reseau/Resumer-cours-18-09-2025.html"
+    },
+    {
+        "path": "Edwin/cours/Reseau/Resumer-cours-24-09-2025.html"
+    },
+    {
         "path": "Edwin/cours/Wordpress/Resumer-cours-14-10-2025-59.html"
+    },
+    {
+        "path": "Edwin/cours/Wordpress/Resumer-cours-16-09-2025.html"
     }
 ]

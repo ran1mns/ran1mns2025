@@ -1,0 +1,176 @@
+<section class="course">
+  <h1>Titre du Cours : Cours Python – 9 Octobre 2025</h1>
+  <article class="concepts">
+    <h2>Révisions et liens utiles</h2>
+    <p>Révision des bases de Python avec les ressources suivantes :</p>
+<ul>
+<li>Google Colab du jour : <a href="https://colab.research.google.com/drive/1tOqCKhx5qIjJ-50H_J3RnJKKHRjABaSM#scrollTo=PghTx1ic2exG" target="_blank">Colab</a></li>
+<li>Documentation officielle : <a href="https://docs.python.org/3/library/stdtypes.html#text-and-binary-sequence-type-methods-summary" target="_blank">Python Standard Types</a></li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Variables et types de données</h2>
+    <p>Python ne fait pas de distinction stricte entre variables et constantes.
+Par convention, une constante est écrite en majuscules pour indiquer qu’elle ne doit pas être modifiée.</p>
+<div class="focus">
+<h4>Types de base</h4>
+<ul>
+<li><code>int</code> : nombre entier</li>
+<li><code>float</code> : nombre à virgule</li>
+<li><code>str</code> : chaîne de caractères entourée de guillemets</li>
+<li><code>bool</code> : True ou False</li>
+</ul>
+<p>Python gère automatiquement le typage des variables. La commande <code>type()</code> permet néanmoins de vérifier leur type :</p>
+<pre><code class="language-python">
+variable = 42
+print(type(variable))  # Affiche &lt;class 'int'&gt;
+</code></pre>
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Chaînes de caractères</h2>
+    <p>Les chaînes peuvent être concaténées ou manipulées comme des listes :</p>
+<pre><code class="language-python">
+print(variable[0])  # Premier caractère
+</code></pre>
+<p>Quelques méthodes utiles :</p>
+<ul>
+<li><code>.upper()</code> → transforme en majuscules</li>
+<li><code>.capitalize()</code> → met la première lettre en majuscule</li>
+<li><code>.strip()</code> → supprime les espaces en début et fin de chaîne</li>
+</ul>
+  </article>
+  <article class="concepts">
+    <h2>Nombres entiers et réels</h2>
+    <p>Quelques opérations de base :</p>
+<pre><code class="language-python">
+a, b = 5, 2
+print(a + b)    # addition
+print(a * b)    # multiplication
+print(a / b)    # division réelle
+print(a // b)   # division entière
+print(a % 3)    # modulo
+print(a ** 2)   # puissance
+</code></pre>
+  </article>
+  <article class="concepts">
+    <h2>Booléens</h2>
+    <p>Révision de la séance précédente : les booléens représentent <code>True</code> ou <code>False</code>.
+Ils servent à la logique conditionnelle et aux comparaisons.</p>
+  </article>
+  <article class="concepts">
+    <h2>Tuples</h2>
+    <p>Les tuples sont des collections de données immuables :</p>
+<pre><code class="language-python">
+coord = (10, 20)
+x, y = coord
+print('x =', x, ', y =', y)
+</code></pre>
+<p>Ils peuvent contenir des types variés et se destructurer facilement.</p>
+  </article>
+  <article class="concepts">
+    <h2>Listes</h2>
+    <p>Les listes sont ordonnées et définies avec des crochets :</p>
+<pre><code class="language-python">
+liste = []  # liste vide
+</code></pre>
+<p>L’index commence à 0 et il est conseillé de garder des éléments de même type.
+Méthodes utiles : <code>.append()</code>, <code>.insert()</code>, etc. (voir documentation).</p>
+  </article>
+  <article class="concepts">
+    <h2>Sets</h2>
+    <p>Les sets sont des collections non ordonnées où chaque élément est unique :</p>
+<ul>
+<li>Permettent de supprimer les doublons</li>
+<li>Méthodes importantes : <code>.add()</code>, <code>.remove()</code></li>
+</ul>
+<div class="note">
+Exemple d’usage : vérifier si une phrase est un pangramme en utilisant un set pour les lettres présentes.
+</div>
+  </article>
+  <article class="concepts">
+    <h2>Dictionnaires</h2>
+    <p>Les dictionnaires sont des collections clé-valeur similaires au format JSON :</p>
+<pre><code class="language-python">
+personne = {
+    'nom': 'Dupont',
+    'age': 30,
+    'ville': 'Paris'
+}
+print(personne['nom'])  # Dupont
+</code></pre>
+<p>Les dictionnaires imbriqués permettent de stocker des sous-ensembles :</p>
+<pre><code class="language-python">
+personne = {
+    'nom': 'Durand',
+    'prenom': 'Sophie',
+    'age': 29,
+    'profession': 'Architecte',
+    'adresse': {
+        'rue': '15 rue des Lilas',
+        'ville': 'Lyon',
+        'code_postal': 69003,
+        'pays': 'France'
+    }
+}
+
+print(personne['adresse']['ville'])  # Lyon
+</code></pre>
+  </article>
+  <article class="concepts">
+    <h2>Conversion entre différents types</h2>
+    <p>Méthodes : <code>int()</code>, <code>float()</code>, <code>str()</code>, <code>list()</code>, <code>tuple()</code>, <code>set()</code>.
+Exemple :</p>
+<pre><code class="language-python">
+liste3 = set(liste2)
+print(liste3)
+</code></pre>
+<p>On crée ainsi une nouvelle variable sans écraser l’originale.</p>
+  </article>
+  <article class="concepts">
+    <h2>Boucles</h2>
+    <p>Les boucles permettent de répéter un morceau de code. Lien vers le Google Colab :
+<a href="https://colab.research.google.com/drive/1DXPO36vB1T6B7fmykXvisePDNVkRnfCc" target="_blank">Colab Boucles</a></p>
+<div class="focus">
+<h4>Itérables et itérateurs</h4>
+<ul>
+<li><b>Itérable :</b> objet que l’on peut parcourir élément par élément (ex : liste, chaîne).</li>
+<li><b>Itérateur :</b> outil qui parcourt réellement l’itérable et mémorise la position. On utilise <code>next()</code> pour obtenir l’élément suivant.</li>
+</ul>
+</div>
+<h4>Boucle <code>while</code></h4>
+<p>Exécute tant que la condition est vraie. Attention aux boucles infinies :</p>
+<pre><code class="language-python">
+while True:
+    # code infini
+    if condition:
+        break  # sortir de la boucle
+    continue   # passer à l'itération suivante
+</code></pre>
+<h4>Boucle <code>for</code></h4>
+<p>Itère directement sur les éléments d’un itérable :</p>
+<pre><code class="language-python">
+for element in variable:
+    print(element)
+</code></pre>
+<p>On peut itérer sur : listes, tuples, sets (ordre non garanti), chaînes de caractères.
+Pour les dictionnaires : utiliser <code>.items()</code>, <code>.keys()</code>, <code>.values()</code>.</p>
+<h4>Fonctions <code>range()</code>, <code>enumerate()</code> et <code>zip()</code></h4>
+<ul>
+<li><code>range(stop)</code>, <code>range(start, stop)</code>, <code>range(start, stop, step)</code></li>
+<li><code>enumerate()</code> → récupère l’index et la valeur</li>
+<li><code>zip()</code> → permet de parcourir plusieurs séquences en parallèle</li>
+</ul>
+<p>Personnalisation des <code>print()</code> avec <code>\n</code> ou <code>end=" "</code>.</p>
+  </article>
+  <article class="concepts">
+    <h2>Bonnes pratiques</h2>
+    <ul>
+<li>Éviter de modifier une liste pendant qu’on l’itère → utiliser une copie</li>
+<li>Préférer <code>enumerate</code> plutôt que de gérer manuellement un index</li>
+<li>Utiliser <code>zip</code> pour itérations parallèles</li>
+<li>Nommer les conditions complexes</li>
+<li>Préférer <code>for</code> à <code>while</code> quand on connaît la progression ou la collection</li>
+</ul>
+  </article>
+</section>
