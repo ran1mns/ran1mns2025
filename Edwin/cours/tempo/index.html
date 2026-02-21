@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        /* --- BASE & LAYOUT (Conserve vos styles existants) --- */
+body {
+    margin: 0;
+    background: linear-gradient(#1e3a8a, #9333ea, #be185d) no-repeat;
+    background-attachment: fixed; /* Fixe le fond pour le scroll */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+main {
+    margin: auto;
+    width: 1200px;
+    text-align: left; /* Aligné à gauche pour la lecture des cours */
+    height: auto;
+    padding-bottom: 100px;
+}
+
+/* --- LE CONTENEUR DE COURS (STYLE GLASSMORPHISM) --- */
+#course-container {
+    max-width: 1000px; /* Légèrement plus étroit que le main pour l'esthétique */
+    margin: 40px auto;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.49);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* --- HEADER DU COURS --- */
+.course-header {
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+}
+
+.course-header h1 {
+    font-size: 3em;
+    background: linear-gradient(to right, #fff, #f0abfc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+/* --- SECTION CONTENU --- */
+.module-content h2 {
+    font-size: 1.8em;
+    color: #f0abfc; /* Rose clair pour les titres de section */
+    margin-top: 40px;
+    border-left: 4px solid #4CAF50;
+    padding-left: 15px;
+}
+
+.module-content p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* --- NOTIONS CLÉS (ENCADRÉS) --- */
+.key-point {
+    background: rgba(76, 175, 80, 0.15); /* Vert transparent */
+    border-radius: 15px;
+    padding: 25px;
+    margin: 30px 0;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.key-point h3 {
+    margin-top: 0;
+    color: #81c784;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.key-point h3::before {
+    content: "💡";
+}
+
+/* --- LISTES --- */
+ul {
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* --- BLOCS DE CODE & PSEUDO-CODE --- */
+pre {
+    background: #0f172a; /* Bleu très sombre / noir */
+    padding: 20px;
+    border-radius: 12px;
+    color: #e2e8f0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.95em;
+    overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #f0abfc;
+}
+
+/* --- FOOTER DU COURS --- */
+.course-footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.course-footer h2 {
+    color: #4CAF50;
+}
+
+/* --- ADAPTATION MOBILE --- */
+@media (max-width: 1200px) {
+    main { width: 95%; }
+    #course-container { padding: 25px; }
+}
+    </style>
+    <body>
+        <div id="course-container">
+            <header class="course-header">
+                <h1>Algorithmie et Programmation : Les Fondamentaux pour Résoudre des Problèmes Complexes</h1>
+                <p>Plongez dans l'univers de l'algorithmie et découvrez comment structurer votre pensée pour concevoir des solutions efficaces, optimisées et transposables en code. Ce cours vous dotera des outils essentiels pour aborder la programmation avec rigueur et créativité.</p>
+            </header>
+            <section class="module-content">
+                <h2>1. Introduction à l'Algorithmie : La Science de la Résolution de Problèmes</h2>
+                <p>
+                    L'algorithmie est au cœur de l'informatique. Elle représente l'art de décomposer un problème complexe en étapes simples et exécutables par une machine. Un algorithme n'est pas simplement une suite d'instructions : c'est une
+                    <strong>méthode systématique</strong>
+                    pour atteindre un objectif, qu'il s'agisse de trier une liste de noms, de calculer un trajet optimal ou de prédire des tendances à partir de données.
+                </p>
+                <p>Pourquoi est-ce si crucial ? Imaginez un chef cuisinier qui suit une recette. Sans une séquence claire d'étapes, le plat final serait imprévisible. De la même manière, un algorithme mal conçu peut entraîner des erreurs, des lenteurs ou des résultats incorrects. Dans ce module, nous explorerons comment formaliser ces étapes pour créer des algorithmes robustes et efficaces.</p>
+                <div class="key-point">
+                    <h3>Définition : Qu'est-ce qu'un algorithme ?</h3>
+                    <p>
+                        Un algorithme est une
+                        <strong>suite finie et non ambiguë d'instructions</strong>
+                        permettant de résoudre un problème ou d'accomplir une tâche. Il doit posséder trois caractéristiques essentielles :
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Finitude</strong>
+                            : Il doit se terminer après un nombre fini d'étapes.
+                        </li>
+                        <li>
+                            <strong>Déterminisme</strong>
+                            : À chaque étape, l'instruction suivante est clairement définie.
+                        </li>
+                        <li>
+                            <strong>Efficacité</strong>
+                            : Il doit produire un résultat correct en un temps raisonnable.
+                        </li>
+                    </ul>
+                </div>
+                <h2>2. Les Séquences : L'Ordre des Opérations</h2>
+                <p>
+                    Une séquence est la structure la plus basique en algorithmie. Elle représente un
+                    <strong>enchaînement linéaire d'instructions</strong>
+                    exécutées les unes après les autres, dans l'ordre où elles sont écrites. Par exemple, pour calculer la moyenne de trois notes, vous devez d'abord additionner les notes, puis diviser par trois.
+                </p>
+                <p>Prenons un exemple concret de logique séquentielle :</p>
+                <pre>
+                    ALGORITHME CalculMoyenne
+    VARIABLES
+        note1, note2, note3 : NOMBRES RÉELS
+        moyenne : NOMBRE RÉEL
+    DÉBUT
+        LIRE note1, note2, note3
+        moyenne ← (note1 + note2 + note3) / 3
+        AFFICHER "La moyenne est : ", moyenne
+    FIN
+                </pre>
+                <div class="key-point">
+                    <h3>Bonnes Pratiques pour les Séquences</h3>
+                    <ul>
+                        <li>
+                            <strong>Clarté</strong>
+                            : Écrivez des instructions simples et compréhensibles.
+                        </li>
+                        <li>
+                            <strong>Modularité</strong>
+                            : Décomposez les tâches complexes en sous-tâches plus simples.
+                        </li>
+                        <li>
+                            <strong>Commentaires</strong>
+                            : Documentez chaque étape pour faciliter la maintenance.
+                        </li>
+                    </ul>
+                </div>
+                <h2>3. Structures Conditionnelles : Prendre des Décisions</h2>
+                <p>
+                    Les structures conditionnelles permettent à un algorithme de
+                    <strong>prendre des décisions</strong>
+                    . Elles introduisent une logique de branchement : selon que la condition est vraie ou fausse, l'algorithme exécutera un bloc d'instructions différent.
+                </p>
+                <p>
+                    Exemple de structure
+                    <code>SI / SINON</code>
+                    :
+                </p>
+                <pre>
+                    SI age ≥ 18 ALORS
+    AFFICHER "Vous êtes majeur."
+SINON
+    AFFICHER "Vous êtes mineur."
+FIN SI
+                </pre>
+                <div class="key-point">
+                    <h3>Opérateurs Logiques et Leur Utilisation</h3>
+                    <ul>
+                        <li>
+                            <code>ET</code>
+                            : Toutes les conditions doivent être vraies.
+                        </li>
+                        <li>
+                            <code>OU</code>
+                            : Au moins une condition doit être vraie.
+                        </li>
+                        <li>
+                            <code>NON</code>
+                            : Inverse la valeur d'une condition.
+                        </li>
+                    </ul>
+                </div>
+                <h2>4. Boucles : Répéter des Actions Efficacement</h2>
+                <p>
+                    Les boucles permettent de
+                    <strong>répéter un bloc d'instructions</strong>
+                    . Il existe deux types principaux :
+                    <code>TANT QUE</code>
+                    (While) et
+                    <code>POUR</code>
+                    (For).
+                </p>
+                <h3>
+                    4.1 La Boucle
+                    <code>TANT QUE</code>
+                    (While)
+                </h3>
+                <p>Idéale lorsque le nombre d'itérations n'est pas connu à l'avance (ex: attendre une saisie utilisateur spécifique).</p>
+                <h3>
+                    4.2 La Boucle
+                    <code>POUR</code>
+                    (For)
+                </h3>
+                <p>Utilisée lorsque le nombre d'itérations est connu à l'avance (ex: parcourir les 10 éléments d'une liste).</p>
+                <h2>5. Fonctions : Modulariser et Réutiliser le Code</h2>
+                <p>
+                    Les fonctions sont des
+                    <strong>blocs d'instructions réutilisables</strong>
+                    . Elles permettent de diviser un programme en sous-programmes plus simples, facilitant ainsi le débogage et la maintenance.
+                </p>
+                <div class="key-point">
+                    <h3>Avantages des Fonctions</h3>
+                    <ul>
+                        <li>
+                            <strong>Réutilisabilité</strong>
+                            : Éviter la duplication de code.
+                        </li>
+                        <li>
+                            <strong>Abstraction</strong>
+                            : Masquer la complexité interne d'une opération.
+                        </li>
+                    </ul>
+                </div>
+                <h2>6. Complexité Algorithmique : Évaluer l'Efficacité</h2>
+                <p>
+                    La complexité mesure l'efficacité d'un algorithme via la
+                    <strong>notation Big-O</strong>
+                    . Elle décrit comment le temps d'exécution évolue par rapport à la taille des données d'entrée (n).
+                </p>
+                <div class="key-point">
+                    <h3>Complexités Courantes</h3>
+                    <ul>
+                        <li>
+                            <strong>O(1)</strong>
+                            : Constant (le plus rapide).
+                        </li>
+                        <li>
+                            <strong>O(n)</strong>
+                            : Linéaire (proportionnel à la taille des données).
+                        </li>
+                        <li>
+                            <strong>O(n²)</strong>
+                            : Quadratique (souvent lié à des boucles imbriquées).
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <footer class="course-footer">
+                <h2>Conclusion : Synthèse et Ouverture</h2>
+                <p>
+                    Ce cours a posé les bases de votre réflexion logique. La maîtrise de l'algorithmie est un voyage qui demande de la
+                    <strong>pratique régulière</strong>
+                    . Pour progresser, testez vos algorithmes sur des cas réels et comparez toujours leur efficacité.
+                </p>
+                <p>
+                    Modules suivants suggérés :
+                    <strong>Structures de Données Avancées</strong>
+                    et
+                    <strong>Programmation Orientée Objet</strong>
+                    .
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
